@@ -21,7 +21,7 @@ This project was created using `bun init` in bun v1.0.26. [Bun](https://bun.sh) 
 
 ### Frontend
 
-- [Next.js 13](https://nextjs.org/docs/getting-started)
+- [Next.js 14](https://nextjs.org/docs/getting-started)
 - [NextUI v2](https://nextui.org/)
 - [Tailwind CSS](https://tailwindcss.com/)
 - [Tailwind Variants](https://tailwind-variants.org)
