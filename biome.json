@@ -1,0 +1,33 @@
+{
+	"$schema": "https://biomejs.dev/schemas/1.6.1/schema.json",
+    "files": {
+		"include": [
+            "./app/**/*.ts",
+            "./app/**/*.tsx",
+            "./__test__/**/*.test.ts"
+        ]
+	},
+	"organizeImports": {
+		"enabled": true
+	},
+	"linter": {
+		"enabled": true,
+		"rules": {
+			"recommended": true,
+            "style": {
+                "useFilenamingConvention": {
+                    "level": "error",
+                    "options": {
+                        "filenameCases": ["camelCase", "export"]
+                    }
+                },
+                "useNamingConvention": "error"
+            }
+		}
+	},
+    "formatter": {
+        "enabled": true,
+        "indentStyle": "tab",
+        "indentWidth": 4
+    }
+}
