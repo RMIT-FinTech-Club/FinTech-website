@@ -9,6 +9,7 @@
 
     "format": "biome format --write ./app",
     "lint": "biome lint --apply ./app",
+    "check": "biome check --apply ./app",
 
     "jest": "jest --coverage --passWithNoTests ./__test__",
     "bunTest": "bun test --coverage --bail"
