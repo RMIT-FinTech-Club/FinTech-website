@@ -1,16 +1,14 @@
 {
-  "name": "client",
+  "name": "fintech-website",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-
     "format": "biome format --write ./app",
     "lint": "biome lint --apply ./app",
     "check": "biome check --apply ./app",
-
     "jest": "jest --coverage --passWithNoTests ./__test__",
     "bunTest": "bun test --coverage --bail"
   },
@@ -20,8 +18,10 @@
     "framer-motion": "^11.0.14",
     "jotai": "^2.7.1",
     "next": "14.1.3",
+    "next-themes": "^0.3.0",
     "react": "^18",
     "react-dom": "^18",
+    "tailwind-variants": "^0.2.1",
     "zod": "^3.22.4"
   },
   "devDependencies": {
