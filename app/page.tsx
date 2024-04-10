@@ -10,7 +10,7 @@ const Home = () => {
                 min-h-screen flex-col 
                 items-center gap-4 p-24"
 		>
-			Placeholder
+            <p className="text-tailwind">Placeholder</p>
 		</main>
 	);
 };

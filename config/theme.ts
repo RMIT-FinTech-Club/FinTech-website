@@ -1,6 +1,7 @@
 import { type NextUIPluginConfig } from "@nextui-org/react";
+import { CustomThemeConfig } from "tailwindcss/types/config";
 
-export const themeConfig = {
+export const nextuiThemeConfig = {
     prefix: "fintech",
     addCommonColors: false,
     defaultTheme: "light",
@@ -11,11 +12,11 @@ export const themeConfig = {
                 ft: {
                     background: {
                         DEFAULT: "#F9FAFB",
-                        modal: "#E7EBEF",
+                        popup: "#979797",
                     },
                     text: {
                         dark: "#282828", // Coal
-                        bright: "#FFF5EA", // Creme
+                        bright: "#EBEBEB",
                     },
                     primary: {
                         yellow: {
@@ -52,13 +53,12 @@ export const themeConfig = {
 
                     // Semantic colors
                     success: "#60D681",
-                    info: "#02B5DD",
-                    warning: "#FFEC42",
-                    danger: "#FF5C47",
+                    info: "#97ABD6",
+                    warning: "#F8DA92",
+                    danger: "#BB2649",
 
                     // Not sure what's this for but imma keep it
                     supporting: {
-                        red: "#BB2649",
                         pink: "#EDCDC2",
                         lightpink: "#D4CACD",
                     }
@@ -79,3 +79,9 @@ export const themeConfig = {
         },
     }
 } as NextUIPluginConfig;
+
+export const tailwindExtendThemeConfig: Partial<CustomThemeConfig> = {
+    fontSize: {
+        
+    }
+}

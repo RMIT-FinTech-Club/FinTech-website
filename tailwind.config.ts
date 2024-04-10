@@ -1,6 +1,7 @@
 import type { Config } from "tailwindcss";
 import { nextui } from "@nextui-org/react";
-import { themeConfig } from "./config/theme";
+import { nextuiThemeConfig, tailwindExtendThemeConfig } from "./config/theme";
+import dynamicFontSize from "./plugins/dynamicFontSize";
 
 const config: Config = {
     content: [
@@ -10,10 +11,17 @@ const config: Config = {
         "./node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}",
     ],
     theme: {
-        extend: {},
+        extend: {
+            spacing: {
+                "side-margin-mobile": "1rem",
+                "side-margin": "8.375rem", 
+            }
+        }
     },
     darkMode: "class",
-    plugins: [nextui(themeConfig)],
+    plugins: [
+        nextui(nextuiThemeConfig),
+    ],
 };
 
 export default config;
