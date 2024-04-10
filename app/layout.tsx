@@ -1,12 +1,12 @@
-import "@styles/globals.css";
-import { Metadata } from "next";
-import { siteConfig } from "@/config/site";
 import { fontSans } from "@/config/fonts";
-import { Providers } from "./providers";
-// import { Navbar } from "@/components/navbar";
-import { Viewport } from "next";
+import { siteConfig } from "@/config/site";
 import { Link } from "@nextui-org/link";
+import "@styles/globals.css";
 import clsx from "clsx";
+import type { Metadata } from "next";
+// import { Navbar } from "@/components/navbar";
+import type { Viewport } from "next";
+import { Providers } from "./providers";
 
 export const metadata: Metadata = {
 	title: {
@@ -22,12 +22,12 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-    themeColor: [
+	themeColor: [
 		{ media: "(prefers-color-scheme: light)", color: "white" },
 		{ media: "(prefers-color-scheme: dark)", color: "black" },
 		{ media: "(prefers-color-scheme: tokyo)", color: "red" },
 	],
-}
+};
 
 export default function RootLayout({
 	children,
@@ -40,10 +40,12 @@ export default function RootLayout({
 			<body
 				className={clsx(
 					"min-h-screen bg-background font-sans antialiased",
-					fontSans.variable
+					fontSans.variable,
 				)}
 			>
-				<Providers themeProps={{ attribute: "class", defaultTheme: "light" }}>
+				<Providers
+					themeProps={{ attribute: "class", defaultTheme: "light" }}
+				>
 					<div className="relative flex flex-col h-screen">
 						{/* <Navbar /> */}
 						<main className="container mx-auto max-w-7xl pt-16 px-6 flex-grow">
@@ -56,7 +58,9 @@ export default function RootLayout({
 								href="https://nextui-docs-v2.vercel.app?utm_source=next-app-template"
 								title="nextui.org homepage"
 							>
-								<span className="text-default-600">Powered by</span>
+								<span className="text-default-600">
+									Powered by
+								</span>
 								<p className="text-primary">NextUI</p>
 							</Link>
 						</footer>
