@@ -1,7 +1,6 @@
 import type { Config } from "tailwindcss";
 import { nextui } from "@nextui-org/react";
 import { nextuiThemeConfig, tailwindExtendThemeConfig } from "./config/theme";
-import dynamicFontSize from "./plugins/dynamicFontSize";
 
 const config: Config = {
     content: [
