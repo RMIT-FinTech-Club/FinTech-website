@@ -1,5 +1,6 @@
 import { type NextUIPluginConfig } from "@nextui-org/react";
 import { CustomThemeConfig } from "tailwindcss/types/config";
+import { ResponsiveStylingConfig } from "@/plugins/responsiveStyling";
 
 export const nextuiThemeConfig = {
     prefix: "fintech",
@@ -80,8 +81,37 @@ export const nextuiThemeConfig = {
     }
 } as NextUIPluginConfig;
 
-export const tailwindExtendThemeConfig: Partial<CustomThemeConfig> = {
-    fontSize: {
-        
+export const tailwindExtendedThemeConfig: Partial<CustomThemeConfig> = {
+    spacing: {
+        "side-margin-mobile": "1rem",
+        "side-margin": "8.375rem", 
     }
 }
+
+export const responsiveStylingConfig = {
+    sm: {
+        fontSize: {
+            'ft-heading': "1.5rem",
+        }
+    },
+    md: {
+        fontSize: {
+            'ft-heading': "2.5rem",
+        }
+    },
+    lg: {
+        fontSize: {
+            'ft-heading': "10rem",
+        }
+    },
+    xl: {
+        fontSize: {
+            'ft-heading': "15rem",
+        }
+    },
+    "2xl": {
+        fontSize: {
+            'ft-heading': "20rem",
+        }
+    }
+} as ResponsiveStylingConfig
