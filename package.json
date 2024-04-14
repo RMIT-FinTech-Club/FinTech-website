@@ -14,6 +14,7 @@
   },
   "dependencies": {
     "@nextui-org/react": "^2.2.10",
+    "biome": "^0.3.3",
     "clsx": "^2.1.0",
     "framer-motion": "^11.0.14",
     "jotai": "^2.7.1",
