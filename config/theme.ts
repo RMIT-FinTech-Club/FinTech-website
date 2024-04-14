@@ -84,34 +84,49 @@ export const nextuiThemeConfig = {
 export const tailwindExtendedThemeConfig: Partial<CustomThemeConfig> = {
     spacing: {
         "side-margin-mobile": "1rem",
-        "side-margin": "8.375rem", 
+        "side-margin": "8.375rem",
     }
 }
 
 export const responsiveStylingConfig = {
+    // fontWeight: regular 400, medium 500, semi-bold 600, bold 700
+    // fontSize: 1rem = 16px
     sm: {
         fontSize: {
-            'ft-heading': "1.5rem",
+            'ft-heading-1': ["2rem", { lineHeight: "2.5rem", fontWeight: "700" }],
+            'ft-heading-2': ["1.5rem", { lineHeight: "2.5rem", fontWeight: "600" }],
+            'ft-heading-3': ["1.25rem", { lineHeight: "2.5rem", fontWeight: "600" }],
+            'ft-subtitle-1': ["1rem", { lineHeight: "2.5rem", fontWeight: "600" }],
+            'ft-subtitle-2': ["0.875rem", { lineHeight: "2.5rem", fontWeight: "500" }],
+            'ft-body-1': ["1rem", { lineHeight: "2.5rem", fontWeight: "400" }],
+            'ft-body-2': ["0.875rem", { lineHeight: "2.5rem", fontWeight: "400" }],
         }
     },
     md: {
         fontSize: {
-            'ft-heading': "2.5rem",
+            'ft-heading-1': ["6rem", { lineHeight: "2.5rem", fontWeight: "700" }],
+            'ft-heading-2': ["4rem", { lineHeight: "2.5rem", fontWeight: "700" }],
+            'ft-heading-3': ["3.5rem", { lineHeight: "2.5rem", fontWeight: "700" }],
+            'ft-heading-4': ["3rem", { lineHeight: "2.5rem", fontWeight: "700" }],
+            'ft-heading-5': ["2.25rem", { lineHeight: "2.5rem", fontWeight: "600" }],
+            'ft-heading-6': ["1.5rem", { lineHeight: "2.5rem", fontWeight: "600" }],
+            'ft-body-1': ["1rem", { lineHeight: "2.5rem", fontWeight: "400" }],
+            'ft-body-2': ["0.875rem", { lineHeight: "2.5rem", fontWeight: "400" }],
         }
     },
-    lg: {
-        fontSize: {
-            'ft-heading': "10rem",
-        }
-    },
-    xl: {
-        fontSize: {
-            'ft-heading': "15rem",
-        }
-    },
-    "2xl": {
-        fontSize: {
-            'ft-heading': "20rem",
-        }
-    }
+    // lg: {
+    //     fontSize: {
+    //         'ft-heading': "10rem",
+    //     }
+    // },
+    // xl: {
+    //     fontSize: {
+    //         'ft-heading': "15rem",
+    //     }
+    // },
+    // "2xl": {
+    //     fontSize: {
+    //         'ft-heading': "20rem",
+    //     }
+    // }
 } as ResponsiveStylingConfig
