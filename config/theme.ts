@@ -13,6 +13,7 @@ export const nextuiThemeConfig = {
                     background: {
                         DEFAULT: "#F9FAFB",
                         popup: "#979797",
+                        icon: "#F2F4F7"
                     },
                     text: {
                         dark: "#282828", // Coal

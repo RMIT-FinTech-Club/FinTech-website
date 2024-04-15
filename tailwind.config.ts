@@ -15,6 +15,13 @@ const config: Config = {
                 "side-margin-mobile": "1rem",
                 "side-margin": "8.375rem", 
             }
+        },
+        dropShadow: {
+            "3xl": "0 4px 2px rgba(0, 0, 0, 0.25)",
+            "none": "0 0 #0000"
+        },
+        screens: {
+            "mobile": "812px",
         }
     },
     darkMode: "class",
