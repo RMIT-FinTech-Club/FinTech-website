@@ -22,8 +22,8 @@
     "next-themes": "^0.3.0",
     "react": "^18",
     "react-dom": "^18",
-    "tabler-icons-react": "^1.56.0",
     "react-icons": "^5.0.1",
+    "tabler-icons-react": "^1.56.0",
     "tailwind-variants": "^0.2.1",
     "zod": "^3.22.4"
   },

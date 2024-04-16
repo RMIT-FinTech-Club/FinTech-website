@@ -25,3 +25,18 @@
         @apply text-ft-heading-6;
     }
 }
+
+.card:hover > .card-content {
+  bottom: 3%;
+}
+@media screen and (max-width: 812px) {
+  .mascot {
+    display: none;
+  }
+  .bubble {
+    display: none;
+  }
+  .line {
+    display: none;
+  }
+}
