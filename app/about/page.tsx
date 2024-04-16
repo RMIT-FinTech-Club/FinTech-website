@@ -15,7 +15,7 @@ import { LuLinkedin } from "react-icons/lu";
 
 const About = () => {
 	return (
-		<section className="mx-side-margin-mobile my-4 h-fit mobile:mx-side-margin">
+		<section className="mx-side-margin-mobile my-4 h-fit">
 			<header className="grid grid-cols-4 gap-4 relative mx-auto">
 				<div className="line">
 					<svg width="100%" height="100%" aria-labelledby="Test">
@@ -33,16 +33,14 @@ const About = () => {
 					</svg>
 				</div>
 				<div className="col-span-4 relative flex flex-col text-center mobile:col-span-2">
-					<h3 className=" text-xl uppercase font-bold mobile:text-2xl">
-						OUR EXECUTIVE BOARD
-					</h3>
-					<h1 className=" font-bold text-3xl text-ft-primary-yellow-500 drop-shadow-none mobile:text-5xl mobile:drop-shadow-3xl">
+					<h6 className="uppercase font-bold">OUR EXECUTIVE BOARD</h6>
+					<h4 className=" font-bold text-ft-primary-yellow-500 drop-shadow-none mobile:drop-shadow-3xl">
 						<span className=" text-ft-primary-blue-500">
 							Meet the
 						</span>{" "}
 						Fintech
-					</h1>
-					<h1 className=" text-3xl font-bold text-ft-secondary-blue drop-shadow-none mobile:text-5xl mobile:drop-shadow-3xl">
+					</h4>
+					<h1 className=" font-bold text-ft-secondary-blue drop-shadow-none mobile:drop-shadow-3xl">
 						Executive Board
 					</h1>
 					<div className="">
