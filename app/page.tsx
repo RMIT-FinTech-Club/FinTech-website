@@ -3,6 +3,7 @@ import Image from "next/image";
 
 import React from "react";
 import IntroSection from "./components/intro";
+import HeroSection from "./components/hero";
 
 const Home = () => {
 	return (
@@ -11,6 +12,7 @@ const Home = () => {
                 min-h-screen flex-col 
                 items-center gap-4"
 		>
+			<HeroSection />
 			<IntroSection />
 		</div>
 	);
