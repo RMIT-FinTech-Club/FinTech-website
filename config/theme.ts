@@ -91,17 +91,18 @@ export const tailwindExtendedThemeConfig: Partial<CustomThemeConfig> = {
 export const responsiveStylingConfig = {
     // fontWeight: regular 400, medium 500, semi-bold 600, bold 700
     // fontSize: 1rem = 16px
-    // sm: {
-    //     fontSize: {
-    //         'ft-heading-1': ["2rem", { lineHeight: "2.5rem", fontWeight: "700" }],
-    //         'ft-heading-2': ["1.5rem", { lineHeight: "2.5rem", fontWeight: "600" }],
-    //         'ft-heading-3': ["1.25rem", { lineHeight: "2.5rem", fontWeight: "600" }],
-    //         'ft-subtitle-1': ["1rem", { lineHeight: "2.5rem", fontWeight: "600" }],
-    //         'ft-subtitle-2': ["0.875rem", { lineHeight: "2.5rem", fontWeight: "500" }],
-    //         'ft-body-1': ["1rem", { lineHeight: "2.5rem", fontWeight: "400" }],
-    //         'ft-body-2': ["0.875rem", { lineHeight: "2.5rem", fontWeight: "400" }],
-    //     }
-    // },
+    default: {
+        fontSize: {
+            'ft-heading-1': ["2rem", { lineHeight: "2.5rem", fontWeight: "700" }],
+            'ft-heading-2': ["1.5rem", { lineHeight: "2.5rem", fontWeight: "600" }],
+            'ft-heading-3': ["1.25rem", { lineHeight: "2.5rem", fontWeight: "600" }],
+            'ft-subtitle-1': ["1rem", { lineHeight: "2.5rem", fontWeight: "600" }],
+            'ft-subtitle-2': ["0.875rem", { lineHeight: "2.5rem", fontWeight: "500" }],
+            'ft-body-1': ["1rem", { lineHeight: "2.5rem", fontWeight: "400" }],
+            'ft-body-2': ["0.875rem", { lineHeight: "2.5rem", fontWeight: "400" }],
+            'testagain': '1rem',
+        }
+    },
     md: {
         fontSize: {
             'ft-heading-1': ["6rem", { lineHeight: "2.5rem", fontWeight: "700" }],
