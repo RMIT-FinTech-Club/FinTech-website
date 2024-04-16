@@ -25,7 +25,7 @@ const MemberList: React.FC<MemberListProps> = ({ members, itemsPerPage }) => {
 	};
 
 	return (
-		<div className="flex flex-col justify-center">
+		<div className="flex flex-col justify-center w-full">
 			{/* Member Avatar and Name */}
 			<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 justify-center my-4 gap-x-16 gap-y-8 min-h-[500px]">
 				{currentMembers.map((member, index) => (

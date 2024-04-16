@@ -4,7 +4,7 @@ type HeaderTitlePageProps = {
 
 const HeaderTitlePage: React.FC<HeaderTitlePageProps> = ({ text }) => {
 	return (
-		<section className="flex justify-center my-4 items-center">
+		<section className="flex justify-center my-4 items-center w-full">
 			{/* Left arrow*/}
 			<div className="relative flex items-center">
 				<div className="bg-ft-primary-blue-500 h-1 w-64 invisible xl:visible"></div>

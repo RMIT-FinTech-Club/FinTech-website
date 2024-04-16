@@ -42,7 +42,7 @@ const MemberFilter: React.FC<MemberFilterProps> = ({
 	// }, [selectedDepartment, generalMemberPage]);
 
 	return (
-		<div className="w-max">
+		<div className="w-full flex justify-center">
 			<div className="relative">
 				<button className="flex items-center px-4 py-2 bg-ft-primary-blue-500 rounded-lg min-w-max">
 					<span className="text-white">

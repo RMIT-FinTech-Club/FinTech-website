@@ -3,7 +3,7 @@
 import { avatar } from "@nextui-org/react";
 import clsx from "clsx";
 import type React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import type ClubMember from "../components/clubMember";
 import HeaderTitlePage from "../components/headerTitlePage";
 import MemberAvatar from "../components/memberCard";
@@ -208,8 +208,17 @@ const Members: React.FC = () => {
 		}
 	};
 
+	// useEffect(() => {
+	// 	document.body.style.overflowX = "hidden";
+	// 	document.body.style.overflowY = "hidden";
+	// 	return () => {
+	// 		document.body.style.overflowX = "auto";
+	// 		document.body.style.overflowY = "auto";
+	// 	};
+	// }, []);
+
 	return (
-		<div className="flex flex-col gap-8 relative">
+		<div className="flex flex-col gap-8 relative w-full items-center">
 			<HeaderTitlePage text="members" />
 			<div className="flex justify-center">
 				<MemberFilter
@@ -220,6 +229,10 @@ const Members: React.FC = () => {
 			<div className="flex flex-wrap justify-center">
 				<MemberList members={filteredMember} itemsPerPage={10} />
 			</div>
+			{/* Right FinTech Bear Decoration */}
+			{/* <img src="./FinTechBear.svg" alt="FinTech Bear" className="absolute right-0 top-1/2 transform translate-y-[-50%] transform translate-x-[50%] w-[500px] h-[500px] invisible xl:visible" /> */}
+			{/* Below FinTech Bear Decoration  */}
+			{/* <img src="./FinTechBear.svg" alt="FinTech Bear" className="absolute bottom-0 left-0 w-[500px] h-[500px] rotate-[40deg] translate-y-1/2 -translate-x-1/2 invisible xl:visible" /> */}
 		</div>
 	);
 };
