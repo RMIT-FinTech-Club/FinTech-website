@@ -66,9 +66,9 @@ const responsiveStyling = plugin.withOptions<ResponsiveStylingConfig>(
             let utilities: CSSRuleObject = {};
 
             Object.entries(config).forEach(([breakpoint, utilitiesConfig]) => {
-                const breakpointSize = screens[breakpoint];
+                let breakpointSize = screens[breakpoint];
 
-                if (!breakpointSize) {
+                if (!breakpointSize && breakpoint.toLowerCase() !== "default") {
                     console.warn(`No screen found for breakpoint "${breakpoint}".`);
                     return;
                 }
@@ -78,6 +78,9 @@ const responsiveStyling = plugin.withOptions<ResponsiveStylingConfig>(
                 Object.entries(fontSizeUtilitiesObj).forEach(([className, fontSize]) => {
                     // Check if the font size is a string
 
+                    breakpointSize = breakpoint.toLowerCase() === "default" ? '0px' : breakpointSize;
+                    const breakpointValue = `@media (min-width: ${breakpointSize})`
+
                     const classKey = `.${e(`text-${className}`)}`;
 
                     if (!utilities[classKey]) {
@@ -86,13 +89,16 @@ const responsiveStyling = plugin.withOptions<ResponsiveStylingConfig>(
 
                     if (typeof fontSize === "string") {
                         utilities[classKey] = {
-                            [`@media (min-width: ${breakpointSize})`]: {
+                            // [breakpointValue]: {
+                            //     fontSize: fontSize
+                            // },
+                            ['???']: {
                                 fontSize: fontSize
-                            },
+                            }
                         };
                     } else if (isFontSizeLineHeightTuple(fontSize)) {
                         utilities[classKey] = {
-                            [`@media (min-width: ${breakpointSize})`]: {
+                            [breakpointValue]: {
                                 fontSize: fontSize[0],
                                 lineHeight: fontSize[1]
                             }
@@ -106,7 +112,7 @@ const responsiveStyling = plugin.withOptions<ResponsiveStylingConfig>(
                         const fontWeightStr = fontWeight?.toString() ?? "400";
 
                         utilities[classKey] = {
-                            [`@media (min-width: ${breakpointSize})`]: {
+                            [breakpointValue]: {
                                 fontSize: fontSize[0],
                                 lineHeight: lineHeight,
                                 letterSpacing: letterSpacing,
@@ -119,7 +125,9 @@ const responsiveStyling = plugin.withOptions<ResponsiveStylingConfig>(
                         respectPrefix: false,
                         respectImportant: false
                     });
-                    
+
+                    utilities = {};
+
                 })
             })
         };

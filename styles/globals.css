@@ -4,12 +4,24 @@
 
 @layer base {
     p {
-        @apply text-lg;
+        @apply text-ft-body-1;
+    }
+    h1 {
+        @apply text-ft-heading-1;
+    }
+    h2 {
+        @apply text-ft-heading-2;
+    }
+    h3 {
+        @apply text-ft-heading-3;
     }
     h4 {
-        @apply text-5xl font-bold;
+        @apply text-ft-heading-4;
     }
     h5 {
-        @apply text-4xl font-bold;
+        @apply text-ft-heading-5;
+    }
+    h6 {
+        @apply text-ft-heading-6;
     }
 }
