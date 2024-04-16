@@ -119,7 +119,9 @@ const responsiveStyling = plugin.withOptions<ResponsiveStylingConfig>(
                         respectPrefix: false,
                         respectImportant: false
                     });
-                    
+
+                    utilities = {};
+
                 })
             })
         };
