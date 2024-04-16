@@ -1,5 +1,11 @@
+import VisionMission from "./missionVision";
+
 const About = () => {
-	return <div className="text-ft-heading-1">Hello World</div>;
+	return (
+		<div>
+			<VisionMission />;
+		</div>
+	);
 };
 
 export default About;
