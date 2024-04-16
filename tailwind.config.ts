@@ -1,6 +1,7 @@
 import type { Config } from "tailwindcss";
 import { nextui } from "@nextui-org/react";
-import { nextuiThemeConfig, tailwindExtendThemeConfig } from "./config/theme";
+import { nextuiThemeConfig, responsiveStylingConfig, tailwindExtendedThemeConfig } from "./config/theme";
+import responsiveStyling from "./plugins/responsiveStyling";
 
 const config: Config = {
     content: [
@@ -10,23 +11,12 @@ const config: Config = {
         "./node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}",
     ],
     theme: {
-        extend: {
-            spacing: {
-                "side-margin-mobile": "1rem",
-                "side-margin": "8.375rem", 
-            }
-        },
-        dropShadow: {
-            "3xl": "0 4px 2px rgba(0, 0, 0, 0.25)",
-            "none": "0 0 #0000"
-        },
-        screens: {
-            "mobile": "812px",
-        }
+        extend: tailwindExtendedThemeConfig
     },
     darkMode: "class",
     plugins: [
         nextui(nextuiThemeConfig),
+        responsiveStyling(responsiveStylingConfig)
     ],
 };
 

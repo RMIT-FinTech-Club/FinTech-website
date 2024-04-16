@@ -30,13 +30,19 @@ import { LuInstagram } from "react-icons/lu";
 import { LuLinkedin } from "react-icons/lu";
 // import Image from "next/image";
 import React from "react";
-// import "../styles/globals.css"
-import About from "./about/page";
+import IntroSection from "./components/intro";
+
+
 const Home = () => {
 	return (
-		<>
-			<About />
-		</>
+		<div
+			className="flex
+                min-h-screen flex-col 
+                items-center gap-4"
+		>
+			<IntroSection />
+
+		</div>
 	);
 };
 
