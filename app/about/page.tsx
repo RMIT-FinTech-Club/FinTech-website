@@ -1,16 +1,16 @@
 import { Button } from "@nextui-org/button";
 import {
 	Card,
-	CardHeader,
 	CardBody,
-	Image,
 	CardFooter,
+	CardHeader,
+	Image,
 } from "@nextui-org/react";
+// import Image from "next/image";
+import React from "react";
 import { LuFacebook } from "react-icons/lu";
 import { LuInstagram } from "react-icons/lu";
 import { LuLinkedin } from "react-icons/lu";
-// import Image from "next/image";
-import React from "react";
 // import "../styles/globals.css"
 
 const About = () => {

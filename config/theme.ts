@@ -64,7 +64,7 @@ export const nextuiThemeConfig = {
                         pink: "#EDCDC2",
                         lightpink: "#D4CACD",
                     }
-                }
+                },
             },
             layout: {
                 radius: {
@@ -86,7 +86,14 @@ export const tailwindExtendedThemeConfig: Partial<CustomThemeConfig> = {
     spacing: {
         "side-margin-mobile": "1rem",
         "side-margin": "8.375rem", 
-    }
+    },
+    dropShadow: {
+            "3xl": "0 4px 2px rgba(0, 0, 0, 0.25)",
+            "none": "0 0 #0000"
+    },
+    screens: {
+            "mobile": "812px",
+    },
 }
 
 export const responsiveStylingConfig = {
