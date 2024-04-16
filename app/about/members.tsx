@@ -210,9 +210,7 @@ const Members: React.FC = () => {
 
 	return (
 		<div className="flex flex-col gap-8 relative">
-			<HeaderTitlePage
-				text="members"
-			/>
+			<HeaderTitlePage text="members" />
 			<div className="flex justify-center">
 				<MemberFilter
 					departments={departments.filter(Boolean) as string[]}

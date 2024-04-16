@@ -1,6 +1,6 @@
 import type React from "react";
 import { useEffect, useState } from "react";
-import { CaretDown } from "tabler-icons-react"
+import { CaretDown } from "tabler-icons-react";
 // import { useNavigate } from "react-router-dom";
 
 type MemberFilterProps = {
@@ -13,7 +13,9 @@ const MemberFilter: React.FC<MemberFilterProps> = ({
 	onFilterChange,
 }) => {
 	const [isDropdownOpen, setIsDropdownOpen] = useState<boolean>(false);
-	const [selectedDepartment, setSelectedDepartment] = useState<string | null>(null);
+	const [selectedDepartment, setSelectedDepartment] = useState<string | null>(
+		null,
+	);
 	// const generalMemberPage = useNavigate();
 
 	const toogleDropdown = () => {

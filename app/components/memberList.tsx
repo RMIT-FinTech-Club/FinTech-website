@@ -2,9 +2,9 @@
 
 import type React from "react";
 import { useState } from "react";
+import { CaretLeft, CaretRight, Circle } from "tabler-icons-react";
 import type ClubMember from "./clubMember";
 import MemberCard from "./memberCard";
-import { CaretLeft, CaretRight, Circle } from "tabler-icons-react"
 
 interface MemberListProps {
 	members: ClubMember[];
@@ -54,7 +54,7 @@ const MemberList: React.FC<MemberListProps> = ({ members, itemsPerPage }) => {
 								? "fill-ft-primary-yellow-500"
 								: "fill-ft-primary-blue-500"
 						} cursor-pointer`}
-						onClick={() => handlePageChange(index + 1)} 
+						onClick={() => handlePageChange(index + 1)}
 					/>
 				))}
 				{/* Right caret icon */}
