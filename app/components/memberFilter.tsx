@@ -1,5 +1,6 @@
 import type React from "react";
 import { useEffect, useState } from "react";
+import { CaretDown } from "tabler-icons-react"
 // import { useNavigate } from "react-router-dom";
 
 type MemberFilterProps = {
@@ -39,16 +40,15 @@ const MemberFilter: React.FC<MemberFilterProps> = ({
 	// }, [selectedDepartment, generalMemberPage]);
 
 	return (
-		<div>
+		<div className="w-max">
 			<div className="relative">
-				<button className="flex items-center px-4 py-2 bg-ft-primary-blue-500 rounded-lg">
+				<button className="flex items-center px-4 py-2 bg-ft-primary-blue-500 rounded-lg min-w-max">
 					<span className="text-white">
 						{selectedDepartment || "Department"}
 					</span>
-					<img
-						src="/dropdownCaretIcon.svg"
-						alt="Filter Department"
-						className={`flex items-center transition-transform ${
+					<CaretDown
+						color="white"
+						className={`flex items-center transition-transform fill-white ${
 							isDropdownOpen ? "transform rotate-180" : ""
 						}`}
 						onClick={toogleDropdown}
@@ -56,7 +56,7 @@ const MemberFilter: React.FC<MemberFilterProps> = ({
 				</button>
 			</div>
 			{isDropdownOpen && (
-				<div className="absolute z-10 mt-2 border bg-white border-gray-300 rounded-lg">
+				<div className="absolute z-10 mt-2 border bg-white border-gray-300 rounded-lg w-auto left-1/2 transform -translate-x-1/2">
 					<ul>
 						{departments.map((department) => (
 							<li

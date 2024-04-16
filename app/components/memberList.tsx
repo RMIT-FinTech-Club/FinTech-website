@@ -1,8 +1,10 @@
 "use client";
 
-import React, { useState } from "react";
+import type React from "react";
+import { useState } from "react";
 import type ClubMember from "./clubMember";
 import MemberCard from "./memberCard";
+import { CaretLeft, CaretRight, Circle } from "tabler-icons-react"
 
 interface MemberListProps {
 	members: ClubMember[];
@@ -25,17 +27,16 @@ const MemberList: React.FC<MemberListProps> = ({ members, itemsPerPage }) => {
 	return (
 		<div className="flex flex-col justify-center">
 			{/* Member Avatar and Name */}
-			<div className="grid grid-cols-5 justify-center my-4 gap-x-16 gap-y-8">
+			<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 justify-center my-4 gap-x-16 gap-y-8 min-h-[500px]">
 				{currentMembers.map((member, index) => (
 					<MemberCard key={index} member={member} />
 				))}
 			</div>
 			<div className="flex justify-center gap-4 my-4 items-center">
 				{/* Left caret icon */}
-				<img
-					src="/leftCaretIcon.svg"
-					alt="Previous Member Page"
-					className="w-8 h-8 cursor-pointer"
+				<CaretLeft
+					className="w-8 h-8 cursor-pointer fill-ft-primary-blue-500"
+					color="ft-primary-blue-500"
 					onClick={() => {
 						if (currentPage > 1) {
 							handlePageChange(currentPage - 1);
@@ -44,25 +45,22 @@ const MemberList: React.FC<MemberListProps> = ({ members, itemsPerPage }) => {
 				/>
 				{/* Pagination dots */}
 				{Array.from({ length: totalPages }, (_, index) => (
-					<svg
+					<Circle
 						key={index}
-						xmlns="http://www.w3.org/2000/svg"
-						viewBox="0 0 8 8"
+						size={16}
+						color="ft-primary-blue-500"
 						className={`${
 							currentPage === index + 1
-								? "text-ft-primary-yellow-500"
-								: "text-ft-primary-blue-500"
-						} w-4 h-4 cursor-pointer`}
-						onClick={() => handlePageChange(index + 1)}
-					>
-						<circle cx="4" cy="4" r="4" fill="currentColor" />
-					</svg>
+								? "fill-ft-primary-yellow-500"
+								: "fill-ft-primary-blue-500"
+						} cursor-pointer`}
+						onClick={() => handlePageChange(index + 1)} 
+					/>
 				))}
 				{/* Right caret icon */}
-				<img
-					src="/rightCaretIcon.svg"
-					alt="Next Member Page"
-					className="w-8 h-8 cursor-pointer"
+				<CaretRight
+					className="w-8 h-8 cursor-pointer fill-ft-primary-blue-500"
+					color="ft-primary-blue-500"
 					onClick={() => {
 						if (currentPage < totalPages) {
 							handlePageChange(currentPage + 1);

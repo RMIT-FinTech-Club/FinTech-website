@@ -212,8 +212,6 @@ const Members: React.FC = () => {
 		<div className="flex flex-col gap-8 relative">
 			<HeaderTitlePage
 				text="members"
-				leftSvgSrc={"./decorationLineLeftCircleArrow.svg"}
-				rightSvgSrc={"./decorationLineRightCircleArrow.svg"}
 			/>
 			<div className="flex justify-center">
 				<MemberFilter

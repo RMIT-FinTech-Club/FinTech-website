@@ -8,7 +8,7 @@ interface MemberCardProps {
 
 const MemberCard: React.FC<MemberCardProps> = ({ member }) => {
 	return (
-		<div className="flex flex-col m-4">
+		<div className="flex flex-col items-center m-4">
 			<img
 				className="w-32 h-32 rounded-lg"
 				src={member.avatarSrc}
