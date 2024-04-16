@@ -1,6 +1,26 @@
+'use client'
 import { fontSans } from "@/config/fonts";
+import useEmblaCarousel from 'embla-carousel-react'
+import { useEffect, useState } from "react";
 
 export default function HistoryPage() {
+	const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, dragFree: true })
+	const [centerSlideIndex, setCenterSlideIndex] = useState<number>(0);
+
+	useEffect(() => {
+		if (emblaApi) {
+			const onSelect = () => {
+				const selectedIndex = emblaApi.selectedScrollSnap();
+				setCenterSlideIndex(selectedIndex);
+			};
+
+			emblaApi.on("select", onSelect);
+			return () => {
+				emblaApi.off("select", onSelect);
+			};
+		}
+	}, [emblaApi]);
+
 	return (
 		<>
 			<div className="mx-auto w-[806px] px-[52px] bg-white bg-opacity-0 flex-col justify-center items-center gap-4">
@@ -49,43 +69,56 @@ export default function HistoryPage() {
 					Phasellus sollicitudin
 				</div>
 			</div>
-			<div className="mt-[93px] mb-[77px] items-center flex justify-between">
-				<div className="flex items-center w-32 h-32 bg-amber-200 rounded-full">
-					<div
-						className={`mx-auto text-slate-700 text-4xl font-semibold ${fontSans.style}`}
-					>
-						2020
+			<div className="mt-[93px] mb-[77px] w-[700px] h-[300px] mx-auto overflow-hidden" ref={emblaRef}>
+				<div className="flex justify-between items-center">
+					{['2020', '2021', '2022', '2023', '2024'].map((year, index) => {
+						return (
+							<div key={year} className={`flex shrink-0 ml-[90px] items-center rounded-full duration-1000 ease-out ${index === centerSlideIndex ? "w-64 h-64 bg-slate-700" : "w-32 h-32 bg-amber-200"} `} >
+								<div
+									className={`mx-auto font-semibold ${index === centerSlideIndex ? 'text-orange-300 text-5xl' : 'text-slate-700  text-4xl'} ${fontSans.style}`}
+								>
+									{year}
+								</div>
+							</div>
+						)
+					})}
+					{/* <div className="flex shrink-0 ml-[90px] items-center w-32 h-32 bg-amber-200 rounded-full">
+						<div
+							className={`text-slate-700 mx-auto text-4xl font-semibold ${fontSans.style}`}
+						>
+							2020
+						</div>
 					</div>
-				</div>
-				<div className="flex items-center w-32 h-32 bg-amber-200 rounded-full">
-					<div
-						className={`mx-auto text-slate-700 text-4xl font-semibold ${fontSans.style}`}
-					>
-						2021
+					<div className="flex shrink-0 ml-[90px] items-center w-32 h-32 bg-amber-200 rounded-full">
+						<div
+							className={`text-slate-700 mx-auto text-4xl font-semibold ${fontSans.style}`}
+						>
+							2021
+						</div>
 					</div>
-				</div>
-				<div className="flex items-center w-64 h-64 bg-slate-700 rounded-full">
-					<div
-						className={`mx-auto text-orange-300 text-5xl  font-bold ${fontSans.style}`}
-					>
-						2022
+					<div className="flex shrink-0 ml-[90px] items-center w-64 h-64 bg-slate-700 rounded-full">
+						<div
+							className={`text-orange-300 mx-auto text-5xl  font-bold ${fontSans.style}`}
+						>
+							2022
+						</div>
 					</div>
-				</div>
-				<div className="flex items-center w-32 h-32 bg-amber-200 rounded-full">
-					<div
-						className={`mx-auto text-slate-700 text-4xl font-semibold ${fontSans.style}`}
-					>
-						2023
+					<div className="flex shrink-0 ml-[90px] items-center w-32 h-32 bg-amber-200 rounded-full">
+						<div
+							className={`text-slate-700 mx-auto text-4xl font-semibold ${fontSans.style}`}
+						>
+							2023
+						</div>
 					</div>
+					<div className="flex shrink-0 ml-[90px] items-center w-32 h-32 bg-amber-200 rounded-full">
+						<div
+							className={`text-slate-700 mx-auto text-4xl font-semibold ${fontSans.style}`}
+						>
+							2024
+						</div>
+					</div> */}
 				</div>
-				<div className="flex items-center w-32 h-32 bg-amber-200 rounded-full">
-					<div
-						className={`mx-auto text-slate-700 text-4xl font-semibold ${fontSans.style}`}
-					>
-						2024
-					</div>
-				</div>
-			</div>
+			</div >
 			<img
 				alt=""
 				className="absolute top-[257px] left-[-200.15px] rotate-[58.03deg] rounded-[59px]"
