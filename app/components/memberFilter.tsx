@@ -58,7 +58,7 @@ const MemberFilter: React.FC<MemberFilterProps> = ({
 				</button>
 			</div>
 			{isDropdownOpen && (
-				<div className="absolute z-10 mt-2 border bg-white border-gray-300 rounded-lg w-auto left-1/2 transform -translate-x-1/2">
+				<div className="absolute z-10 mt-2 border bg-white border-gray-300 rounded-lg w-auto left-1/2 transform -translate-x-1/2 translate-y-1/4">
 					<ul>
 						{departments.map((department) => (
 							<li
