@@ -209,9 +209,23 @@ const Members: React.FC = () => {
 	};
 
 	// useEffect(() => {
+	// 	document.body.style.maxWidth = "1920px";
 	// 	document.body.style.overflowX = "hidden";
-	// 	document.body.style.overflowY = "hidden";
+	// 	window.addEventListener("resize", () => {
+	// 		if (window.innerWidth === 1920 && window.innerHeight === 1080) {
+	// 			document.body.style.overflowX = "hidden";
+	// 		} else {
+	// 			document.body.style.overflowX = "auto";
+	// 		}
+	// 	});
 	// 	return () => {
+	// 		window.removeEventListener("resize", () => {
+	// 			if (window.innerWidth === 1920 && window.innerHeight === 1080) {
+	// 				document.body.style.overflowX = "hidden";
+	// 			} else {
+	// 				document.body.style.overflowX = "auto";
+	// 			}
+	// 		});
 	// 		document.body.style.overflowX = "auto";
 	// 		document.body.style.overflowY = "auto";
 	// 	};
@@ -229,10 +243,26 @@ const Members: React.FC = () => {
 			<div className="flex flex-wrap justify-center">
 				<MemberList members={filteredMember} itemsPerPage={10} />
 			</div>
+			{/* Left Eclipses Decoration  */}
+			<div className="absolute top-1/2 left-0 invisible 2xl:visible transform -translate-x-12">
+				<div className="absolute w-24 h-24 rounded-full bg-ft-primary-blue-500 transform -translate-x-3/4"></div>
+				<div className="absolute w-24 h-24 rounded-full bg-ft-primary-blue-500 transform -translate-x-1/3 -translate-y-36"></div>
+				<div className="absolute w-24 h-24 rounded-full bg-[#c9d6ea] transform -translate-x-24 -translate-y-44"></div>
+				<div className="absolute w-4 h-4 rounded-full bg-ft-primary-blue-500 transform -translate-x-2/3 translate-y-36"></div>
+			</div>
+			{/* Below Eclipses Decoration  */}
+			<div className="absolute bottom-0 right-0 invisible 2xl:visible transform translate-y-16 -translate-x-24">
+				<div className="absolute w-24 h-24 rounded-full bg-ft-primary-yellow-500 transform translate-x-44"></div>
+				<div className="w-24 h-24 rounded-full bg-ft-primary-blue-500 transform -translate-x-12"></div>
+				<div className="absolute w-24 h-24 rounded-full bg-ft-primary-blue-500 transform translate-x-12 translate-y-4"></div>
+				<div className="absolute w-24 h-24 rounded-full bg-[#c9d6ea] transform translate-x-32 -translate-y-4"></div>
+				<div className="absolute w-4 h-4 rounded-full bg-ft-primary-blue-500 transform -translate-x-32 -translate-y-20"></div>
+				<div className="absolute w-4 h-4 rounded-full bg-ft-primary-yellow-500 transform translate-x-52 -translate-y-64"></div>
+			</div>
 			{/* Right FinTech Bear Decoration */}
-			{/* <img src="./FinTechBear.svg" alt="FinTech Bear" className="absolute right-0 top-1/2 transform translate-y-[-50%] transform translate-x-[50%] w-[500px] h-[500px] invisible xl:visible" /> */}
+			<img src="./FinTechBear.svg" alt="FinTech Bear" className="absolute right-0 top-1/2 rotate-[-40deg] transform -translate-y-1/2 translate-x-3/4 w-[400px] h-[400px] invisible 2xl:visible" />
 			{/* Below FinTech Bear Decoration  */}
-			{/* <img src="./FinTechBear.svg" alt="FinTech Bear" className="absolute bottom-0 left-0 w-[500px] h-[500px] rotate-[40deg] translate-y-1/2 -translate-x-1/2 invisible xl:visible" /> */}
+			<img src="./FinTechBear.svg" alt="FinTech Bear" className="absolute bottom-0 left-0 w-[400px] h-[400px] translate-y-full invisible 2xl:visible" />
 		</div>
 	);
 };
