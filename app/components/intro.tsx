@@ -20,7 +20,7 @@ const IntroSection = () => {
 			</div>
 			{/* Image */}
 			{/* <MaskImage src='/ImageMask.svg' /> */}
-			<MaskImage src="/RiceSrc01.png" />
+			<MaskImage src="/ClubDaySemC2023-2.jpg" />
 			{/* Right text */}
 			<div className="flex flex-col justify-center gap-4">
 				<div className="flex flex-col justify-center text-center gap-3">
@@ -72,7 +72,7 @@ const MaskImage: React.FC<MaskImageProps> = ({
 
 	const style: React.CSSProperties = {
 		maskImage: "url('/ImageMask.svg')",
-		maskSize: "cover",
+		maskSize: "contain",
 		maskPosition: "center",
 		maskRepeat: "no-repeat",
 		// height: "100%",
