@@ -1,5 +1,5 @@
 import React from "react";
-import { Image } from "@nextui-org/react";
+import { Button, Image } from "@nextui-org/react";
 
 const HeroSection = () => {
     return (
@@ -12,12 +12,14 @@ const HeroSection = () => {
                     </div>
                     <div className="p">Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, </div>
                     <div className="justify-start items-center gap-6 flex">
-                        <button className="w-[130px] h-[45px] text-ft-text-bright rounded-xl justify-center items-center flex bg-ft-primary-blue">
+                        {/* <button className="w-[130px] h-[45px] text-ft-text-bright rounded-xl justify-center items-center flex bg-ft-primary-blue">
                             Read More
-                        </button>
-                        <button className="w-[130px] h-[45px] text-ft-text-bright rounded-xl justify-center items-center flex bg-ft-primary-blue">
+                        </button> */}
+                        {/* <button className="w-[130px] h-[45px] text-ft-text-bright rounded-xl justify-center items-center flex bg-ft-primary-blue">
                             Join Us
-                        </button>
+                        </button> */}
+                        <Button color="primary" variant="solid">Read More</Button>
+                        <Button color="primary" variant="solid">Join Us</Button>
                     </div>
                 </div>
                 <div className="w-1/2 h-full rounded-xl">
