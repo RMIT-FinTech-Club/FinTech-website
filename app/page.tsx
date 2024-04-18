@@ -3,7 +3,7 @@ import { Button } from "@nextui-org/button";
 import { Card, CardBody, CardFooter, CardHeader } from "@nextui-org/react";
 import React from "react";
 import IntroSection from "./components/intro";
-import UpcomingEvent from "./upcomingEvent";
+import UpcomingEvent from "../components/upcomingEvent";
 const Home = () => {
 	return (
 		<div
