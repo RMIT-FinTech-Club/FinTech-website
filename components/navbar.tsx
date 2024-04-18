@@ -1,19 +1,28 @@
 import React from 'react';
 import Link from 'next/link';
+import { Image } from '@nextui-org/react';
+
+import { siteConfig } from '@/config/site';
+
+const navItems = siteConfig.navItems;
 
 const Navbar = () => {
     return (
         <nav className="md:h-fit w-full bg-ft-primary-blue flex flex-col">
             <div className="container mx-auto flex items-center justify-between p-5">
                 <div className="logo">
-                    <img src="/whiteLogo.png" alt="Logo" className="h-8" />
+                    <Image radius='none' src="/whiteLogo.png" alt="Logo" className="h-8" />
                 </div>
                 <ul className="flex items-center space-x-10">
-                    <li><a href="#" className="text-white hover:text-ft-secondary-yellow transition-colors">Home</a></li>
-                    <li><a href="#" className="text-white hover:text-ft-secondary-yellow transition-colors">About Us</a></li>
-                    <li><a href="#" className="text-white hover:text-ft-secondary-yellow transition-colors">Projects</a></li>
-                    <li><a href="#" className="text-white hover:text-ft-secondary-yellow transition-colors">Events</a></li>
-                    <li><a href="#" className="text-white hover:text-ft-secondary-yellow transition-colors">Join Us</a></li>
+                    {/* <li><a href="#" className="text-white hover:text-ft-secondary-yellow transition-colors">Home</a></li> */}
+                    {navItems.map((item, index) => {
+                        return (
+                            <li key={index}>
+                                <Link className='text-ft-text-bright hover:text-ft-text-dark transition-colors'
+                                    href={item.href}>{item.label}</Link>
+                            </li>
+                        )
+                    })}
                 </ul>
             </div>
         </nav>
