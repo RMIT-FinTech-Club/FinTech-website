@@ -1,10 +1,13 @@
-'use client'
+"use client";
 import { fontSans } from "@/config/fonts";
-import useEmblaCarousel from 'embla-carousel-react'
+import useEmblaCarousel from "embla-carousel-react";
 import { useEffect, useState } from "react";
 
 export default function HistoryPage() {
-	const [emblaRef, emblaApi] = useEmblaCarousel({ loop: false, dragFree: true })
+	const [emblaRef, emblaApi] = useEmblaCarousel({
+		loop: false,
+		dragFree: true,
+	});
 	const [centerSlideIndex, setCenterSlideIndex] = useState<number>(0);
 
 	useEffect(() => {
@@ -69,21 +72,37 @@ export default function HistoryPage() {
 					Phasellus sollicitudin
 				</div>
 			</div>
-			<div className="mt-[93px] mb-[77px] w-[500px] h-[300px] mx-auto" ref={emblaRef}>
+			<div
+				className="mt-[93px] mb-[77px] w-[500px] h-[300px] mx-auto"
+				ref={emblaRef}
+			>
 				<div className="flex justify-between items-center">
-					{['2020', '2021', '2022', '2023', '2024'].map((year, index) => {
-						return (
-							<div key={year} className={`flex shrink-0 md:ml-[60px] lg:ml-[90px] items-center rounded-full duration-1000 ease-out ${index === centerSlideIndex ? "md:w-[200px] md:h-[200px] lg:w-64 lg:h-64 bg-slate-700 " : "lg:w-32 lg:h-32 bg-amber-200 md:w-[120px] md:h-[120px]"} `} >
+					{["2020", "2021", "2022", "2023", "2024"].map(
+						(year, index) => {
+							return (
 								<div
-									className={`mx-auto font-semibold ${index === centerSlideIndex ? 'text-orange-300 md:text-4xl lg:text-5xl ' : 'text-slate-700 md:text-3xl lg:text-4xl'} ${fontSans.style}`}
+									key={year}
+									className={`flex shrink-0 md:ml-[60px] lg:ml-[90px] items-center rounded-full duration-1000 ease-out ${
+										index === centerSlideIndex
+											? "md:w-[200px] md:h-[200px] lg:w-64 lg:h-64 bg-slate-700 "
+											: "lg:w-32 lg:h-32 bg-amber-200 md:w-[120px] md:h-[120px]"
+									} `}
 								>
-									{year}
+									<div
+										className={`mx-auto font-semibold ${
+											index === centerSlideIndex
+												? "text-orange-300 md:text-4xl lg:text-5xl "
+												: "text-slate-700 md:text-3xl lg:text-4xl"
+										} ${fontSans.style}`}
+									>
+										{year}
+									</div>
 								</div>
-							</div>
-						)
-					})}
+							);
+						},
+					)}
 				</div>
-			</div >
+			</div>
 			<img
 				alt=""
 				className="absolute md:w-[300px] md:left-[-120px] md:top-[340px] lg:left-[-190.15px] lg:w-[600px] top-[257px] rotate-[58.03deg] rounded-[59px]"
