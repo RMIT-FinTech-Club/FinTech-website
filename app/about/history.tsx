@@ -1,6 +1,6 @@
 import { fontSans } from "@/config/fonts";
 
-export default function HistoryPage() {
+export default function HistorySection() {
 	return (
 		<>
 			<div className="mx-auto w-[806px] px-[52px] bg-white bg-opacity-0 flex-col justify-center items-center gap-4">

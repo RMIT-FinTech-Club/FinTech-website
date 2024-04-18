@@ -1,5 +1,9 @@
-const About = () => {
-	return <div>About</div>;
+import HistorySection from "./history";
+
+const AboutUs = () => {
+	return <div>
+        <HistorySection />
+    </div>;
 };
 
-export default About;
+export default AboutUs;
