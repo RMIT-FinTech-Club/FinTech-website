@@ -12,7 +12,7 @@ const Home = () => {
                 items-center gap-4"
 		>
 			<IntroSection />
-			<UpcomingEvent/>
+			<UpcomingEvent />
 		</div>
 	);
 };
