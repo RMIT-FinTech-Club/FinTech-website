@@ -4,7 +4,7 @@ import useEmblaCarousel from 'embla-carousel-react'
 import { useEffect, useState } from "react";
 
 export default function HistoryPage() {
-	const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, dragFree: true })
+	const [emblaRef, emblaApi] = useEmblaCarousel({ loop: false, dragFree: true })
 	const [centerSlideIndex, setCenterSlideIndex] = useState<number>(0);
 
 	useEffect(() => {
@@ -69,7 +69,7 @@ export default function HistoryPage() {
 					Phasellus sollicitudin
 				</div>
 			</div>
-			<div className="mt-[93px] mb-[77px] w-[700px] h-[300px] mx-auto overflow-hidden" ref={emblaRef}>
+			<div className="mt-[93px] mb-[77px] w-[600px] h-[300px] mx-auto" ref={emblaRef}>
 				<div className="flex justify-between items-center">
 					{['2020', '2021', '2022', '2023', '2024'].map((year, index) => {
 						return (
