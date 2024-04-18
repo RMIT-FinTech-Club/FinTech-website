@@ -250,7 +250,7 @@ const Members: React.FC = () => {
         <MemberList members={filteredMember} itemsPerPage={10} />
       </div>
       {/* Left Eclipses Decoration  */}
-      <div className="absolute -left-unit-36 top-unit-52 scale-75">
+      <div className="absolute -left-unit-44 top-unit-52 scale-50">
         <Image
           loading="lazy"
           src="/multiple-bubbles-left-side.svg"
@@ -266,7 +266,7 @@ const Members: React.FC = () => {
         />
       </div>
       {/* Below Eclipses Decoration  */}
-      <div className="absolute -bottom-unit-10 right-unit-0 scale-75">
+      <div className="absolute -bottom-unit-18  -right-unit-32 scale-50">
         <Image
           loading="lazy"
           src="/multiple-bubbles-bottom-side.svg"
@@ -274,7 +274,7 @@ const Members: React.FC = () => {
         />
       </div>
       {/* Below FinTech Bear Decoration  */}
-      <div className="absolute -bottom-unit-14 left-unit-0  scale-50">
+      <div className="absolute -bottom-unit-14 -left-unit-52 scale-50">
         <Image
           loading="lazy"
           src="/bear-bottom-side.svg"
