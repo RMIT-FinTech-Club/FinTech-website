@@ -29,7 +29,7 @@ const UpcomingEvent = () => {
         EVENTS
       </h1>
       <section className="w-full sm:w-4/5 mx-auto">
-        <section className="flex flex-row justify-between items-center w-full mb-5">
+        <section className="flex flex-row justify-between items-center w-full mb-5 gap-4">
           <hr className="w-1/3  border-b-2 border-solid border-ft-primary-yellow md:hidden" />
           <div className="text-ft-primary-yellow text-2xl font-semibold">
             2024
