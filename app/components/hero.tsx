@@ -1,18 +1,34 @@
 import { Button, Image } from "@nextui-org/react";
 import React from "react";
+import { Id } from "tabler-icons-react";
 
 const HeroSection = () => {
+	const bottomImages = [
+		{
+			id: "1",
+			src: "https://via.placeholder.com/400x400",
+			alt: "Placeholder image",
+		},
+		{
+			id: "2",
+			src: "https://via.placeholder.com/800x400",
+			alt: "Placeholder image",
+		},
+		{
+			id: "3",
+			src: "https://via.placeholder.com/400x400",
+			alt: "Placeholder image",
+		},
+	];
+
 	return (
 		<div className="w-full py-12 flex-col justify-start items-center gap-12 flex">
-			<div className=" justify-start items-center gap-[60px] flex max-h-[450px]">
+			<div className=" justify-start items-center gap-[60px] flex">
 				<div className="flex flex-col w-1/2 gap-4">
 					<div className="w-full">
-						<span className="text-[80px] font-bold ">
-							What is <br />
-						</span>
-						<span className="text-ft-primary-yellow text-[80px] font-bold">
-							FinTech Club?
-						</span>
+						<h2>What is</h2>
+						<br />
+						<h1 className="text-ft-primary-yellow">Fintech CLub</h1>
 					</div>
 					<div className="p">
 						Contrary to popular belief, Lorem Ipsum is not simply
@@ -48,24 +64,14 @@ const HeroSection = () => {
 				</div>
 			</div>
 			<div className="h-[400px] justify-end items-center gap-12 flex">
-				<div className="h-full">
+				{bottomImages.map((img, _idx) => (
 					<Image
-						className=" h-[400px]"
-						src="https://via.placeholder.com/400x400"
+						key={img.id}
+						className="w-full h-full"
+						src={img.src}
+						alt={img.alt}
 					/>
-				</div>
-				<div className="h-full">
-					<Image
-						className="h-[400px]"
-						src="https://via.placeholder.com/800x400"
-					/>
-				</div>
-				<div className="h-full">
-					<Image
-						className="h-[400px]"
-						src="https://via.placeholder.com/400x400"
-					/>
-				</div>
+				))}
 			</div>
 		</div>
 	);
