@@ -4,11 +4,11 @@ import { avatar } from "@nextui-org/react";
 import clsx from "clsx";
 import type React from "react";
 import { useState, useEffect } from "react";
-import type ClubMember from "../components/clubMember";
-import HeaderTitlePage from "../components/headerTitlePage";
-import MemberAvatar from "../components/memberCard";
-import MemberFilter from "../components/memberFilter";
-import MemberList from "../components/memberList";
+import type ClubMember from "./(components)/clubMember";
+import HeaderTitlePage from "./(components)/headerTitlePage";
+import MemberAvatar from "./(components)/memberCard";
+import MemberFilter from "./(components)/memberFilter";
+import MemberList from "./(components)/memberList";
 
 const clubMembers: ClubMember[] = [
 	{ name: "John Doe", avatarSrc: "/RiceSrc01.png", department: "Business" },

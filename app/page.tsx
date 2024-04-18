@@ -4,7 +4,7 @@ import Image from "next/image";
 
 import React from "react";
 import Members from "./about/members";
-import IntroSection from "./components/intro";
+import IntroSection from "./(components)/intro";
 
 const Home = () => {
 	return (
