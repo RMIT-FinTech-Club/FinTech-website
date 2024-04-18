@@ -29,8 +29,9 @@ const HeroSection = () => {
 						<h2>What is</h2>
 						<br />
 						<h1 className="text-ft-primary-yellow">Fintech CLub</h1>
+						<br />
 					</div>
-					<div className="p">
+					<p>
 						Contrary to popular belief, Lorem Ipsum is not simply
 						random text. It has roots in a piece of classical Latin
 						literature from 45 BC, making it over 2000 years old.
@@ -40,7 +41,7 @@ const HeroSection = () => {
 						of classical Latin literature from 45 BC, making it over
 						2000 years old. Richard McClintock, a Latin professor at
 						Hampden-Sydney College in Virginia,{" "}
-					</div>
+					</p>
 					<div className="justify-start items-center gap-6 flex">
 						{/* <button className="w-[130px] h-[45px] text-ft-text-bright rounded-xl justify-center items-center flex bg-ft-primary-blue">
                             Read More
@@ -48,10 +49,10 @@ const HeroSection = () => {
 						{/* <button className="w-[130px] h-[45px] text-ft-text-bright rounded-xl justify-center items-center flex bg-ft-primary-blue">
                             Join Us
                         </button> */}
-						<Button color="primary" variant="solid">
+						<Button className="bg-ft-primary-blue text-ft-text-bright" variant="solid">
 							Read More
 						</Button>
-						<Button color="primary" variant="solid">
+						<Button className="bg-ft-primary-blue text-ft-text-bright" variant="solid">
 							Join Us
 						</Button>
 					</div>
@@ -66,8 +67,8 @@ const HeroSection = () => {
 			<div className="h-[400px] justify-end items-center gap-12 flex">
 				{bottomImages.map((img, _idx) => (
 					<Image
-						key={img.id}
 						className="w-full h-full"
+						key={img.id}
 						src={img.src}
 						alt={img.alt}
 					/>

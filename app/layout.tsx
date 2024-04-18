@@ -1,5 +1,5 @@
-import Footer from "@/components/footer";
-import Navbar from "@/components/navbar";
+import Footer from "@/components/shared/footer";
+import Navbar from "@/components/shared/navbar";
 import { fontSans } from "@/config/fonts";
 import { siteConfig } from "@/config/site";
 import { Link } from "@nextui-org/link";
@@ -50,7 +50,7 @@ export default function RootLayout({
 				>
 					<div className="relative items-center flex flex-col h-screen">
 						{<Navbar />}
-						<main className="container min-w-full flex-grow px-side-margin">
+						<main className="container min-w-full flex-grow px-side-margin-mobile sm:px-side-margin">
 							{children}
 						</main>
 						{<Footer />}

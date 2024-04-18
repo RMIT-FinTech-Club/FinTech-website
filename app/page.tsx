@@ -4,6 +4,7 @@ import { Card, CardBody, CardFooter, CardHeader } from "@nextui-org/react";
 import React from "react";
 import UpcomingEvent from "../components/upcomingEvent";
 import HeroSection from "../components/hero";
+import PastPartners from "../components/pastPartners";
 import IntroSection from "../components/intro";
 const Home = () => {
 	return (
@@ -13,6 +14,7 @@ const Home = () => {
                 items-center gap-4"
 		>
 			<HeroSection />
+			<PastPartners />
 			<IntroSection />
 			<UpcomingEvent />
 		</div>

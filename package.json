@@ -14,6 +14,7 @@
   },
   "dependencies": {
     "@nextui-org/react": "^2.2.10",
+    "@tabler/icons-react": "^3.2.0",
     "clsx": "^2.1.0",
     "framer-motion": "^11.0.14",
     "jotai": "^2.7.1",
@@ -24,6 +25,7 @@
     "react-dom": "^18",
     "react-slick": "^0.30.2",
     "slick-carousel": "^1.8.1",
+    "tabler-icons-react": "^1.56.0",
     "tailwind-variants": "^0.2.1",
     "zod": "^3.22.4"
   },
