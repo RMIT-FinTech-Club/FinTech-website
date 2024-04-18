@@ -3,7 +3,7 @@ import VisionMission from "./vision-mission/missionVision";
 const About = () => {
 	return (
 		<div>
-			<VisionMission />;
+			<VisionMission />
 		</div>
 	);
 };
