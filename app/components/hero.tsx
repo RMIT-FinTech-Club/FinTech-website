@@ -1,4 +1,5 @@
 import React from "react";
+import { Image } from "@nextui-org/react";
 
 const HeroSection = () => {
     return (
@@ -20,18 +21,18 @@ const HeroSection = () => {
                     </div>
                 </div>
                 <div className="w-1/2 h-full rounded-xl">
-                    <img className="w-full h-full" src="https://via.placeholder.com/800x450" />
+                    <Image className="w-full h-full" src="https://via.placeholder.com/800x450" />
                 </div>
             </div>
             <div className="h-[400px] justify-end items-center gap-12 flex">
                 <div className="h-full">
-                    <img className=" h-[400px]" src="https://via.placeholder.com/400x400" />
+                    <Image className=" h-[400px]" src="https://via.placeholder.com/400x400" />
                 </div>
                 <div className="h-full">
-                    <img className="h-[400px]" src="https://via.placeholder.com/800x400" />
+                    <Image className="h-[400px]" src="https://via.placeholder.com/800x400" />
                 </div>
                 <div className="h-full">
-                    <img className="h-[400px]" src="https://via.placeholder.com/400x400" />
+                    <Image className="h-[400px]" src="https://via.placeholder.com/400x400" />
                 </div>
             </div>
         </div>
