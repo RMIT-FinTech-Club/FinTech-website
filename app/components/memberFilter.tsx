@@ -18,7 +18,7 @@ const MemberFilter: React.FC<MemberFilterProps> = ({
 	);
 	// const generalMemberPage = useNavigate();
 
-	const toogleDropdown = () => {
+	const toggleDropdown = () => {
 		setIsDropdownOpen(!isDropdownOpen);
 	};
 
@@ -44,8 +44,8 @@ const MemberFilter: React.FC<MemberFilterProps> = ({
 	return (
 		<div className="w-full flex justify-center">
 			<div className="relative">
-				<button className="flex items-center px-4 py-2 bg-ft-primary-blue-500 rounded-lg min-w-max">
-					<span className="text-ft-text-bright">
+				<button className="flex items-center justify-around px-4 py-4 bg-ft-primary-blue-500 rounded-lg w-[200px]" onClick={toggleDropdown}>
+					<span className="text-ft-text-bright font-bold">
 						{selectedDepartment || "Department"}
 					</span>
 					<CaretDown
@@ -53,13 +53,13 @@ const MemberFilter: React.FC<MemberFilterProps> = ({
 						className={`flex items-center transition-transform fill-white ${
 							isDropdownOpen ? "transform rotate-180" : ""
 						}`}
-						onClick={toogleDropdown}
+						onClick={toggleDropdown}
 					/>
 				</button>
 			</div>
 			{isDropdownOpen && (
 				<div className="absolute z-10 mt-2 border bg-white border-gray-300 rounded-lg w-auto left-1/2 transform -translate-x-1/2 translate-y-1/4">
-					<ul>
+					<ul className="w-[200px]">
 						{departments.map((department) => (
 							<li
 								key={department}
