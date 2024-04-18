@@ -1,9 +1,9 @@
+"use client";
 import { Button } from "@nextui-org/button";
-import Image from "next/image";
-
+import { Card, CardBody, CardFooter, CardHeader } from "@nextui-org/react";
 import React from "react";
+import UpcomingEvent from "../components/upcomingEvent";
 import IntroSection from "./components/intro";
-
 const Home = () => {
 	return (
 		<div
@@ -12,6 +12,7 @@ const Home = () => {
                 items-center gap-4"
 		>
 			<IntroSection />
+			<UpcomingEvent />
 		</div>
 	);
 };
