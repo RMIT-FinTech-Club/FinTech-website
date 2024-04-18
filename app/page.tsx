@@ -3,6 +3,7 @@ import { Button } from "@nextui-org/button";
 import { Card, CardBody, CardFooter, CardHeader } from "@nextui-org/react";
 import React from "react";
 import UpcomingEvent from "../components/upcomingEvent";
+import HeroSection from "./components/hero";
 import IntroSection from "./components/intro";
 const Home = () => {
 	return (
@@ -11,6 +12,7 @@ const Home = () => {
                 min-h-screen flex-col 
                 items-center gap-4"
 		>
+			<HeroSection />
 			<IntroSection />
 			<UpcomingEvent />
 		</div>
