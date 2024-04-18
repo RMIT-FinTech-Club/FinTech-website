@@ -1,4 +1,4 @@
-import VisionMission from "./missionVision";
+import VisionMission from "./vision-mission/missionVision";
 
 const About = () => {
 	return (
