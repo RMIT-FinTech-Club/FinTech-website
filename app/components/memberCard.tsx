@@ -10,7 +10,7 @@ const MemberCard: React.FC<MemberCardProps> = ({ member }) => {
 	return (
 		<div className="flex flex-col items-center m-4">
 			<img
-				className="w-44 h-44 rounded-lg"
+				className="w-24 h-24 xl:w-32 xl:h-32 2xl:w-44 2xl:h-44 rounded-2xl"
 				src={member.avatarSrc}
 				alt={member.name}
 			/>
