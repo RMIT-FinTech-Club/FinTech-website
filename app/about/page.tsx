@@ -1,6 +1,6 @@
 import VisionMission from "./vision-mission/missionVision";
 
-const About = () => {
+const AboutUs = () => {
 	return (
 		<div>
 			<VisionMission />
@@ -8,4 +8,4 @@ const About = () => {
 	);
 };
 
-export default About;
+export default AboutUs;
