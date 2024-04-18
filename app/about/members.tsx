@@ -209,50 +209,48 @@ const Members: React.FC = () => {
     }
   };
 
-	// useEffect(() => {
-	// 	const resizeHandler = () => {
-	// 		if (window.innerWidth >= 1920) {
-	// 			document.body.style.overflowX = "hidden";
-	// 		} else {
-	// 			document.body.style.overflowX = "auto";
-	// 		}
-	// 	};
-	
-	// 	document.body.style.maxWidth = "1920px";
-	// 	document.body.style.overflowX = "hidden";
-	// 	window.addEventListener("resize", resizeHandler);
-	
-	// 	return () => {
-	// 		window.removeEventListener("resize", resizeHandler);
-	// 		document.body.style.overflowX = "auto";
-	// 		document.body.style.overflowY = "auto";
-	// 	};
-	// }, []);
+  // useEffect(() => {
+  // 	const resizeHandler = () => {
+  // 		if (window.innerWidth >= 1920) {
+  // 			document.body.style.overflowX = "hidden";
+  // 		} else {
+  // 			document.body.style.overflowX = "auto";
+  // 		}
+  // 	};
 
-	useEffect(() => {
-		document.body.style.overflowX = "hidden";
+  // 	document.body.style.maxWidth = "1920px";
+  // 	document.body.style.overflowX = "hidden";
+  // 	window.addEventListener("resize", resizeHandler);
 
-		return() => {
-			document.body.style.overflowX = "auto";
-		};
-	}, [])
+  // 	return () => {
+  // 		window.removeEventListener("resize", resizeHandler);
+  // 		document.body.style.overflowX = "auto";
+  // 		document.body.style.overflowY = "auto";
+  // 	};
+  // }, []);
+
+  useEffect(() => {
+    document.body.style.overflowX = "hidden";
+
+    return () => {
+      document.body.style.overflowX = "auto";
+    };
+  }, []);
 
   return (
-    <>
-      <div className="flex flex-col gap-8 relative w-full items-center">
-        <HeaderTitlePage text="members" />
-        <div className="flex justify-center">
-          <MemberFilter
-            departments={departments.filter(Boolean) as string[]}
-            onFilterChange={handleFilterChange}
-          />
-        </div>
-        <div className="flex flex-wrap justify-center relative">
-          <MemberList members={filteredMember} itemsPerPage={10} />
-        </div>
+    <div className="flex flex-col gap-8 relative w-full items-center">
+      <HeaderTitlePage text="members" />
+      <div className="flex justify-center">
+        <MemberFilter
+          departments={departments.filter(Boolean) as string[]}
+          onFilterChange={handleFilterChange}
+        />
+      </div>
+      <div className="flex flex-wrap justify-center relative">
+        <MemberList members={filteredMember} itemsPerPage={10} />
       </div>
       {/* Left Eclipses Decoration  */}
-      <div className="absolute -left-unit-7 top-unit-52 scale-75">
+      <div className="absolute -left-unit-36 top-unit-52 scale-75">
         <Image
           loading="lazy"
           src="/multiple-bubbles-left-side.svg"
@@ -260,7 +258,7 @@ const Members: React.FC = () => {
         />
       </div>
       {/* Right FinTech Bear Decoration */}
-      <div className="absolute -right-unit-14 top-unit-40 scale-50">
+      <div className="absolute -right-unit-48 top-unit-40 scale-50">
         <Image
           loading="lazy"
           src="/bear-right-side.svg"
@@ -268,7 +266,7 @@ const Members: React.FC = () => {
         />
       </div>
       {/* Below Eclipses Decoration  */}
-      <div className="absolute -bottom-unit-24 right-unit-0 scale-75">
+      <div className="absolute -bottom-unit-10 right-unit-0 scale-75">
         <Image
           loading="lazy"
           src="/multiple-bubbles-bottom-side.svg"
@@ -276,15 +274,14 @@ const Members: React.FC = () => {
         />
       </div>
       {/* Below FinTech Bear Decoration  */}
-      <div className="absolute -bottom-unit-24 left-unit-0  scale-50">
+      <div className="absolute -bottom-unit-14 left-unit-0  scale-50">
         <Image
           loading="lazy"
           src="/bear-bottom-side.svg"
           alt="bear left side"
         />
       </div>
-    </>
+    </div>
   );
 };
-
 export default Members;
