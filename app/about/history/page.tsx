@@ -69,7 +69,7 @@ export default function HistoryPage() {
 					Phasellus sollicitudin
 				</div>
 			</div>
-			<div className="mt-[93px] mb-[77px] w-[600px] h-[300px] mx-auto" ref={emblaRef}>
+			<div className="mt-[93px] mb-[77px] w-[500px] h-[300px] mx-auto" ref={emblaRef}>
 				<div className="flex justify-between items-center">
 					{['2020', '2021', '2022', '2023', '2024'].map((year, index) => {
 						return (
