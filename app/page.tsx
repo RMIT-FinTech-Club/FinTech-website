@@ -9,7 +9,7 @@ import IntroSection from "./(components)/intro";
 const Home = () => {
 	return (
 		// <Router>
-			<div className="flex min-h-screen flex-col items-center gap-4">
+			<div className="flex flex-col items-center justify-center gap-4">
 				{/* <IntroSection />  */}
 				<Members />
 			</div>
