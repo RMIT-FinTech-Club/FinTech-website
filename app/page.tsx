@@ -5,6 +5,7 @@ import React from "react";
 import HeroSection from "../components/hero";
 import IntroSection from "../components/intro";
 import UpcomingEvent from "../components/upcomingEvent";
+import HerosectionVid from "@/components/heroVideoSection";
 const Home = () => {
 	return (
 		<div
@@ -12,9 +13,10 @@ const Home = () => {
                 min-h-screen flex-col 
                 items-center gap-4"
 		>
-			<HeroSection />
+            <HerosectionVid />
+			{/* <HeroSection />
 			<IntroSection />
-			<UpcomingEvent />
+			<UpcomingEvent /> */}
 		</div>
 	);
 };
