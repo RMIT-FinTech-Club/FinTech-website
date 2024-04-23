@@ -6,9 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "format": "biome format --write ./app ./components",
-    "lint": "biome lint --apply ./app ./components",
-    "check": "biome check --apply ./app ./components",
+    "format": "biome format --write ./",
+    "lint": "biome lint --apply ./",
+    "check": "biome check --apply ./",
     "jest": "jest --coverage --passWithNoTests ./__test__",
     "bunTest": "bun test --coverage --bail"
   },
