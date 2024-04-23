@@ -44,7 +44,10 @@ const MemberFilter: React.FC<MemberFilterProps> = ({
 	return (
 		<div className="w-full flex justify-center">
 			<div className="relative">
-				<button className="flex items-center justify-around px-4 py-4 bg-ft-primary-blue-500 rounded-lg w-[200px]" onClick={toggleDropdown}>
+				<button
+					className="flex items-center justify-around px-4 py-4 bg-ft-primary-blue-500 rounded-lg w-[200px]"
+					onClick={toggleDropdown}
+				>
 					<span className="text-ft-text-bright font-bold">
 						{selectedDepartment || "Department"}
 					</span>

@@ -12,7 +12,9 @@ const HeaderTitlePage: React.FC<HeaderTitlePageProps> = ({ text }) => {
 			</div>
 			{/* Title page  */}
 			<div className="bg-ft-primary-yellow-500 py-4 px-24 mx-8 xl:px-48 xl:mx-16 rounded-2xl">
-				<h5 className="uppercase text-ft-text-bright font-bold">{text}</h5>
+				<h5 className="uppercase text-ft-text-bright font-bold">
+					{text}
+				</h5>
 			</div>
 			{/* Right arrow*/}
 			<div className="relative flex items-center invisible lg:visible">
