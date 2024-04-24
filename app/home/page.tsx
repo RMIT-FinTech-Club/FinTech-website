@@ -1,11 +1,11 @@
-import HallOfFame from "@/components/home/hall-of-fame/member"
-import Invidivual from "@/components/home/hall-of-fame/individual"
+import Invidivual from "@/components/home/hall-of-fame/individual";
+import HallOfFame from "@/components/home/hall-of-fame/member";
 const Home = () => {
-    return(
-        <>
-        <Invidivual />
-        </>
-    )
-}
+	return (
+		<>
+			<Invidivual />
+		</>
+	);
+};
 
-export default Home
+export default Home;
