@@ -1,7 +1,5 @@
 'use client'
 import { fontSans } from "@/config/fonts";
-import { useRef } from "react";
-import { useCountUp } from 'react-countup';
 import CountUp from 'react-countup';
 const Achievements = () => {
     return (
