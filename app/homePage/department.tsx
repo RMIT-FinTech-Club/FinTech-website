@@ -42,7 +42,7 @@ const Department = () => {
                 background: "none"
             }
         };
-        setDepartment(departments[name] || departments["Human Resources"]);
+        setDepartment(departments[name as keyof typeof departments] || departments["Human Resources"]);
     };
 
     const responsive = {
