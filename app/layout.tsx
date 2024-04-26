@@ -48,7 +48,7 @@ export default function RootLayout({
 				>
 					<div className="relative items-center flex flex-col h-screen">
 						{/* <Navbar /> */}
-						<main className="container min-w-full flex-grow px-side-margin">
+						<main className="container min-w-full flex-grow">
 							{children}
 						</main>
 						<footer className="w-full flex items-center justify-center py-3">
@@ -61,7 +61,7 @@ export default function RootLayout({
 								<span className="text-default-600">
 									Powered by
 								</span>
-								<p className="text-primary">NextUI</p>
+								<p className="text-primary">Jacky Do</p>
 							</Link>
 						</footer>
 					</div>
