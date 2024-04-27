@@ -1,21 +1,21 @@
 "use client";
 import { Button } from "@nextui-org/button";
 import { Card, CardBody, CardFooter, CardHeader } from "@nextui-org/react";
+// import { BrowserRouter as Router } from "react-router-dom";
 import React from "react";
 import UpcomingEvent from "../components/upcomingEvent";
 import HeroSection from "../components/hero";
-import IntroSection from "../components/intro";
+import Members from "./about/members";
 const Home = () => {
 	return (
-		<div
-			className="flex
-                min-h-screen flex-col 
-                items-center gap-4"
-		>
+		// <Router>
+		<div className="flex flex-col items-center justify-center gap-4">
 			<HeroSection />
-			<IntroSection />
+			{/* <IntroSection />  */}
+			<Members />
 			<UpcomingEvent />
 		</div>
+		// </Router>
 	);
 };
 
