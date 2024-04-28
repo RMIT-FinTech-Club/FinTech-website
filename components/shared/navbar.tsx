@@ -20,9 +20,9 @@ const Navbar = () => {
 				</div>
 				<ul className="flex items-center space-x-10">
 					{/* <li><a href="#" className="text-white hover:text-ft-secondary-yellow transition-colors">Home</a></li> */}
-					{navItems.map((item, index) => {
+					{navItems.map((item, _) => {
 						return (
-							<li key={index}>
+							<li key={item.href}>
 								<Link
 									className="text-ft-text-bright hover:text-ft-text-dark transition-colors"
 									href={item.href}

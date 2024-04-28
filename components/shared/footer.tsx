@@ -33,27 +33,27 @@ const Footer = () => {
 					<ul className="mt-[20px] text-center md:text-left">
 						<h5 className="text-ft-text-bright">Important Links</h5>
 						<li>
-							<a href="#" className="block mb-2">
+							<a href="/" className="block mb-2">
 								<p className="text-ft-text-bright">Home</p>
 							</a>
 						</li>
 						<li>
-							<a href="#" className="block mb-2">
+							<a href="/" className="block mb-2">
 								<p className="text-ft-text-bright">About Us</p>
 							</a>
 						</li>
 						<li>
-							<a href="#" className="block mb-2">
+							<a href="/" className="block mb-2">
 								<p className="text-ft-text-bright">Events</p>
 							</a>
 						</li>
 						<li>
-							<a href="#" className="block mb-2">
+							<a href="/" className="block mb-2">
 								<p className="text-ft-text-bright">Projects</p>
 							</a>
 						</li>
 						<li>
-							<a href="#" className="block">
+							<a href="/" className="block">
 								<p className="text-ft-text-bright">Join Us</p>
 							</a>
 						</li>
@@ -65,23 +65,23 @@ const Footer = () => {
 							Contact Info
 						</h5>
 						<div className="flex items-center w-fit mt-[12px]">
-							<a href="#">
+							<a href="/">
 								<Mail className="w-[30px] h-[30px] text-ft-text-bright mr-[16px]" />{" "}
 							</a>
-							<a href="#">
+							<a href="/">
 								<BrandFacebook className="w-[30px] h-[30px] text-ft-text-bright mr-[16px]" />
 							</a>
-							<a href="#">
+							<a href="/">
 								<BrandInstagram className="w-[30px] h-[30px] text-ft-text-bright mr-[16px]" />
 							</a>
-							<a href="#">
+							<a href="/">
 								<BrandTiktok className="w-[30px] h-[30px] text-ft-text-bright mr-[16px]" />
 							</a>
 						</div>
 					</div>
 				</div>
 			</div>
-			<div className="mx-auto w-[90%] h-[3px] bg-ft-secondary-yellow rounded-full"></div>
+			<div className="mx-auto w-[90%] h-[3px] bg-ft-secondary-yellow rounded-full" />
 			<div className="mx-auto my-[13px]">
 				<p className="text-ft-text-bright text-center md:text-left w-[90%] md:w-full mx-auto">
 					Copyright ©2024 All rights reserved | This website is

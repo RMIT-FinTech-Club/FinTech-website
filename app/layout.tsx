@@ -1,3 +1,5 @@
+import Footer from "@/components/shared/footer";
+import Navbar from "@/components/shared/navbar";
 import { fontSans } from "@/config/fonts";
 import { siteConfig } from "@/config/site";
 import { Link } from "@nextui-org/link";
