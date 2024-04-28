@@ -20,13 +20,13 @@ const Department = () => {
             "Technology": {
                 name: "TECHNOLOGY DEPARTMENT",
                 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit",
-                imageUrl: "bg-gray-300",
+                imageUrl: "url('Hr.png')",
                 background: "none"
             },
             "Business": {
                 name: "BUSINESS DEPARTMENT",
                 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit",
-                imageUrl: "bg-gray-300",
+                imageUrl: "url('Hr.png')",
                 background: "none"
             },
             "Human Resources": {
@@ -38,7 +38,7 @@ const Department = () => {
             "Marketing": {
                 name: "MARKETING DEPARTMENT",
                 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit",
-                imageUrl: "bg-gray-300",
+                imageUrl: "url('Hr.png')",
                 background: "none"
             }
         };
@@ -52,8 +52,6 @@ const Department = () => {
         }
     };
 
-    const isImageUrl = department.imageUrl.includes('url'); // Check if a Phuc dua image zo or not
-
     return (
         <section className="relative flex flex-col w-full max-h-fit justify-center items-center md:flex-row px-side-margin-mobile md:px-side-margin" style={{
             backgroundImage: department.background ? `url(${department.background.replace("url('", "").replace("')", "")})` : 'none',
@@ -65,10 +63,10 @@ const Department = () => {
 
             {/* Mobile buttons bar */}
             <div className="flex md:hidden justify-center items-center w-full p-2">
-                    <button className="text-ft-heading-3 button text-ft-text-bright hover:bg-ft-primary-yellow-700 hover:rounded-medium p-2 transition-all duration-300 ease-in-out" onClick={() => handleDepartmentChange("Technology")}>TECHNOLOGY</button>
-                    <button className="text-ft-heading-3 button text-ft-text-bright hover:bg-ft-primary-yellow-700 hover:rounded-medium p-2 transition-all duration-300 ease-in-out" onClick={() => handleDepartmentChange("Business")}>BUSINESS</button>
-                    <button className="text-ft-heading-3 button text-ft-text-bright hover:bg-ft-primary-yellow-700 hover:rounded-medium p-2 transition-all duration-300 ease-in-out" onClick={() => handleDepartmentChange("Human Resources")}>HUMAN RESOURCES</button>
-                    <button className="text-ft-heading-3 button text-ft-text-bright hover:bg-ft-primary-yellow-700 hover:rounded-medium p-2 transition-all duration-300 ease-in-out" onClick={() => handleDepartmentChange("Marketing")}>MARKETING</button>
+                <button className="text-ft-heading-3 button text-ft-text-bright hover:bg-ft-primary-yellow-700 hover:rounded-medium p-2 transition-all duration-300 ease-in-out" onClick={() => handleDepartmentChange("Technology")}>TECHNOLOGY</button>
+                <button className="text-ft-heading-3 button text-ft-text-bright hover:bg-ft-primary-yellow-700 hover:rounded-medium p-2 transition-all duration-300 ease-in-out" onClick={() => handleDepartmentChange("Business")}>BUSINESS</button>
+                <button className="text-ft-heading-3 button text-ft-text-bright hover:bg-ft-primary-yellow-700 hover:rounded-medium p-2 transition-all duration-300 ease-in-out" onClick={() => handleDepartmentChange("Human Resources")}>HUMAN RESOURCES</button>
+                <button className="text-ft-heading-3 button text-ft-text-bright hover:bg-ft-primary-yellow-700 hover:rounded-medium p-2 transition-all duration-300 ease-in-out" onClick={() => handleDepartmentChange("Marketing")}>MARKETING</button>
             </div>
 
             {/* Department content */}
@@ -89,15 +87,11 @@ const Department = () => {
 
             {/* Department right image */}
             <div className="relative w-full h-full md:h-5/6 md:w-2/5 flex justify-center items-center">
-                {isImageUrl ? (
-                    <Image className="object-cover md:h-full md:w-full"
-                        src={department.imageUrl.replace("url('", "").replace("')", "")}
-                        // Remove url() wrapper, NextUI Image component doesn't support it :<, this will change "url('image.png')" to "image.png"
-                        alt={`${department.name} Image`}
-                    />
-                ) : (
-                    <div className={`absolute inset-0 ${department.imageUrl}`} style={{ width: '100%', height: '100%' }}></div>
-                )}
+                <Image className="object-cover md:h-full md:w-full"
+                    src={department.imageUrl.replace("url('", "").replace("')", "")}
+                    // Remove url() wrapper, NextUI Image component doesn't support it :<, this will change "url('image.png')" to "image.png"
+                    alt={`${department.name} Image`}
+                />
             </div>
         </section>
     );
