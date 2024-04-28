@@ -1,4 +1,5 @@
 "use client";
+import Invidivual from "@/components/home/hall-of-fame/individual";
 import { Button } from "@nextui-org/button";
 import { Card, CardBody, CardFooter, CardHeader } from "@nextui-org/react";
 // import { BrowserRouter as Router } from "react-router-dom";
@@ -13,6 +14,7 @@ const Home = () => {
 			{/* <IntroSection />  */}
 			{/* <Members /> */}
 			{/* <UpcomingEvent /> */}
+			<Invidivual />
 		</div>
 		// </Router>
 	);

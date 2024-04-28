@@ -4,7 +4,8 @@
 		"include": [
             "./app/**/*.ts",
             "./app/**/*.tsx",
-            "./__test__/**/*.test.ts"
+            "./__test__/**/*.test.ts",
+            "./components/**/*.tsx"
         ]
 	},
 	"organizeImports": {

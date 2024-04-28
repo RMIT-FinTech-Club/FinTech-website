@@ -8,7 +8,7 @@
     "start": "next start",
     "format": "biome format --write ./app ./components",
     "lint": "biome lint --apply ./app ./components",
-    "check": "biome check --apply ./app ./components",
+    "check": "biome check --apply ./app ./components ./components/home/hall-of-fame",
     "jest": "jest --coverage --passWithNoTests ./__test__",
     "bunTest": "bun test --coverage --bail"
   },
