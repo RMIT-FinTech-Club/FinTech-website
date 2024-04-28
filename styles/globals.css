@@ -25,3 +25,30 @@
         @apply text-ft-heading-6;
     }
 }
+
+.card:hover > .card-content {
+    bottom: 3%;
+  }
+  @media screen and (max-width: 768px) {
+    .mascot {
+      display: none;
+    }
+    .bubble {
+      display: none;
+    }
+    .line {
+      display: none;
+    }
+    #yellow-line {
+      stroke-width: 40;
+    }
+    #white-line {
+      stroke-width: 50;
+    }
+    #left-bar {
+      width: 20%;
+    }
+    #HallOfFame-MasCot {
+      max-width: 100;
+    }
+  }
