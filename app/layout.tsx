@@ -1,6 +1,8 @@
+import Footer from "@/components/shared/footer";
 import { fontSans } from "@/config/fonts";
 import { siteConfig } from "@/config/site";
 import { Link } from "@nextui-org/link";
+import { Navbar } from "@nextui-org/react";
 import "@styles/globals.css";
 import clsx from "clsx";
 import type { Metadata } from "next";
