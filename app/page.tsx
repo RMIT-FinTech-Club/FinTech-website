@@ -1,5 +1,4 @@
 "use client";
-import Member from "@/components/home/hall-of-fame/member";
 import { Button } from "@nextui-org/button";
 import { Card, CardBody, CardFooter, CardHeader } from "@nextui-org/react";
 // import { BrowserRouter as Router } from "react-router-dom";
@@ -10,10 +9,10 @@ const Home = () => {
 	return (
 		// <Router>
 		<div className="flex flex-col items-center justify-center gap-4">
-			<HeroSection />
+			{/* <HeroSection /> */}
 			{/* <IntroSection />  */}
-			<Members />
-			<UpcomingEvent />
+			{/* <Members /> */}
+			{/* <UpcomingEvent /> */}
 		</div>
 		// </Router>
 	);
