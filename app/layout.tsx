@@ -53,7 +53,7 @@ export default function RootLayout({
 						<main className="container min-w-full flex-grow px-side-margin">
 							{children}
 						</main>
-						{<Footer />}
+						{/* {<Footer />} */}
 					</div>
 				</Providers>
 			</body>

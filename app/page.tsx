@@ -2,6 +2,7 @@
 import HerosectionVid from "@/components/heroVideoSection";
 import { Button } from "@nextui-org/button";
 import { Card, CardBody, CardFooter, CardHeader } from "@nextui-org/react";
+// import { BrowserRouter as Router } from "react-router-dom";
 import React from "react";
 import HeroSection from "../components/hero";
 import IntroSection from "../components/intro";
@@ -18,6 +19,7 @@ const Home = () => {
 			<IntroSection />
 			<UpcomingEvent /> */}
 		</div>
+		// </Router>
 	);
 };
 
