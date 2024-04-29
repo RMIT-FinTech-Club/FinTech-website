@@ -1,8 +1,6 @@
 import AchievementsSection from "@/components/achievements/achievements";
 const Achievements = () => {
-    return (
-        <AchievementsSection/>
-    );
+	return <AchievementsSection />;
 };
 
 export default Achievements;

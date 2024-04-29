@@ -6,10 +6,10 @@ import { Link } from "@nextui-org/link";
 import "@styles/globals.css";
 import clsx from "clsx";
 import type { Metadata } from "next";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
 // import { Navbar } from "@/components/navbar";
 import type { Viewport } from "next";
+import "slick-carousel/slick/slick-theme.css";
+import "slick-carousel/slick/slick.css";
 import { Providers } from "./providers";
 
 export const metadata: Metadata = {
@@ -52,9 +52,7 @@ export default function RootLayout({
 				>
 					<div className="relative items-center flex flex-col h-screen">
 						{/* {<Navbar />} */}
-						<main className="">
-							{children}
-						</main>
+						<main className="">{children}</main>
 						{/* {<Footer />} */}
 					</div>
 				</Providers>
