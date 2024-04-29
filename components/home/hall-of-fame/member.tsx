@@ -105,7 +105,9 @@ const Member = () => {
 							<p className=" text-base text-ft-primary-yellow-500">
 								Dung Nguyen
 							</p>
-							<p className="text-tiny text-ft-text-bright">President</p>
+							<p className="text-tiny text-ft-text-bright">
+								President
+							</p>
 						</CardFooter>
 					</Card>
 					<Card className="card" isFooterBlurred>
@@ -121,7 +123,9 @@ const Member = () => {
 							<p className=" text-base text-ft-primary-yellow-500">
 								Dung Nguyen
 							</p>
-							<p className="text-tiny text-ft-text-bright">President</p>
+							<p className="text-tiny text-ft-text-bright">
+								President
+							</p>
 						</CardFooter>
 					</Card>
 					<Card className="card" isFooterBlurred>
@@ -137,7 +141,9 @@ const Member = () => {
 							<p className=" text-base text-ft-primary-yellow-500">
 								Dung Nguyen
 							</p>
-							<p className="text-tiny text-ft-text-bright">President</p>
+							<p className="text-tiny text-ft-text-bright">
+								President
+							</p>
 						</CardFooter>
 					</Card>
 					<Card className="card" isFooterBlurred>
@@ -154,7 +160,9 @@ const Member = () => {
 							<p className=" text-base text-ft-primary-yellow-500">
 								Dung Nguyen
 							</p>
-							<p className="text-tiny text-ft-text-bright">President</p>
+							<p className="text-tiny text-ft-text-bright">
+								President
+							</p>
 						</CardFooter>
 					</Card>
 				</div>
@@ -173,7 +181,9 @@ const Member = () => {
 							<p className=" text-base text-ft-primary-yellow-500">
 								Dung Nguyen
 							</p>
-							<p className="text-tiny text-ft-text-bright">President</p>
+							<p className="text-tiny text-ft-text-bright">
+								President
+							</p>
 						</CardFooter>
 					</Card>
 					<Card className="card" isFooterBlurred>
@@ -190,7 +200,9 @@ const Member = () => {
 							<p className=" text-base text-ft-primary-yellow-500">
 								Dung Nguyen
 							</p>
-							<p className="text-tiny text-ft-text-bright">President</p>
+							<p className="text-tiny text-ft-text-bright">
+								President
+							</p>
 						</CardFooter>
 					</Card>
 					<Card className="card" isFooterBlurred>
@@ -207,7 +219,9 @@ const Member = () => {
 							<p className=" text-base text-ft-primary-yellow-500">
 								Dung Nguyen
 							</p>
-							<p className="text-tiny text-ft-text-bright">President</p>
+							<p className="text-tiny text-ft-text-bright">
+								President
+							</p>
 						</CardFooter>
 					</Card>
 					<Card className="card" isFooterBlurred>
@@ -224,7 +238,9 @@ const Member = () => {
 							<p className=" text-base text-ft-primary-yellow-500">
 								Dung Nguyen
 							</p>
-							<p className="text-tiny text-ft-text-bright">President</p>
+							<p className="text-tiny text-ft-text-bright">
+								President
+							</p>
 						</CardFooter>
 					</Card>
 				</div>
