@@ -7,8 +7,8 @@ import React from "react";
 import HeroSection from "../components/hero";
 import IntroSection from "../components/intro";
 import UpcomingEvent from "../components/upcomingEvent";
+import Department from "./homePage/department";
 
-import Project from "@/components/projects/page";
 const Home = () => {
 	return (
 		<div
@@ -18,9 +18,9 @@ const Home = () => {
 		>
 			{/* <HerosectionVid /> */}
 			{/* <HeroSection />
-			<IntroSection />
-			<UpcomingEvent /> */}
-			<Project />
+			{/* <IntroSection /> */}
+			<Department />
+			{/* <UpcomingEvent /> */}
 		</div>
 		// </Router>
 	);

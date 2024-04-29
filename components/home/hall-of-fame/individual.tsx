@@ -19,7 +19,8 @@ const Invidivual = () => {
 				<Image src="HallOfFame-ClubLogo.svg" radius="none" />
 			</div>
 			<header className="flex z-10 mt-0 md:mt-10">
-				<svg width="10%" height="100%" id="left-bar">
+				<svg width="10%" height="100%" id="left-bar" aria-label="test">
+					<title> Line bar </title>
 					<line
 						x1="0%"
 						y1="80"
@@ -47,6 +48,7 @@ const Invidivual = () => {
 					</div>
 				</div>
 				<svg className=" basis-9/12" height="80%">
+					<title> Line bar </title>
 					<line
 						x1="100%"
 						y1="80"
@@ -80,11 +82,12 @@ const Invidivual = () => {
 					<h2 className=" text-ft-primary-yellow-500 items-start mb-2">
 						Phuc Hoang
 					</h2>
-					<h5 className=" text-ft-text-bright mb-2">
+					<h5 className=" text-ft-text-bright mbb-2">
 						MVP of My Heart
 					</h5>
 
 					<svg width="100%" height="10" aria-labelledby="Line">
+						<title> Line </title>
 						<line
 							x1="0%"
 							y1="50%"
