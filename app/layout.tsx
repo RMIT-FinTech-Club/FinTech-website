@@ -1,4 +1,5 @@
 import Footer from "@/components/shared/footer";
+import Navbar from "@/components/shared/navbar";
 import { fontSans } from "@/config/fonts";
 import { siteConfig } from "@/config/site";
 import { Link } from "@nextui-org/link";
@@ -6,6 +7,8 @@ import { Navbar } from "@nextui-org/react";
 import "@styles/globals.css";
 import clsx from "clsx";
 import type { Metadata } from "next";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 // import { Navbar } from "@/components/navbar";
 import type { Viewport } from "next";
 import { Providers } from "./providers";
@@ -49,11 +52,11 @@ export default function RootLayout({
 					themeProps={{ attribute: "class", defaultTheme: "light" }}
 				>
 					<div className="relative items-center flex flex-col h-screen">
-						{<Navbar />}
+						{/* {<Navbar />} */}
 						<main className="container min-w-full flex-grow px-side-margin">
 							{children}
 						</main>
-						{<Footer />}
+						{/* {<Footer />} */}
 					</div>
 				</Providers>
 			</body>

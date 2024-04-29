@@ -1,19 +1,26 @@
 "use client";
+import HerosectionVid from "@/components/heroVideoSection";
 import { Button } from "@nextui-org/button";
 import { Card, CardBody, CardFooter, CardHeader } from "@nextui-org/react";
 // import { BrowserRouter as Router } from "react-router-dom";
 import React from "react";
 import HeroSection from "../components/hero";
+import IntroSection from "../components/intro";
 import UpcomingEvent from "../components/upcomingEvent";
-import Members from "./about/members";
+import Department from "./homePage/department";
+
 const Home = () => {
 	return (
-		// <Router>
-		<div className="flex flex-col items-center justify-center gap-4">
-			<HeroSection />
-			{/* <IntroSection />  */}
-			<Members />
-			<UpcomingEvent />
+		<div
+			className="flex
+                min-h-screen flex-col 
+                items-center gap-4"
+		>
+			{/* <HerosectionVid /> */}
+			{/* <HeroSection />
+			{/* <IntroSection /> */}
+			<Department />
+			{/* <UpcomingEvent /> */}
 		</div>
 		// </Router>
 	);
