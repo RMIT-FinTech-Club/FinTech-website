@@ -16,7 +16,7 @@ const Footer = () => {
                     </div>
                 </div>
                 <div className="md:w-1/3 w-full flex justify-end mb-[40px] md:mb-0">
-                    <ul className="mt-[20px] text-center md:text-left">
+                    <ul className="mt-[20px] mx-auto text-center md:text-left">
                         <h5 className="text-ft-text-bright">Important Links</h5>
                         <li><a href="#" className="block mb-2"><p className="text-ft-text-bright">Home</p></a></li>
                         <li><a href="#" className="block mb-2"><p className="text-ft-text-bright">About Us</p></a></li>
@@ -26,7 +26,7 @@ const Footer = () => {
                     </ul>
                 </div>
                 <div className="md:w-1/3 w-full mb-[40px] md:mb-0 flex justify-end">
-                    <div className="mt-[20px] w-fit flex items-center flex-col md:block">
+                    <div className="mt-[20px] w-fit flex mx-auto items-center flex-col md:block">
                         <h5 className="ft-heading-1 text-ft-text-bright w-fit">Contact Info</h5>
                         <div className="flex items-center w-fit mt-[12px]">
                             <a href="#"><Mail className="w-[30px] h-[30px] text-ft-text-bright mr-[16px]" /> </a>
