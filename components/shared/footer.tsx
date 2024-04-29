@@ -1,6 +1,11 @@
-import React from "react";
-import { Mail, BrandFacebook, BrandInstagram, BrandTiktok } from "tabler-icons-react";
 import Link from "next/link";
+import React from "react";
+import {
+	BrandFacebook,
+	BrandInstagram,
+	BrandTiktok,
+	Mail,
+} from "tabler-icons-react";
 
 const Footer = () => {
     return (
