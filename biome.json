@@ -1,11 +1,14 @@
 {
 	"$schema": "https://biomejs.dev/schemas/1.6.1/schema.json",
-    "files": {
+	"files": {
+		"ignore": [".next"],
 		"include": [
-            "./app/**/*.ts",
-            "./app/**/*.tsx",
-            "./__test__/**/*.test.ts"
-        ]
+			"./app/**/*.ts",
+			"./app/**/*.tsx",
+			"./components/**/*.ts",
+			"./components/**/*.tsx",
+			"./__test__/**/*.test.ts"
+		]
 	},
 	"organizeImports": {
 		"enabled": true
@@ -14,20 +17,20 @@
 		"enabled": true,
 		"rules": {
 			"recommended": true,
-            "style": {
-                "useFilenamingConvention": {
-                    "level": "error",
-                    "options": {
-                        "filenameCases": ["camelCase", "export"]
-                    }
-                },
-                "useNamingConvention": "error"
-            }
+			"style": {
+				"useFilenamingConvention": {
+					"level": "error",
+					"options": {
+						"filenameCases": ["camelCase", "export"]
+					}
+				},
+				"useNamingConvention": "error"
+			}
 		}
 	},
-    "formatter": {
-        "enabled": true,
-        "indentStyle": "tab",
-        "indentWidth": 4
-    }
+	"formatter": {
+		"enabled": true,
+		"indentStyle": "tab",
+		"indentWidth": 4
+	}
 }

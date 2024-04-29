@@ -1,0 +1,8 @@
+<svg width="330" height="279" viewBox="0 0 330 279" fill="none" xmlns="http://www.w3.org/2000/svg">
+<ellipse cx="48.5" cy="48.5" rx="48.5" ry="48.5" transform="matrix(-1 0 0 1 205 209)" fill="#2B305E"/>
+<ellipse cx="48.5" cy="48.5" rx="48.5" ry="48.5" transform="matrix(-1 0 0 1 278 97)" fill="#2B305E"/>
+<circle cx="12.5" cy="12.5" r="11" transform="matrix(-1 0 0 1 330 97)" fill="#2B305E" stroke="white" stroke-width="3"/>
+<ellipse cx="48.5" cy="48.5" rx="48.5" ry="48.5" transform="matrix(-1 0 0 1 97 97)" fill="#DBB968"/>
+<path d="M38 232.5C38 259.286 59.7142 281 86.5 281C113.286 281 135 259.286 135 232.5C135 205.714 113.286 184 86.5 184C59.7142 184 38 205.714 38 232.5Z" fill="#C9D6EA"/>
+<circle cx="12.5" cy="12.5" r="12.5" transform="matrix(-1 0 0 1 73 0)" fill="#DBB968"/>
+</svg>
