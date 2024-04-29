@@ -6,14 +6,16 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "format": "biome format --write ./app ./components",
-    "lint": "biome lint --apply ./app ./components",
-    "check": "biome check --apply ./app ./components",
+    "format": "biome format --write ./",
+    "lint": "biome lint --apply ./",
+    "check": "biome check --apply ./",
     "jest": "jest --coverage --passWithNoTests ./__test__",
     "bunTest": "bun test --coverage --bail"
   },
   "dependencies": {
     "@nextui-org/react": "^2.2.10",
+    "@tabler/icons-react": "^3.2.0",
+    "@types/react-slick": "^0.23.13",
     "clsx": "^2.1.0",
     "framer-motion": "^11.0.14",
     "jotai": "^2.7.1",
@@ -29,7 +31,7 @@
     "zod": "^3.22.4"
   },
   "devDependencies": {
-    "@biomejs/biome": "^1.6.1",
+    "@biomejs/biome": "1.7.1",
     "@types/jest": "^29.5.12",
     "@types/node": "^20",
     "@types/react": "^18",
@@ -41,6 +43,9 @@
     "postcss-import": "^16.1.0",
     "tailwindcss": "^3.3.0",
     "ts-jest": "^29.1.2",
-    "typescript": "^5"
-  }
+    "typescript": "^5.4.5"
+  },
+  "trustedDependencies": [
+    "@biomejs/biome"
+  ]
 }

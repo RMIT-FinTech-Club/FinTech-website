@@ -6,6 +6,8 @@ import { Link } from "@nextui-org/link";
 import "@styles/globals.css";
 import clsx from "clsx";
 import type { Metadata } from "next";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 // import { Navbar } from "@/components/navbar";
 import type { Viewport } from "next";
 import { Providers } from "./providers";
@@ -49,11 +51,11 @@ export default function RootLayout({
 					themeProps={{ attribute: "class", defaultTheme: "light" }}
 				>
 					<div className="relative items-center flex flex-col h-screen">
-						{<Navbar />}
-						<main className="container min-w-full flex-grow px-side-margin-mobile lg:px-side-margin">
+						{/* {<Navbar />} */}
+						<main className="container min-w-full flex-grow px-side-margin">
 							{children}
 						</main>
-						{<Footer />}
+						{/* {<Footer />} */}
 					</div>
 				</Providers>
 			</body>
