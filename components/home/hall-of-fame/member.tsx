@@ -20,6 +20,7 @@ const Member = () => {
 			</div>
 			<header className="flex z-10 mt-0 md:mt-10">
 				<svg width="10%" height="100%" id="left-bar" aria-label="Line">
+					<title> Line bar </title>
 					<line
 						x1="0%"
 						y1="80"
@@ -47,6 +48,7 @@ const Member = () => {
 					</div>
 				</div>
 				<svg className=" basis-9/12" height="80%" aria-label="Line">
+					<title> Line bar </title>
 					<line
 						x1="100%"
 						y1="80"
@@ -105,7 +107,9 @@ const Member = () => {
 							<p className=" text-base text-ft-primary-yellow-500">
 								Dung Nguyen
 							</p>
-							<p className="text-tiny text-ft-text-bright">President</p>
+							<p className="text-tiny text-ft-text-bright">
+								President
+							</p>
 						</CardFooter>
 					</Card>
 					<Card className="card" isFooterBlurred>
@@ -121,7 +125,9 @@ const Member = () => {
 							<p className=" text-base text-ft-primary-yellow-500">
 								Dung Nguyen
 							</p>
-							<p className="text-tiny text-ft-text-bright">President</p>
+							<p className="text-tiny text-ft-text-bright">
+								President
+							</p>
 						</CardFooter>
 					</Card>
 					<Card className="card" isFooterBlurred>
@@ -137,7 +143,9 @@ const Member = () => {
 							<p className=" text-base text-ft-primary-yellow-500">
 								Dung Nguyen
 							</p>
-							<p className="text-tiny text-ft-text-bright">President</p>
+							<p className="text-tiny text-ft-text-bright">
+								President
+							</p>
 						</CardFooter>
 					</Card>
 					<Card className="card" isFooterBlurred>
@@ -154,7 +162,9 @@ const Member = () => {
 							<p className=" text-base text-ft-primary-yellow-500">
 								Dung Nguyen
 							</p>
-							<p className="text-tiny text-ft-text-bright">President</p>
+							<p className="text-tiny text-ft-text-bright">
+								President
+							</p>
 						</CardFooter>
 					</Card>
 				</div>
@@ -173,7 +183,9 @@ const Member = () => {
 							<p className=" text-base text-ft-primary-yellow-500">
 								Dung Nguyen
 							</p>
-							<p className="text-tiny text-ft-text-bright">President</p>
+							<p className="text-tiny text-ft-text-bright">
+								President
+							</p>
 						</CardFooter>
 					</Card>
 					<Card className="card" isFooterBlurred>
@@ -190,7 +202,9 @@ const Member = () => {
 							<p className=" text-base text-ft-primary-yellow-500">
 								Dung Nguyen
 							</p>
-							<p className="text-tiny text-ft-text-bright">President</p>
+							<p className="text-tiny text-ft-text-bright">
+								President
+							</p>
 						</CardFooter>
 					</Card>
 					<Card className="card" isFooterBlurred>
@@ -207,7 +221,9 @@ const Member = () => {
 							<p className=" text-base text-ft-primary-yellow-500">
 								Dung Nguyen
 							</p>
-							<p className="text-tiny text-ft-text-bright">President</p>
+							<p className="text-tiny text-ft-text-bright">
+								President
+							</p>
 						</CardFooter>
 					</Card>
 					<Card className="card" isFooterBlurred>
@@ -224,7 +240,9 @@ const Member = () => {
 							<p className=" text-base text-ft-primary-yellow-500">
 								Dung Nguyen
 							</p>
-							<p className="text-tiny text-ft-text-bright">President</p>
+							<p className="text-tiny text-ft-text-bright">
+								President
+							</p>
 						</CardFooter>
 					</Card>
 				</div>
