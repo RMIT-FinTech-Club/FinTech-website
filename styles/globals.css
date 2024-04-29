@@ -2,23 +2,53 @@
 @tailwind components;
 @tailwind utilities;
 
-/* :root {
-    --foreground-rgb: 0, 0, 255;
-    --background-rgb: 255, 255, 255;
-} */
-
-/* body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+@layer base {
+    p {
+        @apply text-ft-body-1;
+    }
+    h1 {
+        @apply text-ft-heading-1;
+    }
+    h2 {
+        @apply text-ft-heading-2;
+    }
+    h3 {
+        @apply text-ft-heading-3;
+    }
+    h4 {
+        @apply text-ft-heading-4;
+    }
+    h5 {
+        @apply text-ft-heading-5;
+    }
+    h6 {
+        @apply text-ft-heading-6;
+    }
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+.card:hover > .card-content {
+    bottom: 3%;
   }
-} */
+  @media screen and (max-width: 768px) {
+    .mascot {
+      display: none;
+    }
+    .bubble {
+      display: none;
+    }
+    .line {
+      display: none;
+    }
+    #yellow-line {
+      stroke-width: 40;
+    }
+    #white-line {
+      stroke-width: 50;
+    }
+    #left-bar {
+      width: 20%;
+    }
+    #HallOfFame-MasCot {
+      max-width: 100;
+    }
+  }
