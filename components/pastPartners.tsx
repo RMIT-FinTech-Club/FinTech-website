@@ -2,14 +2,6 @@ import { Image } from '@nextui-org/react';
 import React from 'react';
 import Slider from 'react-slick';
 
-// interface PastPartners {
-//     partners: {
-//         id: string;
-//         src: string;
-//         alt: string;
-//     }[];
-// }
-
 const PastPartners = () => {
     const width = 150;
     const height = 150;
