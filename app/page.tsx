@@ -17,7 +17,7 @@ const Home = () => {
                 items-center gap-4"
 		>
 			{/* <HerosectionVid /> */}
-			{/* <HeroSection />
+			<HeroSection />
 			{/* <IntroSection /> */}
 			<Department />
 			{/* <UpcomingEvent /> */}
