@@ -5,6 +5,7 @@ import { Card, CardBody, CardFooter, CardHeader } from "@nextui-org/react";
 // import { BrowserRouter as Router } from "react-router-dom";
 import React from "react";
 import HeroSection from "../components/hero";
+import PastPartners from "../components/pastPartners";
 import IntroSection from "../components/intro";
 import UpcomingEvent from "../components/upcomingEvent";
 import Department from "./homePage/department";
@@ -17,9 +18,10 @@ const Home = () => {
                 items-center gap-4"
 		>
 			{/* <HerosectionVid /> */}
-			<HeroSection />
+			{/* <HeroSection /> */}
+			{/* <PastPartners /> */}
 			{/* <IntroSection /> */}
-			<Department />
+			{/* <Department /> */}
 			{/* <UpcomingEvent /> */}
 		</div>
 		// </Router>
