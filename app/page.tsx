@@ -6,21 +6,19 @@ import HerosectionVid from "./components/heroVideoSection";
 import IntroSection from "./components/intro";
 import PastPartners from "./components/pastPartners";
 import UpcomingEvent from "./components/upcomingEvent";
+import EventDateAndLocation from "./events/eventDateAndLocation";
 
 const Home = () => {
 	return (
-		<div
-			className="flex
-                min-h-screen flex-col 
-                items-center gap-4"
-		>
+		<div className="flex min-h-screen flex-col justify-center gap-4">
 			{/* <HerosectionVid /> */}
 			{/* <HeroSection /> */}
 			{/* <PastPartners /> */}
 			{/* <IntroSection /> */}
 			{/* <Department /> */}
-			<Individual />
+			{/* <Individual /> */}
 			{/* <UpcomingEvent /> */}
+			<EventDateAndLocation />
 		</div>
 	);
 };
