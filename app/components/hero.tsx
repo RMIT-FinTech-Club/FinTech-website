@@ -48,10 +48,16 @@ const HeroSection = () => {
 						{/* <button className="w-[130px] h-[45px] text-ft-text-bright rounded-xl justify-center items-center flex bg-ft-primary-blue">
                             Join Us
                         </button> */}
-						<Button className="bg-ft-primary-blue text-ft-text-bright" variant="solid">
+						<Button
+							className="bg-ft-primary-blue text-ft-text-bright"
+							variant="solid"
+						>
 							Read More
 						</Button>
-						<Button className="bg-ft-primary-blue text-ft-text-bright" variant="solid">
+						<Button
+							className="bg-ft-primary-blue text-ft-text-bright"
+							variant="solid"
+						>
 							Join Us
 						</Button>
 					</div>
@@ -72,7 +78,6 @@ const HeroSection = () => {
 						src={img.src}
 						alt={img.alt}
 					/>
-
 				))}
 			</div>
 		</div>

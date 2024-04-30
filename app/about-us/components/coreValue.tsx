@@ -17,8 +17,8 @@ const CoreValue = () => {
 						</p>
 					</div>
 					<div className="w-fit mx-auto md:mx-0 flex items-center">
-						<div className="w-16 h-16 bg-white rounded-full absolute -left-8"></div>
-						<div className="w-16 h-16 bg-white rounded-full absolute -right-8"></div>
+						<div className="w-16 h-16 bg-white rounded-full absolute -left-8" />
+						<div className="w-16 h-16 bg-white rounded-full absolute -right-8" />
 						<h5 className="md:ml-[5%] text-[60px] xl:text-[100px] text-[#3B679F]">
 							<span className="text-[#C1272D]">I</span>NNOVATIVE
 						</h5>
@@ -26,8 +26,8 @@ const CoreValue = () => {
 				</div>
 				<div className="md:ml-[22%] flex flex-col md:flex-row mb-5">
 					<div className="w-fit mx-auto md:mx-0 flex flex-row-reverse items-center">
-						<div className="w-16 h-16 bg-white rounded-full absolute -left-8"></div>
-						<div className="w-16 h-16 bg-white rounded-full absolute -right-8"></div>
+						<div className="w-16 h-16 bg-white rounded-full absolute -left-8" />
+						<div className="w-16 h-16 bg-white rounded-full absolute -right-8" />
 						<h5 className="text-right mr-[5%] text-[60px] xl:text-[100px] text-[#3B679F]">
 							INCLUS<span className="text-[#C1272D]">I</span>VE
 						</h5>
@@ -48,8 +48,8 @@ const CoreValue = () => {
 						</p>
 					</div>
 					<div className="w-fit mx-auto md:mx-0 flex justify-center items-center">
-						<div className="w-16 h-16 bg-white rounded-full absolute -left-8"></div>
-						<div className="w-16 h-16 bg-white rounded-full absolute -right-8"></div>
+						<div className="w-16 h-16 bg-white rounded-full absolute -left-8" />
+						<div className="w-16 h-16 bg-white rounded-full absolute -right-8" />
 						<h5 className="text-[60px] xl:text-[100px] text-[#3B679F]">
 							INSP<span className="text-[#C1272D]">I</span>RING
 						</h5>
@@ -61,8 +61,8 @@ const CoreValue = () => {
 						</p>
 					</div>
 					<div className="md:w-1/3 mx-auto md:mx-0">
-						<div className="w-16 h-16 bg-white rounded-full absolute -left-8 bottom-16 md:hidden"></div>
-						<div className="w-16 h-16 bg-white rounded-full absolute -right-8 bottom-16 md:hidden"></div>
+						<div className="w-16 h-16 bg-white rounded-full absolute -left-8 bottom-16 md:hidden" />
+						<div className="w-16 h-16 bg-white rounded-full absolute -right-8 bottom-16 md:hidden" />
 						<p className="text-2xl text-center md:text-left ml-[5%] text-[#3B679F]">
 							We believe in building a club where members are
 							inspired by their work and contributions.

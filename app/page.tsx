@@ -1,14 +1,11 @@
-"use client";
-import HerosectionVid from "@/components/heroVideoSection";
-import { Button } from "@nextui-org/button";
-import { Card, CardBody, CardFooter, CardHeader } from "@nextui-org/react";
-// import { BrowserRouter as Router } from "react-router-dom";
 import React from "react";
-import HeroSection from "../components/hero";
-import PastPartners from "../components/pastPartners";
-import IntroSection from "../components/intro";
-import UpcomingEvent from "../components/upcomingEvent";
-import Department from "./homePage/department";
+import Department from "./components/department";
+import Individual from "./components/hall-of-fame/individual";
+import HeroSection from "./components/hero";
+import HerosectionVid from "./components/heroVideoSection";
+import IntroSection from "./components/intro";
+import PastPartners from "./components/pastPartners";
+import UpcomingEvent from "./components/upcomingEvent";
 
 const Home = () => {
 	return (
@@ -22,9 +19,9 @@ const Home = () => {
 			{/* <PastPartners /> */}
 			{/* <IntroSection /> */}
 			{/* <Department /> */}
+			<Individual />
 			{/* <UpcomingEvent /> */}
 		</div>
-		// </Router>
 	);
 };
 
