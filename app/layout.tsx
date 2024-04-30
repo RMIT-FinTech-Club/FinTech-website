@@ -52,7 +52,7 @@ export default function RootLayout({
 				>
 					<div className="relative items-center flex flex-col h-screen">
 						{/* {<Navbar />} */}
-						<main className="container min-w-full flex-grow px-side-margin-mobile sm:px-side-margin">
+						<main className="container min-w-full flex-grow px-side-margin-mobile md:px-side-margin">
 							{children}
 						</main>
 						{/* {<Footer />} */}

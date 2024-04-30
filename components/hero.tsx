@@ -1,12 +1,11 @@
 import { Button, Image } from "@nextui-org/react";
 import React from "react";
-import { Id } from "tabler-icons-react";
 
 const HeroSection = () => {
 	const bottomImages = [
 		{
 			id: "1",
-			src: "https://via.placeholder.com/400x400",
+			src: "https://via.placeholder.com/500x400",
 			alt: "Placeholder image",
 		},
 		{
@@ -16,15 +15,15 @@ const HeroSection = () => {
 		},
 		{
 			id: "3",
-			src: "https://via.placeholder.com/400x400",
+			src: "https://via.placeholder.com/500x400",
 			alt: "Placeholder image",
 		},
 	];
 
 	return (
-		<div className="w-full py-12 flex-col justify-start items-center gap-12 flex">
-			<div className=" justify-start items-center gap-[60px] flex">
-				<div className="flex flex-col w-1/2 gap-4">
+		<div className="w-full py-3 lg:py-12 flex-col justify-start items-center gap-6 md:gap-12 flex">
+			<div className=" justify-start items-center gap-6 md:gap-[60px] flex flex-col md:flex-row">
+				<div className="flex flex-col w-full lg:w-1/2 gap-4">
 					<div className="w-full">
 						<h2>What is</h2>
 						<br />
@@ -44,8 +43,8 @@ const HeroSection = () => {
 					</p>
 					<div className="justify-start items-center gap-6 flex">
 						{/* <button className="w-[130px] h-[45px] text-ft-text-bright rounded-xl justify-center items-center flex bg-ft-primary-blue">
-                            Read More
-                        </button> */}
+							Read More
+						</button> */}
 						{/* <button className="w-[130px] h-[45px] text-ft-text-bright rounded-xl justify-center items-center flex bg-ft-primary-blue">
                             Join Us
                         </button> */}
@@ -57,14 +56,15 @@ const HeroSection = () => {
 						</Button>
 					</div>
 				</div>
-				<div className="w-1/2 h-full rounded-xl">
+				<div className="w-full md:w-1/2 h-full rounded-xl">
 					<Image
-						className="w-full h-full"
+						className="w-full h-[450px] object-cover"
 						src="https://via.placeholder.com/800x450"
+						alt="Placeholder image"
 					/>
 				</div>
 			</div>
-			<div className="h-[400px] justify-end items-center gap-12 flex">
+			<div className="flex-col md:flex-row justify-end items-center gap-12 flex">
 				{bottomImages.map((img, _idx) => (
 					<Image
 						className="w-full h-full"
@@ -72,6 +72,7 @@ const HeroSection = () => {
 						src={img.src}
 						alt={img.alt}
 					/>
+
 				))}
 			</div>
 		</div>
