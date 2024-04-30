@@ -2,9 +2,9 @@ import clsx from "clsx";
 import type React from "react";
 import type ClubMember from "./clubMember";
 
-interface MemberCardProps {
+type MemberCardProps = {
 	member: ClubMember;
-}
+};
 
 const MemberCard: React.FC<MemberCardProps> = ({ member }) => {
 	return (

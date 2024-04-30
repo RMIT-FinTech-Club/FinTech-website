@@ -5,6 +5,7 @@ import { Image } from "@nextui-org/react";
 import clsx from "clsx";
 import type React from "react";
 import { useEffect, useState } from "react";
+import { v4 as uuidv4 } from "uuid";
 import type ClubMember from "./(components)/clubMember";
 import HeaderTitlePage from "./(components)/headerTitlePage";
 import MemberAvatar from "./(components)/memberCard";
@@ -208,6 +209,11 @@ const Members: React.FC = () => {
 			setFilteredMember(clubMembers);
 		}
 	};
+
+	const clubMembersWithUuid: ClubMember[] = clubMembers.map((member) => ({
+		...member,
+		uuid: uuidv4(),
+	}));
 
 	// useEffect(() => {
 	// 	const resizeHandler = () => {
