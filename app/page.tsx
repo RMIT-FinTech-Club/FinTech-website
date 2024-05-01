@@ -7,6 +7,7 @@ import React from "react";
 import HeroSection from "../components/hero";
 import IntroSection from "../components/intro";
 import UpcomingEvent from "../components/upcomingEvent";
+import Events from "./events/page";
 const Home = () => {
 	return (
 		<div
@@ -14,10 +15,7 @@ const Home = () => {
                 min-h-screen flex-col 
                 items-center gap-4"
 		>
-			<HerosectionVid />
-			{/* <HeroSection />
-			<IntroSection />
-			<UpcomingEvent /> */}
+			<Events />
 		</div>
 		// </Router>
 	);

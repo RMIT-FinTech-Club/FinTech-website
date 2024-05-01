@@ -1,5 +1,8 @@
+import React from "react";
+import EventDetail from "./(components)/eventDetail";
+
 const Events = () => {
-	return <div>Events</div>;
+	return <EventDetail />;
 };
 
 export default Events;
