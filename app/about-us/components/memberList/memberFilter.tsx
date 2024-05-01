@@ -1,7 +1,7 @@
+import { Button } from "@nextui-org/react";
 import type React from "react";
 import { useEffect, useState } from "react";
 import { CaretDown } from "tabler-icons-react";
-// import { useNavigate } from "react-router-dom";
 
 type MemberFilterProps = {
 	departments: string[];
@@ -44,8 +44,8 @@ const MemberFilter: React.FC<MemberFilterProps> = ({
 	return (
 		<div className="w-full flex justify-center">
 			<div className="relative">
-				<button
-					className="flex items-center justify-around px-4 py-4 bg-ft-primary-blue-500 rounded-lg w-[200px]"
+				<Button
+					className="flex items-center justify-around px-4 py-4 bg-ft-primary-blue-500 rounded-lg w-[200px] h-full"
 					onClick={toggleDropdown}
 				>
 					<span className="text-ft-text-bright font-bold">
@@ -58,7 +58,7 @@ const MemberFilter: React.FC<MemberFilterProps> = ({
 						}`}
 						onClick={toggleDropdown}
 					/>
-				</button>
+				</Button>
 			</div>
 			{isDropdownOpen && (
 				<div className="absolute z-10 mt-2 border bg-white border-gray-300 rounded-lg w-auto left-1/2 transform -translate-x-1/2 translate-y-1/4">
@@ -74,6 +74,11 @@ const MemberFilter: React.FC<MemberFilterProps> = ({
 								onClick={() =>
 									handleDepartmentChange(department)
 								}
+								onKeyDown={(e) => {
+									if (e.key === "Enter") {
+										handleDepartmentChange(department);
+									}
+								}}
 							>
 								{department}
 							</li>

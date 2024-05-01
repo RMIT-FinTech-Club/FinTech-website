@@ -5,11 +5,12 @@ import { Image } from "@nextui-org/react";
 import clsx from "clsx";
 import type React from "react";
 import { useEffect, useState } from "react";
-import type ClubMember from "./(components)/clubMember";
-import HeaderTitlePage from "./(components)/headerTitlePage";
-import MemberAvatar from "./(components)/memberCard";
-import MemberFilter from "./(components)/memberFilter";
-import MemberList from "./(components)/memberList";
+import { v4 as uuidv4 } from "uuid";
+import type ClubMember from "./memberList/clubMember";
+import HeaderTitlePage from "./memberList/headerTitlePage";
+import MemberAvatar from "./memberList/memberCard";
+import MemberFilter from "./memberList/memberFilter";
+import MemberList from "./memberList/memberList";
 
 const clubMembers: ClubMember[] = [
 	{ name: "John Doe", avatarSrc: "/RiceSrc01.png", department: "Business" },
@@ -208,6 +209,11 @@ const Members: React.FC = () => {
 			setFilteredMember(clubMembers);
 		}
 	};
+
+	const clubMembersWithUuid: ClubMember[] = clubMembers.map((member) => ({
+		...member,
+		uuid: uuidv4(),
+	}));
 
 	// useEffect(() => {
 	// 	const resizeHandler = () => {

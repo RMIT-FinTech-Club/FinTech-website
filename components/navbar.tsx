@@ -1,5 +1,6 @@
 "use client";
-
+import { siteConfig } from "@/config/site";
+import { Button } from "@nextui-org/react";
 import Link from "next/link";
 import React, { useState, useEffect } from "react";
 import { Menu, X } from "tabler-icons-react"; // Including Tabler icons for menu controls
@@ -38,17 +39,18 @@ const Navbar = () => {
 					/>
 				</div>
 				<div className="md:hidden">
-					<button
+					<Button
+						isIconOnly
 						onClick={toggleSidebar}
 						aria-label="Toggle menu"
-						className="text-white"
+						className="bg-transparent"
 					>
 						{isOpen ? (
 							<X size={24} stroke="1.5" />
 						) : (
 							<Menu size={24} stroke="1.5" />
 						)}
-					</button>
+					</Button>
 				</div>
 				<ul
 					className={`md:flex md:items-center md:space-x-10 py-4 ${
@@ -58,48 +60,23 @@ const Navbar = () => {
 					}`}
 					style={{ textAlign: "right", paddingRight: "20px" }} // Right aligning the sidebar links
 				>
-					<li className="my-2">
-						<Link href="/" legacyBehavior>
-							<a className="font-bold text-white hover:text-ft-secondary-yellow">
-								Home
-							</a>
-						</Link>
-					</li>
-					<li className="my-2">
-						<Link href="/about-us" legacyBehavior>
-							<a className="font-bold text-white hover:text-ft-secondary-yellow">
-								About Us
-							</a>
-						</Link>
-					</li>
-					<li className="my-2">
-						<Link href="/projects" legacyBehavior>
-							<a className="font-bold text-white hover:text-ft-secondary-yellow">
-								Projects
-							</a>
-						</Link>
-					</li>
-					<li className="my-2">
-						<Link href="/events" legacyBehavior>
-							<a className="font-bold text-white hover:text-ft-secondary-yellow">
-								Events
-							</a>
-						</Link>
-					</li>
-					<li className="my-2">
-						<Link href="/join-us" legacyBehavior>
-							<a className="font-bold text-white hover:text-ft-secondary-yellow">
-								Join Us
-							</a>
-						</Link>
-					</li>
+					{siteConfig.navItems.map((item) => (
+						<li key={item.href} className="my-2">
+							<Link
+								className="font-bold text-white hover:text-ft-secondary-yellow"
+								href={item.href}
+							>
+								{item.label}
+							</Link>
+						</li>
+					))}
 				</ul>
 			</div>
 			{isOpen && (
-				<div
+				<Button
 					className="fixed inset-0 bg-black bg-opacity-50 z-40"
 					onClick={toggleSidebar}
-				></div>
+				/>
 			)}
 		</nav>
 	);
