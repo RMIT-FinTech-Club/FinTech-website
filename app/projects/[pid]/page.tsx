@@ -21,7 +21,7 @@ const ProjectDetail = () => {
 					<div className=" my-auto">
 						<Avatar
 							src="https://i.pravatar.cc/150?u=a04258114e29026302d"
-							size="lg"
+							className=" w-20 h-20"
 						/>
 					</div>
 					<div>
@@ -31,7 +31,7 @@ const ProjectDetail = () => {
 						<h6 className="">Lorem ipsum dolor sit amet</h6>
 					</div>
 				</div>
-				<Card className=" max-w-full">
+				<Card className=" max-w-full my-4">
 					<CardBody>
 						<p>
 							Make beautiful websites regardless of your design
@@ -54,35 +54,19 @@ const ProjectDetail = () => {
 					</div>
 					<div className=" grid grid-cols-2 grid-rows-2 text-center gap-6">
 						<div className="flex flex-row">
-							<Avatar
-								isBordered
-								radius="sm"
-								src="https://i.pravatar.cc/150?u=a04258114e29026302d"
-							/>
+							<Avatar isBordered radius="sm" src="" />
 							<p className=" ml-3">lorem</p>
 						</div>
 						<div className="flex flex-row">
-							<Avatar
-								isBordered
-								radius="sm"
-								src="https://i.pravatar.cc/150?u=a04258114e29026302d"
-							/>
+							<Avatar isBordered radius="sm" src="" />
 							<p className=" ml-3">lorem</p>
 						</div>
 						<div className="flex flex-row">
-							<Avatar
-								isBordered
-								radius="sm"
-								src="https://i.pravatar.cc/150?u=a04258114e29026302d"
-							/>
+							<Avatar isBordered radius="sm" src="" />
 							<p className=" ml-3">lorem</p>
 						</div>
 						<div className="flex flex-row">
-							<Avatar
-								isBordered
-								radius="sm"
-								src="https://i.pravatar.cc/150?u=a04258114e29026302d"
-							/>
+							<Avatar isBordered radius="sm" src="" />
 							<p className=" ml-3">lorem</p>
 						</div>
 					</div>
