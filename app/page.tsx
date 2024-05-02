@@ -6,7 +6,7 @@ import HerosectionVid from "./components/heroVideoSection";
 import IntroSection from "./components/intro";
 import PastPartners from "./components/pastPartners";
 import UpcomingEvent from "./components/upcomingEvent";
-
+import ExecuteBoard from "./about-us/components/execute-board/page";
 const Home = () => {
 	return (
 		<div
@@ -19,8 +19,9 @@ const Home = () => {
 			{/* <PastPartners /> */}
 			{/* <IntroSection /> */}
 			{/* <Department /> */}
-			<Individual />
+			{/* <Individual /> */}
 			{/* <UpcomingEvent /> */}
+			<ExecuteBoard />
 		</div>
 	);
 };
