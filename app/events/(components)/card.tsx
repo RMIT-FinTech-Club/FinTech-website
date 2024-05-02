@@ -25,7 +25,7 @@ const EventCard: React.FC<CardProps> = ({
 		<div className="bg-ft-background-popup bg-opacity-20 transition-shadow duration-300 rounded-2xl w-11/12 h-[500px] relative flex g-5 hover:shadow mb-5 border-gray-300 border-2">
 			<Image
 				isZoomed
-				width={650}
+				width={10000}
 				src={imageUrl}
 				alt={title}
 				className="object-cover h-[350px] rounded-2xl z-10"
