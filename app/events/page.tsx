@@ -2,10 +2,10 @@ import EventDateAndLocation from "./eventDateAndLocation";
 
 const Events = () => {
 	return (
-		<div>
-			<EventDateAndLocation />
-		</div>
-	);
+        <div>
+            <EventDateAndLocation />
+        </div>
+    );
 };
 
 export default Events;
