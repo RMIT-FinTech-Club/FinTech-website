@@ -1,11 +1,13 @@
-import HistorySection from "../../components/about-us/history";
-import VisionMission from "../../components/about-us/vision-mission/missionVision";
+import CoreValue from "./components/coreValue";
+import HistorySection from "./components/history";
+import VisionMission from "./components/vision-mission/missionVision";
 
 const AboutUs = () => {
 	return (
 		<div>
 			<VisionMission />
 			<HistorySection />
+			<CoreValue />
 		</div>
 	);
 };
