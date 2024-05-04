@@ -10,13 +10,13 @@ const EventDateAndLocation = () => {
 				<EventDetail />
 				<EventLocation />
 			</div>
-			<div className="hidden lg:flex lg:absolute lg:top-1/4 lg:right-0">
+			<div className="hidden lg:flex lg:absolute lg:top-1/3 lg:right-0">
 				<Image
 					loading="lazy"
 					src="./SideFinTechBearForEventDateAndLocation.svg"
 					alt="above decoration for event date and location"
-					width={300}
-					height={300}
+					width={200}
+					height={200}
 				/>
 			</div>
 			<div className="hidden lg:flex lg:justify-center lg:my-4">
@@ -25,8 +25,8 @@ const EventDateAndLocation = () => {
 					loading="lazy"
 					src="./ThreeBearsAndDecorationsForEventDateAndLocation.svg"
 					alt="below decoration for event date and location"
-					width={1200}
-					height={300}
+					width={1000}
+					height={250}
 				/>
 			</div>
 		</div>
