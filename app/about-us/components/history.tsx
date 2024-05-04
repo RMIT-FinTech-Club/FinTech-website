@@ -2,6 +2,7 @@
 import { fontSans } from "@/config/fonts";
 import useEmblaCarousel from "embla-carousel-react";
 import { useEffect, useState } from "react";
+import "../../../styles/about-us/historyPage.css"
 
 export default function HistorySection() {
 	const [emblaRef, emblaApi] = useEmblaCarousel({
@@ -88,7 +89,7 @@ export default function HistorySection() {
 							return (
 								<div
 									key={year}
-									className={`flex shrink-0 md:ml-[60px] lg:ml-[90px] items-center rounded-full duration-1000 ease-out ${
+									className={`flex shrink-0 md:ml-[60px] lg:ml-[90px] items-center rounded-full duration-1000 ease-out select-none ${
 										index === centerSlideIndex
 											? "md:w-[200px] md:h-[200px] lg:w-64 lg:h-64 bg-slate-700 "
 											: "lg:w-32 lg:h-32 bg-amber-200 md:w-[120px] md:h-[120px]"

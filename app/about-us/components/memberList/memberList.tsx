@@ -29,7 +29,7 @@ const MemberList: React.FC<MemberListProps> = ({ members, itemsPerPage }) => {
 			{/* Member Avatar and Name */}
 			<div className="grid grid-cols-2 lg:grid-cols-5 flex sm:flex-col justify-center my-4 gap-x-8 gap-y-2 xl:gap-x-12 xl:gap-y-4 2xl:gap-x-16 2xl:gap-y-8 min-h-[400px] xl:min-h-[500px] 2xl:min-h-[600px]">
 				{currentMembers.map((member, index) => (
-					<MemberCard key={index} member={member} />
+					<MemberCard key={member.uuid || index} member={member} />
 				))}
 			</div>
 			<div className="flex justify-center gap-4 my-4 items-center">
@@ -44,19 +44,22 @@ const MemberList: React.FC<MemberListProps> = ({ members, itemsPerPage }) => {
 					}}
 				/>
 				{/* Pagination dots */}
-				{Array.from({ length: totalPages }, (_, index) => (
-					<Circle
-						key={index}
-						size={16}
-						color="ft-primary-blue-500"
-						className={`${
-							currentPage === index + 1
-								? "fill-ft-primary-yellow-500"
-								: "fill-ft-primary-blue-500"
-						} cursor-pointer`}
-						onClick={() => handlePageChange(index + 1)}
-					/>
-				))}
+				{Array.from({ length: totalPages }).map((_, i) => {
+					const pageNumber = i + 1;
+					return (
+						<Circle
+							key={`page-${pageNumber}`}
+							size={16}
+							color="ft-primary-blue-500"
+							className={`${
+								currentPage === pageNumber
+									? "fill-ft-primary-yellow-500"
+									: "fill-ft-primary-blue-500"
+							} cursor-pointer`}
+							onClick={() => handlePageChange(pageNumber)}
+						/>
+					);
+				})}
 				{/* Right caret icon */}
 				<CaretRight
 					className="w-8 h-8 cursor-pointer fill-ft-primary-blue-500"

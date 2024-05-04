@@ -1,5 +1,5 @@
-import Footer from "@/components/shared/footer";
-import Navbar from "@/components/shared/navbar";
+import Footer from "@/components/footer";
+import Navbar from "@/components/navbar";
 import { fontSans } from "@/config/fonts";
 import { siteConfig } from "@/config/site";
 import { Link } from "@nextui-org/link";
@@ -43,7 +43,7 @@ export default function RootLayout({
 			<head />
 			<body
 				className={clsx(
-					"min-h-screen bg-background font-sans antialiased",
+					"min-h-screen bg-background font-sans antialiased overflow-x-hidden",
 					fontSans.variable,
 				)}
 			>
@@ -51,9 +51,11 @@ export default function RootLayout({
 					themeProps={{ attribute: "class", defaultTheme: "light" }}
 				>
 					<div className="relative items-center flex flex-col h-screen">
-						{/* {<Navbar />} */}
-						<main className="">{children}</main>
-						{/* {<Footer />} */}
+						{<Navbar />}
+						<main className="min-w-full flex-grow px-side-margin-mobile md:px-side-margin">
+							{children}
+						</main>
+						{<Footer />}
 					</div>
 				</Providers>
 			</body>
