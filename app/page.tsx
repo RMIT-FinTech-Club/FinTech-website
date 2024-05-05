@@ -1,7 +1,7 @@
 import React from "react";
-import HeroSection from "../components/hero";
-import IntroSection from "../components/intro";
-import UpcomingEvent from "../components/upcomingEvent";
+// import HeroSection from "../components/";
+// import IntroSection from "../components/intro";
+// import UpcomingEvent from "../components/upcomingEvent";
 import Events from "./events/page";
 const Home = () => {
 	return (

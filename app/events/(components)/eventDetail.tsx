@@ -1,11 +1,13 @@
 // eventDetail.tsx
-import React from "react";
+import React, { lazy , Suspense } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick-theme.css";
 import "slick-carousel/slick/slick.css";
-import Card from "./card";
 import eventData from "./eventsData";
-import "./style.css";
+import "../../../styles/eventDetail/events-detail.css";
+
+const LazyCard = lazy(() => import("./card"));
+
 
 export default function EventDetail() {
 	const settings = {
@@ -17,13 +19,14 @@ export default function EventDetail() {
 	};
 
 	const eventCards = eventData.map((event) => (
-		<Card
-			key={event.id}
-			title={event.title}
-			description={event.description}
-			date={event.date}
-			imageUrl={event.imageUrl as string}
-		/>
+		<Suspense key={event.id} fallback={<div>...</div>}>
+			<LazyCard
+				title={event.title}
+				description={event.description}
+				date={event.date}
+				imageUrl={event.imageUrl as string}
+			/>
+		</Suspense>
 	));
 
 	return (

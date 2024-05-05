@@ -1,9 +1,4 @@
 import {
-	Button,
-	Card,
-	CardBody,
-	CardFooter,
-	CardHeader,
 	Image,
 } from "@nextui-org/react";
 import type React from "react";
