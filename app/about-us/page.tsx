@@ -8,7 +8,7 @@ const AboutUs = () => {
 		<div>
 			{/* <VisionMission /> */}
 			{/* <HistorySection /> */}
-			<Members/>
+			<Members />
 			{/* <CoreValue /> */}
 		</div>
 	);

@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import { IconChevronCompactDown } from "@tabler/icons-react";
 import clsx from "clsx";
 import {

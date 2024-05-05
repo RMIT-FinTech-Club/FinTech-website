@@ -2,7 +2,7 @@
 import { fontSans } from "@/config/fonts";
 import useEmblaCarousel from "embla-carousel-react";
 import { useEffect, useState } from "react";
-import "../../../styles/about-us/historyPage.css"
+import "../../../styles/about-us/historyPage.css";
 
 export default function HistorySection() {
 	const [emblaRef, emblaApi] = useEmblaCarousel({
