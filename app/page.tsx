@@ -5,12 +5,14 @@ import React from "react";
 import Events from "./events/page";
 const Home = () => {
 	return (
-		<div
-			className="flex
-                min-h-screen flex-col 
-                items-center gap-4"
-		>
-			<Events />
+		<div className="flex min-h-screen flex-col justify-center gap-4">
+			{/* <HerosectionVid /> */}
+			{/* <HeroSection /> */}
+			{/* <PastPartners /> */}
+			{/* <IntroSection /> */}
+			{/* <Department /> */}
+			{/* <Individual /> */}
+			{/* <UpcomingEvent /> */}
 		</div>
 	);
 };

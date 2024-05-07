@@ -1,43 +1,34 @@
-// eventDetail.tsx
-import React, { lazy, Suspense } from "react";
-import Slider from "react-slick";
-import "slick-carousel/slick/slick-theme.css";
-import "slick-carousel/slick/slick.css";
-import "../../../styles/eventDetail/events-detail.css";
-import eventData from "./eventsData";
-
-const LazyCard = lazy(() => import("./card"));
-
-export default function EventDetail() {
-	const settings = {
-		dots: true,
-		infinite: false,
-		speed: 500,
-		slidesToShow: 2,
-		slidesToScroll: 2,
-	};
-
-	const eventCards = eventData.map((event) => (
-		<Suspense key={event.id} fallback={<div>...</div>}>
-			<LazyCard
-				title={event.title}
-				description={event.description}
-				date={event.date}
-				imageUrl={event.imageUrl as string}
-			/>
-		</Suspense>
-	));
-
+const EventDetail = () => {
 	return (
-		<div className="flex justify-center items-center min-h-screen w-full px-side-margin events">
-			<div className="py-8 ">
-				<h2 className="text-ft-heading-5 font-bold mb-10 text-ft-primary-blue-500">
-					Other events that you might be interested
-				</h2>
-				<Slider {...settings} className="slider">
-					{eventCards}
-				</Slider>
+		<div className="items-center lg:w-1/2 2xl:w-1/3 h-full mx-4 2xl:mx-16 my-4 2xl:my-8 justify-between">
+			<div className="my-1 py-1 2xl:my-2 2xl:py-4">
+				<h4 className="py-1 2xl:py-2 text-center lg:text-left">
+					Description
+				</h4>
+				<p className="py-1 2xl:py-2 text-justify">
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+					Vestibulum sodales ante eu libero iaculis, sit amet
+					vestibulum
+				</p>
+			</div>
+			<div className="my-1 py-1 2xl:my-2 2xl:py-4">
+				<h4 className="py-1 2xl:py-2 text-center lg:text-left">Time</h4>
+				<p className="py-1 2xl:py-2 text-justify">
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+					Vestibulum sodales ante eu libero iaculis, sit amet
+					vestibulum
+				</p>
+			</div>
+			<div className="my-1 py-1 2xl:my-2 2xl:py-4">
+				<h4 className="py-1 2xl:py-2 text-center lg:text-left">Link</h4>
+				<p className="py-1 2xl:py-2 text-justify">
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+					Vestibulum sodales ante eu libero iaculis, sit amet
+					vestibulum
+				</p>
 			</div>
 		</div>
 	);
-}
+};
+
+export default EventDetail;
