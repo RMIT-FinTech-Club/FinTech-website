@@ -1,13 +1,37 @@
+"use client";
 import { fontSans } from "@/config/fonts";
+import useEmblaCarousel from "embla-carousel-react";
+import { useEffect, useState } from "react";
+import "../../../styles/about-us/historyPage.css";
 
 export default function HistorySection() {
+	const [emblaRef, emblaApi] = useEmblaCarousel({
+		loop: false,
+		dragFree: true,
+	});
+	const [centerSlideIndex, setCenterSlideIndex] = useState<number>(0);
+
+	useEffect(() => {
+		if (emblaApi) {
+			const onSelect = () => {
+				const selectedIndex = emblaApi.selectedScrollSnap();
+				setCenterSlideIndex(selectedIndex);
+			};
+
+			emblaApi.on("select", onSelect);
+			return () => {
+				emblaApi.off("select", onSelect);
+			};
+		}
+	}, [emblaApi]);
+
 	return (
 		<>
 			<div className="mx-auto w-[806px] px-[52px] bg-white bg-opacity-0 flex-col justify-center items-center gap-4">
-				<div className="absolute w-[340px] top-[120px] left-[134px] h-[4px] bg-black flex items-center">
+				<div className="absolute md:w-[250px] md:left-[100px] lg:w-[340px] top-[120px] lg:left-[134px] h-[4px] bg-black flex items-center">
 					<div className="w-6 h-6 bg-black rounded-full" />
 				</div>
-				<div className="absolute w-[340px] top-[120px] right-[134px] h-[4px] bg-black flex flex-row-reverse items-center">
+				<div className="absolute md:w-[250px] md:right-[100px] lg:w-[340px] top-[120px] lg:right-[134px] h-[4px] bg-black flex flex-row-reverse items-center">
 					<div className="w-6 h-6 bg-black rounded-full" />
 				</div>
 				<div className="flex-col justify-start items-center gap-1 flex">
@@ -49,61 +73,61 @@ export default function HistorySection() {
 					Phasellus sollicitudin
 				</div>
 			</div>
-			<div className="mt-[93px] mb-[77px] items-center flex justify-between">
-				<div className="flex items-center w-32 h-32 bg-amber-200 rounded-full">
-					<div
-						className={`mx-auto text-slate-700 text-4xl font-semibold ${fontSans.style}`}
-					>
-						2020
-					</div>
-				</div>
-				<div className="flex items-center w-32 h-32 bg-amber-200 rounded-full">
-					<div
-						className={`mx-auto text-slate-700 text-4xl font-semibold ${fontSans.style}`}
-					>
-						2021
-					</div>
-				</div>
-				<div className="flex items-center w-64 h-64 bg-slate-700 rounded-full">
-					<div
-						className={`mx-auto text-orange-300 text-5xl  font-bold ${fontSans.style}`}
-					>
-						2022
-					</div>
-				</div>
-				<div className="flex items-center w-32 h-32 bg-amber-200 rounded-full">
-					<div
-						className={`mx-auto text-slate-700 text-4xl font-semibold ${fontSans.style}`}
-					>
-						2023
-					</div>
-				</div>
-				<div className="flex items-center w-32 h-32 bg-amber-200 rounded-full">
-					<div
-						className={`mx-auto text-slate-700 text-4xl font-semibold ${fontSans.style}`}
-					>
-						2024
-					</div>
+			<div
+				className={`mt-[93px] mb-[77px] w-[500px] h-[300px] md: mx-auto ${
+					centerSlideIndex === 0
+						? "pr-96"
+						: centerSlideIndex === 4
+							? "pl-96"
+							: "px-96"
+				}`}
+				ref={emblaRef}
+			>
+				<div className="flex justify-between items-center">
+					{["2020", "2021", "2022", "2023", "2024"].map(
+						(year, index) => {
+							return (
+								<div
+									key={year}
+									className={`flex shrink-0 md:ml-[60px] lg:ml-[90px] items-center rounded-full duration-1000 ease-out select-none ${
+										index === centerSlideIndex
+											? "md:w-[200px] md:h-[200px] lg:w-64 lg:h-64 bg-slate-700 "
+											: "lg:w-32 lg:h-32 bg-amber-200 md:w-[120px] md:h-[120px]"
+									} `}
+								>
+									<div
+										className={`mx-auto font-semibold ${
+											index === centerSlideIndex
+												? "text-orange-300 md:text-4xl lg:text-5xl "
+												: "text-slate-700 md:text-3xl lg:text-4xl"
+										} ${fontSans.style}`}
+									>
+										{year}
+									</div>
+								</div>
+							);
+						},
+					)}
 				</div>
 			</div>
 			<img
 				alt=""
-				className="absolute top-[257px] left-[-200.15px] rotate-[58.03deg] rounded-[59px]"
+				className="absolute md:w-[300px] md:left-[-120px] md:top-[340px] lg:left-[-190.15px] lg:w-[600px] top-[257px] rotate-[58.03deg] rounded-[59px]"
 				src="https://ik.imagekit.io/mbrrji2rk/Picture1.png?updatedAt=1713240956080"
 			/>
 			<img
 				alt=""
-				className="absolute top-[257px] right-[-200.15px] rotate-[-58.03deg] rounded-[59px]"
+				className="absolute md:w-[400px] md:right-[-120px] md:top-[340px] lg:right-[-190.15px] lg:w-[600px] top-[257px] rotate-[-58.03deg] rounded-[59px]"
 				src="https://ik.imagekit.io/mbrrji2rk/Picture1.png?updatedAt=1713240956080"
 			/>
 			<img
 				alt=""
-				className="absolute bottom-0 left-0 w-[330px] h-[306px]"
+				className="absolute md:bottom-[-330px] lg:bottom-0 left-0 w-[330px] h-[306px] md:w-[250px] md:h-auto"
 				src="https://ik.imagekit.io/mbrrji2rk/3164276f-e306-432f-ab36-b9a275439de7.jpg?updatedAt=1713241506012"
 			/>
 			<img
 				alt=""
-				className="absolute bottom-0 w-[330px] h-[306px] right-0 rotate-[-24.12deg]"
+				className="absolute md:bottom-[-330px] md:w-[180px] lg:bottom-0 w-[330px] h-[306px] md:w-[250px] md:h-auto right-0 rotate-[-24.12deg]"
 				src="https://ik.imagekit.io/mbrrji2rk/3164276f-e306-432f-ab36-b9a275439de7.jpg?updatedAt=1713241506012"
 			/>
 			<div

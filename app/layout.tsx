@@ -43,7 +43,7 @@ export default function RootLayout({
 			<head />
 			<body
 				className={clsx(
-					"min-h-screen bg-background font-sans antialiased",
+					"min-h-screen bg-background font-sans antialiased overflow-x-hidden",
 					fontSans.variable,
 				)}
 			>
@@ -52,7 +52,7 @@ export default function RootLayout({
 				>
 					<div className="relative items-center flex flex-col h-screen">
 						{<Navbar />}
-						<main className="container min-w-full flex-grow px-side-margin-mobile md:px-side-margin">
+						<main className="min-w-full flex-grow px-side-margin-mobile md:px-side-margin">
 							{children}
 						</main>
 						{<Footer />}

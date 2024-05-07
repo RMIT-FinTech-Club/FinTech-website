@@ -8,7 +8,7 @@ const Home = () => {
 		<div className="flex min-h-screen flex-col justify-center gap-4">
 			{/* <HerosectionVid /> */}
 			{/* <HeroSection /> */}
-			{/* <PastPartners /> */}
+			<PastPartners />
 			{/* <IntroSection /> */}
 			{/* <Department /> */}
 			{/* <Individual /> */}
