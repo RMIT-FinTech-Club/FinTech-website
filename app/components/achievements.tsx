@@ -9,20 +9,18 @@ import {
 } from "@tabler/icons-react";
 import CountUp from "react-countup";
 const AchievementsSection = () => {
-	const primaryBlue500 =
-		config?.themes?.light?.colors?.ft?.primary?.blue[500];
 	return (
-		<div className={`bg-[${primaryBlue500}] w-screen md:pb-[200px]`}>
+		<div className={`bg-ft-primary-blue w-screen md:pb-[200px]`}>
 			<div className="flex flex-row items-top justify-between items-center md:pt-[43px] pt-[40px]">
-				<div className="w-[700px] md:w-[500px] w-[40px] md:h-[0px] border-2 border-orange-300 md:mt-[25px] mt-[10px]" />
+				<div className="w-[700px] md:w-[500px] md:h-[0px] border-2 border-orange-300 md:mt-[25px] mt-[10px]" />
 				<div
 					className={`text-orange-300 md:w-auto md:text-8xl text-4xl font-bold items-center ${fontSans.style}`}
 				>
 					Our Achievements
 				</div>
-				<div className="w-[700px] md:w-[500px] w-[40px] md:h-[0px] border-2 border-orange-300 md:mt-[25px] mt-[10px]" />
+				<div className="w-[700px] md:w-[500px] md:h-[0px] border-2 border-orange-300 md:mt-[25px] mt-[10px]" />
 			</div>
-			<div className="md:flex md:flex-row sm:flex-col mx-atuo justify-around md:mt-[200px] items-center flex-wrap px-[200px] flex-wrap">
+			<div className="md:flex md:flex-row sm:flex-col mx-atuo justify-around md:mt-[200px] items-center flex-wrap px-[200px]">
 				<div className="flex flex-col justify-evenly w-1/2">
 					<div className="mx-auto mb-4">
 						<IconUsers
