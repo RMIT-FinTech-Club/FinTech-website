@@ -1,11 +1,8 @@
-import EventDateAndLocation from "./eventDateAndLocation";
+import React from "react";
+import EventDetail from "./(components)/eventDetail";
 
 const Events = () => {
-	return (
-        <div>
-            <EventDateAndLocation />
-        </div>
-    );
+	return <EventDetail />;
 };
 
 export default Events;
