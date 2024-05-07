@@ -5,7 +5,7 @@ const Invidivual = () => {
 	const imageUrl = "HallOfFame-Background.svg";
 	return (
 		<section
-			className=" relative bg-cover bg-center h-fit w-screen pb-10"
+			className=" relative bg-cover bg-center h-fit -mx-0 md:-mx-side-margin pb-10"
 			style={{ backgroundImage: `url(${imageUrl})` }}
 		>
 			<div className=" mascot absolute right-0 bottom-0 z-0 max-w-44 md:max-w-96">

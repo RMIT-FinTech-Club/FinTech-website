@@ -5,7 +5,7 @@ const Member = () => {
 	const imageUrl = "HallOfFame-Background.svg";
 	return (
 		<section
-			className=" relative bg-cover bg-center h-fit md:h-screen w-screen pb-10"
+			className=" relative bg-cover bg-center h-fit pb-10 md:h-screen -mx-0 md:-mx-side-margin md:pb-10"
 			style={{ backgroundImage: `url(${imageUrl})` }}
 		>
 			<div className=" absolute right-0 bottom-0 z-0 max-w-44 md:max-w-96">
@@ -13,6 +13,7 @@ const Member = () => {
 					src="HallOfFame-FrontMasCot.svg"
 					radius="none"
 					id="HallOfFame-MasCot"
+					className="mascot"
 				/>
 			</div>
 			<div className=" absolute right-0 md:right-10 top-10 md:top-4 z-10 max-w-24 md:max-w-96">
@@ -92,7 +93,7 @@ const Member = () => {
 					/>
 				</div> */}
 			</header>
-			<main className=" grid grid-rows-3 gap-8 mx-side-margin-mobile mt-0 md:grid-rows-2 md:gap-10 md:mx-side-margin md:w-4/6 md:my-14 md:h-4/6">
+			<main className=" grid grid-rows-2 gap-8 mx-side-margin-mobile mt-0 h-fit md:grid-rows-2 md:gap-10 md:mx-side-margin md:w-4/6 md:my-14 md:h-4/6">
 				<div className=" grid grid-cols-2 gap-8 md:grid-cols-4 md:gap-10">
 					<Card className="card" isFooterBlurred>
 						<Image
