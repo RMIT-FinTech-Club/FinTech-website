@@ -1,5 +1,11 @@
+import EventDateAndLocation from "./eventDateAndLocation";
+
 const Events = () => {
-	return <div>Events</div>;
+	return (
+        <div>
+            <EventDateAndLocation />
+        </div>
+    );
 };
 
 export default Events;

@@ -9,17 +9,13 @@ import UpcomingEvent from "./components/upcomingEvent";
 
 const Home = () => {
 	return (
-		<div
-			className="flex
-                min-h-screen flex-col 
-                items-center gap-4"
-		>
+		<div className="flex min-h-screen flex-col justify-center gap-4">
 			{/* <HerosectionVid /> */}
 			{/* <HeroSection /> */}
 			{/* <PastPartners /> */}
 			{/* <IntroSection /> */}
 			{/* <Department /> */}
-			<Individual />
+			{/* <Individual /> */}
 			{/* <UpcomingEvent /> */}
 		</div>
 	);
