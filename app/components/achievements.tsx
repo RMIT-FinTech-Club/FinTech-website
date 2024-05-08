@@ -1,6 +1,5 @@
 "use client";
 import { fontSans } from "@/config/fonts";
-import { nextuiThemeConfig as config } from "@config/theme";
 import {
 	IconCalendarEvent,
 	IconHeartHandshake,
@@ -10,7 +9,7 @@ import {
 import CountUp from "react-countup";
 const AchievementsSection = () => {
 	return (
-		<div className={`bg-ft-primary-blue w-screen md:pb-[200px]`}>
+		<div className={`w-screen h-screen`}>
 			<div className="flex flex-row items-top justify-between items-center md:pt-[43px] pt-[40px]">
 				<div className="w-[700px] md:w-[500px] md:h-[0px] border-2 border-orange-300 md:mt-[25px] mt-[10px]" />
 				<div
@@ -20,112 +19,108 @@ const AchievementsSection = () => {
 				</div>
 				<div className="w-[700px] md:w-[500px] md:h-[0px] border-2 border-orange-300 md:mt-[25px] mt-[10px]" />
 			</div>
-			<div className="md:flex md:flex-row sm:flex-col mx-atuo justify-around md:mt-[200px] items-center flex-wrap px-[200px]">
-				<div className="flex flex-col justify-evenly w-1/2">
-					<div className="mx-auto mb-4">
+			<div className="md:flex md:flex-row sm:flex-col mx-atuo justify-around md:mt-[300px] items-center flex-wrap px-auto">
+				<div className="bg-ft-primary-blue flex flex-col justify-evenly md:p-16">
+					<div className="mx-auto">
 						<IconUsers
 							strokeWidth={2}
 							stroke={"#ffffff"}
 							fill={"none"}
-							width={200}
-							height={200}
+							width={120}
+							height={120}
 							style={{ color: "white", stroke: "white" }}
+							className="md:m-12"
 						/>
 					</div>
-					<CountUp start={1} end={100} duration={5}>
+					<div
+						className={`text-center text-white text-4xl font-semibold ${fontSans.style}`}
+					>
+						Members:{" "}
+					</div>
+					<CountUp start={1} end={100} duration={5} >
 						{({ countUpRef }) => (
-							<>
-								<div
-									className={`text-center text-white text-4xl font-semibold ${fontSans.style}`}
-								>
-									Members:{" "}
-									<span
-										ref={countUpRef}
-										className={` text-center text-white text-[100px] font-semibold ${fontSans.style}`}
-									/>
-								</div>
-							</>
+							<span
+								ref={countUpRef}
+								className={` text-center text-white text-7xl font-semibold ${fontSans.style}`}
+							/>
 						)}
 					</CountUp>
 				</div>
-				<div className="flex flex-col justify-evenly w-1/2">
-					<div className="mx-auto mb-4">
+				<div className="bg-ft-primary-blue  flex flex-col justify-evenly md:p-16">
+					<div className="mx-auto">
 						<IconTools
 							strokeWidth={2}
 							stroke={"#ffffff"}
 							fill={"none"}
-							width={200}
-							height={200}
+							width={120}
+							height={120}
 							style={{ color: "white", stroke: "white" }}
+							className="md:m-12"
 						/>
+					</div>
+					<div
+						className={`text-center text-white text-4xl font-semibold ${fontSans.style}`}
+					>
+						Projects:{" "}
 					</div>
 					<CountUp start={1} end={100} duration={5}>
 						{({ countUpRef }) => (
-							<>
-								<div
-									className={`text-center text-white text-4xl font-semibold ${fontSans.style}`}
-								>
-									Projects:{" "}
-									<span
-										ref={countUpRef}
-										className={` text-center text-white text-[100px] font-semibold ${fontSans.style}`}
-									/>
-								</div>
-							</>
+							<span
+								ref={countUpRef}
+								className={` text-center text-white text-7xl font-semibold ${fontSans.style}`}
+							/>
 						)}
 					</CountUp>
 				</div>
-				<div className="flex flex-col w-1/2 md:mt-[200px]">
-					<div className="mx-auto mb-4">
+				<div className="bg-ft-primary-blue flex flex-col justify-evenly md:p-16">
+					<div className="mx-auto">
 						<IconHeartHandshake
 							strokeWidth={2}
 							stroke={"#ffffff"}
 							fill={"none"}
-							width={200}
-							height={200}
+							width={120}
+							height={120}
 							style={{ color: "white", stroke: "white" }}
+							className="md:m-12"
 						/>
+					</div>
+					<div
+						className={`text-center text-white text-4xl font-semibold ${fontSans.style}`}
+					>
+						Events Partners:{" "}
 					</div>
 					<CountUp start={1} end={100} duration={5}>
 						{({ countUpRef }) => (
-							<>
-								<div
-									className={`text-center text-white text-4xl font-semibold ${fontSans.style}`}
-								>
-									Events Partners:{" "}
-									<span
-										ref={countUpRef}
-										className={` text-center text-white text-[100px] font-semibold ${fontSans.style}`}
-									/>
-								</div>
-							</>
+							<span
+								ref={countUpRef}
+								className={` text-center text-white text-7xl font-semibold ${fontSans.style}`}
+							/>
 						)}
 					</CountUp>
 				</div>
-				<div className="flex flex-col md:mt-[200px] w-1/2">
-					<div className="mx-auto mb-4">
+				<div className="bg-ft-primary-blue flex flex-col justify-evenly md:p-16">
+					<div className="mx-auto">
 						<IconCalendarEvent
 							strokeWidth={2}
 							stroke={"#ffffff"}
 							fill={"none"}
-							width={200}
-							height={200}
+							width={120}
+							height={120}
 							style={{ color: "white", stroke: "white" }}
+							className="md:m-12"
 						/>
+					</div>
+					<div
+						className={`text-center text-white text-4xl font-semibold ${fontSans.style}`}
+					>
+						Events:{" "}
 					</div>
 					<CountUp start={1} end={100} duration={5}>
 						{({ countUpRef }) => (
-							<>
-								<div
-									className={`text-center text-white text-4xl font-semibold ${fontSans.style}`}
-								>
-									Events:{" "}
-									<span
-										ref={countUpRef}
-										className={` text-center text-white text-[100px] font-semibold ${fontSans.style}`}
-									/>
-								</div>
-							</>
+							<span
+								ref={countUpRef}
+								className={` text-center text-white text-7xl font-semibold ${fontSans.style}`}
+							/>
 						)}
 					</CountUp>
 				</div>

@@ -10,16 +10,18 @@ import IntroSection from "./components/intro";
 import Individual from "./components/hall-of-fame/individual";
 import Department from "./components/department";
 import UpcomingEvent from "./components/upcomingEvent";
+import AchievementsSection from "./components/achievements";
 const Home = () => {
 	return (
 		<div className="flex min-h-screen flex-col justify-center gap-4">
-			<HerosectionVid />
+			{/* <HerosectionVid />
 			<HeroSection />
 			<PastPartners />
 			<IntroSection />
 			<Department />
 			<Individual />
-			<UpcomingEvent />
+			<UpcomingEvent /> */}
+			<AchievementsSection />
 		</div>
 	);
 };
