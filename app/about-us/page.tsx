@@ -6,10 +6,10 @@ import VisionMission from "./components/vision-mission/missionVision";
 const AboutUs = () => {
 	return (
 		<div>
-			{/* <VisionMission /> */}
-			{/* <HistorySection /> */}
+			<VisionMission />
+			<HistorySection />
 			<Members />
-			{/* <CoreValue /> */}
+			<CoreValue />
 		</div>
 	);
 };
