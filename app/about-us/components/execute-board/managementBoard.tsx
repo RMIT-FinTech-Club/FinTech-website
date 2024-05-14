@@ -13,7 +13,11 @@ const ManagementBoard = () => {
 		<section className=" relative bg-ft-primary-yellow-500 bg-cover bg-center h-full -mx-side-margin-mobile md:-mx-side-margin">
 			<main className=" mx-side-margin-mobile mt-0  md:mx-side-margin">
 				<div className=" grid grid-cols-2 gap-8 md:grid-cols-4 my-16">
-					<Card className="py-4 -px-2 bg-transparent">
+					<Card
+						className="py-4 -px-2 bg-transparent"
+						radius="none"
+						shadow="none"
+					>
 						<CardHeader className="py-2 px-5 flex flex-col justify-items-center">
 							<Image
 								alt="Card background"
@@ -28,7 +32,11 @@ const ManagementBoard = () => {
 							<h6 className=" text-tiny">Vice President</h6>
 						</CardBody>
 					</Card>
-					<Card className="py-4 -px-2 bg-transparent">
+					<Card
+						className="py-4 -px-2 bg-transparent"
+						radius="none"
+						shadow="none"
+					>
 						<CardHeader className="py-2 px-5 flex-col items-center">
 							<Image
 								alt="Card background"
@@ -62,7 +70,11 @@ const ManagementBoard = () => {
 							<h6 className=" text-tiny">Vice President</h6>
 						</CardBody>
 					</Card>
-					<Card className="py-4 -px-2 bg-transparent">
+					<Card
+						className="py-4 -px-2 bg-transparent"
+						radius="none"
+						shadow="none"
+					>
 						<CardHeader className="py-2 px-5 flex flex-col justify-items-center">
 							<Image
 								alt="Card background"

@@ -1,3 +1,4 @@
+import { IconMessageCircleExclamation } from "@tabler/icons-react";
 import React from "react";
 import ExecuteBoard from "./about-us/components/execute-board/executeBoard";
 import ManagementBoard from "./about-us/components/execute-board/managementBoard";

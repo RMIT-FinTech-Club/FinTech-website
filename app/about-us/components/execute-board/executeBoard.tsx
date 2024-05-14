@@ -38,24 +38,24 @@ const ExecuteBoard = () => {
 						</CardHeader>
 						<CardBody className="overflow-visible py-2 text-center">
 							<h6 className="font-bold text-large">
-								Hoang Nguyen Nhat Minh
+								Nguyen Minh Dung
 							</h6>
-							<h6 className=" text-tiny">Vice President</h6>
+							<h6 className=" text-tiny">President</h6>
 						</CardBody>
 					</Card>
-					<Card className="py-4 -px-2">
+					<Card className="py-4 -px-2 rounded-lg">
 						<CardHeader className="py-2 px-5 flex-col items-center">
 							<Image
 								alt="Card background"
-								className="object-cover rounded-lg bg-ft-primary-yellow-500"
+								className="object-cover rounded-lg bg-ft-primary-yellow-500 text-center"
 								src="ExecuteBoard/CFO.svg"
 							/>
 						</CardHeader>
 						<CardBody className="overflow-visible py-2 text-center">
 							<h6 className="font-bold text-large">
-								Hoang Nguyen Nhat Minh
+								Nguyen Minh Dung
 							</h6>
-							<h6 className=" text-tiny">Vice President</h6>
+							<h6 className=" text-tiny">CFO</h6>
 						</CardBody>
 					</Card>
 				</div>
