@@ -1,9 +1,15 @@
+'use client';
 
-import { nextuiThemeConfig } from '@/config/theme';
 import { Slider } from '@nextui-org/react';
-import { IconDownload, IconPlayerPlayFilled, IconRewindBackward10, IconRewindForward10, IconShare, IconVolume } from '@tabler/icons-react';
+import { IconDownload, IconPlayerPlayFilled, IconRewindBackward10, IconRewindForward10, IconShare, IconVolume, IconPlayerPauseFilled, IconVolumeOff } from '@tabler/icons-react';
+import { color } from 'framer-motion';
+import { useState } from 'react';
 
 const PodcastMainFunction = () => {
+
+    const [isPlaying, setIsPlaying] = useState(false);
+    const [isVolumeOn, setIsVolumeOn] = useState(true);
+
     return (
         <div className="flex flex-col px-24">
             <div className="py-4">
@@ -19,11 +25,21 @@ const PodcastMainFunction = () => {
             <div className='w-full py-4'>
                 <div className='flex items-center justify-between'>
                     <div className='flex items-center w-1/12'>
+                    {isVolumeOn ? (
                         <IconVolume 
                             size={50}
                             color='#ebebeb'
                             className='mx-2 flex-shrink-0'
+                            onClick={() => setIsVolumeOn(false)}
                         />
+                        ) : (
+                        <IconVolumeOff 
+                            size={50}
+                            color='#ebebeb'
+                            className='mx-2 flex-shrink-0'
+                            onClick={() => setIsVolumeOn(true)}
+                        />
+                        )}
                         <Slider 
                             size='md'
                             className='w-full mx-2'
@@ -35,11 +51,21 @@ const PodcastMainFunction = () => {
                             color='#ebebeb'
                             className='mx-2'
                         />
-                        <IconPlayerPlayFilled
-                            size={125}
-                            color="#ebebeb"
-                            className='mx-2'
-                        />
+                        {isPlaying ? (
+                            <IconPlayerPauseFilled
+                                size={125}
+                                color="#ebebeb"
+                                className='mx-2'
+                                onClick={() => setIsPlaying(false)}
+                            />
+                        ) : (
+                            <IconPlayerPlayFilled
+                                size={125}
+                                color="#ebebeb"
+                                className='mx-2'
+                                onClick={() => setIsPlaying(true)}
+                            />
+                        )}
                         <IconRewindForward10
                             size={75}
                             color="#ebebeb"
