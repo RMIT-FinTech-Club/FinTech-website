@@ -1,5 +1,12 @@
+import React from 'react';
+import Podcast from './[pid]/podcast';
+
 const Projects = () => {
-	return <div>Projects</div>;
+	return (
+		<div>
+			<Podcast />
+		</div>
+	);
 };
 
 export default Projects;
