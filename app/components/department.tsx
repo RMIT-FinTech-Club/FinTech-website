@@ -1,6 +1,9 @@
 "use client";
 import { Button, Image } from "@nextui-org/react";
 import React, { useState } from "react";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 const Department = () => {
 	type Department =
@@ -52,14 +55,23 @@ const Department = () => {
 		departments.humanResources,
 	);
 
+	const settings = {
+		dots: false,
+		infinite: true,
+		speed: 500,
+		slidesToShow: 1,
+		slidesToScroll: 1,
+		
+	};
+
 	return (
 		<section
 			className="relative flex flex-col w-full max-h-fit justify-center items-center md:flex-row px-side-margin-mobile md:px-side-margin"
 			style={{
 				backgroundImage: department.background
 					? `url(${department.background
-							.replace("url('", "")
-							.replace("')", "")})`
+						.replace("url('", "")
+						.replace("')", "")})`
 					: "none",
 				backgroundSize: "cover",
 				backgroundPosition: "center",
@@ -69,35 +81,37 @@ const Department = () => {
 
 			{/* Mobile buttons bar */}
 			<div className="flex md:hidden justify-center items-center w-full p-2">
-				<Button
-					onClick={() => setDepartment(departments.technology)}
-					variant="light"
-				>
-					TECHNOLOGY
-				</Button>
-				<Button
-					onClick={() => setDepartment(departments.business)}
-					variant="light"
-				>
-					BUSINESS
-				</Button>
-				{/* <Button
-                        onClick={() => setDepartment(departments.humanResources)}
-                        variant="light"
-                    >
-                        HUMAN RESOURCES
-                    </Button>
-                    <Button
-                        onClick={() => setDepartment(departments.marketing)}
-                        variant="light"
-                    >
-                        MARKETING
-                    </Button> */}
+				<Slider {...settings} className="w-80" >
+					<Button
+						onClick={() => setDepartment(departments.technology)}
+						variant="light"
+					>
+						TECHNOLOGY
+					</Button>
+					<Button
+						onClick={() => setDepartment(departments.business)}
+						variant="light"
+					>
+						BUSINESS
+					</Button>
+					<Button
+						onClick={() => setDepartment(departments.humanResources)}
+						variant="light"
+					>
+						HUMAN RESOURCES
+					</Button>
+					<Button
+						onClick={() => setDepartment(departments.marketing)}
+						variant="light"
+					>
+						MARKETING
+					</Button>
+				</Slider>
 			</div>
 
 			{/* Department content */}
 			<div
-				className="flex flex-col md:items-start items-center p-8 bg-opacity-50 z-10 mt-24 md:mt-0"
+				className="flex flex-col md:items-start items-center p-8 bg-opacity-50 z-10 md:mt-0"
 				style={{ flex: 1 }}
 			>
 				{/* These elements will be pushed down on mobile due to the absolute positioning of the buttons bar */}
