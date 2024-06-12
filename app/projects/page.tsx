@@ -1,5 +1,11 @@
-const Projects = () => {
-	return <div>Projects</div>;
+import ProjectGeneral from "./components/projectGeneral";
+
+const Project = () => {
+	return (
+		<div>
+			<ProjectGeneral />
+		</div>
+	);
 };
 
-export default Projects;
+export default Project;
