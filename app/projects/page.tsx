@@ -1,9 +1,7 @@
 import ProjectGeneralPage from "./components/ProjectGeneralPage";
 
 const Projects = () => {
-	return (
-		<ProjectGeneralPage/>
-	);
+	return <ProjectGeneralPage />;
 };
 
 export default Projects;

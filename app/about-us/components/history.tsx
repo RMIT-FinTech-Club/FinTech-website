@@ -80,12 +80,13 @@ export default function HistorySection() {
 					src="https://ik.imagekit.io/mbrrji2rk/Picture1.png?updatedAt=1713240956080"
 				/>
 				<div
-					className={`mt-[93px] mb-[77px] w-[500px] h-[300px] grid grid-cols-3 col-span-4 z-0 md: mx-auto ${centerSlideIndex === 0
-						? "pr-96"
-						: centerSlideIndex === 4
-							? "pl-96"
-							: "px-96"
-						}`}
+					className={`mt-[93px] mb-[77px] w-[500px] h-[300px] grid grid-cols-3 col-span-4 z-0 md: mx-auto ${
+						centerSlideIndex === 0
+							? "pr-96"
+							: centerSlideIndex === 4
+								? "pl-96"
+								: "px-96"
+					}`}
 					ref={emblaRef}
 				>
 					<div className="flex justify-between items-center">
@@ -94,16 +95,18 @@ export default function HistorySection() {
 								return (
 									<div
 										key={year}
-										className={`flex shrink-0 md:ml-[60px] lg:ml-[90px] items-center rounded-full duration-1000 ease-out select-none ${index === centerSlideIndex
-											? "md:w-[200px] md:h-[200px] lg:w-64 lg:h-64 bg-slate-700 "
-											: "lg:w-32 lg:h-32 bg-amber-200 md:w-[120px] md:h-[120px]"
-											} `}
+										className={`flex shrink-0 md:ml-[60px] lg:ml-[90px] items-center rounded-full duration-1000 ease-out select-none ${
+											index === centerSlideIndex
+												? "md:w-[200px] md:h-[200px] lg:w-64 lg:h-64 bg-slate-700 "
+												: "lg:w-32 lg:h-32 bg-amber-200 md:w-[120px] md:h-[120px]"
+										} `}
 									>
 										<div
-											className={`mx-auto font-semibold ${index === centerSlideIndex
-												? "text-orange-300 md:text-4xl lg:text-5xl "
-												: "text-slate-700 md:text-3xl lg:text-4xl"
-												} ${fontSans.style}`}
+											className={`mx-auto font-semibold ${
+												index === centerSlideIndex
+													? "text-orange-300 md:text-4xl lg:text-5xl "
+													: "text-slate-700 md:text-3xl lg:text-4xl"
+											} ${fontSans.style}`}
 										>
 											{year}
 										</div>
@@ -126,7 +129,6 @@ export default function HistorySection() {
 					src="https://ik.imagekit.io/mbrrji2rk/3164276f-e306-432f-ab36-b9a275439de7.jpg?updatedAt=1713241506012"
 				/>
 				<div>
-
 					<div
 						className={`w-[716px] mb-[26px] mx-auto text-center text-slate-400 text-5xl font-bold ${fontSans.style}`}
 					>
@@ -135,16 +137,18 @@ export default function HistorySection() {
 					<div
 						className={` mx-auto w-[760px] text-justify text-black text-lg font-normal ${fontSans.style} tracking-wide`}
 					>
-						Richard McClintock, a Latin professor at Hampden-Sydney College
-						in Virginia, looked up one of the more obscure Latin words,
-						consectetur, from a Lorem Ipsum passage, and going through the
-						cites of the word in classical literature, discovered the
-						undoubtable source. Lorem Ipsum comes from sections 1.10.32 and
-						1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good
-						and Evil) by Cicero, written in 45 BC. This book is a treatise
-						on the theory of ethics, very popular during the Renaissance.
-						The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..",
-						comes from a line in section 1.10.32.
+						Richard McClintock, a Latin professor at Hampden-Sydney
+						College in Virginia, looked up one of the more obscure
+						Latin words, consectetur, from a Lorem Ipsum passage,
+						and going through the cites of the word in classical
+						literature, discovered the undoubtable source. Lorem
+						Ipsum comes from sections 1.10.32 and 1.10.33 of "de
+						Finibus Bonorum et Malorum" (The Extremes of Good and
+						Evil) by Cicero, written in 45 BC. This book is a
+						treatise on the theory of ethics, very popular during
+						the Renaissance. The first line of Lorem Ipsum, "Lorem
+						ipsum dolor sit amet..", comes from a line in section
+						1.10.32.
 					</div>
 				</div>
 				<img

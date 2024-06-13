@@ -37,7 +37,7 @@ const AchievementsSection = () => {
 					>
 						Members:{" "}
 					</div>
-					<CountUp start={1} end={100} duration={5} >
+					<CountUp start={1} end={100} duration={5}>
 						{({ countUpRef }) => (
 							<span
 								ref={countUpRef}
