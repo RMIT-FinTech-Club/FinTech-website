@@ -73,14 +73,14 @@ export default function HistorySection() {
 					Phasellus sollicitudin
 				</div>
 			</div>
-			<div className="flex justify-between items-center w-full mt-8">
+			<div className="items-center w-full mt-8 grid grid-cols-6">
 				<img
 					alt="fintech mascot"
 					className="md:w-[300px] lg:w-[600px] rotate-[58.03deg] rounded-[59px] z-10"
 					src="https://ik.imagekit.io/mbrrji2rk/Picture1.png?updatedAt=1713240956080"
 				/>
 				<div
-					className={`mt-[93px] mb-[77px] w-[500px] h-[300px] grid grid-cols-3 z-0 md: mx-auto ${centerSlideIndex === 0
+					className={`mt-[93px] mb-[77px] w-[500px] h-[300px] grid grid-cols-3 col-span-4 z-0 md: mx-auto ${centerSlideIndex === 0
 						? "pr-96"
 						: centerSlideIndex === 4
 							? "pl-96"
