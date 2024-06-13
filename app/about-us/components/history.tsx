@@ -105,7 +105,7 @@ export default function HistorySection() {
             );
           })}
         </div>
-        <img
+        {/* <img
           alt=""
           className="absolute md:w-[300px] md:left-[-120px] md:top-[340px] lg:left-[-190.15px] lg:w-[600px] top-[257px] rotate-[58.03deg] rounded-[59px]"
           src="https://ik.imagekit.io/mbrrji2rk/Picture1.png?updatedAt=1713240956080"
@@ -123,6 +123,30 @@ export default function HistorySection() {
         <img
           alt=""
           className="md:absolute bottom-0 right-0 w-[330px] h-[306px] md:w-[250px] md:h-auto transform -scale-x-100"
+          src="https://ik.imagekit.io/mbrrji2rk/3164276f-e306-432f-ab36-b9a275439de7.jpg?updatedAt=1713241506012"
+        /> */}
+      </div>
+      <div className="container flex-row gap-3 justify-end absolute w-1/4 top-[500px] left-0">
+        <img
+          alt=""
+          className="hidden md:block md:w-[300px] md:left-[-120px] md:top-[340px] lg:left-[-190.15px] lg:w-[600px] top-[257px] rounded-[59px]"
+          src="https://ik.imagekit.io/mbrrji2rk/Picture1.png?updatedAt=1713240956080"
+        />
+        <img
+          alt=""
+          className="md:block bottom-0 left-0 w-[330px] h-[306px] md:w-[250px] md:h-auto transform "
+          src="https://ik.imagekit.io/mbrrji2rk/3164276f-e306-432f-ab36-b9a275439de7.jpg?updatedAt=1713241506012"
+        />
+      </div>
+      <div className="container flex-row gap-3 justify-end absolute w-1/4 top-[500px] right-0">
+        <img
+          alt=""
+          className="hidden md:block md:w-[300px] md:left-[-120px] md:top-[340px] lg:left-[-190.15px] lg:w-[600px] top-[257px] rounded-[59px]"
+          src="https://ik.imagekit.io/mbrrji2rk/Picture1.png?updatedAt=1713240956080"
+        />
+        <img
+          alt=""
+          className="md:block bottom-0 right-0 w-[330px] h-[306px] md:w-[250px] md:h-auto transform -scale-x-100"
           src="https://ik.imagekit.io/mbrrji2rk/3164276f-e306-432f-ab36-b9a275439de7.jpg?updatedAt=1713241506012"
         />
       </div>
