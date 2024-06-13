@@ -27,12 +27,12 @@ export default function HistorySection() {
 
 	return (
 		<>
-			<div className="mx-auto w-full px-[52px] bg-white bg-opacity-0 flex-col grid grid-cols-6 justify-center items-center gap-4">
-				<div className=" md:w-[250px] md:left-[100px] lg:w-[340px] h-[4px] bg-black flex items-center">
+			<div className="mx-auto w-full px-[52px] bg-white bg-opacity-0 flex-col grid grid-cols-8 justify-center items-center gap-4">
+				<div className="sm:w-[100px] md:w-[200px] md:left-[100px] w-[340px] h-[4px] bg-black flex items-center">
 					<div className="w-6 h-6 bg-black rounded-full" />
 				</div>
 
-				<div className="flex-col justify-start items-center gap-1 flex col-span-4">
+				<div className="flex-col justify-start items-center gap-1 flex col-span-6">
 					<div
 						className={`self-stretch text-center text-slate-700 text-2xl font-semibold ${fontSans.style} tracking-tight`}
 					>
@@ -72,7 +72,7 @@ export default function HistorySection() {
 					</div>
 				</div>
 
-				<div className="md:w-[250px] md:right-[100px] lg:w-[340px] h-[4px] bg-black flex flex-row-reverse items-center">
+				<div className=" sm:w-[100px] md:w-[200px] md:right-[100px] w-[340px] h-[4px] bg-black flex flex-row-reverse items-center justify-self-end">
 					<div className="w-6 h-6 bg-black rounded-full" />
 				</div>
 			</div>
@@ -97,8 +97,8 @@ export default function HistorySection() {
 								return (
 									<div
 										key={year}
-										className={`flex shrink-0 md:ml-[60px] lg:ml-[90px] items-center rounded-full duration-1000 ease-out select-none ${index === centerSlideIndex
-											? "md:w-[200px] md:h-[200px] lg:w-64 lg:h-64 bg-slate-700 "
+										className={`flex shrink-0 md:ml-[50px] lg:ml-[90px] items-center rounded-full duration-1000 ease-out select-none ${index === centerSlideIndex
+											? "md:w-[170px] md:h-[170px] lg:w-60 lg:h-60 bg-slate-700 "
 											: "lg:w-32 lg:h-32 bg-amber-200 md:w-[120px] md:h-[120px]"
 											} `}
 									>
