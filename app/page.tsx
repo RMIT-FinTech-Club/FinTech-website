@@ -10,6 +10,7 @@ import UpcomingEvent from "./components/upcomingEvent";
 // import IntroSection from "../components/intro";
 // import UpcomingEvent from "../components/upcomingEvent";
 import Events from "./events/page";
+import LoginPage from "./login/page";
 const Home = () => {
 	return (
 		<div className="flex min-h-screen flex-col justify-center gap-4">
@@ -20,6 +21,7 @@ const Home = () => {
 			<Department />
 			<Individual />
 			<UpcomingEvent />
+			<LoginPage />
 		</div>
 	);
 };
