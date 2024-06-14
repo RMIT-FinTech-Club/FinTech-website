@@ -3,7 +3,7 @@ import React from "react";
 
 const FollowUs = () => {
     return (
-        <div className="flex">
+        <div className="flex py-2">
             <div className="">
                 <h5 className="text-ft-text-bright">
                     Follow Us:

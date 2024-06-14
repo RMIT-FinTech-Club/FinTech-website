@@ -8,15 +8,15 @@ import PodcastMainFunction from '../components/podcastMainFunction';
 
 const Podcast = () => {
     return (
-        <div className="w-screen relative flex items-center justify-around">
+        <div className="w-screen flex flex-col items-center justify-around relative">
             <Image 
-                className='object-cover'
+                className='object-cover absolute'
                 src="/podcast-background.png"
                 alt="Podcast background image"
-                width={1920}
-                height={1080}
+                layout='fill'
+                objectFit='cover'
             />
-            <div className='absolute top-0 my-4 flex flex-col justify-between'>
+            <div className='flex flex-col z-10 h-screen justify-around'>
                 <HeaderPodcastPage text="Podcast"/>
                 <div className='flex'>
                     <div className='w-1/3 h-full flex justify-center py-4'>
