@@ -43,12 +43,13 @@ const Podcast = () => {
             </div>
             {/* Mobile view */}
             <div className='flex flex-col lg:hidden items-center justify-around z-10 my-4 h-screen'>
-                <div className='flex flex-col justify-center items-center '>
+                <div className='flex flex-col justify-center items-center'>
                     <Image
                         src={'/fintechtainment.png'}
                         alt='Fintechtainment logo'
                         width={256}
                         height={256}
+                        className='py-4'
                     />
                     <PodcastTitle />
                     <PodcastDescription />
