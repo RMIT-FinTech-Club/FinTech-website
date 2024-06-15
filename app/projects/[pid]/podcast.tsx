@@ -5,6 +5,7 @@ import Author from '../components/author';
 import PodcastDescription from '../components/podcastDescription';
 import FollowUs from '../components/follow-us';
 import PodcastMainFunction from '../components/podcastMainFunction';
+import PodcastTitle from '../components/podcastTitle';
 
 const Podcast = () => {
     return (
@@ -16,7 +17,8 @@ const Podcast = () => {
                 layout='fill'
                 objectFit='cover'
             />
-            <div className='flex flex-col z-10 h-screen justify-around'>
+            {/* Laptop view */}
+            <div className='hidden lg:flex lg:flex-col z-10 h-screen justify-around my-4'>
                 <HeaderPodcastPage text="Podcast"/>
                 <div className='flex'>
                     <div className='w-1/3 h-full flex justify-center py-4'>
@@ -38,6 +40,20 @@ const Podcast = () => {
                 <div>
                     <PodcastMainFunction />
                 </div>
+            </div>
+            {/* Mobile view */}
+            <div className='flex flex-col lg:hidden items-center justify-around z-10 my-4 h-screen'>
+                <div className='flex flex-col justify-center items-center '>
+                    <Image
+                        src={'/fintechtainment.png'}
+                        alt='Fintechtainment logo'
+                        width={256}
+                        height={256}
+                    />
+                    <PodcastTitle />
+                    <PodcastDescription />
+                </div>
+                <PodcastMainFunction />
             </div>
         </div>
     );

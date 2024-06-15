@@ -4,7 +4,7 @@ type HeaderPodcastPageProps = {
 
 const HeaderPodcastPage: React.FC<HeaderPodcastPageProps> = ({ text }) => {
 	return (
-		<section className="flex justify-center my-4 mx-16 items-center">
+		<section className="hidden lg:flex justify-center my-4 mx-16 items-center">
 			{/* Left arrow*/}
 			<div className="relative flex items-center invisible lg:visible">
 				<div className="bg-ft-primary-yellow-500 h-1 w-full lg:w-96" />

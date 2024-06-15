@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 const Author = () => {
     return (
-        <div className='my-2'>
+        <div className='hidden lg:flex lg:flex-col my-2 px-4'>
             <h4 className='text-ft-text-bright py-4'>Authors</h4>
             <div className='flex'>
                 <div className='mx-2 flex flex-col items-center mx-2'>
