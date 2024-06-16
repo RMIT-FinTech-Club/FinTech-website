@@ -6,11 +6,14 @@ import { color } from 'framer-motion';
 import { useState } from 'react';
 import SpeedSelector from './audioSpeedSelector';
 import PodcastTitle from './podcastTitle';
+import FollowUs from './follow-us';
 
 const PodcastMainFunction = () => {
 
     const [isPlaying, setIsPlaying] = useState(false);
     const [isVolumeOn, setIsVolumeOn] = useState(true);
+    const [showIcons, setShowIcons] = useState(false);
+    const [showFollowUs, setShowFollowUs] = useState(false);
 
     return (
         <div className='my-4'>
@@ -28,11 +31,19 @@ const PodcastMainFunction = () => {
                     />
                 </div>
                 <div className='flex justify-around items-center'>
-                    <IconInfoCircle 
-                        size={30}  
-                        color='#ebebeb'
-                        className='mx-2 cursor-pointer'
-                    />
+                    <div className='relative'>
+                        <IconInfoCircle
+                            size={30}
+                            color='#ebebeb'
+                            className='mx-2 cursor-pointer'
+                            onClick={() => setShowFollowUs(!showFollowUs)}
+                        />
+                        {showFollowUs && (
+                            <div className='absolute bg-ft-primary-yellow-500 my-2 rounded-xl'>
+                                <FollowUs />
+                            </div>
+                        )}
+                    </div>
                     <div className='flex justify-center items-center'>
                         <IconRewindBackward10
                             size={30}
@@ -60,11 +71,36 @@ const PodcastMainFunction = () => {
                             className='mx-2'
                         />
                     </div>
-                    <IconDotsVertical 
-                        size={30}
-                        color='#ebebeb'
-                        className='mx-2 cursor-pointer'
-                    />
+                    <div className='relative'>
+                        <IconDotsVertical
+                            size={30}
+                            color='#ebebeb'
+                            className='mx-2 cursor-pointer'
+                            onClick={() => setShowIcons(!showIcons)}
+                        />
+                        {showIcons && (
+                            <div className='absolute bg-ft-primary-yellow-500 rounded-xl my-2'>
+                                <ul className='rounded-xl'>
+                                    <li className='my-2'>
+                                        <IconDownload
+                                            size={30}
+                                            color='#ebebeb'
+                                            className='mx-2 cursor-pointer'
+                                            onClick={() => {setShowIcons(false)}}
+                                        />
+                                    </li>
+                                    <li className='my-2'>
+                                        <IconShare
+                                            size={30}
+                                            color='#ebebeb'
+                                            className='mx-2 cursor-pointer'
+                                            onClick={() => {setShowIcons(false)}}
+                                        />
+                                    </li>
+                                </ul>
+                            </div>
+                        )}
+                    </div>
                 </div>
             </div>
             {/* Laptop view */}

@@ -22,7 +22,7 @@ const SpeedSelector: React.FC<SpeedSelectorProps> = ({ onSpeedChange }) => {
 
     return (
         <div className="relative flex">
-            <div className="flex items-center">
+            <div className="flex items-center justify-center">
                 <p className="text-ft-text-bright font-bold bg-ft-primary-blue-500 pl-4 pr-8 rounded-full translate-x-1/4">
                     Speed
                 </p>
@@ -48,7 +48,7 @@ const SpeedSelector: React.FC<SpeedSelectorProps> = ({ onSpeedChange }) => {
                         {[0.5, 1, 1.5, 2].map((speed) => (
                             <li
                                 key={speed}
-                                className={`p-2 hover:bg-gray-100 hover:rounded-lg cursor-pointer ${
+                                className={`p-2 hover:bg-gray-100 rounded-xl cursor-pointer ${
                                     selectedSpeed === speed ? "bg-gray-200" : ""
                                 }`}
                                 onClick={() => {
