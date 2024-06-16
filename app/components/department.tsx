@@ -59,9 +59,9 @@ const Department = () => {
 		dots: false,
 		infinite: true,
 		speed: 500,
-		slidesToShow: 1,
-		slidesToScroll: 1,
-		
+		slidesToShow: 2,
+		slidesToScroll: 2,
+		arrows: false,
 	};
 
 	return (
@@ -85,24 +85,28 @@ const Department = () => {
 					<Button
 						onClick={() => setDepartment(departments.technology)}
 						variant="light"
+						className="text-white bg-transparent hover:bg-ft-primary-yellow-500 rounded-[10px] transition duration-300"
 					>
 						TECHNOLOGY
 					</Button>
 					<Button
 						onClick={() => setDepartment(departments.business)}
 						variant="light"
+						className="text-white bg-transparent hover:bg-ft-primary-yellow-500 rounded-[10px] transition duration-300"
 					>
 						BUSINESS
 					</Button>
 					<Button
 						onClick={() => setDepartment(departments.humanResources)}
 						variant="light"
+						className="text-white bg-transparent hover:bg-ft-primary-yellow-500 rounded-[10px] transition duration-300"
 					>
 						HUMAN RESOURCES
 					</Button>
 					<Button
 						onClick={() => setDepartment(departments.marketing)}
 						variant="light"
+						className="text-white bg-transparent hover:bg-ft-primary-yellow-500 rounded-[10px] transition duration-300"
 					>
 						MARKETING
 					</Button>
