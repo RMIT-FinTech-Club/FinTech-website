@@ -52,9 +52,7 @@ export default function RootLayout({
 				>
 					<div className="relative items-center flex flex-col h-screen">
 						{<Navbar />}
-						<main className="min-w-full flex-grow">
-							{children}
-						</main>
+						<main className="min-w-full flex-grow">{children}</main>
 						{<Footer />}
 					</div>
 				</Providers>

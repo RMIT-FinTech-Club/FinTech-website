@@ -67,8 +67,8 @@ export default function HistorySection() {
 					>
 						{" "}
 						Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-						Cras viverra viverra eros, eu euismod arcu dignissim quis.
-						Phasellus sollicitudin
+						Cras viverra viverra eros, eu euismod arcu dignissim
+						quis. Phasellus sollicitudin
 					</div>
 				</div>
 
@@ -83,12 +83,13 @@ export default function HistorySection() {
 					src="https://ik.imagekit.io/mbrrji2rk/Picture1.png?updatedAt=1713240956080"
 				/>
 				<div
-					className={`mt-[93px] mb-[77px] w-[500px] h-[300px] grid grid-cols-3 col-span-4 z-0 md: mx-auto ${centerSlideIndex === 0
-						? "pr-96"
-						: centerSlideIndex === 4
-							? "pl-96"
-							: "px-96"
-						}`}
+					className={`mt-[93px] mb-[77px] w-[500px] h-[300px] grid grid-cols-3 col-span-4 z-0 md: mx-auto ${
+						centerSlideIndex === 0
+							? "pr-96"
+							: centerSlideIndex === 4
+								? "pl-96"
+								: "px-96"
+					}`}
 					ref={emblaRef}
 				>
 					<div className="flex justify-between items-center">
@@ -97,16 +98,18 @@ export default function HistorySection() {
 								return (
 									<div
 										key={year}
-										className={`flex shrink-0 md:ml-[50px] lg:ml-[90px] items-center rounded-full duration-1000 ease-out select-none ${index === centerSlideIndex
-											? "md:w-[170px] md:h-[170px] lg:w-60 lg:h-60 bg-slate-700 "
-											: "lg:w-32 lg:h-32 bg-amber-200 md:w-[120px] md:h-[120px]"
-											} `}
+										className={`flex shrink-0 md:ml-[50px] lg:ml-[90px] items-center rounded-full duration-1000 ease-out select-none ${
+											index === centerSlideIndex
+												? "md:w-[170px] md:h-[170px] lg:w-60 lg:h-60 bg-slate-700 "
+												: "lg:w-32 lg:h-32 bg-amber-200 md:w-[120px] md:h-[120px]"
+										} `}
 									>
 										<div
-											className={`mx-auto font-semibold ${index === centerSlideIndex
-												? "text-orange-300 md:text-4xl lg:text-5xl "
-												: "text-slate-700 md:text-3xl lg:text-4xl"
-												} ${fontSans.style}`}
+											className={`mx-auto font-semibold ${
+												index === centerSlideIndex
+													? "text-orange-300 md:text-4xl lg:text-5xl "
+													: "text-slate-700 md:text-3xl lg:text-4xl"
+											} ${fontSans.style}`}
 										>
 											{year}
 										</div>

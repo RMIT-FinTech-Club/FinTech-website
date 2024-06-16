@@ -1,7 +1,7 @@
 import PodcastForm from "./podcast";
 
 const CMS = () => {
-  return <PodcastForm/>;
+	return <PodcastForm />;
 };
 
 export default CMS;
