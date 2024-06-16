@@ -1,6 +1,6 @@
 "use client";
 import { Image } from "@nextui-org/image";
-import { Checkbox } from "@nextui-org/react";
+import { Checkbox, Button } from "@nextui-org/react";
 import { Input } from "@nextui-org/react";
 import React, { useState } from "react";
 import { EyeFilledIcon } from "./components/EyeFilledIcon";
@@ -207,12 +207,13 @@ const LoginPage = () => {
 					>
 						<span className="text-black">Remember me</span>
 					</Checkbox>
-					<button
+					<Button
 						type="submit"
+						size="lg"
 						className=" bg-ft-primary-yellow-500 py-5 w-full rounded-lg text-white"
 					>
 						Login
-					</button>
+					</Button>
 				</form>
 			</div>
 		</div>
