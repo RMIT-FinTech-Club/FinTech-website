@@ -1,4 +1,4 @@
-import PodcastForm from "./podcast";
+import PodcastForm from "./researchForm";
 
 const CMS = () => {
 	return <PodcastForm />;
