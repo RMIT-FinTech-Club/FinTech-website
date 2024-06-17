@@ -1,8 +1,18 @@
 "use client";
 import { fontSans } from "@/config/fonts";
+import {
+	Button,
+	Modal,
+	ModalBody,
+	ModalContent,
+	ModalFooter,
+	ModalHeader,
+	Radio,
+	RadioGroup,
+	useDisclosure,
+} from "@nextui-org/react";
 import useEmblaCarousel from "embla-carousel-react";
 import { useEffect, useState } from "react";
-import { Modal, ModalContent, ModalHeader, ModalBody, ModalFooter, Button, useDisclosure, RadioGroup, Radio } from "@nextui-org/react";
 import "../../../styles/about-us/historyPage.css";
 
 export default function HistorySection() {
@@ -16,7 +26,7 @@ export default function HistorySection() {
 	const [emblaVerticalRef, emblaVerticalApi] = useEmblaCarousel({
 		loop: false,
 		dragFree: true,
-		axis: 'y',
+		axis: "y",
 	});
 	const [scrollBehavior, setScrollBehavior] = useState<string>("inside");
 
@@ -107,12 +117,13 @@ export default function HistorySection() {
 					src="https://ik.imagekit.io/mbrrji2rk/Picture1.png?updatedAt=1713240956080"
 				/>
 				<div
-					className={`mt-[93px] mb-[77px] md:w-[0px] w-auto md:h-[300px] h-[100px] grid grid-cols-3 col-span-4 z-0 md: mx-auto ${centerSlideIndex === 0
-						? "pr-96"
-						: centerSlideIndex === 4
-							? "pl-96"
-							: "px-96"
-						}`}
+					className={`mt-[93px] mb-[77px] md:w-[0px] w-auto md:h-[300px] h-[100px] grid grid-cols-3 col-span-4 z-0 md: mx-auto ${
+						centerSlideIndex === 0
+							? "pr-96"
+							: centerSlideIndex === 4
+								? "pl-96"
+								: "px-96"
+					}`}
 					ref={emblaHorizontalRef}
 				>
 					<div className="flex justify-between items-center">
@@ -121,16 +132,18 @@ export default function HistorySection() {
 								return (
 									<div
 										key={year}
-										className={`flex shrink-0 md:ml-[50px] lg:ml-[90px] items-center rounded-full duration-1000 ease-out select-none ${index === centerSlideIndex
-											? "md:w-[170px] md:h-[170px] lg:w-60 lg:h-60 bg-slate-700 w-36 h-36"
-											: "sm:inline-flex hidden lg:w-32 lg:h-32 bg-amber-200 md:w-[120px] md:h-[120px]"
-											} `}
+										className={`flex shrink-0 md:ml-[50px] lg:ml-[90px] items-center rounded-full duration-1000 ease-out select-none ${
+											index === centerSlideIndex
+												? "md:w-[170px] md:h-[170px] lg:w-60 lg:h-60 bg-slate-700 w-36 h-36"
+												: "sm:inline-flex hidden lg:w-32 lg:h-32 bg-amber-200 md:w-[120px] md:h-[120px]"
+										} `}
 									>
 										<div
-											className={`mx-auto font-semibold ${index === centerSlideIndex
-												? "text-orange-300 md:text-4xl lg:text-5xl text-3xl"
-												: "sm:inline-flex hidden text-slate-700 md:text-3xl lg:text-4xl"
-												} ${fontSans.style}`}
+											className={`mx-auto font-semibold ${
+												index === centerSlideIndex
+													? "text-orange-300 md:text-4xl lg:text-5xl text-3xl"
+													: "sm:inline-flex hidden text-slate-700 md:text-3xl lg:text-4xl"
+											} ${fontSans.style}`}
 										>
 											{year}
 										</div>
@@ -154,13 +167,9 @@ export default function HistorySection() {
 					className="w-[250px] md:hidden h-auto transform -scale-x-100 rotate-[-24.12deg]"
 					src="https://ik.imagekit.io/mbrrji2rk/3164276f-e306-432f-ab36-b9a275439de7.jpg?updatedAt=1713241506012"
 				/>
-				<div
-					className={`mt-[93px] mb-[77px] md:w-[0px] w-auto md:h-[300px] h-[100px] md:mx-auto`}
-				>
+				<div className="mt-[93px] mb-[77px] md:w-[0px] w-auto md:h-[300px] h-[100px] md:mx-auto">
 					<div className="flex w-auto justify-between items-center">
-						<div
-							className={`flex shrink-0 md:ml-[50px] lg:ml-[90px] items-center rounded-full duration-1000 ease-out select-none md:w-[170px] md:h-[170px] lg:w-60 lg:h-60 bg-slate-700 w-36 h-36`}
-						>
+						<div className="flex shrink-0 md:ml-[50px] lg:ml-[90px] items-center rounded-full duration-1000 ease-out select-none md:w-[170px] md:h-[170px] lg:w-60 lg:h-60 bg-slate-700 w-36 h-36">
 							<div
 								className={`mx-auto font-semibold text-orange-300 md:text-4xl lg:text-5xl text-3xl ${fontSans.style}`}
 							>
@@ -176,51 +185,67 @@ export default function HistorySection() {
 				/>
 			</div>
 
-			<div className="md:hidden mx-auto text-center font-semibold text-2xl text-[#5E5E92]" onClick={onOpen}>
+			<div
+				className="md:hidden mx-auto text-center font-semibold text-2xl text-[#5E5E92]"
+				onClick={onOpen}
+				onKeyUp={(e) => {
+					if (e.key === "Enter" || e.key === " ") {
+						onOpen();
+					}
+				}}
+			>
 				change
 			</div>
 
 			<div className="flex flex-col gap-2">
-				<Modal
-					isOpen={isOpen}
-					onOpenChange={onOpenChange}
-				>
+				<Modal isOpen={isOpen} onOpenChange={onOpenChange}>
 					<ModalContent>
-						{(onClose: any) => (
+						{() => (
 							<>
 								<ModalBody>
 									<div
-										className={`mt-[93px] mb-[77px] md:w-[0px] w-auto md:h-[300px] h-[100px] grid grid-rows-5 col-span-4 z-0 md:mx-auto ${centerSlideIndex === 0
-											? "pr-96"
-											: centerSlideIndex === 4
-												? "pl-96"
-												: "px-96"
-											}`}
+										className={`mt-[93px] mb-[77px] md:w-[0px] w-auto md:h-[300px] h-[100px] grid grid-rows-5 col-span-4 z-0 md:mx-auto ${
+											centerSlideIndex === 0
+												? "pr-96"
+												: centerSlideIndex === 4
+													? "pl-96"
+													: "px-96"
+										}`}
 										ref={emblaVerticalRef}
 									>
 										<div className="flex flex-col justify-between items-center gap-8">
-											{["2020", "2021", "2022", "2023", "2024"].map(
-												(year, index) => {
-													return (
-														<div
-															key={year}
-															className={`flex shrink-0 md:ml-[50px] lg:ml-[90px] items-center rounded-full duration-1000 ease-out select-none ${index === centerSlideIndex
+											{[
+												"2020",
+												"2021",
+												"2022",
+												"2023",
+												"2024",
+											].map((year, index) => {
+												return (
+													<div
+														key={year}
+														className={`flex shrink-0 md:ml-[50px] lg:ml-[90px] items-center rounded-full duration-1000 ease-out select-none ${
+															index ===
+															centerSlideIndex
 																? "md:w-[170px] md:h-[170px] lg:w-60 lg:h-60 bg-slate-700 w-36 h-36"
 																: "sm:inline-flex w-24 h-24 bg-amber-200"
-																} `}
-														>
-															<div
-																className={`mx-auto font-semibold ${index === centerSlideIndex
+														} `}
+													>
+														<div
+															className={`mx-auto font-semibold ${
+																index ===
+																centerSlideIndex
 																	? "text-orange-300 md:text-4xl lg:text-5xl text-3xl"
 																	: "sm:inline-flex text-slate-700 text-3xl lg:text-4xl"
-																	} ${fontSans.style}`}
-															>
-																{year}
-															</div>
+															} ${
+																fontSans.style
+															}`}
+														>
+															{year}
 														</div>
-													);
-												},
-											)}
+													</div>
+												);
+											})}
 										</div>
 									</div>
 								</ModalBody>
