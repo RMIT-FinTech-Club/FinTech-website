@@ -12,12 +12,12 @@ const LoginPage = () => {
 	const [password, setPassword] = useState("");
 	const toggleVisibility = () => setVisible(!visible);
 	return (
-		<div className="grid grid-cols-1 md:grid-cols-2 bg-white min-h-full max-w-full py-10 md:py-44">
-			<div className="col-span-0 md:col-span-1 mx-auto">
+		<div className="grid grid-cols-1 md:grid-cols-2 bg-white min-h-full max-w-full h-screen">
+			<div className="col-span-0 flex flex-col md:col-span-1 mx-auto">
 				<img
 					src="loginPage/Logo.svg"
 					loading="lazy"
-					className="text-center w-4/12 md:w-10/12 mx-auto"
+					className="text-center w-4/12 md:w-10/12 mx-auto my-auto"
 					alt="Club Logo"
 					aria-label="logo"
 				/>
