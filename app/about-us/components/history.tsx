@@ -27,8 +27,8 @@ export default function HistorySection() {
 		loop: false,
 		dragFree: true,
 		axis: "y",
+		align: "center",
 	});
-	const [scrollBehavior, setScrollBehavior] = useState<string>("inside");
 
 	const [centerSlideIndex, setCenterSlideIndex] = useState<number>(0);
 
@@ -117,13 +117,12 @@ export default function HistorySection() {
 					src="https://ik.imagekit.io/mbrrji2rk/Picture1.png?updatedAt=1713240956080"
 				/>
 				<div
-					className={`mt-[93px] mb-[77px] md:w-[0px] w-auto md:h-[300px] h-[100px] grid grid-cols-3 col-span-4 z-0 md: mx-auto ${
-						centerSlideIndex === 0
+					className={`mt-[93px] mb-[77px] md:w-[0px] w-auto md:h-[300px] h-[100px] grid grid-cols-3 col-span-4 z-0 md: mx-auto ${centerSlideIndex === 0
 							? "pr-96"
 							: centerSlideIndex === 4
 								? "pl-96"
 								: "px-96"
-					}`}
+						}`}
 					ref={emblaHorizontalRef}
 				>
 					<div className="flex justify-between items-center">
@@ -132,18 +131,16 @@ export default function HistorySection() {
 								return (
 									<div
 										key={year}
-										className={`flex shrink-0 md:ml-[50px] lg:ml-[90px] items-center rounded-full duration-1000 ease-out select-none ${
-											index === centerSlideIndex
+										className={`flex shrink-0 md:ml-[50px] lg:ml-[90px] items-center rounded-full duration-1000 ease-out select-none ${index === centerSlideIndex
 												? "md:w-[170px] md:h-[170px] lg:w-60 lg:h-60 bg-slate-700 w-36 h-36"
 												: "sm:inline-flex hidden lg:w-32 lg:h-32 bg-amber-200 md:w-[120px] md:h-[120px]"
-										} `}
+											} `}
 									>
 										<div
-											className={`mx-auto font-semibold ${
-												index === centerSlideIndex
+											className={`mx-auto font-semibold ${index === centerSlideIndex
 													? "text-orange-300 md:text-4xl lg:text-5xl text-3xl"
 													: "sm:inline-flex hidden text-slate-700 md:text-3xl lg:text-4xl"
-											} ${fontSans.style}`}
+												} ${fontSans.style}`}
 										>
 											{year}
 										</div>
@@ -161,7 +158,7 @@ export default function HistorySection() {
 			</div>
 
 			{/* mobile version */}
-			<div className="md:hidden items-center w-full grid grid-cols-3 overflow-x-hidden">
+			<div className="md:hidden items-center w-full grid grid-cols-3">
 				<img
 					alt=""
 					className="w-[250px] md:hidden h-auto transform -scale-x-100 rotate-[-24.12deg]"
@@ -169,7 +166,7 @@ export default function HistorySection() {
 				/>
 				<div className="mt-[93px] mb-[77px] md:w-[0px] w-auto md:h-[300px] h-[100px] md:mx-auto">
 					<div className="flex w-auto justify-between items-center">
-						<div className="flex shrink-0 md:ml-[50px] lg:ml-[90px] items-center rounded-full duration-1000 ease-out select-none md:w-[170px] md:h-[170px] lg:w-60 lg:h-60 bg-slate-700 w-36 h-36">
+						<div className="flex shrink-0 md:ml-[50px] lg:ml-[90px] items-center rounded-full duration-1000 ease-out select-none md:w-[170px] md:h-[170px] lg:w-60 lg:h-60 bg-slate-700 mx-auto w-32 h-32">
 							<div
 								className={`mx-auto font-semibold text-orange-300 md:text-4xl lg:text-5xl text-3xl ${fontSans.style}`}
 							>
@@ -197,63 +194,57 @@ export default function HistorySection() {
 				change
 			</div>
 
-			<div className="flex flex-col gap-2">
-				<Modal isOpen={isOpen} onOpenChange={onOpenChange}>
-					<ModalContent>
-						{() => (
-							<>
-								<ModalBody>
-									<div
-										className={`mt-[93px] mb-[77px] md:w-[0px] w-auto md:h-[300px] h-[100px] grid grid-rows-5 col-span-4 z-0 md:mx-auto ${
-											centerSlideIndex === 0
-												? "pr-96"
-												: centerSlideIndex === 4
-													? "pl-96"
-													: "px-96"
+			<Modal isOpen={isOpen} onOpenChange={onOpenChange}>
+				<ModalContent>
+					{() => (
+						<>
+							<ModalBody>
+								<div
+									className={`w-auto h-[850px] grid grid-rows-5 z-0 m-auto ${centerSlideIndex === 0
+											? ""
+											: centerSlideIndex === 4
+												? "pl-96"
+												: "px-96"
 										}`}
-										ref={emblaVerticalRef}
-									>
-										<div className="flex flex-col justify-between items-center gap-8">
-											{[
-												"2020",
-												"2021",
-												"2022",
-												"2023",
-												"2024",
-											].map((year, index) => {
-												return (
-													<div
-														key={year}
-														className={`flex shrink-0 md:ml-[50px] lg:ml-[90px] items-center rounded-full duration-1000 ease-out select-none ${
-															index ===
+									ref={emblaVerticalRef}
+								>
+									<div className="flex flex-col justify-between items-center gap-40 justify-self-center">
+										{[
+											"2020",
+											"2021",
+											"2022",
+											"2023",
+											"2024",
+										].map((year, index) => {
+											return (
+												<div
+													key={year}
+													className={`flex shrink-0 md:ml-[50px] lg:ml-[90px] items-center rounded-full duration-1000 ease-out select-none ${index ===
 															centerSlideIndex
-																? "md:w-[170px] md:h-[170px] lg:w-60 lg:h-60 bg-slate-700 w-36 h-36"
-																: "sm:inline-flex w-24 h-24 bg-amber-200"
+															? "md:w-[170px] md:h-[170px] lg:w-60 lg:h-60 bg-slate-700 w-52 h-52"
+															: "sm:inline-flex w-44 h-44 bg-amber-200"
 														} `}
-													>
-														<div
-															className={`mx-auto font-semibold ${
-																index ===
+												>
+													<div
+														className={`mx-auto font-semibold ${index ===
 																centerSlideIndex
-																	? "text-orange-300 md:text-4xl lg:text-5xl text-3xl"
-																	: "sm:inline-flex text-slate-700 text-3xl lg:text-4xl"
-															} ${
-																fontSans.style
+																? "text-orange-300 text-5xl"
+																: "sm:inline-flex text-slate-700 text-4xl"
+															} ${fontSans.style
 															}`}
-														>
-															{year}
-														</div>
+													>
+														{year}
 													</div>
-												);
-											})}
-										</div>
+												</div>
+											);
+										})}
 									</div>
-								</ModalBody>
-							</>
-						)}
-					</ModalContent>
-				</Modal>
-			</div>
+								</div>
+							</ModalBody>
+						</>
+					)}
+				</ModalContent>
+			</Modal>
 
 			<div className="grid grid-cols-3 justify-between items-center w-full my-8">
 				<img
