@@ -43,7 +43,7 @@ const EventCard: React.FC<{ event: Event }> = ({ event }) => {
       <div className="col-span-2 flex items-center justify-center bg-ft-primary-blue relative">
         <div className="absolute left-0 top-0 bottom-0 w-px" style={{ borderLeft: '1px dashed white', backgroundImage: 'linear-gradient(to bottom, white 50%, transparent 50%)', backgroundSize: '100% 12px' }} />
         <a
-          href={`/events/${event.id}`}
+          href={`/events/event-detail`}
           className="text-ft-primary-yellow rotate-90 text-lg font-bold z-10"
         >
           Explore More

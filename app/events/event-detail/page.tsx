@@ -1,7 +1,7 @@
 import Image from "next/image";
 import React from "react";
-import EventDetail from "./(components)/eventDetail";
-import EventLocation from "./(components)/eventLocation";
+import EventDetail from "./components/eventDetail";
+import EventLocation from "./components/eventLocation";
 
 const EventDateAndLocation = () => {
 	return (
