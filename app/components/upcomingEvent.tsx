@@ -23,11 +23,11 @@ const settings = {
 
 const UpcomingEvent = () => {
 	return (
-		<section className="flex flex-col gap-5 w-screen">
+		<section className="flex flex-col gap-5 w-screen  py-3 lg:py-12">
 			<h1 className="text-3xl font-bold mx-auto text-ft-primary-blue">
 				EVENTS
 			</h1>
-			<section className="w-full sm:w-4/5 mx-auto">
+			<section className="w-11/12 mx-auto">
 				<section className="flex flex-row justify-between items-center w-full mb-5 gap-4">
 					<hr className="w-1/3  border-b-2 border-solid border-ft-primary-yellow md:hidden" />
 					<div className="text-ft-primary-yellow text-2xl font-semibold">
