@@ -13,7 +13,7 @@ import Events from "./events/page";
 import LoginPage from "./login/page";
 const Home = () => {
 	return (
-		<div className="flex min-h-screen flex-col justify-center gap-4">
+		<div className="flex min-h-screen flex-col justify-center items-center">
 			<HerosectionVid />
 			<HeroSection />
 			<PastPartners />

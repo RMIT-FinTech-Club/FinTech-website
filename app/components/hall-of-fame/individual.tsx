@@ -5,7 +5,7 @@ const Invidivual = () => {
 	const imageUrl = "HallOfFame-Background.svg";
 	return (
 		<section
-			className=" relative bg-cover bg-center h-fit -mx-0 md:-mx-side-margin pb-10"
+			className=" relative bg-cover bg-center w-screen h-fit  pb-10 "
 			style={{ backgroundImage: `url(${imageUrl})` }}
 		>
 			<div className=" mascot absolute right-0 bottom-0 z-0 max-w-44 md:max-w-96">
@@ -69,8 +69,8 @@ const Invidivual = () => {
 					/>
 				</svg>
 			</header>
-			<main className=" flex flex-col gap-0 md:gap-8 mx-side-margin-mobile mt-0 md:mt-20 md:mx-side-margin md:flex-row">
-				<div className="items-center basis-1/3">
+			<main className=" flex flex-col gap-0 md:gap-8 mx-side-margin-mobile mt-0 md:mt-20 md:mx-side-margin lg:flex-row">
+				<div className="items-center min-w-60 basis-1/3">
 					<Image
 						isBlurred
 						src="President.jpg"
@@ -79,9 +79,9 @@ const Invidivual = () => {
 					/>
 				</div>
 				<div className="items-start mt-4 basis-3/3 md:basis-2/3 md:mt-0 md:pr-40">
-					<h2 className=" text-ft-primary-yellow-500 items-start mb-2">
+					<h3 className=" text-ft-primary-yellow-500 items-start mb-2">
 						Phuc Hoang
-					</h2>
+					</h3>
 					<h5 className=" text-ft-text-bright mbb-2">
 						MVP of My Heart
 					</h5>
