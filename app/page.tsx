@@ -13,14 +13,14 @@ import UpcomingEvent from "./components/upcomingEvent";
 import Events from "./events/page";
 const Home = () => {
 	return (
-		<div className="flex min-h-screen flex-col justify-center gap-4">
-			{/* <HerosectionVid />
+		<div className="flex min-h-screen flex-col justify-center items-center">
+			<HerosectionVid />
 			<HeroSection />
 			<PastPartners />
 			<IntroSection />
 			<Department />
 			<Individual />
-			<UpcomingEvent /> */}
+			<UpcomingEvent />
 			<AchievementsSection />
 		</div>
 	);

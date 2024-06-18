@@ -1,14 +1,9 @@
 "use client";
 import { fontSans } from "@/config/fonts";
 import {
-	Button,
 	Modal,
 	ModalBody,
 	ModalContent,
-	ModalFooter,
-	ModalHeader,
-	Radio,
-	RadioGroup,
 	useDisclosure,
 } from "@nextui-org/react";
 import useEmblaCarousel from "embla-carousel-react";
@@ -61,7 +56,7 @@ export default function HistorySection() {
 	return (
 		<>
 			<div className="mx-auto w-full md:px-[52px] bg-white bg-opacity-0 flex-col grid grid-cols-8 justify-center items-center gap-4">
-				<div className="md:inline-flex sm:hidden md:w-96 md:h-1 bg-black flex items-center">
+				<div className="md:inline-flex sm:hidden md:w-full md:h-1 bg-black flex items-center col-span-1">
 					<div className="md:inline-block sm:hidden md:w-6 md:h-6 bg-black rounded-full" />
 				</div>
 
@@ -104,13 +99,13 @@ export default function HistorySection() {
 					</div>
 				</div>
 
-				<div className="md:inline-flex sm:hidden md:w-96 md:h-1 bg-black flex flex-row-reverse items-center justify-self-end">
+				<div className="md:inline-flex sm:hidden md:w-full md:h-1 bg-black flex flex-row-reverse items-center justify-self-end col-span-1">
 					<div className="md:inline-block sm:hidden md:w-6 md:h-6 bg-black rounded-full" />
 				</div>
 			</div>
 
 			{/* desktop version */}
-			<div className="hidden items-center w-full mt-8 md:grid md:grid-cols-6 grid-cols-1">
+			<div className="hidden items-center w-full mt-8 md:grid md:grid-cols-6 grid-cols-1 overflow-hidden">
 				<img
 					alt="fintech mascot"
 					className="md:block hidden md:w-[300px] lg:w-[600px] rotate-[58.03deg] rounded-[59px] z-10"
@@ -118,10 +113,10 @@ export default function HistorySection() {
 				/>
 				<div
 					className={`mt-[93px] mb-[77px] md:w-[0px] w-auto md:h-[300px] h-[100px] grid grid-cols-3 col-span-4 z-0 md: mx-auto ${centerSlideIndex === 0
-							? "pr-96"
-							: centerSlideIndex === 4
-								? "pl-96"
-								: "px-96"
+						? "pr-96"
+						: centerSlideIndex === 4
+							? "pl-96"
+							: "px-96"
 						}`}
 					ref={emblaHorizontalRef}
 				>
@@ -132,14 +127,14 @@ export default function HistorySection() {
 									<div
 										key={year}
 										className={`flex shrink-0 md:ml-[50px] lg:ml-[90px] items-center rounded-full duration-1000 ease-out select-none ${index === centerSlideIndex
-												? "md:w-[170px] md:h-[170px] lg:w-60 lg:h-60 bg-slate-700 w-36 h-36"
-												: "sm:inline-flex hidden lg:w-32 lg:h-32 bg-amber-200 md:w-[120px] md:h-[120px]"
+											? "md:w-[170px] md:h-[170px] lg:w-60 lg:h-60 bg-slate-700 w-36 h-36"
+											: "sm:inline-flex hidden lg:w-32 lg:h-32 bg-amber-200 md:w-[120px] md:h-[120px]"
 											} `}
 									>
 										<div
-											className={`mx-auto font-semibold ${index === centerSlideIndex
-													? "text-orange-300 md:text-4xl lg:text-5xl text-3xl"
-													: "sm:inline-flex hidden text-slate-700 md:text-3xl lg:text-4xl"
+											className={`mx-auto font-extrabold ${index === centerSlideIndex
+												? "text-orange-300 md:text-4xl lg:text-5xl text-3xl"
+												: "sm:inline-flex hidden text-slate-700 md:text-3xl lg:text-4xl"
 												} ${fontSans.style}`}
 										>
 											{year}
@@ -201,10 +196,10 @@ export default function HistorySection() {
 							<ModalBody>
 								<div
 									className={`w-auto h-[850px] grid grid-rows-5 z-0 m-auto ${centerSlideIndex === 0
-											? ""
-											: centerSlideIndex === 4
-												? "pl-96"
-												: "px-96"
+										? ""
+										: centerSlideIndex === 4
+											? "pl-96"
+											: "px-96"
 										}`}
 									ref={emblaVerticalRef}
 								>
@@ -220,16 +215,16 @@ export default function HistorySection() {
 												<div
 													key={year}
 													className={`flex shrink-0 md:ml-[50px] lg:ml-[90px] items-center rounded-full duration-1000 ease-out select-none ${index ===
-															centerSlideIndex
-															? "md:w-[170px] md:h-[170px] lg:w-60 lg:h-60 bg-slate-700 w-52 h-52"
-															: "sm:inline-flex w-44 h-44 bg-amber-200"
+														centerSlideIndex
+														? "md:w-[170px] md:h-[170px] lg:w-60 lg:h-60 bg-slate-700 w-52 h-52"
+														: "sm:inline-flex w-44 h-44 bg-amber-200"
 														} `}
 												>
 													<div
 														className={`mx-auto font-semibold ${index ===
-																centerSlideIndex
-																? "text-orange-300 text-5xl"
-																: "sm:inline-flex text-slate-700 text-4xl"
+															centerSlideIndex
+															? "text-orange-300 text-5xl"
+															: "sm:inline-flex text-slate-700 text-4xl"
 															} ${fontSans.style
 															}`}
 													>

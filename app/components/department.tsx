@@ -54,7 +54,7 @@ const Department = () => {
 
 	return (
 		<section
-			className="relative flex flex-col w-full max-h-fit justify-center items-center md:flex-row px-side-margin-mobile md:px-side-margin"
+			className="relative flex flex-col-reverse w-full max-h-fit justify-center items-center lg:flex-row p-side-margin-mobile md:px-side-margin"
 			style={{
 				backgroundImage: department.background
 					? `url(${department.background
@@ -68,36 +68,26 @@ const Department = () => {
 			{/* Department background image */}
 
 			{/* Mobile buttons bar */}
-			<div className="flex md:hidden justify-center items-center w-full p-2">
+			<div className="flex lg:hidden justify-center items-center w-full p-2 ">
 				<Button
+					className="text-white"
 					onClick={() => setDepartment(departments.technology)}
 					variant="light"
 				>
 					TECHNOLOGY
 				</Button>
 				<Button
+					className="text-white"
 					onClick={() => setDepartment(departments.business)}
 					variant="light"
 				>
 					BUSINESS
 				</Button>
-				{/* <Button
-                        onClick={() => setDepartment(departments.humanResources)}
-                        variant="light"
-                    >
-                        HUMAN RESOURCES
-                    </Button>
-                    <Button
-                        onClick={() => setDepartment(departments.marketing)}
-                        variant="light"
-                    >
-                        MARKETING
-                    </Button> */}
 			</div>
 
 			{/* Department content */}
 			<div
-				className="flex flex-col md:items-start items-center p-8 bg-opacity-50 z-10 mt-24 md:mt-0"
+				className="flex flex-col lg:items-start items-center p-8 bg-opacity-50 z-10 mt-10 md:mt-0"
 				style={{ flex: 1 }}
 			>
 				{/* These elements will be pushed down on mobile due to the absolute positioning of the buttons bar */}
@@ -105,25 +95,28 @@ const Department = () => {
 					{department.name}
 				</h4>
 				<h4 className="text-ft-text-bright mt-4">BE ONE OF US!</h4>
-				<p className="ft-body-2 text-ft-text-bright max-w-md mt-6 text-center md:text-left">
+				<p className="ft-body-2 text-ft-text-bright max-w-lg mt-6 text-center md:text-left">
 					{department.description}
 				</p>
 
 				{/* Desktop buttons */}
-				<div className="hidden md:flex mt-6 gap-4">
+				<div className="hidden lg:flex mt-6 gap-4 ">
 					<Button
+						className="text-white"
 						onClick={() => setDepartment(departments.technology)}
 						variant="light"
 					>
 						TECHNOLOGY
 					</Button>
 					<Button
+						className="text-white"
 						onClick={() => setDepartment(departments.business)}
 						variant="light"
 					>
 						BUSINESS
 					</Button>
 					<Button
+						className="text-white"
 						onClick={() =>
 							setDepartment(departments.humanResources)
 						}
@@ -132,6 +125,7 @@ const Department = () => {
 						HUMAN RESOURCES
 					</Button>
 					<Button
+						className="text-white"
 						onClick={() => setDepartment(departments.marketing)}
 						variant="light"
 					>
@@ -141,9 +135,9 @@ const Department = () => {
 			</div>
 
 			{/* Department right image */}
-			<div className="relative w-full h-full md:h-5/6 md:w-2/5 flex justify-center items-center">
+			<div className="relative h-full w-96 lg:min-w-60 lg:max-w-96 lg:h-5/6 md:w-2/5 flex justify-center items-center">
 				<Image
-					className="object-cover md:h-full md:w-full"
+					className="object-cover lg:h-full md:w-full"
 					src={department.imageUrl
 						.replace("url('", "")
 						.replace("')", "")}

@@ -4,9 +4,9 @@ import type React from "react";
 
 const IntroSection = () => {
 	return (
-		<section className="flex gap-6">
+		<section className="flex flex-col md:flex-row items-center gap-6 w-11/12 py-3 lg:py-12">
 			{/* Left text */}
-			<div className="flex flex-col justify-center">
+			<div className="flex flex-col items-center  md:w-1/3 justify-center">
 				<h4 className="text-ft-primary-yellow">Vision and mission</h4>
 				<p>
 					Lorem ipsum dolor sit amet, consectetur adipiscing elit.
@@ -20,9 +20,11 @@ const IntroSection = () => {
 			</div>
 			{/* Image */}
 			{/* <MaskImage src='/ImageMask.svg' /> */}
-			<MaskImage src="/RiceSrc01.png" />
+			<div className="md:w-1/3" style={{ aspectRatio: "1/ 1.5" }}>
+				<MaskImage src="/RiceSrc01.png" />
+			</div>
 			{/* Right text */}
-			<div className="flex flex-col justify-center gap-4">
+			<div className="flex flex-col md:w-1/3 justify-center gap-4">
 				<div className="flex flex-col justify-center text-center gap-3">
 					<h4 className="text-ft-primary-yellow">100+</h4>
 					<h5 className="text-ft-primary-blue">Projects</h5>
@@ -75,7 +77,8 @@ const MaskImage: React.FC<MaskImageProps> = ({
 		maskSize: "cover",
 		maskPosition: "center",
 		maskRepeat: "no-repeat",
-		// height: "100%",
+		width: "100%",
+		height: "100%",
 	};
 
 	return (
