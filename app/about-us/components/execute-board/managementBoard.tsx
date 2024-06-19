@@ -6,6 +6,7 @@ import {
 	Image,
 } from "@nextui-org/react";
 import React from "react";
+import './styles.css';
 
 const ManagementBoard = () => {
 	const imageUrl = "HallOfFame-Background.svg";
@@ -19,17 +20,19 @@ const ManagementBoard = () => {
 						shadow="none"
 					>
 						<CardHeader className="py-2 px-5 flex flex-col justify-items-center">
-							<Image
-								alt="Card background"
-								className="object-cover rounded-full bg-white"
-								src="ExecuteBoard/VicePresident.svg"
-							/>
+							<div className="bg-white rounded-full relative overflow-visible">
+								<Image
+									alt="Card background"
+									className="object-cover rounded-full bg-transparent management-card-image"
+									src="ExecuteBoard/VicePresident.svg"
+								/>
+							</div>
 						</CardHeader>
 						<CardBody className="overflow-visible py-2 text-center">
-							<h6 className="font-bold text-large">
-								Hoang Nguyen Nhat Minh
+							<h6 className="font-bold text-large text-ft-primary-blue-500">
+								TRUONG MINH NGOC
 							</h6>
-							<h6 className=" text-tiny">Vice President</h6>
+							<h6 className="text-ft-primary-blue-500 text-tiny">Head of Business Department</h6>
 						</CardBody>
 					</Card>
 					<Card
@@ -38,17 +41,19 @@ const ManagementBoard = () => {
 						shadow="none"
 					>
 						<CardHeader className="py-2 px-5 flex-col items-center">
-							<Image
-								alt="Card background"
-								className="object-cover rounded-full bg-white"
-								src="ExecuteBoard/President.svg"
-							/>
+							<div className="bg-white rounded-full relative overflow-visible">
+								<Image
+									alt="Card background"
+									className="object-cover rounded-full bg-transparent management-card-image"
+									src="ExecuteBoard/President.svg"
+								/>
+							</div>
 						</CardHeader>
 						<CardBody className="overflow-visible py-2 text-center">
-							<h6 className="font-bold text-large">
-								Hoang Nguyen Nhat Minh
+							<h6 className="font-bold text-large text-ft-primary-blue-500">
+								NGUYEN BAO NGOC
 							</h6>
-							<h6 className=" text-tiny">Vice President</h6>
+							<h6 className="text-ft-primary-blue-500 text-tiny">Head of Human Resources Department</h6>
 						</CardBody>
 					</Card>
 					<Card
@@ -57,17 +62,19 @@ const ManagementBoard = () => {
 						shadow="none"
 					>
 						<CardHeader className="py-2 px-5 flex-col items-center">
-							<Image
-								alt="Card background"
-								className="object-cover rounded-full bg-white"
-								src="ExecuteBoard/CFO.svg"
-							/>
+							<div className="bg-white rounded-full relative overflow-visible">
+								<Image
+									alt="Card background"
+									className="object-cover rounded-full bg-transparent management-card-image"
+									src="ExecuteBoard/CFO.svg"
+								/>
+							</div>
 						</CardHeader>
 						<CardBody className="overflow-visible py-2 text-center">
-							<h6 className="font-bold text-large">
-								Hoang Nguyen Nhat Minh
+							<h6 className="font-bold text-large text-ft-primary-blue-500">
+								NGUYEN TRAN HOANG ANH
 							</h6>
-							<h6 className=" text-tiny">Vice President</h6>
+							<h6 className="text-ft-primary-blue-500 text-tiny">Head of Marketing Department</h6>
 						</CardBody>
 					</Card>
 					<Card
@@ -76,18 +83,20 @@ const ManagementBoard = () => {
 						shadow="none"
 					>
 						<CardHeader className="py-2 px-5 flex flex-col justify-items-center">
-							<Image
-								alt="Card background"
-								className="object-cover rounded-full bg-white"
-								src="ExecuteBoard/VicePresident.svg"
-								shadow="none"
-							/>
+							<div className="bg-white rounded-full relative overflow-visible">
+								<Image
+									alt="Card background"
+									className="object-cover rounded-full bg-transparent management-card-image"
+									src="ExecuteBoard/VicePresident.svg"
+									shadow="none"
+								/>
+							</div>
 						</CardHeader>
 						<CardBody className="overflow-visible py-2 text-center">
-							<h6 className="font-bold text-large">
-								Hoang Nguyen Nhat Minh
+							<h6 className="font-bold text-large text-ft-primary-blue-500">
+								HUYNH LE DIEM QUI
 							</h6>
-							<h6 className=" text-tiny">Vice President</h6>
+							<h6 className="text-ft-primary-blue-500 text-tiny">Head of Technology Department</h6>
 						</CardBody>
 					</Card>
 				</div>

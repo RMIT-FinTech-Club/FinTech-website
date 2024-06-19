@@ -23,6 +23,7 @@ const Home = () => {
 			{/* <Department /> */}
 			{/* <Individual /> */}
 			{/* <UpcomingEvent /> */}
+			<ExecuteBoard />
 			<ManagementBoard />
 		</div>
 	);
