@@ -6,11 +6,11 @@ import FinTechInTheEyes from "./components/inTheEyes";
 const AboutUs = () => {
 	return (
 		<div>
-			{/* <VisionMission /> */}
-			{/* <HistorySection /> */}
+			{/* <VisionMission />
+			<HistorySection />  */}
 			<FinTechInTheEyes/>
-			{/* <Members /> */}
-			{/* <CoreValue /> */}
+			{/* <Members />
+			<CoreValue /> */}
 		</div>
 	);
 };
