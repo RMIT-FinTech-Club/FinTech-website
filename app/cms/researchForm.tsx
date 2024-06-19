@@ -1,6 +1,5 @@
 "use client";
 import { fontSans } from "@/config/fonts";
-import { IconCloudUpload } from "@tabler/icons-react";
 import { type SubmitHandler, useForm } from "react-hook-form";
 
 interface FormInput {
@@ -12,9 +11,13 @@ interface FormInput {
 }
 
 export default function PodcastForm() {
-	const { register, handleSubmit } = useForm<FormInput>();
+	const {
+		register,
+		handleSubmit,
+		formState: { errors },
+	} = useForm<FormInput>();
 
-	const onSubmit: SubmitHandler<FormInput> = (data) => console.log(data);
+	const onSubmit: SubmitHandler<FormInput> = (data: FormInput) => console.log(data);
 
 	return (
 		<>
@@ -47,9 +50,14 @@ export default function PodcastForm() {
 							>
 								*
 							</div>
+							{errors.title && (
+								<div className={`ml-2 text-lg ${fontSans.style} text-rose-700`}>
+									{errors.title.message}
+								</div>
+							)}
 						</div>
 						<input
-							{...register("title")}
+							{...register("title", { required: "Title is required" })}
 							className="self-stretch h-10 p-2 rounded-lg border border-zinc-300 justify-start items-center gap-2.5 inline-flex"
 						/>
 					</div>
@@ -65,9 +73,14 @@ export default function PodcastForm() {
 							>
 								*
 							</div>
+							{errors.author && (
+								<div className={`ml-2 text-lg ${fontSans.style} text-rose-700`}>
+									{errors.author.message}
+								</div>
+							)}
 						</div>
 						<input
-							{...register("author")}
+							{...register("author", { required: "Author is required" })}
 							className="self-stretch h-10 p-2 rounded-lg border border-zinc-300 justify-start items-center gap-2.5 inline-flex"
 						/>
 					</div>
@@ -83,9 +96,14 @@ export default function PodcastForm() {
 							>
 								*
 							</div>
+							{errors.description && (
+								<div className={`ml-2 text-lg ${fontSans.style} text-rose-700`}>
+									{errors.description.message}
+								</div>
+							)}
 						</div>
 						<textarea
-							{...register("description")}
+							{...register("description", { required: "Description is required" })}
 							className="self-stretch p-2 rounded-lg border border-zinc-300 justify-start items-center gap-2.5 inline-flex"
 						/>
 					</div>
@@ -101,9 +119,14 @@ export default function PodcastForm() {
 							>
 								*
 							</div>
+							{errors.description && (
+								<div className={`ml-2 text-lg ${fontSans.style} text-rose-700`}>
+									{errors.description.message}
+								</div>
+							)}
 						</div>
 						<input
-							{...register("publisher")}
+							{...register("publisher", { required: "Publisher is required" })}
 							className="self-stretch h-10 p-2 rounded-lg border border-zinc-300 justify-start items-center gap-2.5 inline-flex"
 						/>
 					</div>
@@ -119,10 +142,22 @@ export default function PodcastForm() {
 							>
 								*
 							</div>
+							{errors.publicationDate && (
+								<div className={`ml-2 text-lg ${fontSans.style} text-rose-700`}>
+									{errors.publicationDate.message}
+								</div>
+							)}
 						</div>
 						<input
 							{...register("publicationDate", {
-								pattern: /^\d{2}-\d{2}-\d{4}$/,
+								required: "Publication date is required",
+								validate: (value: string) => {
+									const regex = /^\d{2}-\d{2}-\d{4}$/;
+									if (!regex.test(value)) {
+										return "Invalid date format";
+									}
+									return true
+								},
 							})}
 							className="self-stretch h-10 p-2 rounded-lg border border-zinc-300 justify-start items-center gap-2.5 inline-flex"
 							placeholder="DD-MM-YYYY"
@@ -180,13 +215,13 @@ export default function PodcastForm() {
 					</div>
 					<div className="flex items-end gap-2 justify-end border-t border-zinc-300 pt-6">
 						<button
-							className="w-1/3 h-10 rounded-lg text-gray-500 font-semibold text-lg tracking-wide border border-zinc-300 hover:bg-gray-100 active:bg-gray-200"
+							className="w-1/3 h-10 rounded-lg text-black font-semibold text-lg tracking-wide border border-zinc-300 hover:bg-gray-100 active:bg-gray-200"
 							type="reset"
 						>
 							Cancel
 						</button>
 						<button
-							className="w-1/3 h-10 rounded-lg bg-[#DCB968] hover:bg-[#DCB968]/80 active:bg-[#DCB968]/60 text-gray-500 font-semibold text-lg tracking-wide"
+							className="w-1/3 h-10 rounded-lg bg-[#DCB968] hover:bg-[#DCB968]/80 active:bg-[#DCB968]/60 text-black font-semibold text-lg tracking-wide"
 							type="submit"
 						>
 							Save
