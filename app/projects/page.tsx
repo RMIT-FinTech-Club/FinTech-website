@@ -1,5 +1,5 @@
-import React from 'react';
-import Podcast from './[pid]/podcast';
+import React from "react";
+import Podcast from "./[pid]/podcast";
 
 const Projects = () => {
 	return (
