@@ -1,18 +1,54 @@
 "use client";
 import { Image } from "@nextui-org/image";
-import { Checkbox, Button } from "@nextui-org/react";
+import { Button, Checkbox } from "@nextui-org/react";
 import { Input } from "@nextui-org/react";
-import React, { useState } from "react";
-import { EyeFilledIcon } from "./components/EyeFilledIcon";
-import { EyeSlashFilledIcon } from "./components/EyeSlashFilledIcon";
+import axios from "axios";
+import { useRouter } from "next/navigation";
+import type React from "react";
+import { useState } from "react";
+import toast from "react-hot-toast";
 
 const LoginPage = () => {
 	const [visible, setVisible] = useState(false);
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
 	const toggleVisibility = () => setVisible(!visible);
+	const router = useRouter();
+	const login = async (e: React.FormEvent<HTMLFormElement>) => {
+		e.preventDefault();
+		const configuration = {
+			method: "post",
+			url: "/api/v1/auth/login",
+			data: {
+				email,
+				password,
+			},
+		};
+		axios(configuration)
+			.then((result) => {
+				console.log(result);
+				toast.success(result.data.message, {
+					duration: 3000,
+					position: "bottom-center",
+				});
+			})
+			.catch((error) => {
+				console.log(error);
+				toast.error(error.response.data.error);
+			});
+		const user = {
+			email,
+			password,
+		};
+		// try {
+		//     const response = await axios.post("/api/v1/auth/login", user);
+		//     // router.push("/login");
+		// } catch (error:any) {
+		//     console.log("Signup failed", error.message);
+		// }
+	};
 	return (
-		<div className="grid grid-cols-1 md:grid-cols-2 bg-white min-h-full max-w-full h-screen">
+		<div className="grid grid-cols-1 md:grid-cols-2 bg-white min-h-full w-full h-screen">
 			<div className="col-span-0 flex flex-col md:col-span-1 mx-auto">
 				<img
 					src="loginPage/Logo.svg"
@@ -26,7 +62,10 @@ const LoginPage = () => {
 				<h2 className=" text-ft-primary-blue-500 mb-10 mt-7 md:mt-0">
 					Admin Login
 				</h2>
-				<form action="" className="flex flex-col mx-10 md:mx-20 gap-5">
+				<form
+					onSubmit={(e) => login(e)}
+					className="flex flex-col mx-10 md:mx-20 gap-5"
+				>
 					<Input
 						value={email}
 						onValueChange={setEmail}

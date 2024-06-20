@@ -1,5 +1,4 @@
 import mongoose from "mongoose";
-import { unique } from "next/dist/build/utils";
 
 const userSchema = new mongoose.Schema(
     {
@@ -17,9 +16,10 @@ const userSchema = new mongoose.Schema(
             required: [true, "Please provide your role"],
             default: "user"
         }
-    }
+    },
+    {timestamps: true}
 );
 
-const User = mongoose.model("users", userSchema);
+const User = mongoose.models.users || mongoose.model("users", userSchema);
 
 export default User;
