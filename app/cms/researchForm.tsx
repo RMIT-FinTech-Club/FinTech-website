@@ -49,6 +49,8 @@ export default function PodcastForm() {
 			// Handle success
 			console.log("Research paper created successfully!");
 			reset()
+			setFile(null)
+			setFileUrl(null)
 		},
 		onError: (error) => {
 			// Handle error
@@ -332,7 +334,7 @@ export default function PodcastForm() {
 							Cancel
 						</button>
 						<button
-							className="w-1/3 h-10 rounded-lg bg-[#DCB968] hover:bg-[#DCB968]/80 active:bg-[#DCB968]/60 text-black font-semibold text-lg tracking-wide"
+							className={`w-1/3 h-10 rounded-lg text-black font-semibold text-lg tracking-wide ${mutation.isPending ? "cursor-not-allowed bg-[#DCB968]/80 " : "cursor-pointer bg-[#DCB968] hover:bg-[#DCB968]/80 active:bg-[#DCB968]/60"}`}
 							type="submit"
 							disabled={mutation.isPending}
 						>
