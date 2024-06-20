@@ -6,6 +6,7 @@ import HerosectionVid from "./components/heroVideoSection";
 import IntroSection from "./components/intro";
 import PastPartners from "./components/pastPartners";
 import UpcomingEvent from "./components/upcomingEvent";
+import Events from "./events/page";
 
 const Home = () => {
 	return (
@@ -20,6 +21,7 @@ const Home = () => {
 			{/* <IntroSection /> */}
 			{/* <Department /> */}
 			<Individual />
+			<Events />
 			{/* <UpcomingEvent /> */}
 		</div>
 	);

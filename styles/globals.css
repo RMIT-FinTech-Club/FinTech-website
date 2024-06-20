@@ -28,8 +28,13 @@
 
 .card:hover > .card-content {
     bottom: 3%;
-  }
-  @media screen and (max-width: 768px) {
+}
+
+.date {
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
     .mascot {
       display: none;
     }
@@ -50,5 +55,11 @@
     }
     #HallOfFame-MasCot {
       max-width: 100;
+    }
+    .explore {
+      display: none;
+    }
+    .date {
+      display: block
     }
   }
