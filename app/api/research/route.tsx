@@ -14,7 +14,7 @@ export async function POST(req: Request) {
     const { title, author, publicationDate, description } = await req.json();
     connectMongoDB();
     const researchPaper = await ResearchPaper.create({ title, author, publicationDate, description });
-    return NextResponse.json({ message: "Research paper created successfully", researchPaper }, { status: 201 });
+    return NextResponse.json({ message: "Research paper created successfully", researchPaper }, { status: 200 });
 }
 
 export async function createResearchPaper({ title, author, publicationDate, description }: ResearchPaper) {

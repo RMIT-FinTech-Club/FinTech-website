@@ -12,6 +12,6 @@ const researchPaperSchema = new Schema(
     }
 );
 
-const ResearchPaper = mongoose.models.ResearchPaper || mongoose.model("ResearchPaper", researchPaperSchema);
+const ResearchPaper = mongoose.models?.ResearchPaper || mongoose.model("ResearchPaper", researchPaperSchema);
 
 export default ResearchPaper;
