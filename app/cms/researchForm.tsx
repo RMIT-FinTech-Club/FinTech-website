@@ -1,6 +1,10 @@
 "use client";
 import { fontSans } from "@/config/fonts";
+import { useMutation } from "@tanstack/react-query";
 import { type SubmitHandler, useForm } from "react-hook-form";
+import { createResearchPaper } from "../api/research/route";
+import { ChangeEventHandler, useState } from "react";
+import { getSignedURL } from "../api/research/actions";
 
 interface FormInput {
 	title: string;
@@ -8,16 +12,97 @@ interface FormInput {
 	description: string;
 	publisher: string;
 	publicationDate: string;
+	file: File
 }
 
 export default function PodcastForm() {
+	const [file, setFile] = useState<File | null>(null);
+	const [fileUrl, setFileUrl] = useState<string | null>(null)
+
 	const {
 		register,
 		handleSubmit,
-		formState: { errors },
-	} = useForm<FormInput>();
+		reset,
+		formState: { errors, isSubmitting },
+	} = useForm<FormInput>({
+		defaultValues: {
+			title: '',
+			author: '',
+			description: '',
+			publisher: '',
+			publicationDate: '',
+			file: undefined
+		}
+	});
 
-	const onSubmit: SubmitHandler<FormInput> = (data: FormInput) => console.log(data);
+	const computeSHA256 = async (file: File) => {
+		const buffer = await file.arrayBuffer()
+		const hashBuffer = await crypto.subtle.digest('SHA-256', buffer)
+		const hashArray = Array.from(new Uint8Array(hashBuffer))
+		const hashHex = hashArray.map(b => b.toString(16).padStart(2, '0')).join('')
+		return hashHex
+	}
+
+	const mutation = useMutation({
+		mutationFn: createResearchPaper,
+		onSuccess: () => {
+			// Handle success
+			console.log("Research paper created successfully!");
+			reset()
+		},
+		onError: (error) => {
+			// Handle error
+			console.error("Failed to create research paper:", error);
+		}
+	});
+
+	const onSubmit: SubmitHandler<FormInput> = async (data: FormInput) => {
+		if (!file) {
+			console.log("No file uploaded");
+			return
+		}
+
+		const signedURL = await getSignedURL(file.name, file.type, file.size, await computeSHA256(file))
+
+		if (signedURL.failure) {
+			console.log(signedURL.failure)
+			return
+		}
+
+		const url = signedURL.success ? signedURL.success.url : null;
+
+		if (!url) {
+			console.log("Failed to get signed URL");
+			return;
+		}
+
+		await fetch(url,
+			{
+				method: "PUT",
+				body: file,
+				headers: {
+					"Content-Type": file.type
+				}
+			}
+		)
+
+		mutation.mutate({ ...data, fileURL: url });
+	};
+
+	const handleFileChange: ChangeEventHandler<HTMLInputElement> = (e) => {
+		e.preventDefault()
+		const file: File | null = e.target.files?.[0] ?? null
+		setFile(file)
+
+		if (fileUrl) URL.revokeObjectURL(fileUrl)
+
+		if (file) {
+			const url = URL.createObjectURL(file)
+			setFileUrl(url)
+		} else {
+			setFileUrl(null)
+		}
+	};
 
 	return (
 		<>
@@ -119,9 +204,9 @@ export default function PodcastForm() {
 							>
 								*
 							</div>
-							{errors.description && (
+							{errors.publisher && (
 								<div className={`ml-2 text-lg ${fontSans.style} text-rose-700`}>
-									{errors.description.message}
+									{errors.publisher.message}
 								</div>
 							)}
 						</div>
@@ -164,10 +249,18 @@ export default function PodcastForm() {
 						/>
 					</div>
 					<div
-						className={`text-black text-4xl font-semibold ${fontSans.style}`}
 					>
-						Research Paper
-						<p className=" leading-relaxed">
+						<div className={`flex md:flex-row flex-col`}>
+							<p className={`text-black text-4xl font-semibold ${fontSans.style}`}>
+								Research Paper
+							</p>
+							{errors.file && (
+								<div className={`md:ml-2 text-lg ${fontSans.style} text-rose-700 md:self-end self-start`}>
+									* {errors.file.message}
+								</div>
+							)}
+						</div>
+						<p className={`text-black text-lg font-normal ${fontSans.style} leading-relaxed`}>
 							Upload a pdf file of your research paper here to be
 							downloaded by user when they visit this research
 							page
@@ -179,37 +272,55 @@ export default function PodcastForm() {
 							htmlFor="dropzone-file"
 							className="flex flex-col items-center justify-center w-full rounded-lg "
 						>
-							<div className="flex flex-col items-center justify-center pt-2 pb-6">
-								<svg
-									className="w-8 h-8 mb-4 text-gray-500 dark:text-gray-400"
-									aria-hidden="true"
-									xmlns="http://www.w3.org/2000/svg"
-									fill="none"
-									viewBox="0 0 20 16"
-								>
-									<path
-										stroke="currentColor"
-										strokeLinecap="round"
-										strokeLinejoin="round"
-										strokeWidth="2"
-										d="M13 13h3a3 3 0 0 0 0-6h-.025A5.56 5.56 0 0 0 16 6.5 5.5 5.5 0 0 0 5.207 5.021C5.137 5.017 5.071 5 5 5a4 4 0 0 0 0 8h2.167M10 15V6m0 0L8 8m2-2 2 2"
-									/>
-								</svg>
-								<p className="mb-2 text-sm text-gray-500 dark:text-gray-400">
-									<span className="font-semibold text-[#DCB968]">
-										Click
-									</span>{" "}
-									to browse your computer or drag pdf file to
-									this area{" "}
-								</p>
-								<p className="text-xs text-gray-500 dark:text-gray-400">
-									(Max. File size: 25MB)
-								</p>
+							{file && fileUrl && (
+								<img
+									className=" object-cover"
+									src={fileUrl}
+									alt={file.name}
+								/>
+							)}
+							<div
+								className="flex flex-col items-center justify-center pt-2 pb-6"
+								onChange={handleFileChange}
+							>
+								{!file && !fileUrl && (
+									<>
+										<svg
+											className="w-8 h-8 mb-4 text-gray-500 dark:text-gray-400"
+											aria-hidden="true"
+											xmlns="http://www.w3.org/2000/svg"
+											fill="none"
+											viewBox="0 0 20 16"
+										>
+											<path
+												stroke="currentColor"
+												strokeLinecap="round"
+												strokeLinejoin="round"
+												strokeWidth="2"
+												d="M13 13h3a3 3 0 0 0 0-6h-.025A5.56 5.56 0 0 0 16 6.5 5.5 5.5 0 0 0 5.207 5.021C5.137 5.017 5.071 5 5 5a4 4 0 0 0 0 8h2.167M10 15V6m0 0L8 8m2-2 2 2"
+											/>
+										</svg>
+										<p className="mb-2 text-sm text-gray-500 dark:text-gray-400">
+											<span className="font-semibold text-[#DCB968]">
+												Click
+											</span>{" "}
+											to browse your computer or drag pdf file to
+											this area{" "}
+										</p>
+										<p className="text-xs text-gray-500 dark:text-gray-400">
+											(Max. File size: 25MB)
+										</p>
+									</>
+								)}
 							</div>
+
+							{/* Preview file */}
 							<input
+								{...register("file", { required: "File is required" })}
 								id="dropzone-file"
 								type="file"
 								className="hidden"
+								onChange={handleFileChange}
 							/>
 						</label>
 					</div>
@@ -223,8 +334,9 @@ export default function PodcastForm() {
 						<button
 							className="w-1/3 h-10 rounded-lg bg-[#DCB968] hover:bg-[#DCB968]/80 active:bg-[#DCB968]/60 text-black font-semibold text-lg tracking-wide"
 							type="submit"
+							disabled={mutation.isPending}
 						>
-							Save
+							{mutation.isPending ? "Saving..." : "Save"}
 						</button>
 					</div>
 				</div>
