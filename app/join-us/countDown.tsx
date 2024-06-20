@@ -51,42 +51,40 @@ export default function CountDown() {
           alt="hero background"
           className="-z-0  object-cover absolute"
         /> */}
-      <div className="w-4/5 z-10 mt-16 absolute flex flex-col justify-center items-center">
+      <div className="w-full z-10 mt-16 absolute flex flex-col justify-center items-center">
         <h1
-          className={`mb-14 text-[#F9FAFB] text-6xl font-bold ${fontMono.style}`}
+          className={`mb-7 md:mb-14 text-[#F9FAFB] text-3xl md:text-6xl font-bold ${fontMono.style}`}
         >
           Count down to form closed
         </h1>
-        <div className="timer-container w-4/5">
-          <div className="timer w-full flex justify-between items-center text-center mb-14">
+        <div className="timer-container w-full md:w-4/5">
+          <div className="timer w-full flex flex-col md:flex-row  justify-between items-center text-center mb-7 md:mb-14">
             <section
-              className={`text-[#F9FAFB] text-6xl font-bold ${fontMono.style}`}
+              className={`text-[#F9FAFB] mb-12 md:mb-0 ${fontMono.style}`}
             >
-              <p className="text-8xl">{days}</p>
-              <p className="text-5xl">DAYS</p>
+              <p className="text-5xl md:text-8xl mb-5 font-black">{days}</p>
+              <p className="text-2xl md:text-5xl font-bold">DAYS</p>
             </section>
             <section
-              className={`text-[#F9FAFB] text-6xl font-bold ${fontMono.style}`}
+              className={`text-[#F9FAFB] mb-12 md:mb-0 font-bold ${fontMono.style}`}
             >
-              <p className="text-8xl">{hours}</p>
-              <p className="text-5xl">HOURS</p>
+              <p className="text-5xl md:text-8xl mb-5 font-black">{hours}</p>
+              <p className="text-2xl md:text-5xl font-bold">HOURS</p>
             </section>
             <section
-              className={`text-[#F9FAFB] text-6xl font-bold ${fontMono.style}`}
+              className={`text-[#F9FAFB] mb-12 md:mb-0 font-bold ${fontMono.style}`}
             >
-              <p className="text-8xl">{minutes}</p>
-              <p className="text-5xl">MINUTES</p>
+              <p className="text-5xl md:text-8xl mb-5 font-black">{minutes}</p>
+              <p className="text-2xl md:text-5xl font-bold">MINUTES</p>
             </section>
-            <section
-              className={`text-[#F9FAFB] text-6xl font-bold ${fontMono.style}`}
-            >
-              <p className="text-8xl">{seconds}</p>
-              <p className="text-5xl">SECONDS</p>
+            <section className={`text-[#F9FAFB] font-bold ${fontMono.style}`}>
+              <p className="text-5xl md:text-8xl mb-5 font-black">{seconds}</p>
+              <p className="text-2xl md:text-5xl font-bold">SECONDS</p>
             </section>
           </div>
         </div>
         <Button
-          className="text-5xl px-10 py-12 bg-[#0D1742] border border-4 border-white text-[#F9FAFB]"
+          className="text-2xl md:text-5xl px-5 md:px-10 py-6 md:py-12 bg-[#0D1742] border border-2 md:border-4 border-white text-[#F9FAFB]"
           size="lg"
         >
           Join us here
