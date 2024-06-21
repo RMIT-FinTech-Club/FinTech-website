@@ -54,7 +54,7 @@ const Department = () => {
 
 	return (
 		<section
-			className="relative flex flex-col-reverse w-full max-h-fit justify-center items-center lg:flex-row p-side-margin-mobile md:px-side-margin"
+			className="relative flex flex-col-reverse w-full max-h-fit justify-center items-center lg:flex-row"
 			style={{
 				backgroundImage: department.background
 					? `url(${department.background

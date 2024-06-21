@@ -1,15 +1,9 @@
 "use client";
 import { fontSans } from "@/config/fonts";
 import { useMutation } from "@tanstack/react-query";
-import { S3 } from "aws-sdk";
-import { useMotionValue } from "framer-motion";
-import {
-	type ChangeEventHandler,
-	type MouseEventHandler,
-	useEffect,
-	useState,
-} from "react";
+import { type ChangeEventHandler, useState } from "react";
 import { type SubmitHandler, useForm } from "react-hook-form";
+import { getSignedURL } from "../api/research/actions";
 import { createResearchPaper } from "../api/research/route";
 
 interface FormInput {
@@ -21,17 +15,9 @@ interface FormInput {
 	file: File;
 }
 
-const s3 = new S3({
-	accessKeyId: process.env.ACCESS_KEY,
-	secretAccessKey: process.env.SECRET_ACCESS_KEY,
-	region: process.env.BUCKET_REGION,
-});
-
 export default function PodcastForm() {
 	const [file, setFile] = useState<File | null>(null);
 	const [fileUrl, setFileUrl] = useState<string | null>(null);
-	const [upload, setUpload] = useState<S3.ManagedUpload | null>(null);
-	const progress = useMotionValue(0);
 
 	const {
 		register,
@@ -45,8 +31,19 @@ export default function PodcastForm() {
 			description: "",
 			publisher: "",
 			publicationDate: "",
+			file: undefined,
 		},
 	});
+
+	const computeSha256 = async (file: File) => {
+		const buffer = await file.arrayBuffer();
+		const hashBuffer = await crypto.subtle.digest("SHA-256", buffer);
+		const hashArray = Array.from(new Uint8Array(hashBuffer));
+		const hashHex = hashArray
+			.map((b) => b.toString(16).padStart(2, "0"))
+			.join("");
+		return hashHex;
+	};
 
 	const mutation = useMutation({
 		mutationFn: createResearchPaper,
@@ -54,6 +51,8 @@ export default function PodcastForm() {
 			// Handle success
 			console.log("Research paper created successfully!");
 			reset();
+			setFile(null);
+			setFileUrl(null);
 		},
 		onError: (error) => {
 			// Handle error
@@ -62,18 +61,40 @@ export default function PodcastForm() {
 	});
 
 	const onSubmit: SubmitHandler<FormInput> = async (data: FormInput) => {
-		handleUpload;
-		mutation.mutate(data);
+		if (!file) {
+			console.log("No file uploaded");
+			return;
+		}
+
+		const signedUrl = await getSignedURL(
+			file.name,
+			file.type,
+			file.size,
+			await computeSha256(file),
+		);
+
+		if (signedUrl.failure) {
+			console.log(signedUrl.failure);
+			return;
+		}
+
+		const url = signedUrl.success ? signedUrl.success.url : null;
+
+		if (!url) {
+			console.log("Failed to get signed URL");
+			return;
+		}
+
+		await fetch(url, {
+			method: "PUT",
+			body: file,
+			headers: {
+				"Content-Type": file.type,
+			},
+		});
+
+		mutation.mutate({ ...data, fileURL: url });
 	};
-
-	useEffect(() => {
-		return upload?.abort();
-	}, []);
-
-	useEffect(() => {
-		progress.set(0);
-		setUpload(null);
-	}, [file]);
 
 	const handleFileChange: ChangeEventHandler<HTMLInputElement> = (e) => {
 		e.preventDefault();
@@ -88,44 +109,6 @@ export default function PodcastForm() {
 		} else {
 			setFileUrl(null);
 		}
-	};
-
-	const handleUpload: MouseEventHandler<HTMLDivElement | HTMLButtonElement> =
-		async (e) => {
-			e.preventDefault();
-			if (!file) return;
-			const bucketName = process.env.BUCKET_NAME;
-			if (!bucketName) {
-				console.error("Bucket name is undefined.");
-				return;
-			}
-			const params = {
-				Bucket: bucketName,
-				Key: file.name,
-				Body: file,
-			};
-			console.log(params);
-
-			try {
-				const upload = s3.upload(params);
-				setUpload(upload);
-				upload.on("httpUploadProgress", (p) => {
-					console.log(p.loaded / p.total);
-					progress.set(p.loaded / p.total);
-				});
-				await upload.promise();
-				console.log(`File uploaded successfully: ${file.name}`);
-			} catch (err) {
-				console.error(err);
-			}
-		};
-
-	const handleCancel: MouseEventHandler<HTMLButtonElement> = (e) => {
-		e.preventDefault();
-		if (!upload) return;
-		upload.abort();
-		progress.set(0);
-		setUpload(null);
 	};
 
 	return (
@@ -255,11 +238,11 @@ export default function PodcastForm() {
 							>
 								*
 							</div>
-							{errors.description && (
+							{errors.publisher && (
 								<div
 									className={`ml-2 text-lg ${fontSans.style} text-rose-700`}
 								>
-									{errors.description.message}
+									{errors.publisher.message}
 								</div>
 							)}
 						</label>
@@ -310,11 +293,24 @@ export default function PodcastForm() {
 							placeholder="DD-MM-YYYY"
 						/>
 					</div>
-					<div
-						className={`text-black text-4xl font-semibold ${fontSans.style}`}
-					>
-						Research Paper
-						<p className=" leading-relaxed">
+					<div>
+						<div className={`flex md:flex-row flex-col`}>
+							<p
+								className={`text-black text-4xl font-semibold ${fontSans.style}`}
+							>
+								Research Paper
+							</p>
+							{errors.file && (
+								<div
+									className={`md:ml-2 text-lg ${fontSans.style} text-rose-700 md:self-end self-start`}
+								>
+									* {errors.file.message}
+								</div>
+							)}
+						</div>
+						<p
+							className={`text-black text-lg font-normal ${fontSans.style} leading-relaxed`}
+						>
 							Upload a pdf file of your research paper here to be
 							downloaded by user when they visit this research
 							page
@@ -369,8 +365,10 @@ export default function PodcastForm() {
 							</div>
 
 							{/* Preview file */}
-
 							<input
+								{...register("file", {
+									required: "File is required",
+								})}
 								id="dropzone-file"
 								type="file"
 								className="hidden"
@@ -386,41 +384,19 @@ export default function PodcastForm() {
 							Cancel
 						</button>
 						<button
-							className="w-1/3 h-10 rounded-lg bg-[#DCB968] hover:bg-[#DCB968]/80 active:bg-[#DCB968]/60 text-black font-semibold text-lg tracking-wide"
+							className={`w-1/3 h-10 rounded-lg text-black font-semibold text-lg tracking-wide ${
+								mutation.isPending
+									? "cursor-not-allowed bg-[#DCB968]/80 "
+									: "cursor-pointer bg-[#DCB968] hover:bg-[#DCB968]/80 active:bg-[#DCB968]/60"
+							}`}
 							type="submit"
-							disabled={isSubmitting}
+							disabled={mutation.isPending}
 						>
-							Save
+							{mutation.isPending ? "Saving..." : "Save"}
 						</button>
 					</div>
 				</div>
 			</form>
-
-			<div className="dark flex min-h-screen w-full items-center justify-center">
-				<main>
-					<form className="flex flex-col gap-4 rounded bg-stone-800 p-10 text-white shadow">
-						<input type="file" onChange={handleFileChange} />
-						<button
-							type="button"
-							className="rounded bg-green-500 p-2 shadow"
-							onClick={handleUpload}
-						>
-							Upload
-						</button>
-						{upload && (
-							<>
-								<button
-									type="button"
-									className="rounded bg-red-500 p-2 shadow"
-									onClick={handleCancel}
-								>
-									Cancel
-								</button>
-							</>
-						)}
-					</form>
-				</main>
-			</div>
 		</>
 	);
 }

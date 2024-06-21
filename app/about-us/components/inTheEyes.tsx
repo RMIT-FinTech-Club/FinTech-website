@@ -6,7 +6,7 @@ export default function FinTechInTheEyes() {
 		<div className="w-screen h-auto grid md:grid-cols-12 p-5 md:p-0">
 			<img
 				src="https://ik.imagekit.io/mbrrji2rk/Picture1.png?updatedAt=1718879714203"
-				alt="president profile picture"
+				alt="president profile"
 				className="hidden md:block md:col-span-5 mt-32"
 			/>
 			<div className="md:col-span-5 col-span-10 place-content-center md:content-start mt-32">
@@ -22,7 +22,7 @@ export default function FinTechInTheEyes() {
 				</h1>
 				<img
 					src="https://ik.imagekit.io/mbrrji2rk/Picture1.png?updatedAt=171887971420"
-					alt="president profile picture"
+					alt="president profile"
 					className="md:hidden block border-8 border-[#DBB968] rounded-3xl"
 				/>
 				<h2

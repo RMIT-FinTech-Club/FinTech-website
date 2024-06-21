@@ -9,7 +9,7 @@ import {
 import CountUp from "react-countup";
 const AchievementsSection = () => {
 	return (
-		<div className="bg-ft-primary-blue w-screen md:pb-[200px] h-screen">
+		<div className="bg-ft-primary-blue w-screen md:pb-[200px]">
 			<div className="flex flex-row items-top justify-between items-center md:pt-[43px] pt-[40px]">
 				<div className="w-[700px] md:w-[500px] md:h-[0px] border-2 border-orange-300 md:mt-[25px] mt-[10px]" />
 				<div
@@ -19,7 +19,7 @@ const AchievementsSection = () => {
 				</div>
 				<div className="w-[700px] md:w-[500px] md:h-[0px] border-2 border-orange-300 md:mt-[25px] mt-[10px]" />
 			</div>
-			<div className="md:flex md:flex-row sm:flex-col mx-atuo justify-around md:mt-[300px] items-center flex-wrap px-auto">
+			<div className="grid md:grid-cols-4 mx-atuo justify-around my-7 items-center px-auto gap-24">
 				<div className="bg-ft-primary-blue flex flex-col justify-evenly md:p-16">
 					<div className="mx-auto">
 						<IconUsers

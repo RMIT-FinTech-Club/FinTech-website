@@ -166,7 +166,7 @@ export default function HistorySection() {
 					<div className="flex w-auto justify-between items-center">
 						<div className="flex shrink-0 md:ml-[50px] lg:ml-[90px] items-center rounded-full duration-1000 ease-out select-none md:w-[170px] md:h-[170px] lg:w-60 lg:h-60 bg-slate-700 mx-auto w-32 h-32">
 							<div
-								className={`mx-auto font-semibold text-orange-300 md:text-4xl lg:text-5xl text-3xl ${fontSans.style}`}
+								className={`mx-auto font-extrabold text-orange-300 md:text-4xl lg:text-5xl text-3xl ${fontSans.style}`}
 							>
 								2022
 							</div>
