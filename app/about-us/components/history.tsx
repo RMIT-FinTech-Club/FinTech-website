@@ -2,7 +2,6 @@ import { fontSans } from "@/config/fonts";
 
 export default function HistorySection() {
 	return (
-		<>
 			<div className="mx-auto w-[806px] px-[52px] bg-white bg-opacity-0 flex-col justify-center items-center gap-4">
 				<div className="absolute w-[340px] top-[120px] left-[134px] h-[4px] bg-black flex items-center">
 					<div className="w-6 h-6 bg-black rounded-full" />
@@ -14,8 +13,8 @@ export default function HistorySection() {
 					<div
 						className={`self-stretch text-center text-slate-700 text-2xl font-semibold ${fontSans.style} tracking-tight`}
 					>
-						BACK TO TIME
 					</div>
+						BACK TO TIME
 					<div className="self-stretch text-center">
 						<span
 							className={`text-slate-700 text-5xl font-bold ${fontSans.style}`}
@@ -40,6 +39,7 @@ export default function HistorySection() {
 						</span>
 					</div>
 				</div>
+		<>
 				<div
 					className={`mx-auto mt-[16px] text-black text-lg ${fontSans.style} tracking-wide text-center`}
 				>
