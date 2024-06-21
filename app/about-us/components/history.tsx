@@ -109,7 +109,7 @@ export default function HistorySection() {
 				<img
 					alt="fintech mascot"
 					className="md:block hidden md:w-[300px] lg:w-[600px] rotate-[58.03deg] rounded-[59px] z-10"
-					src="https://ik.imagekit.io/mbrrji2rk/Picture1.png?updatedAt=1713240956080"
+					src="https://ik.imagekit.io/mbrrji2rk/fintechMascot.png?updatedAt=1718991881430"
 				/>
 				<div
 					className={`mt-[93px] mb-[77px] md:w-[0px] w-auto md:h-[300px] h-[100px] grid grid-cols-3 col-span-4 z-0 md: mx-auto ${
@@ -151,7 +151,7 @@ export default function HistorySection() {
 				<img
 					alt="fintech mascot"
 					className=" md:block hidden md:w-[400px] lg:w-[600px] rotate-[-58.03deg] rounded-[59px] z-10 "
-					src="https://ik.imagekit.io/mbrrji2rk/Picture1.png?updatedAt=1713240956080"
+					src="https://ik.imagekit.io/mbrrji2rk/fintechMascot.png?updatedAt=1718991881430"
 				/>
 			</div>
 

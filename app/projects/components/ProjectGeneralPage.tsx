@@ -7,25 +7,25 @@ import {
 export default function ProjectGeneralPage() {
 	return (
 		<>
-			<div className="flex md:py-10 items-center">
-				<div className="grow flex md:w-[250px] md:left-[100px] lg:w-[340px] h-[4px] bg-black flex items-center">
+			<div className="gird grid grid-cols-8 md:py-10 items-center px-20">
+				<div className="grow w-auto md:left-[100px] h-[4px] bg-black flex items-center col-span-2">
 					<div className="w-6 h-6 bg-black rounded-full" />
 				</div>
 				<div
-					className={`w-[515px] text-center text-orange-300 text-[56px] font-bold ${fontSans} mx-auto`}
+					className={`w-[515px] text-center text-orange-300 text-[56px] font-bold ${fontSans} mx-auto col-span-4`}
 				>
 					PROJECTS
 				</div>
-				<div className="grow flex md:w-[250px] md:right-[100px] lg:w-[340px] h-[4px] bg-black flex flex-row-reverse items-center">
+				<div className="grow w-auto md:right-[100px] h-[4px] bg-black flex flex-row-reverse items-center col-span-2">
 					<div className="w-6 h-6 bg-black rounded-full" />
 				</div>
 			</div>
-			<div className="md:mb-10 grid grid-cols-3 md:mt-10 md:mb-44">
+			<div className="grid grid-cols-3 md:mt-10 md:mb-44 px-11">
 				<div className="flex flex-col gap-4 items-center col-span-2">
 					<ProjectGeneralCard />
 					<ProjectGeneralCard />
 				</div>
-				<div className="flex flex-col gap-4 mx-auto">
+				<div className="flex flex-col gap-4 md:pl-16 justify-self-start">
 					<div className="flex justify-between items-center mb-4">
 						<input
 							type="text"
@@ -103,7 +103,7 @@ function ProjectGeneralCard() {
 								<span>Research</span>
 							</div>
 						</div>
-						<article className="text-wrapper w-[560px] mt-4 text-gray-700">
+						<article className="text-wrapper mt-4 text-gray-700">
 							<p className="leading-relaxed">
 								The FinTech Forum 2024 is set to be the most
 								dynamic student driven FinTech event, with a
@@ -116,9 +116,11 @@ function ProjectGeneralCard() {
 							</p>
 						</article>
 					</div>
-					<div className="mt-4 w-[175px] bg-orange-300 text-white py-2 px-4 rounded-[10px] self-end">
+					<button 
+						type="button"
+						className="mt-4 items-center bg-orange-300 hover:bg-orange-400 active:bg-orange-500 text-white py-2 px-4 rounded-full self-end">
 						More detail
-					</div>
+					</button>
 				</div>
 			</div>
 		</>
