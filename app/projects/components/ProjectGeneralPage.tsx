@@ -8,7 +8,7 @@ export default function ProjectGeneralPage() {
 	return (
 		<>
 			<div className="flex md:py-10 items-center">
-				<div className="grow flex md:w-[250px] md:left-[100px] lg:w-[340px] h-[4px] bg-black flex items-center">
+				<div className="grow flex md:w-[250px] md:left-[100px] lg:w-[340px] h-[4px] bg-black items-center">
 					<div className="w-6 h-6 bg-black rounded-full" />
 				</div>
 				<div
@@ -16,11 +16,11 @@ export default function ProjectGeneralPage() {
 				>
 					PROJECTS
 				</div>
-				<div className="grow flex md:w-[250px] md:right-[100px] lg:w-[340px] h-[4px] bg-black flex flex-row-reverse items-center">
+				<div className="grow md:w-[250px] md:right-[100px] lg:w-[340px] h-[4px] bg-black flex flex-row-reverse items-center">
 					<div className="w-6 h-6 bg-black rounded-full" />
 				</div>
 			</div>
-			<div className="md:mb-10 grid grid-cols-3 md:mt-10 md:mb-44">
+			<div className="grid grid-cols-3 md:mt-10 md:mb-44">
 				<div className="flex flex-col gap-4 items-center col-span-2">
 					<ProjectGeneralCard />
 					<ProjectGeneralCard />

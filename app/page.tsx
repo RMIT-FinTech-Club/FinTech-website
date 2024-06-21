@@ -11,6 +11,7 @@ import UpcomingEvent from "./components/upcomingEvent";
 // import IntroSection from "../components/intro";
 // import UpcomingEvent from "../components/upcomingEvent";
 import Events from "./events/page";
+import ProjectDetail from "./projects/[pid]/page";
 const Home = () => {
 	return (
 		<div className="flex min-h-screen flex-col justify-center items-center">
@@ -21,6 +22,7 @@ const Home = () => {
 			<Department />
 			<Individual />
 			<UpcomingEvent />
+			<ProjectDetail />
 			<AchievementsSection />
 		</div>
 	);
