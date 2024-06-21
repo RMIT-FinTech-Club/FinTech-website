@@ -1,13 +1,14 @@
 import CoreValue from "./components/coreValue";
 import HistorySection from "./components/history";
+import FinTechInTheEyes from "./components/inTheEyes";
 import Members from "./components/members";
 import VisionMission from "./components/vision-mission/missionVision";
-
 const AboutUs = () => {
 	return (
 		<div>
-			<VisionMission />
 			<HistorySection />
+			<VisionMission />
+			<FinTechInTheEyes />
 			<Members />
 			<CoreValue />
 		</div>

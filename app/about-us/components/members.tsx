@@ -244,7 +244,7 @@ const Members: React.FC = () => {
 	}, []);
 
 	return (
-		<div className="flex flex-col gap-8 relative items-center justify-center xl:w-full overflow-x-hidden xl:overflow-x-visible overflow-y-hidden xl:overflow-y-visible">
+		<div className="flex flex-col gap-8 relative items-center justify-center overflow-x-hidden xl:overflow-x-visible overflow-y-hidden xl:overflow-y-visible">
 			<HeaderTitlePage text="members" />
 			<div className="flex justify-center">
 				<MemberFilter
@@ -256,7 +256,7 @@ const Members: React.FC = () => {
 				<MemberList members={filteredMember} itemsPerPage={10} />
 			</div>
 			{/* Left Eclipses Decoration  */}
-			<div className="absolute -left-unit-52 top-unit-52 scale-50 invisible xl:visible">
+			<div className="absolute left-0 md:scale-100 scale-50 invisible xl:visible">
 				<Image
 					loading="lazy"
 					src="/multiple-bubbles-left-side.svg"
@@ -264,7 +264,7 @@ const Members: React.FC = () => {
 				/>
 			</div>
 			{/* Right FinTech Bear Decoration */}
-			<div className="absolute -right-unit-56 top-unit-28 scale-50 invisible xl:visible">
+			<div className="absolute right-20 bottom-4 md:scale-75 scale-50 invisible xl:visible">
 				<Image
 					loading="lazy"
 					src="/bear-right-side.svg"
@@ -272,7 +272,7 @@ const Members: React.FC = () => {
 				/>
 			</div>
 			{/* Below Eclipses Decoration  */}
-			<div className="absolute -bottom-unit-18 -right-unit-16 scale-50 invisible xl:visible">
+			<div className="absolute -bottom-14 right-56 scale-100 invisible xl:visible">
 				<Image
 					loading="lazy"
 					src="/multiple-bubbles-bottom-side.svg"
@@ -280,7 +280,7 @@ const Members: React.FC = () => {
 				/>
 			</div>
 			{/* Below FinTech Bear Decoration  */}
-			<div className="absolute -bottom-unit-14 -left-unit-28 scale-50 invisible xl:visible">
+			<div className="absolute left-20 -bottom-14 md:scale-75 scale-50 invisible xl:visible">
 				<Image
 					loading="lazy"
 					src="/bear-bottom-side.svg"
