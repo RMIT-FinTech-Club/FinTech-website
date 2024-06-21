@@ -1,5 +1,9 @@
+import BondingActivities from './components/bondingActivities';
+
 const JoinUs = () => {
-	return <div>JoinUs</div>;
+	return (
+		<BondingActivities />
+	);
 };
 
 export default JoinUs;
