@@ -1,4 +1,4 @@
-"use client";
+'use client'
 import { fontSans } from "@/config/fonts";
 import { useMutation } from "@tanstack/react-query";
 import { type SubmitHandler, useForm } from "react-hook-form";
@@ -142,7 +142,7 @@ export default function PodcastForm() {
 						Research details
 					</div>
 					<div className="flex-col justify-center items-start gap-2 inline-flex">
-						<div className="px-1.5 justify-start items-center inline-flex">
+						<label htmlFor="title" className="px-1.5 justify-start items-center inline-flex">
 							<div
 								className={`text-center text-black text-lg font-normal ${fontSans.style} tracking-wide`}
 							>
@@ -158,14 +158,15 @@ export default function PodcastForm() {
 									{errors.title.message}
 								</div>
 							)}
-						</div>
+						</label>
 						<input
+							id="title"
 							{...register("title", { required: "Title is required" })}
 							className="self-stretch h-10 p-2 rounded-lg border border-zinc-300 justify-start items-center gap-2.5 inline-flex"
 						/>
 					</div>
 					<div className="flex-col justify-center items-start gap-2 inline-flex">
-						<div className="px-1.5 justify-start items-center inline-flex">
+						<label htmlFor="author" className="px-1.5 justify-start items-center inline-flex">
 							<div
 								className={`text-center text-black text-lg font-normal ${fontSans.style} tracking-wide`}
 							>
@@ -181,14 +182,15 @@ export default function PodcastForm() {
 									{errors.author.message}
 								</div>
 							)}
-						</div>
+						</label>
 						<input
+							id="author"
 							{...register("author", { required: "Author is required" })}
 							className="self-stretch h-10 p-2 rounded-lg border border-zinc-300 justify-start items-center gap-2.5 inline-flex"
 						/>
 					</div>
 					<div className="flex-col justify-center items-start gap-2 inline-flex">
-						<div className="px-1.5 justify-start items-center inline-flex">
+						<label htmlFor="description" className="px-1.5 justify-start items-center inline-flex">
 							<div
 								className={`text-center text-black text-lg font-normal ${fontSans.style} tracking-wide`}
 							>
@@ -204,14 +206,15 @@ export default function PodcastForm() {
 									{errors.description.message}
 								</div>
 							)}
-						</div>
+						</label>
 						<textarea
+							id="description"
 							{...register("description", { required: "Description is required" })}
 							className="self-stretch p-2 rounded-lg border border-zinc-300 justify-start items-center gap-2.5 inline-flex"
 						/>
 					</div>
 					<div className="flex-col justify-center items-start gap-2 inline-flex">
-						<div className="px-1.5 justify-start items-center inline-flex">
+						<label htmlFor="publisher" className="px-1.5 justify-start items-center inline-flex">
 							<div
 								className={`text-center text-black text-lg font-normal ${fontSans.style} tracking-wide`}
 							>
@@ -227,14 +230,15 @@ export default function PodcastForm() {
 									{errors.description.message}
 								</div>
 							)}
-						</div>
+						</label>
 						<input
+							id="publisher"
 							{...register("publisher", { required: "Publisher is required" })}
 							className="self-stretch h-10 p-2 rounded-lg border border-zinc-300 justify-start items-center gap-2.5 inline-flex"
 						/>
 					</div>
 					<div className="flex-col justify-center items-start gap-2 inline-flex">
-						<div className="px-1.5 justify-start items-center inline-flex">
+						<label htmlFor="publicationDate" className="px-1.5 justify-start items-center inline-flex">
 							<div
 								className={`text-center text-black text-lg font-normal ${fontSans.style} tracking-wide`}
 							>
@@ -250,8 +254,9 @@ export default function PodcastForm() {
 									{errors.publicationDate.message}
 								</div>
 							)}
-						</div>
+						</label>
 						<input
+							id="publicationDate"
 							{...register("publicationDate", {
 								required: "Publication date is required",
 								validate: (value: string) => {
@@ -357,6 +362,7 @@ export default function PodcastForm() {
 					<form className="flex flex-col gap-4 rounded bg-stone-800 p-10 text-white shadow">
 						<input type="file" onChange={handleFileChange} />
 						<button
+							type="button"
 							className="rounded bg-green-500 p-2 shadow"
 							onClick={handleUpload}>
 							Upload
@@ -364,6 +370,7 @@ export default function PodcastForm() {
 						{upload && (
 							<>
 								<button
+									type="button"
 									className="rounded bg-red-500 p-2 shadow"
 									onClick={handleCancel}>
 									Cancel

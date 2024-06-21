@@ -1,0 +1,11 @@
+.countDown-container {
+    background: url("https://ik.imagekit.io/wsdkzaaovq/Hero%20Section.svg?updatedAt=1718877523809") center bottom no-repeat;
+    background-size: 100%;
+}
+
+@media screen and (max-width: 768px) {
+    .countDown-container {
+            background: url("https://ik.imagekit.io/wsdkzaaovq/Hero%20Section.svg?updatedAt=1718877523809") left top no-repeat;
+            background-size:  500%;
+        }
+}

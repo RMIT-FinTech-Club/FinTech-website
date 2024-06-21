@@ -21,7 +21,7 @@ const ContentContainer: React.FC<ContentContainerProps> = ({
 	return (
 		<div
 			className={clsx(
-				"relative w-screen text-center pt-12 pb-44 px-44 md:w-1/2",
+				"relative w-screen text-center pt-12 md:pb-44 pb-32 px-8 md:w-1/2",
 				rounded,
 				bgColor,
 			)}

@@ -23,7 +23,7 @@ const VisionMission = () => {
 				headingColor={"text-ft-primary-blue"}
 				textColor={"text-black"}
 				bgColor={"bg-ft-primary-yellow"}
-				rounded={"rounded-br-[50px]"}
+				rounded={"md:rounded-br-[50px]"}
 			/>
 			<ContentContainer
 				title={mainContent.mission.title}
@@ -31,7 +31,7 @@ const VisionMission = () => {
 				headingColor={"text-ft-primary-yellow"}
 				textColor={"text-white"}
 				bgColor={"bg-ft-primary-blue"}
-				rounded={"rounded-bl-[50px]"}
+				rounded={"md:rounded-bl-[50px]"}
 			/>
 			<PuzzleContainer />
 		</div>

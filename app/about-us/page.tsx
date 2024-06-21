@@ -11,10 +11,6 @@ const AboutUs = () => {
 			<FinTechInTheEyes />
 			<Members />
 			<CoreValue />
-			{/* <VisionMission /> */}
-			{/* <HistorySection /> */}
-			{/* <Members /> */}
-			{/* <CoreValue /> */}
 		</div>
 	);
 };
