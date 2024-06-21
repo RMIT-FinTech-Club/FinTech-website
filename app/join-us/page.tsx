@@ -1,10 +1,10 @@
 import CountDown from "./countDown";
 const JoinUs = () => {
-  return (
-    <div>
-      <CountDown />
-    </div>
-  );
+	return (
+		<div>
+			<CountDown />
+		</div>
+	);
 };
 
 export default JoinUs;

@@ -1,11 +1,16 @@
-'use client'
+"use client";
 import { fontSans } from "@/config/fonts";
 import { useMutation } from "@tanstack/react-query";
+import { S3 } from "aws-sdk";
+import { useMotionValue } from "framer-motion";
+import {
+	type ChangeEventHandler,
+	type MouseEventHandler,
+	useEffect,
+	useState,
+} from "react";
 import { type SubmitHandler, useForm } from "react-hook-form";
 import { createResearchPaper } from "../api/research/route";
-import { S3 } from "aws-sdk";
-import { ChangeEventHandler, MouseEventHandler, useEffect, useState } from "react";
-import { useMotionValue } from "framer-motion";
 
 interface FormInput {
 	title: string;
@@ -13,7 +18,7 @@ interface FormInput {
 	description: string;
 	publisher: string;
 	publicationDate: string;
-	file: File
+	file: File;
 }
 
 const s3 = new S3({
@@ -24,7 +29,7 @@ const s3 = new S3({
 
 export default function PodcastForm() {
 	const [file, setFile] = useState<File | null>(null);
-	const [fileUrl, setFileUrl] = useState<string | null>(null)
+	const [fileUrl, setFileUrl] = useState<string | null>(null);
 	const [upload, setUpload] = useState<S3.ManagedUpload | null>(null);
 	const progress = useMotionValue(0);
 
@@ -35,12 +40,12 @@ export default function PodcastForm() {
 		formState: { errors, isSubmitting },
 	} = useForm<FormInput>({
 		defaultValues: {
-			title: '',
-			author: '',
-			description: '',
-			publisher: '',
-			publicationDate: '',
-		}
+			title: "",
+			author: "",
+			description: "",
+			publisher: "",
+			publicationDate: "",
+		},
 	});
 
 	const mutation = useMutation({
@@ -48,16 +53,16 @@ export default function PodcastForm() {
 		onSuccess: () => {
 			// Handle success
 			console.log("Research paper created successfully!");
-			reset()
+			reset();
 		},
 		onError: (error) => {
 			// Handle error
 			console.error("Failed to create research paper:", error);
-		}
+		},
 	});
 
 	const onSubmit: SubmitHandler<FormInput> = async (data: FormInput) => {
-		handleUpload
+		handleUpload;
 		mutation.mutate(data);
 	};
 
@@ -72,47 +77,48 @@ export default function PodcastForm() {
 
 	const handleFileChange: ChangeEventHandler<HTMLInputElement> = (e) => {
 		e.preventDefault();
-		const file: File | null = e.target.files?.[0] ?? null
+		const file: File | null = e.target.files?.[0] ?? null;
 		setFile(file);
 
-		if (fileUrl) URL.revokeObjectURL(fileUrl)
+		if (fileUrl) URL.revokeObjectURL(fileUrl);
 
 		if (file) {
-			const url = URL.createObjectURL(file)
-			setFileUrl(url)
+			const url = URL.createObjectURL(file);
+			setFileUrl(url);
 		} else {
-			setFileUrl(null)
+			setFileUrl(null);
 		}
 	};
 
-	const handleUpload: MouseEventHandler<HTMLDivElement | HTMLButtonElement> = async (e) => {
-		e.preventDefault();
-		if (!file) return;
-		const bucketName = process.env.BUCKET_NAME;
-		if (!bucketName) {
-			console.error("Bucket name is undefined.");
-			return;
-		}
-		const params = {
-			Bucket: bucketName,
-			Key: file.name,
-			Body: file,
+	const handleUpload: MouseEventHandler<HTMLDivElement | HTMLButtonElement> =
+		async (e) => {
+			e.preventDefault();
+			if (!file) return;
+			const bucketName = process.env.BUCKET_NAME;
+			if (!bucketName) {
+				console.error("Bucket name is undefined.");
+				return;
+			}
+			const params = {
+				Bucket: bucketName,
+				Key: file.name,
+				Body: file,
+			};
+			console.log(params);
+
+			try {
+				const upload = s3.upload(params);
+				setUpload(upload);
+				upload.on("httpUploadProgress", (p) => {
+					console.log(p.loaded / p.total);
+					progress.set(p.loaded / p.total);
+				});
+				await upload.promise();
+				console.log(`File uploaded successfully: ${file.name}`);
+			} catch (err) {
+				console.error(err);
+			}
 		};
-		console.log(params);
-
-		try {
-			const upload = s3.upload(params);
-			setUpload(upload);
-			upload.on('httpUploadProgress', (p) => {
-				console.log(p.loaded / p.total);
-				progress.set(p.loaded / p.total);
-			});
-			await upload.promise();
-			console.log(`File uploaded successfully: ${file.name}`);
-		} catch (err) {
-			console.error(err);
-		}
-	};
 
 	const handleCancel: MouseEventHandler<HTMLButtonElement> = (e) => {
 		e.preventDefault();
@@ -120,7 +126,7 @@ export default function PodcastForm() {
 		upload.abort();
 		progress.set(0);
 		setUpload(null);
-	}
+	};
 
 	return (
 		<>
@@ -142,7 +148,10 @@ export default function PodcastForm() {
 						Research details
 					</div>
 					<div className="flex-col justify-center items-start gap-2 inline-flex">
-						<label htmlFor="title" className="px-1.5 justify-start items-center inline-flex">
+						<label
+							htmlFor="title"
+							className="px-1.5 justify-start items-center inline-flex"
+						>
 							<div
 								className={`text-center text-black text-lg font-normal ${fontSans.style} tracking-wide`}
 							>
@@ -154,19 +163,26 @@ export default function PodcastForm() {
 								*
 							</div>
 							{errors.title && (
-								<div className={`ml-2 text-lg ${fontSans.style} text-rose-700`}>
+								<div
+									className={`ml-2 text-lg ${fontSans.style} text-rose-700`}
+								>
 									{errors.title.message}
 								</div>
 							)}
 						</label>
 						<input
 							id="title"
-							{...register("title", { required: "Title is required" })}
+							{...register("title", {
+								required: "Title is required",
+							})}
 							className="self-stretch h-10 p-2 rounded-lg border border-zinc-300 justify-start items-center gap-2.5 inline-flex"
 						/>
 					</div>
 					<div className="flex-col justify-center items-start gap-2 inline-flex">
-						<label htmlFor="author" className="px-1.5 justify-start items-center inline-flex">
+						<label
+							htmlFor="author"
+							className="px-1.5 justify-start items-center inline-flex"
+						>
 							<div
 								className={`text-center text-black text-lg font-normal ${fontSans.style} tracking-wide`}
 							>
@@ -178,19 +194,26 @@ export default function PodcastForm() {
 								*
 							</div>
 							{errors.author && (
-								<div className={`ml-2 text-lg ${fontSans.style} text-rose-700`}>
+								<div
+									className={`ml-2 text-lg ${fontSans.style} text-rose-700`}
+								>
 									{errors.author.message}
 								</div>
 							)}
 						</label>
 						<input
 							id="author"
-							{...register("author", { required: "Author is required" })}
+							{...register("author", {
+								required: "Author is required",
+							})}
 							className="self-stretch h-10 p-2 rounded-lg border border-zinc-300 justify-start items-center gap-2.5 inline-flex"
 						/>
 					</div>
 					<div className="flex-col justify-center items-start gap-2 inline-flex">
-						<label htmlFor="description" className="px-1.5 justify-start items-center inline-flex">
+						<label
+							htmlFor="description"
+							className="px-1.5 justify-start items-center inline-flex"
+						>
 							<div
 								className={`text-center text-black text-lg font-normal ${fontSans.style} tracking-wide`}
 							>
@@ -202,19 +225,26 @@ export default function PodcastForm() {
 								*
 							</div>
 							{errors.description && (
-								<div className={`ml-2 text-lg ${fontSans.style} text-rose-700`}>
+								<div
+									className={`ml-2 text-lg ${fontSans.style} text-rose-700`}
+								>
 									{errors.description.message}
 								</div>
 							)}
 						</label>
 						<textarea
 							id="description"
-							{...register("description", { required: "Description is required" })}
+							{...register("description", {
+								required: "Description is required",
+							})}
 							className="self-stretch p-2 rounded-lg border border-zinc-300 justify-start items-center gap-2.5 inline-flex"
 						/>
 					</div>
 					<div className="flex-col justify-center items-start gap-2 inline-flex">
-						<label htmlFor="publisher" className="px-1.5 justify-start items-center inline-flex">
+						<label
+							htmlFor="publisher"
+							className="px-1.5 justify-start items-center inline-flex"
+						>
 							<div
 								className={`text-center text-black text-lg font-normal ${fontSans.style} tracking-wide`}
 							>
@@ -226,19 +256,26 @@ export default function PodcastForm() {
 								*
 							</div>
 							{errors.description && (
-								<div className={`ml-2 text-lg ${fontSans.style} text-rose-700`}>
+								<div
+									className={`ml-2 text-lg ${fontSans.style} text-rose-700`}
+								>
 									{errors.description.message}
 								</div>
 							)}
 						</label>
 						<input
 							id="publisher"
-							{...register("publisher", { required: "Publisher is required" })}
+							{...register("publisher", {
+								required: "Publisher is required",
+							})}
 							className="self-stretch h-10 p-2 rounded-lg border border-zinc-300 justify-start items-center gap-2.5 inline-flex"
 						/>
 					</div>
 					<div className="flex-col justify-center items-start gap-2 inline-flex">
-						<label htmlFor="publicationDate" className="px-1.5 justify-start items-center inline-flex">
+						<label
+							htmlFor="publicationDate"
+							className="px-1.5 justify-start items-center inline-flex"
+						>
 							<div
 								className={`text-center text-black text-lg font-normal ${fontSans.style} tracking-wide`}
 							>
@@ -250,7 +287,9 @@ export default function PodcastForm() {
 								*
 							</div>
 							{errors.publicationDate && (
-								<div className={`ml-2 text-lg ${fontSans.style} text-rose-700`}>
+								<div
+									className={`ml-2 text-lg ${fontSans.style} text-rose-700`}
+								>
 									{errors.publicationDate.message}
 								</div>
 							)}
@@ -264,7 +303,7 @@ export default function PodcastForm() {
 									if (!regex.test(value)) {
 										return "Invalid date format";
 									}
-									return true
+									return true;
 								},
 							})}
 							className="self-stretch h-10 p-2 rounded-lg border border-zinc-300 justify-start items-center gap-2.5 inline-flex"
@@ -290,7 +329,7 @@ export default function PodcastForm() {
 							{file && fileUrl && (
 								<img
 									className=" object-cover"
-									src={fileUrl}	
+									src={fileUrl}
 									alt={file.name}
 								/>
 							)}
@@ -319,8 +358,8 @@ export default function PodcastForm() {
 											<span className="font-semibold text-[#DCB968]">
 												Click
 											</span>{" "}
-											to browse your computer or drag pdf file to
-											this area{" "}
+											to browse your computer or drag pdf
+											file to this area{" "}
 										</p>
 										<p className="text-xs text-gray-500 dark:text-gray-400">
 											(Max. File size: 25MB)
@@ -364,7 +403,8 @@ export default function PodcastForm() {
 						<button
 							type="button"
 							className="rounded bg-green-500 p-2 shadow"
-							onClick={handleUpload}>
+							onClick={handleUpload}
+						>
 							Upload
 						</button>
 						{upload && (
@@ -372,7 +412,8 @@ export default function PodcastForm() {
 								<button
 									type="button"
 									className="rounded bg-red-500 p-2 shadow"
-									onClick={handleCancel}>
+									onClick={handleCancel}
+								>
 									Cancel
 								</button>
 							</>
