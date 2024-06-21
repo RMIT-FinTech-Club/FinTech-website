@@ -1,8 +1,42 @@
+'use client'
+import axios from "@/app/api/(axios)/axios";
 import { Card, CardBody, CardFooter, CardHeader } from "@nextui-org/react";
 import { Image } from "@nextui-org/react";
+import { useEffect, useState } from "react";
 
-const Invidivual = () => {
+interface Member {
+    name: string;
+    generation: string;
+    position: string;
+    birthdate: string;
+    avatarURL?: string;
+}
+
+const Invidivual = ({ params } : { params: { memId: string }}) => {
 	const imageUrl = "HallOfFame-Background.svg";
+
+    const [member, setMember] = useState<Member>({} as Member);
+
+    useEffect(() => {
+        const fetchMember = async () => {
+            axios.get(`/api/v1/members/${params.memId}`)
+                .then((res) => res.data.json)
+                .then((data) => {
+                    setMember({
+                        name: data.name,
+                        generation: data.generation,
+                        position: data.position,
+                        birthdate: data.birthdate,
+                        avatarURL: data.avatarURL,
+                    } as Member);
+                })
+                .catch((err) => {
+                    console.error(err);
+                });
+        }
+        fetchMember();
+    }, [])
+
 	return (
 		<section
 			className=" relative bg-cover bg-center w-screen h-fit  pb-10 "
@@ -73,14 +107,14 @@ const Invidivual = () => {
 				<div className="items-center min-w-60 basis-1/3">
 					<Image
 						isBlurred
-						src="President.jpg"
+						src="/President.jpg"
 						width={400}
 						height={400}
 					/>
 				</div>
 				<div className="items-start mt-4 basis-3/3 md:basis-2/3 md:mt-0 md:pr-40">
 					<h3 className=" text-ft-primary-yellow-500 items-start mb-2">
-						Phuc Hoang
+						{member.name}
 					</h3>
 					<h5 className=" text-ft-text-bright mbb-2">
 						MVP of My Heart
