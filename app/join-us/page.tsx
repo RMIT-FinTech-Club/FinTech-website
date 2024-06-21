@@ -1,9 +1,12 @@
+import RecruitmentProcess from "./recruitmentProcess";
 import CountDown from "./countDown";
+
 const JoinUs = () => {
 	return (
-		<div>
-			<CountDown />
-		</div>
+		<>
+			<CountDown/>
+			<RecruitmentProcess />
+		</>
 	);
 };
 
