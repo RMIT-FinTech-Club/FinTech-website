@@ -55,14 +55,38 @@ const JoinUs: React.FC = () => {
 				<h1 className="mx-16 py-2 px-2 text-center">
 					Road to FinTech Club
 				</h1>
-				<Image
-					src="registration-background-mobile.png"
-					alt="Road to FinTech Club Mobile"
-					className="relative z-0"
-					width={402}
-					height={455}
-				/>
-				<RoadToFtcContainerMobileLeft
+				<div className="flex flex-col w-full">
+					<Image
+						src="registration-background-mobile.png"
+						alt="Road to FinTech Club Mobile"
+						className="absolute z-0"
+						width={402}
+						height={455}
+					/>
+					<div className="flex flex-col w-full justify-around relative z-10">
+						<RoadToFtcContainer 
+							header="1. Club Day"
+							text="Discover our unique culture and activities."
+							containerClassName="flex justify-center w-full my-2"
+						/>
+						<RoadToFtcContainer 
+							header="2. Induction Day"
+							text="Where you could find out more about us this semester."
+							containerClassName="flex justify-center w-full my-2"
+						/>
+						<RoadToFtcContainer 
+							header="3. Application Round"
+							text="Prepare your CV and fill in our application form."
+							containerClassName="flex justify-center w-full my-2"
+						/>
+						<RoadToFtcContainer 
+							header="4. Interview Round"
+							text="Prepare your CV and fill in our application form."
+							containerClassName="flex justify-center w-full my-2"
+						/>
+					</div>
+				</div>
+				{/* <RoadToFtcContainerMobileLeft
 					header="1. Club Day"
 					text="Discover our unique culture and activities."
 					containerMobileLeftClassName="absolute z-10 -left-1/4 top-1/3 translate-x-20 -translate-y-6"
@@ -81,7 +105,7 @@ const JoinUs: React.FC = () => {
 					header="4. Interview Round"
 					text="Prepare your CV and fill in our application form."
 					containerMobileRightClassName="absolute z-10 -right-1/2 bottom-1/2 -translate-x-20 translate-y-64"
-				/>
+				/> */}
 				<div className="flex flex-col">
 					<RoadToFtcButton
 						text="Apply Now"
