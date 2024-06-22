@@ -1,9 +1,9 @@
 import { connect } from "@/db/dbConfig";
 import User from "@/models/user";
 import bcryptjs from "bcryptjs";
-import jwt from "jsonwebtoken";
-import type { NextApiRequest, NextApiResponse } from "next";
+// import jwt from "jsonwebtoken";
 import { type NextRequest, NextResponse } from "next/server";
+import { SignJWT } from "jose";
 
 export async function POST(request: NextRequest) {
 	try {
@@ -27,11 +27,14 @@ export async function POST(request: NextRequest) {
 			);
 		}
 		// Create JWT token
-		const token = await jwt.sign(
-			{ id: user._id, email: user.email, role: user.role },
-			process.env.JWT_SECRET || "",
-			{ expiresIn: "3d" },
-		);
+		const jwtSecretKey = process.env.JWT_SECRET;
+		const secretKey = new TextEncoder().encode(jwtSecretKey);
+		const token = await new SignJWT(
+			{ id: user._id, email: user.email, role: user.role }
+		)    .setProtectedHeader({ alg: "HS256" })
+		.setIssuedAt()
+		.setExpirationTime("3 days")
+		.sign(secretKey);
 		// Create response
 		const response = NextResponse.json(
 			{ message: "Login successfully!" },

@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
-import * as jose from "jose";
+// import * as jose from "jose";
+import {jwtVerify} from "jose";
 
 export async function middleware(request: NextRequest) {
     const path = request.nextUrl.pathname
@@ -12,9 +13,11 @@ export async function middleware(request: NextRequest) {
     const token = request.cookies.get('token')?.value || ''
 
     // Verify token
-    const secret = await jose.base64url.decode(process.env.JWT_SECRET)
-    const verified = await jose.jwtDecrypt(token, secret);
-    console.log(verified)
+    const secretKey = await new TextEncoder().encode(process.env.JWT_SECRET);
+    const { payload } = await jwtVerify(token, secretKey, {
+      algorithms: ["HS256"],
+    });
+    // console.log(payload)
   
     // Redirect logic based on the path and token presence
     if (isPublicPath && token) {
@@ -23,12 +26,12 @@ export async function middleware(request: NextRequest) {
       return NextResponse.redirect(new URL('/', request.nextUrl))
     }
 
-    // if (!verified) {
-    //   return NextResponse.redirect(new URL('/login', request.nextUrl))
-    // }
+    if (payload.role !== "admin") {
+      return NextResponse.redirect(new URL('/login', request.nextUrl))
+    }
   
   // If trying to access a protected path without a token, redirect to the login page
-    if (!isPublicPath && !token) {
+    if (!token) {
       return NextResponse.redirect(new URL('/login', request.nextUrl))
     }
       
