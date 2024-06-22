@@ -64,22 +64,22 @@ const JoinUs: React.FC = () => {
 						height={455}
 					/>
 					<div className="flex flex-col w-full justify-around relative z-10">
-						<RoadToFtcContainer 
+						<RoadToFtcContainer
 							header="1. Club Day"
 							text="Discover our unique culture and activities."
 							containerClassName="flex justify-center w-full my-2"
 						/>
-						<RoadToFtcContainer 
+						<RoadToFtcContainer
 							header="2. Induction Day"
 							text="Where you could find out more about us this semester."
 							containerClassName="flex justify-center w-full my-2"
 						/>
-						<RoadToFtcContainer 
+						<RoadToFtcContainer
 							header="3. Application Round"
 							text="Prepare your CV and fill in our application form."
 							containerClassName="flex justify-center w-full my-2"
 						/>
-						<RoadToFtcContainer 
+						<RoadToFtcContainer
 							header="4. Interview Round"
 							text="Prepare your CV and fill in our application form."
 							containerClassName="flex justify-center w-full my-2"
