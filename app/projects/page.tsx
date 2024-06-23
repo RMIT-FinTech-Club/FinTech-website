@@ -1,5 +1,7 @@
+import ProjectGeneralPage from "./components/ProjectGeneralPage";
+
 const Projects = () => {
-	return <div>Projects</div>;
+	return <ProjectGeneralPage />;
 };
 
 export default Projects;

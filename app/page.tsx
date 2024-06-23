@@ -1,4 +1,5 @@
 import React from "react";
+import AchievementsSection from "./components/achievements";
 import Department from "./components/department";
 import Individual from "./components/hall-of-fame/individual";
 import HeroSection from "./components/hero";
@@ -20,6 +21,7 @@ const Home = () => {
 			<Department />
 			<Individual />
 			<UpcomingEvent />
+			<AchievementsSection />
 		</div>
 	);
 };
