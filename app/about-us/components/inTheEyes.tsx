@@ -3,11 +3,11 @@ import { fontMono } from "@/config/fonts";
 
 export default function FinTechInTheEyes() {
   return (
-    <div className="w-screen h-auto grid md:grid-cols-12 p-5 md:p-0">
+    <div className="w-screen h-auto grid md:grid-cols-12 md:my-10 md:p-0">
       <img
         src="https://ik.imagekit.io/mbrrji2rk/Picture1.png?updatedAt=1718879714203"
         alt="president profile picture"
-        className="hidden md:block md:col-span-5 mt-32"
+        className="hidden md:block md:col-span-5 md:mt-32"
       />
       <div className="md:col-span-5 col-span-10 place-content-center md:content-start mt-32">
           <h1
