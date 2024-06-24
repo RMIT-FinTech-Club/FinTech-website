@@ -294,7 +294,7 @@ export default function PodcastForm() {
 						/>
 					</div>
 					<div>
-						<div className={`flex md:flex-row flex-col`}>
+						<div className="flex md:flex-row flex-col">
 							<p
 								className={`text-black text-4xl font-semibold ${fontSans.style}`}
 							>

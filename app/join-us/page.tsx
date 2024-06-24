@@ -1,11 +1,11 @@
-import RecruitmentProcess from "./recruitmentProcess";
+import BondingActivities from "./components/bondingActivities";
 import CountDown from "./countDown";
-import BondingActivities from './components/bondingActivities';
+import RecruitmentProcess from "./recruitmentProcess";
 
 const JoinUs = () => {
 	return (
 		<>
-			<CountDown/>
+			<CountDown />
 			<RecruitmentProcess />
 			<BondingActivities />
 		</>

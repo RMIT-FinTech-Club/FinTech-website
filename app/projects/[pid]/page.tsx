@@ -1,10 +1,6 @@
 import { Avatar } from "@nextui-org/react";
-import { IconLink } from '@tabler/icons-react';
-import {
-	Card,
-	CardBody,
-	Divider,
-} from "@nextui-org/react";
+import { Card, CardBody, Divider } from "@nextui-org/react";
+import { IconLink } from "@tabler/icons-react";
 import React from "react";
 
 const ProjectDetail = () => {
@@ -32,11 +28,16 @@ const ProjectDetail = () => {
 						// can pass the link of the document on amazon s3
 						href="https://fintech-club-website.s3.ap-southeast-2.amazonaws.com/UML+class+-+application+architecture.pdf"
 						target="_blank"
+						rel="noreferrer"
 					>
-						<button className="py-4 items-center justify-center flex flex-grow my-auto px-6 bg-blue-500 rounded-full drop-shadow-lg text-xl text-white duration-300 hover:bg-blue-700 active:bg-blue-900">
-							<IconLink stroke={2} className="basis-1/4 mr-2 mx-auto" />
-							<p
-								className="md:w-fit text-2xl text-nowrap ">
+						<button
+							type="button"
+							className="py-4 items-center justify-center flex flex-grow my-auto px-6 bg-blue-500 rounded-full drop-shadow-lg text-xl text-white duration-300 hover:bg-blue-700 active:bg-blue-900">
+							<IconLink
+								stroke={2}
+								className="basis-1/4 mr-2 mx-auto"
+							/>
+							<p className="md:w-fit text-2xl text-nowrap ">
 								Full access
 							</p>
 						</button>

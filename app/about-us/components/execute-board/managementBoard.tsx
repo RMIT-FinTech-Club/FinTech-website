@@ -6,7 +6,7 @@ import {
 	Image,
 } from "@nextui-org/react";
 import React from "react";
-import './styles.css';
+import "./styles.css";
 
 const ManagementBoard = () => {
 	const imageUrl = "HallOfFame-Background.svg";
@@ -32,7 +32,9 @@ const ManagementBoard = () => {
 							<h6 className="font-bold text-large text-ft-primary-blue-500">
 								TRUONG MINH NGOC
 							</h6>
-							<h6 className="text-ft-primary-blue-500 text-tiny">Head of Business Department</h6>
+							<h6 className="text-ft-primary-blue-500 text-tiny">
+								Head of Business Department
+							</h6>
 						</CardBody>
 					</Card>
 					<Card
@@ -53,7 +55,9 @@ const ManagementBoard = () => {
 							<h6 className="font-bold text-large text-ft-primary-blue-500">
 								NGUYEN BAO NGOC
 							</h6>
-							<h6 className="text-ft-primary-blue-500 text-tiny">Head of Human Resources Department</h6>
+							<h6 className="text-ft-primary-blue-500 text-tiny">
+								Head of Human Resources Department
+							</h6>
 						</CardBody>
 					</Card>
 					<Card
@@ -74,7 +78,9 @@ const ManagementBoard = () => {
 							<h6 className="font-bold text-large text-ft-primary-blue-500">
 								NGUYEN TRAN HOANG ANH
 							</h6>
-							<h6 className="text-ft-primary-blue-500 text-tiny">Head of Marketing Department</h6>
+							<h6 className="text-ft-primary-blue-500 text-tiny">
+								Head of Marketing Department
+							</h6>
 						</CardBody>
 					</Card>
 					<Card
@@ -96,7 +102,9 @@ const ManagementBoard = () => {
 							<h6 className="font-bold text-large text-ft-primary-blue-500">
 								HUYNH LE DIEM QUI
 							</h6>
-							<h6 className="text-ft-primary-blue-500 text-tiny">Head of Technology Department</h6>
+							<h6 className="text-ft-primary-blue-500 text-tiny">
+								Head of Technology Department
+							</h6>
 						</CardBody>
 					</Card>
 				</div>

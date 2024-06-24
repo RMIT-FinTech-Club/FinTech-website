@@ -3,7 +3,7 @@ import {
 	IconBroadcast,
 	IconCalendarMonth,
 	IconUser,
-	IconX
+	IconX,
 } from "@tabler/icons-react";
 export default function ProjectGeneralPage() {
 	return (
@@ -122,7 +122,8 @@ function ProjectGeneralCard() {
 					</div>
 					<button
 						type="button"
-						className="mt-4 items-center bg-orange-300 hover:bg-orange-400 active:bg-orange-500 text-white py-2 px-4 rounded-full self-end md:w-fit w-full">
+						className="mt-4 items-center bg-orange-300 hover:bg-orange-400 active:bg-orange-500 text-white py-2 px-4 rounded-full self-end md:w-fit w-full"
+					>
 						More detail
 					</button>
 				</div>

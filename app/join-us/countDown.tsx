@@ -10,7 +10,7 @@ export default function CountDown() {
 	const [minutes, setMinutes] = useState(0);
 	const [seconds, setSeconds] = useState(0);
 
-	let interval = useRef<NodeJS.Timeout>();
+	const interval = useRef<NodeJS.Timeout>();
 
 	const timerCount = () => {
 		const expiredDay = new Date(2024, 7, 21, 23, 59, 59);
@@ -44,7 +44,7 @@ export default function CountDown() {
 		return () => {
 			clearInterval(interval.current);
 		};
-	}, []);
+	}, [timerCount]);
 
 	return (
 		<div className="countDown-container h-screen w-screen flex justify-center items-start">
