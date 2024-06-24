@@ -52,7 +52,7 @@ const JoinUs: React.FC = () => {
 			</div>
 			{/* Mobile view */}
 			<div className="flex flex-col h-screen items-center justify-around lg:hidden">
-				<h1 className="mx-16 py-2 px-2 text-center">
+				<h1 className="mx-16 py-2 px-2 text-center md:text-4xl">
 					Road to FinTech Club
 				</h1>
 				<div className="flex flex-col w-full">

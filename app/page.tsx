@@ -6,6 +6,7 @@ import HerosectionVid from "./components/heroVideoSection";
 import IntroSection from "./components/intro";
 import PastPartners from "./components/pastPartners";
 import UpcomingEvent from "./components/upcomingEvent";
+import JoinUs from "./join-us/page";
 // import HeroSection from "../components/";
 // import IntroSection from "../components/intro";
 // import UpcomingEvent from "../components/upcomingEvent";
@@ -13,13 +14,14 @@ import Events from "./events/page";
 const Home = () => {
 	return (
 		<div className="flex min-h-screen flex-col justify-center items-center">
-			<HerosectionVid />
+			{/* <HerosectionVid />
 			<HeroSection />
 			<PastPartners />
 			<IntroSection />
 			<Department />
 			<Individual />
-			<UpcomingEvent />
+			<UpcomingEvent /> */}
+			<JoinUs />
 		</div>
 	);
 };
