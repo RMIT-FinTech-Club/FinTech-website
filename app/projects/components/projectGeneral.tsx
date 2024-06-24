@@ -6,12 +6,13 @@ import {
 	BrandApplePodcast,
 	CalendarEvent,
 	Filter,
-	Menu2,
+	ChevronDown,
 	ReportSearch,
 	User,
 } from "tabler-icons-react";
 
 const ProjectGeneral = () => {
+	const [isOpen, setIsOpen] = useState(false);
 	type Filters = {
 		research: boolean;
 		podcast: boolean;
@@ -219,10 +220,55 @@ const ProjectGeneral = () => {
 									placeholder="Search..."
 								/>
 								<div className="flex mt-4 md:hidden px-2 py-2 rounded-lg">
-									<Menu2 className="text-ft-primary-blue w-8 h-8 mb-2 cursor-pointer mr-2" />
-									<p className="text-[24px] text-ft-primary-blue">
+								<div className="relative inline-block text-left">
+									<div>
+										<button
+										type="button"
+										className="inline-flex justify-center w-full rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-ft-primary-blue text-sm font-medium text-white focus:outline-none"
+										id="options-menu"
+										aria-haspopup="true"
+										aria-expanded="true"
+										onClick={() => setIsOpen(!isOpen)}
+										>
 										Newest
-									</p>
+										<ChevronDown className="w-5 h-5 ml-2 -mr-1" />
+										</button>
+									</div>
+									{isOpen && (
+										<div
+										className={`origin-top-right absolute mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 transition-transform transform ${
+											isOpen ? 'scale-100 opacity-100' : 'scale-95 opacity-0'
+										  }`}
+										role="menu"
+										aria-orientation="vertical"
+										aria-labelledby="options-menu"
+										>
+										<div className="py-1" role="none">
+											<a
+											href="#"
+											className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+											role="menuitem"
+											>
+											Newest
+											</a>
+											<a
+											href="#"
+											className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+											role="menuitem"
+											>
+											Oldest
+											</a>
+											<a
+											href="#"
+											className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+											role="menuitem"
+											>
+											Default
+											</a>
+										</div>
+										</div>
+									)}
+									</div>
 								</div>
 								<div className="mt-4 md:bg-ft-background px-2 py-2 rounded-lg">
 									<p className="text-[24px] hidden md:block">
