@@ -3,11 +3,13 @@ import {
 	IconBroadcast,
 	IconCalendarMonth,
 	IconUser,
+	IconX
 } from "@tabler/icons-react";
 export default function ProjectGeneralPage() {
 	return (
 		<>
-			<div className="gird grid grid-cols-8 md:py-10 items-center px-20">
+			{/* title */}
+			<div className="md:gird md:grid-cols-8 md:py-10 items-center px-20 hidden">
 				<div className="grow w-auto md:left-[100px] h-[4px] bg-black flex items-center col-span-2">
 					<div className="w-6 h-6 bg-black rounded-full" />
 				</div>
@@ -20,12 +22,18 @@ export default function ProjectGeneralPage() {
 					<div className="w-6 h-6 bg-black rounded-full" />
 				</div>
 			</div>
-			<div className="grid grid-cols-3 md:mt-10 md:mb-44 px-11">
-				<div className="flex flex-col gap-4 items-center col-span-2">
+
+			{/* project cards */}
+			<div className="grid md:grid-cols-3 md:mt-10 md:mb-44 px-11 w-full">
+				<div className="flex flex-col gap-4 items-center col-span-2 w-fit">
+					<ProjectGeneralCard />
+					<ProjectGeneralCard />
+					<ProjectGeneralCard />
 					<ProjectGeneralCard />
 					<ProjectGeneralCard />
 				</div>
-				<div className="flex flex-col gap-4 md:pl-16 justify-self-start">
+				{/* projects filter  */}
+				<div className="md:flex md:flex-col hidden gap-4 md:pl-16 justify-self-start">
 					<div className="flex justify-between items-center mb-4">
 						<input
 							type="text"
@@ -37,12 +45,14 @@ export default function ProjectGeneralPage() {
 						<h2 className="text-lg font-bold mb-2">
 							Project filter:
 						</h2>
-						<div className="flex flex-wrap gap-2">
-							<span className="bg-orange-300 text-white py-1 px-3 rounded-full">
+						<div className="flex flex-col gap-2">
+							<span className="bg-orange-300 grid grid-cols-2 text-white py-1 px-3 rounded-full w-28">
 								Research
+								<IconX stroke={2} className="ml-6" />
 							</span>
-							<span className="bg-orange-300 text-white py-1 px-3 rounded-full">
+							<span className="bg-orange-300 grid grid-cols-2 text-white py-1 px-3 rounded-full w-28">
 								Podcast
+								<IconX stroke={2} className="ml-6" />
 							</span>
 						</div>
 					</div>
@@ -76,30 +86,30 @@ export default function ProjectGeneralPage() {
 function ProjectGeneralCard() {
 	return (
 		<>
-			<div className="flex bg-white shadow-lg rounded-lg p-6 md:w-fit">
-				<div className="flex-shrink-0">
+			<div className="grid md:grid-cols-2 bg-white shadow-lg rounded-lg p-6 w-fit">
+				<div className="flex-shrink-0 mx-auto md:my-0 my-7 md:px-0 px-3 md:rounded-none rounded-full">
 					<img
-						className="w-[406px] h-[267px] rounded-lg"
+						className="md:w-[406px] md:h-[267px] w-full rounded-lg"
 						alt="Fintech Forum"
 						src="https://ik.imagekit.io/mbrrji2rk/ProjectGeneralImage.png?updatedAt=1715686577329"
 					/>
 				</div>
-				<div className="ml-10 flex flex-col justify-between">
+				<div className="md:ml-10 flex flex-col justify-between">
 					<div>
-						<h6 className="text-2xl font-bold text-black">
+						<h6 className="md:text-2xl text-xl font-bold text-black text-center">
 							THE FINTECH FORUM 2024
 						</h6>
-						<div className="flex items-center mt-2 text-gray-600">
+						<div className="grid md:grid-cols-3 items-center mt-4 text-gray-600 md:gap-0 gap-2">
 							<div className="flex items-center mr-4">
-								<IconCalendarMonth className="w-5 h-5 mr-1 text-orange-300" />
+								<IconCalendarMonth className="w-6 h-6 mr-1 text-orange-300" />
 								<span>28/10/2024</span>
 							</div>
 							<div className="flex items-center mr-4">
-								<IconUser className="w-5 h-5 mr-1 text-orange-300" />
+								<IconUser className="w-6 h-6 mr-1 text-orange-300" />
 								<span>Duy2k5</span>
 							</div>
 							<div className="flex items-center">
-								<IconBroadcast className="w-5 h-5 mr-1 text-orange-300" />
+								<IconBroadcast className="w-6 h-6 mr-1 text-orange-300" />
 								<span>Research</span>
 							</div>
 						</div>
@@ -116,9 +126,9 @@ function ProjectGeneralCard() {
 							</p>
 						</article>
 					</div>
-					<button 
+					<button
 						type="button"
-						className="mt-4 items-center bg-orange-300 hover:bg-orange-400 active:bg-orange-500 text-white py-2 px-4 rounded-full self-end">
+						className="mt-4 items-center bg-orange-300 hover:bg-orange-400 active:bg-orange-500 text-white py-2 px-4 rounded-full self-end md:w-fit w-full">
 						More detail
 					</button>
 				</div>
