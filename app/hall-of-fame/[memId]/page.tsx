@@ -29,6 +29,8 @@ const Invidivual = ({ params } : { params: { memId: string }}) => {
                         birthdate: data.birthdate,
                         avatarURL: data.avatarURL,
                     } as Member);
+					// print member data
+					console.log(data);
                 })
                 .catch((err) => {
                     console.error(err);
