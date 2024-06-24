@@ -11,9 +11,9 @@ import './styles.css';
 const ManagementBoard = () => {
 	const imageUrl = "HallOfFame-Background.svg";
 	return (
-		<section className=" relative bg-ft-primary-yellow-500 bg-cover bg-center h-full -mx-side-margin-mobile md:-mx-side-margin">
-			<main className=" mx-side-margin-mobile mt-0  md:mx-side-margin">
-				<div className=" grid grid-cols-2 gap-8 md:grid-cols-4 my-16">
+		<section className=" relative bg-ft-primary-yellow-500 bg-cover bg-center h-full -mx-side-margin-mobile md:-mx-side-margin md:pt-32 md:pb-20">
+			<main className="mx-side-margin-mobile mt-0 md:mx-side-margin">
+				<div className="grid grid-cols-2 gap-8 md:grid-cols-4 md:mb-10">
 					<Card
 						className="py-4 -px-2 bg-transparent"
 						radius="none"
@@ -100,7 +100,7 @@ const ManagementBoard = () => {
 						</CardBody>
 					</Card>
 				</div>
-				<div className=" grid gap-2 md:grid-cols-1 md:gap-2 text-center mb-5">
+				<div className=" grid gap-2 md:grid-cols-1 md:gap-2 text-center">
 					<h4 className=" text-ft-primary-blue-500">
 						MEET OUR <strong>MANAGEMENT BOARD</strong>
 					</h4>

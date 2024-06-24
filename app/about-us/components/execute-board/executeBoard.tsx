@@ -10,7 +10,7 @@ import {
   
   const ExecuteBoard = () => {
 	return (
-	  <section className="relative bg-ft-primary-yellow-500 bg-cover bg-center h-full -mx-side-margin-mobile md:-mx-side-margin">
+	  <section className="relative bg-ft-primary-yellow-500 bg-cover bg-center h-full -mx-side-margin-mobile md:-mx-side-margin px-10 pt-6">
 		<main className="mx-side-margin-mobile mt-0 md:mx-side-margin">
 		  <div className="grid grid-cols-1 gap-8 md:grid-cols-4 my-16">
 			<Card className="py-4 px-2 rounded-3xl bg-gray-100 relative overflow-visible">
@@ -82,7 +82,7 @@ import {
 			  </CardBody>
 			</Card>
 		  </div>
-		  <div className="grid gap-2 md:grid-cols-1 md:gap-2 text-center mb-5">
+		  <div className="grid gap-2 md:grid-cols-1 md:gap-2 text-center">
 			<h4 className="text-ft-primary-blue-500">
 			  MEET OUR <strong>EXECUTIVE BOARD</strong>
 			</h4>
