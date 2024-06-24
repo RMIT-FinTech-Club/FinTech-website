@@ -3,6 +3,7 @@ import {
 	IconBroadcast,
 	IconCalendarMonth,
 	IconUser,
+	IconX
 } from "@tabler/icons-react";
 export default function ProjectGeneralPage() {
 	return (
@@ -12,7 +13,7 @@ export default function ProjectGeneralPage() {
 					<div className="w-6 h-6 bg-black rounded-full" />
 				</div>
 				<div
-					className={`w-[515px] text-center text-orange-300 text-[56px] font-bold ${fontSans} mx-auto`}
+					className={`w-[515px] text-center text-orange-300 text-[56px] font-bold ${fontSans} mx-auto col-span-4`}
 				>
 					PROJECTS
 				</div>
@@ -25,7 +26,8 @@ export default function ProjectGeneralPage() {
 					<ProjectGeneralCard />
 					<ProjectGeneralCard />
 				</div>
-				<div className="flex flex-col gap-4 mx-auto">
+				{/* projects filter  */}
+				<div className="md:flex md:flex-col hidden gap-4 md:pl-16 justify-self-start">
 					<div className="flex justify-between items-center mb-4">
 						<input
 							type="text"
@@ -37,12 +39,14 @@ export default function ProjectGeneralPage() {
 						<h2 className="text-lg font-bold mb-2">
 							Project filter:
 						</h2>
-						<div className="flex flex-wrap gap-2">
-							<span className="bg-orange-300 text-white py-1 px-3 rounded-full">
+						<div className="flex flex-col gap-2">
+							<span className="bg-orange-300 grid grid-cols-2 text-white py-1 px-3 rounded-full w-28">
 								Research
+								<IconX stroke={2} className="ml-6" />
 							</span>
-							<span className="bg-orange-300 text-white py-1 px-3 rounded-full">
+							<span className="bg-orange-300 grid grid-cols-2 text-white py-1 px-3 rounded-full w-28">
 								Podcast
+								<IconX stroke={2} className="ml-6" />
 							</span>
 						</div>
 					</div>
@@ -76,34 +80,34 @@ export default function ProjectGeneralPage() {
 function ProjectGeneralCard() {
 	return (
 		<>
-			<div className="flex bg-white shadow-lg rounded-lg p-6 md:w-fit">
-				<div className="flex-shrink-0">
+			<div className="grid md:grid-cols-2 bg-white shadow-lg rounded-lg p-6 w-fit">
+				<div className="flex-shrink-0 mx-auto md:my-0 my-7 md:px-0 px-3 md:rounded-none rounded-full">
 					<img
-						className="w-[406px] h-[267px] rounded-lg"
+						className="md:w-[406px] md:h-[267px] w-full rounded-lg"
 						alt="Fintech Forum"
 						src="https://ik.imagekit.io/mbrrji2rk/ProjectGeneralImage.png?updatedAt=1715686577329"
 					/>
 				</div>
-				<div className="ml-10 flex flex-col justify-between">
+				<div className="md:ml-10 flex flex-col justify-between">
 					<div>
-						<h6 className="text-2xl font-bold text-black">
+						<h6 className="md:text-2xl text-xl font-bold text-black text-center">
 							THE FINTECH FORUM 2024
 						</h6>
-						<div className="flex items-center mt-2 text-gray-600">
+						<div className="grid md:grid-cols-3 items-center mt-4 text-gray-600 md:gap-0 gap-2">
 							<div className="flex items-center mr-4">
-								<IconCalendarMonth className="w-5 h-5 mr-1 text-orange-300" />
+								<IconCalendarMonth className="w-6 h-6 mr-1 text-orange-300" />
 								<span>28/10/2024</span>
 							</div>
 							<div className="flex items-center mr-4">
-								<IconUser className="w-5 h-5 mr-1 text-orange-300" />
+								<IconUser className="w-6 h-6 mr-1 text-orange-300" />
 								<span>Duy2k5</span>
 							</div>
 							<div className="flex items-center">
-								<IconBroadcast className="w-5 h-5 mr-1 text-orange-300" />
+								<IconBroadcast className="w-6 h-6 mr-1 text-orange-300" />
 								<span>Research</span>
 							</div>
 						</div>
-						<article className="text-wrapper w-[560px] mt-4 text-gray-700">
+						<article className="text-wrapper mt-4 text-gray-700">
 							<p className="leading-relaxed">
 								The FinTech Forum 2024 is set to be the most
 								dynamic student driven FinTech event, with a
@@ -116,9 +120,11 @@ function ProjectGeneralCard() {
 							</p>
 						</article>
 					</div>
-					<div className="mt-4 w-[175px] bg-orange-300 text-white py-2 px-4 rounded-[10px] self-end">
+					<button
+						type="button"
+						className="mt-4 items-center bg-orange-300 hover:bg-orange-400 active:bg-orange-500 text-white py-2 px-4 rounded-full self-end md:w-fit w-full">
 						More detail
-					</div>
+					</button>
 				</div>
 			</div>
 		</>

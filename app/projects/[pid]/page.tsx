@@ -1,48 +1,44 @@
-import { Avatar, AvatarIcon } from "@nextui-org/react";
+import { Avatar } from "@nextui-org/react";
 import { IconLink } from '@tabler/icons-react';
 import {
 	Card,
 	CardBody,
-	CardFooter,
-	CardHeader,
 	Divider,
-	Image,
-	Link,
 } from "@nextui-org/react";
 import React from "react";
 
 const ProjectDetail = () => {
 	return (
-		<section className=" mt-16 flex flex-col justify-start p-10">
-			<header>
+		<section className="md:mt-16 flex flex-col justify-start p-10">
+			<header className="text-center md:text-start">
 				<h1>Global trading</h1>
 			</header>
-			<main className="mt-6">
-				<div className="grid grid-cols-12 my-8 gap-6">
-					<div className=" my-auto col-span-1">
+			<main className="md:mt-6">
+				<div className="grid grid-cols-12 md:my-8 my-3 gap-6 grid-flow-row">
+					<div className="my-auto md:col-span-1 col-span-3">
 						<Avatar
 							src="https://i.pravatar.cc/150?u=a04258114e29026302d"
 							className=" w-20 h-20"
 						/>
 					</div>
-					<div className=" place-self-start justify-self-start col-span-8">
+					<div className=" place-self-start justify-self-start md:col-span-7 col-span-9 my-auto">
 						<h6 className=" font-bold">
 							Lorem ipsum dolor sit amet
 						</h6>
 						<h6 className="">Lorem ipsum dolor sit amet</h6>
 					</div>
 					<a
-						className="justify-self-end col-span-3"
+						className="md:justify-self-end md:col-span-4 col-span-12 my-auto md:w-fit w-full"
 						// can pass the link of the document on amazon s3
 						href="https://fintech-club-website.s3.ap-southeast-2.amazonaws.com/UML+class+-+application+architecture.pdf"
 						target="_blank"
 					>
-						<button className="py-4 items-center justify-center flex flex-grow w-fit my-auto px-6 bg-blue-500 rounded-full drop-shadow-lg text-xl text-white duration-300 hover:bg-blue-700 active:bg-blue-900">
-							<IconLink stroke={2} className=" basis-1/4 mr-2 mx-auto" />
-							<div
-								className=" basis-3/4 ">
-								Access
-							</div>
+						<button className="py-4 items-center justify-center flex flex-grow my-auto px-6 bg-blue-500 rounded-full drop-shadow-lg text-xl text-white duration-300 hover:bg-blue-700 active:bg-blue-900">
+							<IconLink stroke={2} className="basis-1/4 mr-2 mx-auto" />
+							<p
+								className="md:w-fit text-2xl text-nowrap ">
+								Full access
+							</p>
 						</button>
 					</a>
 				</div>

@@ -1,4 +1,5 @@
 import CoreValue from "./components/coreValue";
+import ExecuteBoard from "./components/execute-board/executeBoard";
 import HistorySection from "./components/history";
 import FinTechInTheEyes from "./components/inTheEyes";
 import Members from "./components/members";
@@ -10,6 +11,7 @@ const AboutUs = () => {
 			<VisionMission />
 			<FinTechInTheEyes />
 			<Members />
+			<ExecuteBoard />
 			<CoreValue />
 		</div>
 	);
