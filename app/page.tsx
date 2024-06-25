@@ -17,7 +17,7 @@ const Home = () => {
 	return (
 		<div className="flex min-h-screen flex-col justify-center items-center">
 			<Toaster position="bottom-center" />
-			{/* <HerosectionVid />
+			<HerosectionVid />
 			<HeroSection />
 			<PastPartners />
 			<IntroSection />
