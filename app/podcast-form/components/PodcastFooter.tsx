@@ -1,31 +1,106 @@
+import FormData from "form-data";
 import { Button } from "@nextui-org/react";
 import { useContext, useEffect, useState } from "react";
 import { DisabledButtonContext } from "./context/DisableButtonContext";
+import { PodcastDataContext } from "./context/PodcastContext";
+import axios from "@/app/api/(axios)/axios";
 
-const PodcastFooter:React.FC<{focusIndex:number, setFocusIndex:any}> = ({focusIndex, setFocusIndex})=>{
-    const {isDisabled, setIsDisabled} = useContext(DisabledButtonContext);
-    useEffect(()=>{
-        console.log(`is Disabled: ${isDisabled}`)
-    }, [isDisabled])
-    function handleCancel(){
-
-    }
-    function handleBack(){
-        setFocusIndex(focusIndex - 1);
-        setIsDisabled(true);
-    }
-    function handleSubmit(){
-
-    }
-    function handleContinue(){
-        setFocusIndex(focusIndex + 1);
-        setIsDisabled(true);
-    }
-    return(
-        <section className="w-full py-10 flex justify-end gap-2 mt-20 border-t-1 border-gray-300">
-            <Button onClick={focusIndex===1?handleCancel:handleBack}  className="bg-white border-1 border-black px-10" >{focusIndex===1?"Cancel":"Back"}</Button>
-            <Button onClick={focusIndex==3?handleSubmit:handleContinue}  className="bg-ft-primary-blue-600 text-white px-10" isDisabled={isDisabled} >{focusIndex===3?"Submit":"Continue"}</Button>
-        </section>
+const PodcastFooter: React.FC<{ focusIndex: number; setFocusIndex: any }> = ({
+  focusIndex,
+  setFocusIndex,
+}) => {
+  const { isDisabled, setIsDisabled } = useContext(DisabledButtonContext);
+  const { podcastDetail, authorFiles, audioFile, thumnailFile } =
+    useContext(PodcastDataContext);
+  const { title, description, authors, publisher, publicationDate, language } =
+    podcastDetail;
+  useEffect(() => {}, [isDisabled]);
+  function handleCancel() {}
+  function handleBack() {
+    setFocusIndex(focusIndex - 1);
+    setIsDisabled(true);
+  }
+  async function handleSubmit() {
+    console.log(
+      `title: ${title}\ndescription: ${description}\npublisher: ${publisher}\n publicationDate: ${publicationDate}\n language: ${language}\n authors: ${authors}\n\n\n`
     );
-}
+    let verifiedStatus = true;
+
+    if (!(authorFiles.length === authors.length)) {
+      console.log(`check 1`);
+      verifiedStatus = false;
+    }
+    for (let i = 0; i < authors.length; ++i) {
+      if (
+        !(
+          authorFiles[i] instanceof File &&
+          authors[i].name.length > 0 &&
+          authors[i].title.length > 0
+        )
+      ) {
+        console.log(`check 2`);
+        verifiedStatus = false;
+      }
+    }
+    if (
+      !(
+        title.length > 0 &&
+        description.length > 0 &&
+        publicationDate.length > 0 &&
+        publisher.length > 0 &&
+        language.length > 0 &&
+        audioFile instanceof File
+      )
+    ) {
+      console.log(`check 3`);
+      verifiedStatus = false;
+    }
+    if (verifiedStatus) {
+      console.log("already Verified! ");
+      const formData = new FormData();
+      formData.append("title", title);
+      formData.append("description", description);
+      formData.append("publicationDate", publicationDate);
+      formData.append("publisher", publisher);
+      formData.append("language", language);
+      formData.append("audioFile", audioFile);
+      formData.append("thumnailFile", thumnailFile);
+      for (let i = 0; i < authors.length; ++i) {
+      formData.append("authors[]", JSON.stringify(authors[i]));	
+        formData.append("authorFiles[]", authorFiles[i]);
+      }
+	  for (var pair of formData.entries()) {
+		console.log(pair[0]+ ', ' + pair[1]); 
+	}
+      try {
+        await axios.post("/api/v1/podcast", formData);
+      } catch (error: any) {
+        console.error(error.message);
+      }
+      console.log("done upload");
+    } else {
+    }
+  }
+  function handleContinue() {
+    setFocusIndex(focusIndex + 1);
+    setIsDisabled(true);
+  }
+  return (
+    <section className="w-full py-10 flex justify-end gap-2 mt-20 border-t-1 border-gray-300">
+      <Button
+        onClick={focusIndex === 1 ? handleCancel : handleBack}
+        className="bg-white border-1 border-black px-10"
+      >
+        {focusIndex === 1 ? "Cancel" : "Back"}
+      </Button>
+      <Button
+        onClick={focusIndex == 3 ? handleSubmit : handleContinue}
+        className="bg-ft-primary-blue-600 text-white px-10"
+        isDisabled={isDisabled}
+      >
+        {focusIndex === 3 ? "Submit" : "Continue"}
+      </Button>
+    </section>
+  );
+};
 export default PodcastFooter;

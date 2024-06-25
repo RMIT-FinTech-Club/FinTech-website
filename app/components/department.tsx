@@ -87,8 +87,7 @@ const Department = () => {
 
 			{/* Department content */}
 			<div
-				className="flex flex-col lg:items-start items-center p-8 bg-opacity-50 z-10 mt-10 md:mt-0"
-				style={{ flex: 1 }}
+				className="flex flex-col lg:items-start items-center p-8 bg-opacity-50 z-10 mt-10 md:mt-0 lg:w-3/5"
 			>
 				{/* These elements will be pushed down on mobile due to the absolute positioning of the buttons bar */}
 				<h4 className="font-bold text-ft-primary-yellow text-wrap">

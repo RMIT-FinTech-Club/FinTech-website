@@ -24,7 +24,10 @@
     "axios": "^1.7.2",
     "bun": "^1.1.13",
     "clsx": "^2.1.0",
+    "crypto": "^1.0.1",
     "embla-carousel-react": "^8.0.2",
+    "form-data": "^4.0.0",
+    "formidable": "^3.5.1",
     "framer-motion": "^11.0.14",
     "jotai": "^2.7.1",
     "mongoose": "^8.4.3",
@@ -46,6 +49,7 @@
   },
   "devDependencies": {
     "@biomejs/biome": "1.7.1",
+    "@types/formidable": "^3.4.5",
     "@types/jest": "^29.5.12",
     "@types/node": "^20",
     "@types/react": "^18",

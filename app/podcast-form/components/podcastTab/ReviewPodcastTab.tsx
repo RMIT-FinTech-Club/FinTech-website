@@ -7,7 +7,6 @@ import React, {
 } from "react";
 import { PodcastDataContext } from "../context/PodcastContext";
 import readFile from "../../functions/readFile";
-import { cursorTo } from "readline";
 
 const ReviewPodcastDataTab: React.FC<{ isShow: boolean }> = ({ isShow }) => {
   const { podcastDetail, authorFiles, audioFile, thumnailFile } =
@@ -25,18 +24,14 @@ const ReviewPodcastDataTab: React.FC<{ isShow: boolean }> = ({ isShow }) => {
       authorFiles.length
     );
     for (let i = 0; i < authorFiles.length; ++i) {
-      console.log("useEffect run in rewivew tab");
       if (previewAuthorImageRefs.current[i]) {
-        console.log("in set");
-        console.log(previewAuthorImageRefs.current[i]);
-        console.log(authorFiles[i]);
         if (authorFiles[i] instanceof Blob) {
           const reader = new FileReader();
             previewAuthorImageRefs.current[i].src = URL.createObjectURL(authorFiles[i]);
         }
       }
     }
-  }, [authorFiles, podcastDetail.authors, isShow]);
+  }, [authorFiles, podcastDetail.authors]);
 
   if (isShow) {
     return (
