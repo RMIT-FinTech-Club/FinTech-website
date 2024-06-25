@@ -10,6 +10,8 @@ import useEmblaCarousel from "embla-carousel-react";
 import { useEffect, useState } from "react";
 import "../../../styles/about-us/historyPage.css";
 
+const years = ["2019","2020", "2021", "2022", "2023", "2024"];
+
 export default function HistorySection() {
 	const { isOpen, onOpen, onOpenChange } = useDisclosure();
 
@@ -105,24 +107,24 @@ export default function HistorySection() {
 			</div>
 
 			{/* desktop version */}
-			<div className="hidden items-center w-full mt-8 md:grid md:grid-cols-6 grid-cols-1 overflow-hidden">
+			<div className="hidden items-center w-full mt-8 md:grid md:grid-cols-7 grid-cols-1 overflow-hidden">
 				<img
 					alt="fintech mascot"
 					className="md:block hidden md:w-[300px] lg:w-[600px] rotate-[58.03deg] rounded-[59px] z-10"
 					src="https://ik.imagekit.io/mbrrji2rk/fintechMascot.png?updatedAt=1718991881430"
 				/>
 				<div
-					className={`mt-[93px] mb-[77px] md:w-[0px] w-auto md:h-[300px] h-[100px] grid grid-cols-3 col-span-4 z-0 md: mx-auto ${
+					className={`mt-[93px] mb-[77px] md:w-[0px] w-auto md:h-[300px] h-[100px] grid grid-cols-3 col-span-5 z-0 md: mx-auto ${
 						centerSlideIndex === 0
 							? "pr-96"
-							: centerSlideIndex === 4
+							: centerSlideIndex === years.length - 1
 								? "pl-96"
 								: "px-96"
 					}`}
 					ref={emblaHorizontalRef}
 				>
 					<div className="flex justify-between items-center">
-						{["2020", "2021", "2022", "2023", "2024"].map(
+						{years.map(
 							(year, index) => {
 								return (
 									<div
@@ -201,20 +203,14 @@ export default function HistorySection() {
 									className={`w-auto h-[850px] grid grid-rows-5 z-0 m-auto ${
 										centerSlideIndex === 0
 											? ""
-											: centerSlideIndex === 4
+											: centerSlideIndex === years.length - 1
 												? "pl-96"
 												: "px-96"
 									}`}
 									ref={emblaVerticalRef}
 								>
 									<div className="flex flex-col justify-between items-center gap-40 justify-self-center">
-										{[
-											"2020",
-											"2021",
-											"2022",
-											"2023",
-											"2024",
-										].map((year, index) => {
+										{years.map((year, index) => {
 											return (
 												<div
 													key={year}

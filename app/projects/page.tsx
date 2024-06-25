@@ -4,8 +4,8 @@ import ProjectPage from "./components/ProjectPage";
 const Projects = () => {
 	return (
 		<>
-			<ProjectGeneralPage />
-			{/* <ProjectPage /> */}
+			{/* <ProjectGeneralPage /> */}
+			<ProjectPage />
 		</>
 	);
 };
