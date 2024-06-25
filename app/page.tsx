@@ -13,14 +13,13 @@ import Events from "./events/page";
 const Home = () => {
 	return (
 		<div className="flex min-h-screen flex-col justify-center gap-4">
-			{/* <HerosectionVid />
+			<HerosectionVid />
 			<HeroSection />
 			<PastPartners />
 			<IntroSection />
 			<Department />
 			<Individual />
-			<UpcomingEvent /> */}
-			<Events />
+			<UpcomingEvent />
 		</div>
 	);
 };
