@@ -23,7 +23,7 @@ const IntroVideo = () => {
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
                 className={`fixed top-0 left-0 w-full h-full bg-black z-50 flex items-center justify-center`}>
-                <video autoPlay onEnded={() => setShow(false)} className="w-full h-full object-cover">
+                <video autoPlay muted onEnded={() => setShow(false)} className="w-full h-full object-cover">
                     <source src="/intro.mov" type="video/mp4" />
                     Your browser does not support the video tag.
                 </video>
