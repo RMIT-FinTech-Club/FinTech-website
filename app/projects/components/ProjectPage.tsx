@@ -3,7 +3,7 @@ import { Button } from "@nextui-org/react";
 const ProjectPage = () => {
     return (
         <>
-            <div className="w-screen mb-16">
+            <div className="w-screen mb-16 mx-auto">
                 <h1 className="text-center mt-9 text-[#DCB968]">Projects</h1>
                 <div className="w-48 h-[3px] mx-auto bg-black mt-14" />
                 <div className="mx-auto md:px-56 mt-4 w-full px-16">

@@ -4,7 +4,7 @@ import ProjectPage from "./components/ProjectPage";
 const Projects = () => {
 	return (
 		<>
-			{/* <ProjectGeneralPage /> */}
+			<ProjectGeneralPage />
 			<ProjectPage />
 		</>
 	);
