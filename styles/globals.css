@@ -26,6 +26,10 @@
     }
 }
 
+.date {
+  display: none;
+}
+
 .card:hover > .card-content {
     bottom: 3%;
   }
@@ -50,5 +54,11 @@
     }
     #HallOfFame-MasCot {
       max-width: 100;
+    }
+    .explore {
+      display: none;
+    }
+    .date {
+      display: block
     }
   }
