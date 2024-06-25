@@ -10,7 +10,6 @@ import UpcomingEvent from "./components/upcomingEvent";
 // import IntroSection from "../components/intro";
 // import UpcomingEvent from "../components/upcomingEvent";
 import Events from "./events/page";
-import Member from "./components/member";
 import MemberList from "./about-us/components/members"
 import IntroVideo from "./components/introVideo";
 const Home = () => {
@@ -18,14 +17,13 @@ const Home = () => {
         <>
             <IntroVideo />
             <div className="flex min-h-screen flex-col justify-center items-center">
-                {/* <HerosectionVid />
+                <HerosectionVid />
                 <HeroSection />
                 <PastPartners />
                 <IntroSection />
-                <Member />
                 <Department />
                 <UpcomingEvent />
-                <AchievementsSection /> */}
+                <AchievementsSection />
                 <MemberList />
             </div>
         </>
