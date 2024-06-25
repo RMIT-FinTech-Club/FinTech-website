@@ -24,7 +24,21 @@
 						"filenameCases": ["camelCase", "export"]
 					}
 				},
-				"useNamingConvention": "error"
+				"useNamingConvention": {
+					"level": "error",
+					"options": {
+						"strictCase": false,
+						"conventions": [
+							{
+								"selector": {
+									"kind": "function",
+									"scope": "global"
+								},
+								"formats": ["CONSTANT_CASE"]
+							}
+						]
+					}
+				}
 			}
 		}
 	},

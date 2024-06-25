@@ -1,43 +1,44 @@
-'use client'
+"use client";
 import axios from "@/app/api/(axios)/axios";
 import { Card, CardBody, CardFooter, CardHeader } from "@nextui-org/react";
 import { Image } from "@nextui-org/react";
 import { useEffect, useState } from "react";
 
 interface Member {
-    name: string;
-    generation: string;
-    position: string;
-    birthdate: string;
-    avatarURL?: string;
+	name: string;
+	generation: string;
+	position: string;
+	birthdate: string;
+	avatarURL?: string;
 }
 
-const Invidivual = ({ params } : { params: { memId: string }}) => {
+const Invidivual = ({ params }: { params: { memId: string } }) => {
 	const imageUrl = "HallOfFame-Background.svg";
 
-    const [member, setMember] = useState<Member>({} as Member);
+	const [member, setMember] = useState<Member>({} as Member);
 
-    useEffect(() => {
-        const fetchMember = async () => {
-            axios.get(`/api/v1/members/${params.memId}`)
-                .then((res) => res.data.json)
-                .then((data) => {
-                    setMember({
-                        name: data.name,
-                        generation: data.generation,
-                        position: data.position,
-                        birthdate: data.birthdate,
-                        avatarURL: data.avatarURL,
-                    } as Member);
+	useEffect(() => {
+		const fetchMember = async () => {
+			axios
+				.get(`/api/v1/members/${params.memId}`)
+				.then((res) => res.data.json)
+				.then((data) => {
+					setMember({
+						name: data.name,
+						generation: data.generation,
+						position: data.position,
+						birthdate: data.birthdate,
+						avatarURL: data.avatarURL,
+					} as Member);
 					// print member data
 					console.log(data);
-                })
-                .catch((err) => {
-                    console.error(err);
-                });
-        }
-        fetchMember();
-    }, [])
+				})
+				.catch((err) => {
+					console.error(err);
+				});
+		};
+		fetchMember();
+	}, []);
 
 	return (
 		<section
