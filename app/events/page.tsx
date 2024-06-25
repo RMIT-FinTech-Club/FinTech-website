@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react";
 import EventCard from "./components/eventCard";
 import HeaderTitlePage from "./components/headerTitlePage";
 import { Event } from "./components/types";
+import ClipLoader from "react-spinners/ClipLoader";
 
 // const eventsData: Event[] = [
 // 	{
@@ -40,6 +41,7 @@ import { Event } from "./components/types";
 
 const Events = () => {
 	const [eventsData, setEventsData] = useState([]);
+	const [isLoading, setIsLoading] = useState(true);
 	useEffect(() => {
 		const configuration = {
 			method: "get",
@@ -48,13 +50,19 @@ const Events = () => {
 		axios(configuration)
 			.then((result) => {
 				setEventsData(result.data.data);
+				setIsLoading(false);
 			})
 			.catch((error) => {
 				console.log(error);
 			});
 	}, []);
 	return (
-		<section className="relative">
+		isLoading ? (
+			<section className="flex flex-col items-center h-screen w-full justify-center">
+				<ClipLoader color="#2C305F" />
+			</section>
+		) : (
+			<section className="relative">
 			<div className=" flex flex-col gap-8 items-center justify-center w-full md:w-screen">
 				<HeaderTitlePage text="Our Upcoming Events" />
 
@@ -86,6 +94,7 @@ const Events = () => {
 				className="mascot absolute inset-y-0 right-0 h-96"
 			/>
 		</section>
+		)
 	);
 };
 

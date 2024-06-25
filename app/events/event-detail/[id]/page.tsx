@@ -6,9 +6,11 @@ import React, { useEffect, useState } from "react";
 import EventDetail from "../components/eventDetail";
 import EventLocation from "../components/eventLocation";
 import type { Event } from "../components/types";
+import ClipLoader from "react-spinners/ClipLoader";
 let eventData: Event;
 const EventDateAndLocation = ({ params }: { params: { id: string } }) => {
 	const [eventData, setEventData] = useState({});
+	const [isLoading, setIsLoading] = useState(true);
 	useEffect(() => {
 		// console.log(eventId);
 		const configuration = {
@@ -21,6 +23,7 @@ const EventDateAndLocation = ({ params }: { params: { id: string } }) => {
 		axios(configuration)
 			.then((result) => {
 				setEventData(result.data.data);
+				setIsLoading(false);
 				// console.log(result.data.data);
 			})
 			.catch((error) => {
@@ -28,7 +31,12 @@ const EventDateAndLocation = ({ params }: { params: { id: string } }) => {
 			});
 	}, [params.id]);
 	return (
-		<div className="flex flex-col my-16">
+		isLoading ? (
+			<section className="flex flex-col items-center h-screen w-full justify-center">
+			<ClipLoader color="#2C305F" />
+		</section>
+		) : (
+			<div className="flex flex-col my-16">
 			<div className="lg:flex">
 				<EventDetail event={eventData} />
 				<EventLocation />
@@ -53,6 +61,7 @@ const EventDateAndLocation = ({ params }: { params: { id: string } }) => {
 				/>
 			</div>
 		</div>
+		)
 	);
 };
 
