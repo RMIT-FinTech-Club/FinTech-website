@@ -2,7 +2,7 @@ import React from "react";
 
 const ProjectList: React.FC = () => {
   return (
-    <div>Hi</div>
+    <div className="flex flex-col"></div>
   );
 };
 
