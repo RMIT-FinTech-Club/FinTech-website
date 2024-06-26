@@ -7,6 +7,7 @@ import HerosectionVid from "./components/heroVideoSection";
 import IntroSection from "./components/intro";
 import PastPartners from "./components/pastPartners";
 import UpcomingEvent from "./components/upcomingEvent";
+import Team from "./about-us/components/meet-our-team/team"
 // import HeroSection from "../components/";
 // import IntroSection from "../components/intro";
 // import UpcomingEvent from "../components/upcomingEvent";
@@ -22,6 +23,7 @@ const Home = () => {
 			<Individual />
 			<UpcomingEvent />
 			<AchievementsSection />
+			<Team />
 		</div>
 	);
 };
