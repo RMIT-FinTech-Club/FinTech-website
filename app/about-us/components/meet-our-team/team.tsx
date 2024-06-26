@@ -19,7 +19,7 @@ const teamMembers: TeamMember[] = [
 
 const Team: React.FC = () => {
   return (
-    <div className="text-center p-8 bg-ft-primary-yellow-500">
+    <div className="text-center p-8 bg-ft-primary-yellow-500 w-full">
       <h2 className="text-2xl font-bold mb-8">Meet our team</h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
         {teamMembers.map((member, index) => (
