@@ -1,4 +1,3 @@
-import Layout from './components/Layout';
 import React from 'react';
 import Header from './components/Header';
 import FinTechTainment from './components/FinTechTainment';
