@@ -10,7 +10,7 @@ import "./styles.css";
 
 const ExecuteBoard = () => {
 	return (
-		<section className="relative bg-ft-primary-yellow-500 bg-cover bg-center h-full -mx-side-margin-mobile md:-mx-side-margin px-10 pt-6">
+		<section className="relative bg-ft-primary-yellow-500 bg-cover bg-center h-full px-10 pt-6">
 			<main className="mx-side-margin-mobile mt-0 md:mx-side-margin">
 				<div className="grid grid-cols-1 gap-8 md:grid-cols-4 my-16">
 					<Card className="py-4 px-2 rounded-3xl bg-gray-100 relative overflow-visible">
@@ -24,10 +24,10 @@ const ExecuteBoard = () => {
 							</div>
 						</CardHeader>
 						<CardBody className="overflow-visible py-2 text-center">
-							<h6 className="font-bold text-large text-ft-primary-blue-500">
+							<h6 className="font-bold text-2xl text-ft-primary-blue-500">
 								Hoang Nguyen Nhat Minh
 							</h6>
-							<h6 className="text-tiny text-ft-primary-blue-500">
+							<h6 className="text-lg text-ft-primary-blue-500">
 								Vice President
 							</h6>
 						</CardBody>
@@ -43,10 +43,10 @@ const ExecuteBoard = () => {
 							</div>
 						</CardHeader>
 						<CardBody className="overflow-visible py-2 text-center">
-							<h6 className="font-bold text-large text-ft-primary-blue-500">
+							<h6 className="font-bold text-2xl text-ft-primary-blue-500">
 								Nguyen Minh Dung
 							</h6>
-							<h6 className="text-tiny text-ft-primary-blue-500">
+							<h6 className="text-lg text-ft-primary-blue-500">
 								President
 							</h6>
 						</CardBody>
@@ -62,10 +62,10 @@ const ExecuteBoard = () => {
 							</div>
 						</CardHeader>
 						<CardBody className="overflow-visible py-2 text-center">
-							<h6 className="font-bold text-large text-ft-primary-blue-500">
+							<h6 className="font-bold text-2xl text-ft-primary-blue-500">
 								Nguyen Minh Phuong
 							</h6>
-							<h6 className="text-tiny text-ft-primary-blue-500">
+							<h6 className="text-lg text-ft-primary-blue-500">
 								CFO
 							</h6>
 						</CardBody>
@@ -81,10 +81,10 @@ const ExecuteBoard = () => {
 							</div>
 						</CardHeader>
 						<CardBody className="overflow-visible py-2 text-center">
-							<h6 className="font-bold text-large text-ft-primary-blue-500">
+							<h6 className="font-bold text-2xl text-ft-primary-blue-500">
 								Nguyen Minh Phuong
 							</h6>
-							<h6 className="text-tiny text-ft-primary-blue-500">
+							<h6 className="text-lg text-ft-primary-blue-500">
 								CFO
 							</h6>
 						</CardBody>
