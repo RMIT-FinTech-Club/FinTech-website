@@ -22,8 +22,6 @@ type ResearchPaper = {
 };
 
 export default function ProjectGeneralPage() {
-
-
 	return (
 		<>
 			<div className="w-full md:px-16 px-5">
