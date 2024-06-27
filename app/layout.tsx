@@ -3,6 +3,7 @@ import Navbar from "@/components/navbar";
 import { fontSans } from "@/config/fonts";
 import { siteConfig } from "@/config/site";
 import { Link } from "@nextui-org/link";
+import "@styles/carousel.css";
 import "@styles/globals.css";
 import clsx from "clsx";
 import type { Metadata } from "next";
@@ -10,7 +11,6 @@ import type { Metadata } from "next";
 import type { Viewport } from "next";
 import "slick-carousel/slick/slick-theme.css";
 import "slick-carousel/slick/slick.css";
-import "@styles/carousel.css";
 import { Providers } from "./providers";
 
 export const metadata: Metadata = {
