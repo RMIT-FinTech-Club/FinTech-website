@@ -25,11 +25,7 @@ const Navbar = () => {
 	};
 
 	return (
-		<nav
-			className={`sticky top-0 z-50 flex w-full transition-colors duration-300 ${
-				isScrolled ? "bg-ft-primary-blue shadow-md" : "bg-ft-background"
-			}`}
-		>
+		<nav className="sticky top-0 z-50 flex w-full transition-colors duration-300 bg-ft-primary-blue shadow-md">
 			<div className="flex justify-between items-center max-w-6xl mx-auto px-4 w-full">
 				<div className="logo relative w-14 h-14">
 					<img

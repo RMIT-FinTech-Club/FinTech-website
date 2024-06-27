@@ -1,5 +1,7 @@
+"use client";
 import { Image } from "@nextui-org/image";
 import { Card, CardBody, CardFooter, CardHeader } from "@nextui-org/react";
+import Link from "next/link";
 
 const Member = () => {
 	const imageUrl = "HallOfFame-Background.svg";
@@ -93,81 +95,37 @@ const Member = () => {
 					/>
 				</div> */}
 			</header>
-			<main className=" grid grid-rows-2 gap-8 mx-side-margin-mobile mt-0 h-fit md:grid-rows-2 md:gap-10 md:mx-side-margin md:w-4/6 md:my-14 md:h-4/6">
+			<main className=" grid grid-rows-2 gap-8 pl-10 mx-side-margin-mobile mt-0 h-fit md:grid-rows-2 md:gap-10 md:mx-side-margin md:w-4/6 md:my-14 md:h-4/6">
 				<div className=" grid grid-cols-2 gap-8 md:grid-cols-4 md:gap-10">
-					<Card className="card" isFooterBlurred>
-						<Image
-							removeWrapper
-							alt="Card background"
-							className="z-0 w-full h-full object-cover"
-							src="President.jpg"
-							radius="none"
-							isZoomed
-						/>
-						<CardFooter className="card-content flex flex-col text-left -bottom-20 before:bg-white/10 border-white/20 border-1 overflow-hidden py-1 absolute before:rounded-xl rounded-large w-[calc(100%_-_8px)] shadow-small ml-1 z-10 transition-all ease-out delay-150">
-							<p className=" text-base text-ft-primary-yellow-500">
-								Dung Nguyen
-							</p>
-							<p className="text-tiny text-ft-text-bright">
-								President
-							</p>
-						</CardFooter>
-					</Card>
-					<Card className="card" isFooterBlurred>
-						<Image
-							removeWrapper
-							alt="Card background"
-							className="z-0 w-full h-full object-cover"
-							src="President.jpg"
-							radius="none"
-							isZoomed
-						/>
-						<CardFooter className="card-content flex flex-col text-left -bottom-20 before:bg-white/10 border-white/20 border-1 overflow-hidden py-1 absolute before:rounded-xl rounded-large w-[calc(100%_-_8px)] shadow-small ml-1 z-10 transition-all ease-out delay-150">
-							<p className=" text-base text-ft-primary-yellow-500">
-								Dung Nguyen
-							</p>
-							<p className="text-tiny text-ft-text-bright">
-								President
-							</p>
-						</CardFooter>
-					</Card>
-					<Card className="card" isFooterBlurred>
-						<Image
-							removeWrapper
-							alt="Card background"
-							className="z-0 w-full h-full object-cover"
-							src="President.jpg"
-							radius="none"
-							isZoomed
-						/>
-						<CardFooter className="card-content flex flex-col text-left -bottom-20 before:bg-white/10 border-white/20 border-1 overflow-hidden py-1 absolute before:rounded-xl rounded-large w-[calc(100%_-_8px)] shadow-small ml-1 z-10 transition-all ease-out delay-150">
-							<p className=" text-base text-ft-primary-yellow-500">
-								Dung Nguyen
-							</p>
-							<p className="text-tiny text-ft-text-bright">
-								President
-							</p>
-						</CardFooter>
-					</Card>
-					<Card className="card" isFooterBlurred>
-						<Image
-							removeWrapper
-							alt="Card background"
-							className="z-0 w-full h-full object-cover"
-							src="President.jpg"
-							radius="none"
-							isZoomed
-							height={250}
-						/>
-						<CardFooter className="card-content flex flex-col text-left -bottom-20 before:bg-white/10 border-white/20 border-1 overflow-hidden py-1 absolute before:rounded-xl rounded-large w-[calc(100%_-_8px)] shadow-small ml-1 z-10 transition-all ease-out delay-150">
-							<p className=" text-base text-ft-primary-yellow-500">
-								Dung Nguyen
-							</p>
-							<p className="text-tiny text-ft-text-bright">
-								President
-							</p>
-						</CardFooter>
-					</Card>
+					{/* 
+                        WARNING: length of 4 is hardcoded for placeholder data
+                        TODO: replace the placeholder with actual data 
+                    */}
+					{Array.from({ length: 4 }).map((_, index) => (
+						<Link
+							key={index}
+							href={`/hall-of-fame/6675667ae6b4538e26bec36d`}
+						>
+							<Card className="card" isFooterBlurred>
+								<Image
+									removeWrapper
+									alt="Card background"
+									className="z-0 w-full h-full object-cover"
+									src="President.jpg"
+									radius="none"
+									isZoomed
+								/>
+								<CardFooter className="card-content flex flex-col text-left -bottom-20 before:bg-white/10 border-white/20 border-1 overflow-hidden py-1 absolute before:rounded-xl rounded-large w-[calc(100%_-_8px)] shadow-small ml-1 z-10 transition-all ease-out delay-150">
+									<p className=" text-base text-ft-primary-yellow-500">
+										Dung Nguyen
+									</p>
+									<p className="text-tiny text-ft-text-bright">
+										President
+									</p>
+								</CardFooter>
+							</Card>
+						</Link>
+					))}
 				</div>
 				<div className=" grid grid-cols-2 gap-5 md:grid-cols-4 md:gap-10">
 					<Card className="card" isFooterBlurred>

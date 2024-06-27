@@ -4,9 +4,8 @@ import { useMutation } from "@tanstack/react-query";
 import { type ChangeEventHandler, useState } from "react";
 import { type SubmitHandler, useForm } from "react-hook-form";
 import { getSignedURL } from "../api/research/actions";
-import { createResearchPaper } from "../api/research/route";
+import { createResearchPaper } from "../api/research/researchPaper";
 import { Button } from "@nextui-org/react";
-import { BucketLocationConstraint } from "@aws-sdk/client-s3";
 import successNotify from "@/utils/successNotify";
 import failedNotify from "@/utils/failedNotify";
 
