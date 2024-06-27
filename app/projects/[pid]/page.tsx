@@ -2,6 +2,7 @@ import { Avatar } from "@nextui-org/react";
 import { Card, CardBody, Divider } from "@nextui-org/react";
 import { IconLink } from "@tabler/icons-react";
 import React from "react";
+import { Link } from "tabler-icons-react";
 
 const ProjectDetail = () => {
 	return (
@@ -23,12 +24,11 @@ const ProjectDetail = () => {
 						</h6>
 						<h6 className="">Lorem ipsum dolor sit amet</h6>
 					</div>
-					<a
+					<Link
 						className="md:justify-self-end md:col-span-4 col-span-12 my-auto md:w-fit w-full"
 						// can pass the link of the document on amazon s3
 						href="https://fintech-club-website.s3.ap-southeast-2.amazonaws.com/UML+class+-+application+architecture.pdf"
 						target="_blank"
-						rel="noreferrer"
 					>
 						<button
 							type="button"
@@ -42,7 +42,7 @@ const ProjectDetail = () => {
 								Full access
 							</p>
 						</button>
-					</a>
+					</Link>
 				</div>
 				<Card className=" max-w-full my-4">
 					<CardBody>
