@@ -1,203 +1,44 @@
 "use client";
 
-import { avatar } from "@nextui-org/react";
 import { Image } from "@nextui-org/react";
-import clsx from "clsx";
-import type React from "react";
+import axios from "axios";
 import { useEffect, useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 import type ClubMember from "./memberList/clubMember";
 import HeaderTitlePage from "./memberList/headerTitlePage";
-import MemberAvatar from "./memberList/memberCard";
 import MemberFilter from "./memberList/memberFilter";
 import MemberList from "./memberList/memberList";
 
-const clubMembers: ClubMember[] = [
-	{ name: "John Doe", avatarSrc: "/RiceSrc01.png", department: "Business" },
-	{ name: "Jane Doe", avatarSrc: "/RiceSrc01.png", department: "Business" },
-	{ name: "John Smith", avatarSrc: "/RiceSrc01.png", department: "Business" },
-	{ name: "Jane Smith", avatarSrc: "/RiceSrc01.png", department: "Business" },
-	{ name: "John Doe", avatarSrc: "/RiceSrc01.png", department: "Business" },
-	{ name: "Jane Doe", avatarSrc: "/RiceSrc01.png", department: "Marketing" },
-	{
-		name: "John Smith",
-		avatarSrc: "/RiceSrc01.png",
-		department: "Marketing",
-	},
-	{
-		name: "Jane Smith",
-		avatarSrc: "/RiceSrc01.png",
-		department: "Marketing",
-	},
-	{ name: "John Doe", avatarSrc: "/RiceSrc01.png", department: "Marketing" },
-	{ name: "Jane Doe", avatarSrc: "/RiceSrc01.png", department: "Marketing" },
-	{
-		name: "John Smith",
-		avatarSrc: "/RiceSrc01.png",
-		department: "Marketing",
-	},
-	{
-		name: "Jane Smith",
-		avatarSrc: "/RiceSrc01.png",
-		department: "Marketing",
-	},
-	{
-		name: "John Doe",
-		avatarSrc: "/RiceSrc01.png",
-		department: "Human Resources",
-	},
-	{
-		name: "Jane Doe",
-		avatarSrc: "/RiceSrc01.png",
-		department: "Human Resources",
-	},
-	{
-		name: "John Smith",
-		avatarSrc: "/RiceSrc01.png",
-		department: "Human Resources",
-	},
-	{
-		name: "Jane Smith",
-		avatarSrc: "/RiceSrc01.png",
-		department: "Human Resources",
-	},
-	{
-		name: "John Doe",
-		avatarSrc: "/RiceSrc01.png",
-		department: "Human Resources",
-	},
-	{
-		name: "Jane Doe",
-		avatarSrc: "/RiceSrc01.png",
-		department: "Human Resources",
-	},
-	{
-		name: "John Smith",
-		avatarSrc: "/RiceSrc01.png",
-		department: "Human Resources",
-	},
-	{
-		name: "Jane Smith",
-		avatarSrc: "/RiceSrc01.png",
-		department: "Human Resources",
-	},
-	{
-		name: "John Doe",
-		avatarSrc: "/RiceSrc01.png",
-		department: "Human Resources",
-	},
-	{
-		name: "Jane Doe",
-		avatarSrc: "/RiceSrc01.png",
-		department: "Human Resources",
-	},
-	{
-		name: "John Smith",
-		avatarSrc: "/RiceSrc01.png",
-		department: "Technology",
-	},
-	{
-		name: "Jane Smith",
-		avatarSrc: "/RiceSrc01.png",
-		department: "Technology",
-	},
-	{ name: "John Doe", avatarSrc: "/RiceSrc01.png", department: "Technology" },
-	{ name: "Jane Doe", avatarSrc: "/RiceSrc01.png", department: "Technology" },
-	{
-		name: "John Smith",
-		avatarSrc: "/RiceSrc01.png",
-		department: "Technology",
-	},
-	{
-		name: "Jane Smith",
-		avatarSrc: "/RiceSrc01.png",
-		department: "Technology",
-	},
-	{ name: "John Doe", avatarSrc: "/RiceSrc01.png", department: "Business" },
-	{ name: "Jane Doe", avatarSrc: "/RiceSrc01.png", department: "Marketing" },
-	{
-		name: "John Smith",
-		avatarSrc: "/RiceSrc01.png",
-		department: "Human Resources",
-	},
-	{
-		name: "Jane Smith",
-		avatarSrc: "/RiceSrc01.png",
-		department: "Technology",
-	},
-	{ name: "John Doe", avatarSrc: "/RiceSrc01.png", department: "Business" },
-	{ name: "Jane Doe", avatarSrc: "/RiceSrc01.png", department: "Technology" },
-	{
-		name: "John Smith",
-		avatarSrc: "/RiceSrc01.png",
-		department: "Technology",
-	},
-	{ name: "John Doe", avatarSrc: "/RiceSrc01.png", department: "Business" },
-	{ name: "Jane Doe", avatarSrc: "/RiceSrc01.png", department: "Marketing" },
-	{
-		name: "John Smith",
-		avatarSrc: "/RiceSrc01.png",
-		department: "Human Resources",
-	},
-	{
-		name: "Jane Smith",
-		avatarSrc: "/RiceSrc01.png",
-		department: "Technology",
-	},
-	{ name: "John Doe", avatarSrc: "/RiceSrc01.png", department: "Business" },
-	{ name: "Jane Doe", avatarSrc: "/RiceSrc01.png", department: "Technology" },
-	{
-		name: "John Smith",
-		avatarSrc: "/RiceSrc01.png",
-		department: "Technology",
-	},
-	{ name: "John Doe", avatarSrc: "/RiceSrc01.png", department: "Business" },
-	{ name: "Jane Doe", avatarSrc: "/RiceSrc01.png", department: "Marketing" },
-	{
-		name: "John Smith",
-		avatarSrc: "/RiceSrc01.png",
-		department: "Human Resources",
-	},
-	{
-		name: "Jane Smith",
-		avatarSrc: "/RiceSrc01.png",
-		department: "Technology",
-	},
-	{ name: "John Doe", avatarSrc: "/RiceSrc01.png", department: "Business" },
-	{ name: "Jane Doe", avatarSrc: "/RiceSrc01.png", department: "Technology" },
-	{
-		name: "John Smith",
-		avatarSrc: "/RiceSrc01.png",
-		department: "Technology",
-	},
-	{ name: "John Doe", avatarSrc: "/RiceSrc01.png", department: "Business" },
-	{ name: "Jane Doe", avatarSrc: "/RiceSrc01.png", department: "Marketing" },
-	{
-		name: "John Smith",
-		avatarSrc: "/RiceSrc01.png",
-		department: "Human Resources",
-	},
-	{
-		name: "Jane Smith",
-		avatarSrc: "/RiceSrc01.png",
-		department: "Technology",
-	},
-	{ name: "John Doe", avatarSrc: "/RiceSrc01.png", department: "Business" },
-	{ name: "Jane Doe", avatarSrc: "/RiceSrc01.png", department: "Technology" },
-	{
-		name: "John Smith",
-		avatarSrc: "/RiceSrc01.png",
-		department: "Technology",
-	},
-];
-
 const Members: React.FC = () => {
-	const departments = Array.from(
-		new Set(clubMembers.map((member) => member.department)),
-	);
+	const [clubMembers, setClubMembers] = useState<ClubMember[]>([]);
+	const [filteredMember, setFilteredMember] = useState<ClubMember[]>([]);
+	const [departments, setDepartments] = useState<string[]>([]);
 
-	const [filteredMember, setFilteredMember] =
-		useState<ClubMember[]>(clubMembers);
+	useEffect(() => {
+		const fetchMembers = async () => {
+			try {
+				const response = await axios.get("/api/v1/members");
+				const members = response.data.members;
+				const membersWithUuid = members.map((member: ClubMember) => ({
+					...member,
+					uuid: uuidv4(),
+				}));
+				setClubMembers(membersWithUuid);
+				setFilteredMember(membersWithUuid);
+				setDepartments(
+					Array.from(
+						new Set(
+							membersWithUuid.map((member) => member.department),
+						),
+					),
+				);
+			} catch (error) {
+				console.error("Error fetching members:", error);
+			}
+		};
+
+		fetchMembers();
+	}, []);
 
 	const handleFilterChange = (department: string | null) => {
 		if (department) {
@@ -209,31 +50,6 @@ const Members: React.FC = () => {
 			setFilteredMember(clubMembers);
 		}
 	};
-
-	const clubMembersWithUuid: ClubMember[] = clubMembers.map((member) => ({
-		...member,
-		uuid: uuidv4(),
-	}));
-
-	// useEffect(() => {
-	// 	const resizeHandler = () => {
-	// 		if (window.innerWidth >= 1920) {
-	// 			document.body.style.overflowX = "hidden";
-	// 		} else {
-	// 			document.body.style.overflowX = "auto";
-	// 		}
-	// 	};
-
-	// 	document.body.style.maxWidth = "1920px";
-	// 	document.body.style.overflowX = "hidden";
-	// 	window.addEventListener("resize", resizeHandler);
-
-	// 	return () => {
-	// 		window.removeEventListener("resize", resizeHandler);
-	// 		document.body.style.overflowX = "auto";
-	// 		document.body.style.overflowY = "auto";
-	// 	};
-	// }, []);
 
 	useEffect(() => {
 		document.body.style.overflowX = "hidden";
@@ -290,4 +106,5 @@ const Members: React.FC = () => {
 		</div>
 	);
 };
+
 export default Members;

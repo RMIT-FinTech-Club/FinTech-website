@@ -1,11 +1,12 @@
 import React from "react";
+import MemberList from "./about-us/components/members";
 import AchievementsSection from "./components/achievements";
 import { Toaster } from "react-hot-toast";
 import Department from "./components/department";
-import Individual from "./components/hall-of-fame/individual";
 import HeroSection from "./components/hero";
 import HerosectionVid from "./components/heroVideoSection";
 import IntroSection from "./components/intro";
+import IntroVideo from "./components/introVideo";
 import PastPartners from "./components/pastPartners";
 import UpcomingEvent from "./components/upcomingEvent";
 // import HeroSection from "../components/";
@@ -22,7 +23,6 @@ const Home = () => {
 			<PastPartners />
 			<IntroSection />
 			<Department />
-			<Individual />
 			<UpcomingEvent />
 			<AchievementsSection />
 		</div>
