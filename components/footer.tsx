@@ -1,4 +1,3 @@
-import Link from "next/link";
 import React from "react";
 import {
 	BrandFacebook,
@@ -29,7 +28,7 @@ const Footer = () => {
 						/>
 					</div>
 				</div>
-				<div className="md:w-1/3 w-full flex justify-end mb-[40px] md:mb-0">
+				<div className="md:w-1/3 w-full flex justify-center md:justify-end mb-[40px] md:mb-0">
 					<ul className="mt-[20px] text-center md:text-left">
 						<h5 className="text-ft-text-bright">Important Links</h5>
 						<li>
@@ -59,7 +58,7 @@ const Footer = () => {
 						</li>
 					</ul>
 				</div>
-				<div className="md:w-1/3 w-full mb-[40px] md:mb-0 flex justify-end">
+				<div className="md:w-1/3 w-full mb-[40px] md:mb-0 flex justify-center md:justify-end">
 					<div className="mt-[20px] w-fit flex items-center flex-col md:block">
 						<h5 className="ft-heading-1 text-ft-text-bright w-fit">
 							Contact Info

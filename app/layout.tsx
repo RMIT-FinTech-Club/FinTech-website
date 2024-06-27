@@ -3,6 +3,8 @@ import Navbar from "@/components/navbar";
 import { fontSans } from "@/config/fonts";
 import { siteConfig } from "@/config/site";
 import { Link } from "@nextui-org/link";
+import "react-toastify/dist/ReactToastify.css";
+import "@styles/carousel.css";
 import "@styles/globals.css";
 import clsx from "clsx";
 import type { Metadata } from "next";
@@ -10,6 +12,8 @@ import type { Metadata } from "next";
 import type { Viewport } from "next";
 import "slick-carousel/slick/slick-theme.css";
 import "slick-carousel/slick/slick.css";
+import "@styles/carousel.css";
+import { Flip, ToastContainer } from "react-toastify";
 import { Providers } from "./providers";
 
 export const metadata: Metadata = {
@@ -44,17 +48,28 @@ export default function RootLayout({
 			<body
 				className={clsx(
 					"min-h-screen bg-background font-sans antialiased overflow-x-hidden",
-					fontSans.variable,
+					fontSans.className,
 				)}
 			>
 				<Providers
 					themeProps={{ attribute: "class", defaultTheme: "light" }}
 				>
+					<ToastContainer
+						position="top-center"
+						autoClose={3000}
+						hideProgressBar
+						newestOnTop={false}
+						closeOnClick
+						rtl={false}
+						pauseOnFocusLoss
+						draggable
+						pauseOnHover
+						theme="light"
+						transition={Flip}
+					/>
 					<div className="relative items-center flex flex-col h-screen">
 						{<Navbar />}
-						<main className="min-w-full flex-grow px-side-margin-mobile md:px-side-margin">
-							{children}
-						</main>
+						<main className="min-w-full flex-grow">{children}</main>
 						{<Footer />}
 					</div>
 				</Providers>
