@@ -1,7 +1,6 @@
 "use client";
 import { Image } from "@nextui-org/image";
-import { Button, Checkbox } from "@nextui-org/react";
-import { Input } from "@nextui-org/react";
+import { Button, Checkbox, Input } from "@nextui-org/react";
 import axios from "axios";
 import { useRouter } from "next/navigation";
 import type React from "react";

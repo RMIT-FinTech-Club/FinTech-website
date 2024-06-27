@@ -28,7 +28,9 @@ const Members: React.FC = () => {
 				setDepartments(
 					Array.from(
 						new Set(
-							membersWithUuid.map((member) => member.department),
+							membersWithUuid.map(
+								(member: ClubMember) => member.department,
+							),
 						),
 					),
 				);

@@ -26,3 +26,4 @@ const FinTechTainment: React.FC = () => {
 };
 
 export default FinTechTainment;
+

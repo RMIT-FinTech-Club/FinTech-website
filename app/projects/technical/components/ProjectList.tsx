@@ -1,4 +1,4 @@
-import type React from "react";
+import type type React from "react";
 import TechnicalProjectCard from "./TechnicalProjectCard";
 
 const ProjectList: React.FC = () => {
@@ -24,3 +24,4 @@ const ProjectList: React.FC = () => {
 };
 
 export default ProjectList;
+
