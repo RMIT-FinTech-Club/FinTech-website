@@ -3,7 +3,7 @@ import { Skeleton } from "@nextui-org/react";
 const ProjectCardSkeletonLoading = () => {
     return (
         <>
-            <div className="grid md:grid-cols-2 bg-ft-background shadow-lg rounded-lg p-4 w-full h-72 space-x-11">
+            <div className="grid md:grid-cols-2 bg-ft-background shadow-lg rounded-lg p-4 w-4/5 h-72 space-x-11">
                 <Skeleton className="rounded-lg">
                     <div className=" h-60 rounded-lg bg-default-300"></div>
                 </Skeleton>

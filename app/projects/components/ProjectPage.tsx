@@ -33,7 +33,7 @@ const ProjectPage = () => {
                     <div className="grid md:grid-cols-2 md:gap-x-11">
                         <img className="mx-auto object-cover w-full md:order-last rounded-2xl" src="https://placehold.co/1000x900" alt="" />
                         <div className="md:mt-0 mt-4">
-                            <h2 className="text-[#2C305F]">Project type</h2>
+                            <h2 className="text-[#2C305F] text-right">Project type</h2>
                             <p className="md:mt-9 mt-4 text-balance text-justify">
                                 Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repudiandae iure deserunt consequatur! Repudiandae consequuntur corrupti harum nemo ipsa cumque facere! Deleniti nisi repudiandae nemo vitae cumque, quasi sit adipisci consequatur?
                                 Dignissimos fugit fuga recusandae labore at eum illum deserunt, nobis quibusdam reiciendis, ullam laboriosam amet facilis magni aliquid aperiam molestiae expedita laudantium ipsa atque quasi? Deleniti officia iusto asperiores reiciendis.
@@ -67,7 +67,7 @@ const ProjectPage = () => {
                     <div className="grid md:grid-cols-2 md:gap-x-11">
                         <img className="mx-auto object-cover w-full md:order-last rounded-2xl" src="https://placehold.co/1000x900" alt="" />
                         <div className="md:mt-0 mt-4">
-                            <h2 className="text-[#2C305F]">Project type</h2>
+                            <h2 className="text-[#2C305F] text-right">Project type</h2>
                             <p className="md:mt-9 mt-4 text-balance text-justify">
                                 Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repudiandae iure deserunt consequatur! Repudiandae consequuntur corrupti harum nemo ipsa cumque facere! Deleniti nisi repudiandae nemo vitae cumque, quasi sit adipisci consequatur?
                                 Dignissimos fugit fuga recusandae labore at eum illum deserunt, nobis quibusdam reiciendis, ullam laboriosam amet facilis magni aliquid aperiam molestiae expedita laudantium ipsa atque quasi? Deleniti officia iusto asperiores reiciendis.

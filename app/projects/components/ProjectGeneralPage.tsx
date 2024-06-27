@@ -288,7 +288,7 @@ async function ProjectsSection() {
 	})
 	return (
 		<>
-			{projects.map((project) => (
+			{projects.map((project: ResearchPaper) => (
 				<ProjectGeneralCard key={project._id} project={project} />
 			))}
 		</>
