@@ -1,5 +1,5 @@
 "use client";
-import { getProjects } from "@/app/api/projects/route";
+import { getProjects } from "@/app/api/projects/getProjects";
 import Link from 'next/link'
 import ProjectCardSkeletonLoading from "../(skeleton)/ProjectCardSkeletonLoading";
 import { fontSans } from "@/config/fonts";
