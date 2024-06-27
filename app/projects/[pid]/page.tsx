@@ -32,7 +32,8 @@ const ProjectDetail = () => {
 					>
 						<button
 							type="button"
-							className="py-4 items-center justify-center flex flex-grow my-auto px-6 bg-blue-500 rounded-full drop-shadow-lg text-xl text-white duration-300 hover:bg-blue-700 active:bg-blue-900">
+							className="py-4 items-center justify-center flex flex-grow my-auto px-6 bg-blue-500 rounded-full drop-shadow-lg text-xl text-white duration-300 hover:bg-blue-700 active:bg-blue-900"
+						>
 							<IconLink
 								stroke={2}
 								className="basis-1/4 mr-2 mx-auto"

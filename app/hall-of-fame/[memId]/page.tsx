@@ -1,7 +1,7 @@
 "use client";
-import axios from "axios";
 import { Card, CardBody, CardFooter, CardHeader } from "@nextui-org/react";
 import { Image } from "@nextui-org/react";
+import axios from "axios";
 import { useEffect, useState } from "react";
 
 interface Member {

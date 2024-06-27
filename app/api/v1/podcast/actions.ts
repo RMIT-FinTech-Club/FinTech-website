@@ -102,18 +102,27 @@ export async function getBuffer(file: File) {
 	return buffer;
 }
 
-export function checkData(data:string, formData: FormData){
-	if(!formData.get(data)){
-		return NextResponse.json({ error: `${data} is not provided`}, { status: 400 });
+export function checkData(data: string, formData: FormData) {
+	if (!formData.get(data)) {
+		return NextResponse.json(
+			{ error: `${data} is not provided` },
+			{ status: 400 },
+		);
 	}
 }
-export function checkArray(arrayName: string, formData: FormData){
-	if(!(formData.getAll(arrayName).length > 0)){
-		return NextResponse.json({ error: `${arrayName} is not provided`}, { status: 400 });
+export function checkArray(arrayName: string, formData: FormData) {
+	if (!(formData.getAll(arrayName).length > 0)) {
+		return NextResponse.json(
+			{ error: `${arrayName} is not provided` },
+			{ status: 400 },
+		);
 	}
 }
-export function checkInstanceOfFile (item:any, itemName: string){
-	if(!(item instanceof File)){
-		return NextResponse.json({ error: `${itemName} is not a File`}, { status: 400 });	
+export function checkInstanceOfFile(item: any, itemName: string) {
+	if (!(item instanceof File)) {
+		return NextResponse.json(
+			{ error: `${itemName} is not a File` },
+			{ status: 400 },
+		);
 	}
 }

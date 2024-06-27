@@ -21,6 +21,8 @@ export async function POST(req: Request) {
 		description,
 		fileURL,
 	});
-	return NextResponse.json({ message: "Research paper created successfully", researchPaper },{ status: 200 });
+	return NextResponse.json(
+		{ message: "Research paper created successfully", researchPaper },
+		{ status: 200 },
+	);
 }
-

@@ -1,9 +1,7 @@
-import React from "react";
+import type React from "react";
 
 const ProjectList: React.FC = () => {
-  return (
-    <div>Hi</div>
-  );
+	return <div>Hi</div>;
 };
 
 export default ProjectList;

@@ -1,13 +1,13 @@
 "use client";
 import { fontSans } from "@/config/fonts";
+import failedNotify from "@/utils/failedNotify";
+import successNotify from "@/utils/successNotify";
+import { Button } from "@nextui-org/react";
 import { useMutation } from "@tanstack/react-query";
 import { type ChangeEventHandler, useState } from "react";
 import { type SubmitHandler, useForm } from "react-hook-form";
 import { getSignedURL } from "../api/research/actions";
 import { createResearchPaper } from "../api/research/researchPaper";
-import { Button } from "@nextui-org/react";
-import successNotify from "@/utils/successNotify";
-import failedNotify from "@/utils/failedNotify";
 
 interface FormInput {
 	title: string;
@@ -387,10 +387,11 @@ export default function PodcastForm() {
 							Cancel
 						</button>
 						<Button
-							className={`w-1/3 h-10 rounded-lg text-black font-semibold text-lg tracking-wide ${mutation.isPending
+							className={`w-1/3 h-10 rounded-lg text-black font-semibold text-lg tracking-wide ${
+								mutation.isPending
 									? "cursor-not-allowed bg-[#DCB968]/80 "
 									: "cursor-pointer bg-[#DCB968] hover:bg-[#DCB968]/80 active:bg-[#DCB968]/60"
-								}`}
+							}`}
 							type="submit"
 							// disabled={mutation.isPending}
 							isLoading={mutation.isPending}

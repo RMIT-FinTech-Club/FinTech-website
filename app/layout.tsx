@@ -12,8 +12,8 @@ import type { Viewport } from "next";
 import "slick-carousel/slick/slick-theme.css";
 import "slick-carousel/slick/slick.css";
 import "@styles/carousel.css";
-import { Providers } from "./providers";
 import { Flip, ToastContainer } from "react-toastify";
+import { Providers } from "./providers";
 
 export const metadata: Metadata = {
 	title: {
