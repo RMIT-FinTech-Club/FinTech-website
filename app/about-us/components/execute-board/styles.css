@@ -1,0 +1,17 @@
+.team-card-image {
+    transition: transform 0.3s ease-in-out;
+    transform-origin: bottom center;
+    transform: scale(1.2);
+  }
+
+  .management-card-image {
+    transition: transform 0.3s ease-in-out;
+    transform-origin: bottom center;
+  }
+
+  .management-card-image:hover {
+    transform: scale(1.1);
+    transform-origin: center bottom;
+  }
+
+  

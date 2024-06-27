@@ -3,13 +3,13 @@ import { fontMono } from "@/config/fonts";
 
 export default function FinTechInTheEyes() {
 	return (
-		<div className="w-screen h-auto grid md:grid-cols-12 p-5 md:p-0">
+		<div className="w-screen grid md:grid-cols-12 p-5 md:p-0">
 			<img
 				src="https://ik.imagekit.io/mbrrji2rk/Picture1.png?updatedAt=1718879714203"
 				alt="president profile"
 				className="hidden md:block md:col-span-5 mt-32"
 			/>
-			<div className="md:col-span-5 col-span-10 place-content-center md:content-start mt-32">
+			<div className="md:col-span-5 col-span-10 place-content-center md:content-start md:mt-32">
 				<h1
 					className={`text-3xl md:text-7xl text-center md:text-end md:py-2 text-[#DBB968] font-black ${fontMono.style}`}
 				>
@@ -52,7 +52,7 @@ export default function FinTechInTheEyes() {
 					luctus odio.
 				</p>
 			</div>
-			<div className="flex-col justify-betwwen md:col-span-2 mt-32">
+			<div className="md:block hidden flex-col justify-betwwen md:col-span-2 mt-32">
 				<img
 					alt="fintech mascot"
 					className="md:block hidden h-[300px] w-full mb-5"

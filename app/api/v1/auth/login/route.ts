@@ -1,4 +1,4 @@
-import { connect } from "@/db/dbConfig";
+import connectMongoDB from "@/libs/mongodb";
 import User from "@/models/user";
 import bcryptjs from "bcryptjs";
 import { SignJWT } from "jose";
@@ -7,7 +7,7 @@ import { type NextRequest, NextResponse } from "next/server";
 
 export async function POST(request: NextRequest) {
 	try {
-		await connect();
+		connectMongoDB();
 		// Get data from user
 		const { email, password } = await request.json();
 		const user = await User.findOne({ email: email });

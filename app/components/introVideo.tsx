@@ -23,7 +23,7 @@ const IntroVideo = () => {
 					initial={{ opacity: 1 }}
 					animate={{ opacity: 1 }}
 					exit={{ opacity: 0 }}
-					className={`fixed top-0 left-0 w-full h-full bg-black z-50 flex items-center justify-center`}
+					className="fixed top-0 left-0 w-full h-full bg-black z-50 flex items-center justify-center"
 				>
 					<video
 						autoPlay
