@@ -4,7 +4,7 @@ import {
 	PutObjectCommand,
 	S3Client,
 } from "@aws-sdk/client-s3";
-
+import { NextResponse } from "next/server";
 const AUDIO_MAX_SIZE = 1024 * 1024 * 1024 * 4; //4GB
 const IMAGE_MAX_SIZE = 1024 * 1024 * 5; //5MB
 const AUDIOTYPE = ["audio/mpeg", "audio/wav"];
@@ -100,4 +100,20 @@ export async function getBuffer(file: File) {
 	// console.log('run get Buffer');
 	const buffer = Buffer.from(await file.arrayBuffer());
 	return buffer;
+}
+
+export function checkData(data:string, formData: FormData){
+	if(!formData.get(data)){
+		return NextResponse.json({ error: `${data} is not provided`}, { status: 400 });
+	}
+}
+export function checkArray(arrayName: string, formData: FormData){
+	if(!(formData.getAll(arrayName).length > 0)){
+		return NextResponse.json({ error: `${arrayName} is not provided`}, { status: 400 });
+	}
+}
+export function checkInstanceOfFile (item:any, itemName: string){
+	if(!(item instanceof File)){
+		return NextResponse.json({ error: `${itemName} is not a File`}, { status: 400 });	
+	}
 }
