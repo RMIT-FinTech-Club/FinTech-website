@@ -14,8 +14,10 @@ const TechnicalProjectCard: React.FC<{ projectTitle: string, projectDescription:
       <img className="" src={projectImg} alt=""></img>
       <div className="flex flex-col">
         {tags.map((tag) => (<TechnicalTag tagName={tag} />))}
-        <h2></h2>
+        <h2>{projectTitle}</h2>
       </div>
     </div>
   );
 }
+
+export default TechnicalProjectCard;
