@@ -5,7 +5,7 @@ import type React from "react";
 const Header: React.FC = () => {
 	return (
 		<section
-			className="relative w-full h-[40vh] bg-cover bg-center sm:h-[50vh] lg:h-[60vh]"
+			className="relative w-full bg-cover bg-center sm:h-[50vh] lg:h-[60vh]"
 			style={{
 				backgroundImage:
 					"url('https://creatioftu2.com/wp-content/uploads/2023/02/bg-1-2048x1152.png')",
