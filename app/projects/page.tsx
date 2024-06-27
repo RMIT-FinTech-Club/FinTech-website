@@ -1,10 +1,10 @@
-import ProjectGeneralPage from "./components/ProjectGeneralPage";
+// import ProjectGeneralPage from "./components/ProjectGeneralPage";
 import ProjectPage from "./components/ProjectPage";
 
 const Projects = () => {
 	return (
 		<>
-			<ProjectGeneralPage />
+			{/* <ProjectGeneralPage /> */}
 			<ProjectPage />
 		</>
 	);

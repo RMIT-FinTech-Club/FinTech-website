@@ -67,7 +67,7 @@ const Events = () => {
 				<HeaderTitlePage text="Our Upcoming Events" />
 
 				{eventsData?.map((event) => (
-					<EventCard key={event._id} event={event} />
+					<EventCard event={event} />
 				))}
 			</div>
 			{/* Background decorations arranged with the bottom ones sticking to the screen corners */}

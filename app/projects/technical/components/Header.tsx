@@ -1,5 +1,4 @@
-import type React from "react";
-import type React from "react";
+import React from "react";
 
 const Header: React.FC = () => {
 	return (

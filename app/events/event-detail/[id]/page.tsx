@@ -5,11 +5,12 @@ import { useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
 import EventDetail from "../components/eventDetail";
 import EventLocation from "../components/eventLocation";
-import type { Event } from "../components/types";
 import ClipLoader from "react-spinners/ClipLoader";
-let eventData: Event;
+import type { EventDetails } from "../components/types";
+import type { Event } from "../../components/types";
+let eventData: EventDetails;
 const EventDateAndLocation = ({ params }: { params: { id: string } }) => {
-	const [eventData, setEventData] = useState({});
+	const [data, setData] = useState<Event>();
 	const [isLoading, setIsLoading] = useState(true);
 	useEffect(() => {
 		// console.log(eventId);
@@ -22,7 +23,7 @@ const EventDateAndLocation = ({ params }: { params: { id: string } }) => {
 		};
 		axios(configuration)
 			.then((result) => {
-				setEventData(result.data.data);
+				setData(result.data.data);
 				setIsLoading(false);
 				// console.log(result.data.data);
 			})
@@ -38,7 +39,8 @@ const EventDateAndLocation = ({ params }: { params: { id: string } }) => {
 		) : (
 			<div className="flex flex-col my-16">
 			<div className="lg:flex">
-				<EventDetail event={eventData} />
+				{/* <EventDetail event={eventData} /> */}
+				<EventDetail event={data!} />
 				<EventLocation />
 			</div>
 			<div className="hidden lg:flex lg:absolute lg:top-1/3 lg:right-0">

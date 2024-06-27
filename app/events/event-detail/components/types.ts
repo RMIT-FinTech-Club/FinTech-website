@@ -1,12 +1,4 @@
-export interface Event {
-	_id: string;
-	name: string;
-	description: string;
-	imageUrl: string;
-	registrationLink: string;
-	dateTime: string;
-	time: string;
-	date: string;
-	location: string;
-	type: string;
+import type { Event } from "../../components/types";
+export interface EventDetails {
+	event: Event;
 }
