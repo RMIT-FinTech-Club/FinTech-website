@@ -1,8 +1,8 @@
 import { Avatar } from "@nextui-org/react";
 import { Card, CardBody, Divider } from "@nextui-org/react";
 import { IconLink } from "@tabler/icons-react";
+import Link from "next/link";
 import React from "react";
-import { Link } from "tabler-icons-react";
 
 const ProjectDetail = () => {
 	return (
@@ -29,6 +29,7 @@ const ProjectDetail = () => {
 						// can pass the link of the document on amazon s3
 						href="https://fintech-club-website.s3.ap-southeast-2.amazonaws.com/UML+class+-+application+architecture.pdf"
 						target="_blank"
+						rel="noreferrer"
 					>
 						<button
 							type="button"
