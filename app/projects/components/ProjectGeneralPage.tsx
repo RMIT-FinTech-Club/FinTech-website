@@ -1,7 +1,7 @@
 "use client";
 import { getProjects } from "@/app/api/projects/getProjects";
 import Link from 'next/link'
-import ProjectCardSkeletonLoading from "../(skeleton)/ProjectCardSkeletonLoading";
+import ProjectCardSkeletonLoading from "./ProjectCardSkeletonLoading";
 import { fontSans } from "@/config/fonts";
 import {
 	IconBroadcast,
