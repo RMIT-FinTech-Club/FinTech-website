@@ -107,7 +107,7 @@ const ManagementBoard = () => {
 						</CardBody>
 					</Card>
 				</div>
-				<div className=" grid gap-2 md:grid-cols-1 md:gap-2 text-center">
+				<div className=" grid gap-2 md:grid-cols-1 md:gap-2 text-center pt-14 px-32">
 					<h4 className=" text-ft-primary-blue-500">
 						MEET OUR <strong>MANAGEMENT BOARD</strong>
 					</h4>
@@ -117,6 +117,7 @@ const ManagementBoard = () => {
 						mi. Duis porttitor lectus quis turpis malesuada, eu
 						luctus elit dignissim.
 					</p>
+					<div className="mx-auto w-[214px] h-[2px] bg-black mt-6"/>
 				</div>
 			</main>
 		</section>

@@ -1,4 +1,4 @@
-import type type React from "react";
+import React from "react";
 import TechnicalProjectCard from "./TechnicalProjectCard";
 
 const ProjectList: React.FC = () => {

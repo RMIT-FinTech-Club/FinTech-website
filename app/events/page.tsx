@@ -66,7 +66,7 @@ const Events = () => {
 			<div className=" flex flex-col gap-8 items-center justify-center w-full md:w-screen">
 				<HeaderTitlePage text="Our Upcoming Events" />
 
-				{eventsData?.map((event) => (
+				{eventsData?.map((event: Event) => (
 					<EventCard key={event._id} event={event} />
 				))}
 			</div>

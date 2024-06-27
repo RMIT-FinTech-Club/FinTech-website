@@ -14,7 +14,7 @@ const AboutUs = () => {
 			<ExecuteBoard />
 			<ManagementBoard />
 			<Members />
-			<CoreValue />
+			{/* <CoreValue /> */}
 		</div>
 	);
 };

@@ -1,5 +1,6 @@
 "use client";
-import type { Event } from "./types";
+import type { EventDetails } from "./types";
+import type { Event } from "../../components/types";
 const EventDetail: React.FC<{ event: Event }> = ({ event }) => {
 	console.log(event);
 	return (

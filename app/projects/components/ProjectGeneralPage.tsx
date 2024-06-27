@@ -21,7 +21,7 @@ type ResearchPaper = {
 	fileURL: string;
 };
 
-async function GET_PROJECTS() {
+async function getProjects() {
 	return axios
 		.get("/api/projects")
 		.then((res) => res.data)
@@ -51,19 +51,19 @@ export default function ProjectGeneralPage() {
 				</div>
 				<div className="grid md:grid-cols-3 md:mt-10 md:mb-44 w-full md:px-0">
 					<div className="flex flex-col gap-4 items-center md:col-span-2 md:order-first order-last">
-						<Suspense fallback={<ProjectCardSkeletonLoading />}>
-							<PROJECTS_SECTION />
-						</Suspense>
+							<ProjectsSection />
+						{/* <Suspense fallback={<ProjectCardSkeletonLoading />}>
+						</Suspense> */}
 					</div>
 					{/* projects filter  */}
-					<PROJECTS_FILTER />
+					<ProjectsFilter />
 				</div>
 			</div>
 		</>
 	);
 }
 
-function PROJECT_GENERAL_CARD({ project }: { project: ResearchPaper }) {
+function ProjectGeneralCard({ project }: { project: ResearchPaper }) {
 	return (
 		<>
 			<div className="grid md:grid-cols-2 bg-ft-background shadow-lg rounded-lg p-4 w-fit">
@@ -111,7 +111,7 @@ function PROJECT_GENERAL_CARD({ project }: { project: ResearchPaper }) {
 	);
 }
 
-function PROJECTS_FILTER() {
+function ProjectsFilter() {
 	const [isOpen, setIsOpen] = useState(false);
 	type Filters = {
 		research: boolean;
@@ -283,15 +283,15 @@ function PROJECTS_FILTER() {
 	);
 }
 
-async function PROJECTS_SECTION() {
+async function ProjectsSection() {
 	const { data: projects } = useSuspenseQuery<ResearchPaper[]>({
 		queryKey: ["projects"],
-		queryFn: () => GET_PROJECTS(),
+		queryFn: () => getProjects(),
 	});
 	return (
 		<>
 			{projects.map((project: ResearchPaper) => (
-				<PROJECT_GENERAL_CARD key={project._id} project={project} />
+				<ProjectGeneralCard key={project._id} project={project} />
 			))}
 		</>
 	);

@@ -62,7 +62,7 @@ const Members: React.FC = () => {
 	}, []);
 
 	return (
-		<div className="flex flex-col gap-8 relative items-center justify-center overflow-x-hidden xl:overflow-x-visible overflow-y-hidden xl:overflow-y-visible">
+		<div className="flex flex-col mb-14 gap-8 relative items-center justify-center overflow-x-hidden xl:overflow-x-visible overflow-y-hidden xl:overflow-y-visible">
 			<HeaderTitlePage text="members" />
 			<div className="flex justify-center">
 				<MemberFilter
@@ -82,7 +82,7 @@ const Members: React.FC = () => {
 				/>
 			</div>
 			{/* Right FinTech Bear Decoration */}
-			<div className="absolute right-20 bottom-4 md:scale-75 scale-50 invisible xl:visible">
+			<div className="absolute right-0 bottom-4 md:scale-75 scale-50 invisible xl:visible">
 				<Image
 					loading="lazy"
 					src="/bear-right-side.svg"
@@ -98,7 +98,7 @@ const Members: React.FC = () => {
 				/>
 			</div>
 			{/* Below FinTech Bear Decoration  */}
-			<div className="absolute left-20 -bottom-14 md:scale-75 scale-50 invisible xl:visible">
+			<div className="absolute left-20 -bottom-20 md:scale-75 scale-50 invisible xl:visible">
 				<Image
 					loading="lazy"
 					src="/bear-bottom-side.svg"
