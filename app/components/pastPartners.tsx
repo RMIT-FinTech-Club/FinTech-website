@@ -1,3 +1,4 @@
+"use client";
 import { Image } from "@nextui-org/react";
 import React from "react";
 import Slider from "react-slick";
@@ -64,7 +65,7 @@ const PastPartners = () => {
 
 	return (
 		<div className="w-full py-6">
-			<Slider {...settings}>
+			<Slider className="w-screen" {...settings}>
 				{partners.map((partner, _idx) => (
 					<div key={partner.id} className="w-1/5 h-auto">
 						<div className="flex justify-center items-center">

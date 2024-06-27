@@ -1,5 +1,15 @@
+import BondingActivities from "./components/bondingActivities";
+import CountDown from "./countDown";
+import RecruitmentProcess from "./recruitmentProcess";
+
 const JoinUs = () => {
-	return <div>JoinUs</div>;
+	return (
+		<>
+			<CountDown />
+			<RecruitmentProcess />
+			<BondingActivities />
+		</>
+	);
 };
 
 export default JoinUs;
