@@ -1,9 +1,9 @@
-import { connect } from "@/db/dbConfig";
+import connectMongoDB from "@/libs/mongodb";
 import User from "@/models/user";
 import bcryptjs from "bcryptjs";
 import { type NextRequest, NextResponse } from "next/server";
 
-connect();
+connectMongoDB;
 
 export async function POST(req: NextRequest, res: NextResponse) {
 	// TODO: Implement logout logic

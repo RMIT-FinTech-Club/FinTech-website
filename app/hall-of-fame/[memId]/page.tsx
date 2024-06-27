@@ -1,5 +1,5 @@
 "use client";
-import axios from "@/app/api/(axios)/axios";
+import axios from "axios";
 import { Card, CardBody, CardFooter, CardHeader } from "@nextui-org/react";
 import { Image } from "@nextui-org/react";
 import { useEffect, useState } from "react";
