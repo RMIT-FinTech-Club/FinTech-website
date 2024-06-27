@@ -32,15 +32,7 @@ const HeroSection = () => {
 					<h4 className="text-ft-primary-yellow">Fintech CLub</h4>
 					<br />
 					<p className="line-clamp-6 md:line-clamp-2 lg:line-clamp-3">
-						Contrary to popular belief, Lorem Ipsum is not simply
-						random text. It has roots in a piece of classical Latin
-						literature from 45 BC, making it over 2000 years old.
-						Richard McClintock, a Latin professor at Hampden-Sydney
-						College in Virginia, Contrary to popular belief, Lorem
-						Ipsum is not simply random text. It has roots in a piece
-						of classical Latin literature from 45 BC, making it over
-						2000 years old. Richard McClintock, a Latin professor at
-						Hampden-Sydney College in Virginia,{" "}
+                    We’re the first ever student-led Financial Technology initiative in Vietnam. Founded in 2020, our original mission was to create an interdisciplinary learning hub between Business and Technology major students, to advance each other’s expertise and help understand the interconnected nature of Technological advancement and real Business issues.
 					</p>
 					<div className="justify-start items-center gap-6 flex">
 						<Button

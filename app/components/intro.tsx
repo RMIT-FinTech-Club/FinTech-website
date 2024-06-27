@@ -6,46 +6,41 @@ const IntroSection = () => {
 	return (
 		<section className="flex flex-col md:flex-row items-center gap-6 w-11/12 py-3 lg:py-12">
 			{/* Left text */}
-			<div className="flex flex-col items-center  md:w-1/3 justify-center">
-				<h4 className="text-ft-primary-yellow">Vision and mission</h4>
-				<p>
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-					Phasellus ut consectetur enim. Mauris dapibus mauris in
-					aliquet laoreet. Cras sollicitudin quis odio efficitur
-					pellentesque. Vivamus fringilla finibus tellus, eget varius
-					quam tempor posuere. Morbi semper dui vitae leo rhoncus, ac
-					porttitor quam cursus. Curabitur purus ex, laoreet porta
-					nisl ut.
-				</p>
+			<div className="flex flex-col md:w-1/3 justify-center gap-4">
+				<div className="flex flex-col justify-center text-center gap-3">
+					<h4 className="text-ft-primary-yellow">80+</h4>
+					<h5 className="text-ft-primary-blue">Active Club Members</h5>
+					<p>
+                    From diverse backgrounds, be it Finance, Business, Technology, Marketing, Design Studies, and more.
+					</p>
+				</div>
+				<div className="flex flex-col justify-center text-center gap-3">
+					<h4 className="text-ft-primary-yellow">50+</h4>
+					<h5 className="text-ft-primary-blue">Club Projects</h5>
+					<p>
+                    Include academic events, competitions, workshops, training, creative & media projects, technical development, and organizational projects.
+					</p>
+				</div>
 			</div>
 			{/* Image */}
 			{/* <MaskImage src='/ImageMask.svg' /> */}
 			<div className="md:w-1/3" style={{ aspectRatio: "1/ 1.5" }}>
-				<MaskImage src="/RiceSrc01.png" />
+				<MaskImage src="/AchievementsBg.png" />
 			</div>
 			{/* Right text */}
 			<div className="flex flex-col md:w-1/3 justify-center gap-4">
 				<div className="flex flex-col justify-center text-center gap-3">
-					<h4 className="text-ft-primary-yellow">100+</h4>
-					<h5 className="text-ft-primary-blue">Projects</h5>
+					<h4 className="text-ft-primary-yellow">60+</h4>
+					<h5 className="text-ft-primary-blue">Academic & Industry Partners</h5>
 					<p>
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-						Phasellus ut consectetur enim. Mauris dapibus mauris in
-						aliquet laoreet. Cras sollicitudin quis odio efficitur
-						pellentesque. Vivamus fringilla finibus tellus, eget
-						varius quam tempor posuere. Morbi semper dui vitae leo
-						rhoncus, ac porttitor quam cursus. Curabitur purus ex,
-						laoreet porta nisl ut.
+                    In broad industries such as Traditional FinTech, Web3 FinTech, Finance, Technology, Healthcare, Venture Capital, etc.
 					</p>
 				</div>
 				<div className="flex flex-col justify-center text-center gap-3">
-					<h4 className="text-ft-primary-yellow">300+</h4>
-					<h5 className="text-ft-primary-blue">Sponsorship</h5>
+					<h4 className="text-ft-primary-yellow">5000+</h4>
+					<h5 className="text-ft-primary-blue">FanPage followings</h5>
 					<p>
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-						Donec vitae semper dui. Etiam a aliquet magna, et
-						ultrices mauris. Quisque sollicitudin ultricies nisl,
-						sit amet.{" "}
+                    A testament to FinTech Club’s prominence in the RMIT Community and beyond!
 					</p>
 				</div>
 			</div>
@@ -85,7 +80,7 @@ const MaskImage: React.FC<MaskImageProps> = ({
 		<Image
 			width={300}
 			height={0}
-			className=""
+			className="object-cover w-full h-full"
 			src={src}
 			alt="Fintech club members"
 			style={style}

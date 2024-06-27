@@ -14,20 +14,17 @@ import UpcomingEvent from "./components/upcomingEvent";
 import Events from "./events/page";
 import LoginPage from "./login/page";
 import ProjectDetail from "./projects/[pid]/page";
+import Member from "./components/member";
 const Home = () => {
 	return (
 		<div className="flex min-h-screen flex-col justify-center items-center">
 			<Toaster position="bottom-center" />
 			<HerosectionVid />
 			<HeroSection />
-			<PastPartners />
 			<IntroSection />
 			<Department />
+            <Member />
 			<UpcomingEvent />
-			<ProjectDetail />
-			<AchievementsSection />
-			<ExecuteBoard />
-			<ManagementBoard />
 		</div>
 	);
 };
