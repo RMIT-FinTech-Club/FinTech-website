@@ -4,6 +4,7 @@ import { fontSans } from "@/config/fonts";
 import { siteConfig } from "@/config/site";
 import { Link } from "@nextui-org/link";
 import "react-toastify/dist/ReactToastify.css";
+import "@styles/carousel.css";
 import "@styles/globals.css";
 import clsx from "clsx";
 import type { Metadata } from "next";

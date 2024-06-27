@@ -13,7 +13,7 @@ const FinTechTainment: React.FC = () => {
 				doloribus officia repudiandae neque, dolor dolorum voluptatum,
 				non ratione aliquam molestias! Possimus, perferendis!
 			</p>
-			<div className="w-1/5 h-1 bg-black my-8 mx-auto"></div>
+			<div className="w-1/5 h-1 bg-black my-8 mx-auto" />
 			<section className="w-full flex justify-center mt-8">
 				<div className="flex flex-wrap justify-center items-center gap-12 w-full max-w-screen-xl px-4 mb-6">
 					<PodcastCard />
@@ -26,3 +26,4 @@ const FinTechTainment: React.FC = () => {
 };
 
 export default FinTechTainment;
+

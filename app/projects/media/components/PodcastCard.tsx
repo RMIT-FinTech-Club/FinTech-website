@@ -3,7 +3,7 @@ import { FaCirclePlay, FaRegCirclePlay } from "react-icons/fa6";
 const PodcastCard: React.FC = () => {
 	return (
 		<div className="w-[80%] sm:w-1/2 md:w-1/3 lg:w-1/4 min-w-[360px] aspect-[1/1] shadow-lg rounded-xl relative overflow-hidden group">
-			<div className="absolute top-0 left-0 w-full h-full bg-black opacity-20 transition-all duration-300 group-hover:opacity-0"></div>
+			<div className="absolute top-0 left-0 w-full h-full bg-black opacity-20 transition-all duration-300 group-hover:opacity-0" />
 			<img
 				src="https://fintech-club-website.s3.ap-southeast-2.amazonaws.com/philip-an-podcast.png"
 				alt="Avatar"
@@ -24,7 +24,7 @@ const PodcastCard: React.FC = () => {
 							How FinTech promote sustainable finance?
 						</h1>
 					</div>
-					<div className="h-[4/5] bg-white w-[2px] opacity-50"></div>
+					<div className="h-[4/5] bg-white w-[2px] opacity-50" />
 					<div className="w-1/4">
 						<div className="">
 							<p className="text-md leading-normal text-white font-semibold">
@@ -46,3 +46,4 @@ const PodcastCard: React.FC = () => {
 };
 
 export default PodcastCard;
+

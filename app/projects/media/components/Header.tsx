@@ -1,11 +1,12 @@
 // components/Header.tsx
 
 import type React from "react";
+import type React from "react";
 
 const Header: React.FC = () => {
 	return (
 		<section
-			className="relative w-full bg-cover bg-center sm:h-[50vh] lg:h-[60vh]"
+			className="relative w-full h-[40vh] bg-cover bg-center sm:h-[50vh] lg:h-[60vh]"
 			style={{
 				backgroundImage:
 					"url('https://creatioftu2.com/wp-content/uploads/2023/02/bg-1-2048x1152.png')",
@@ -25,7 +26,7 @@ const Header: React.FC = () => {
 						</h1>
 					</div>
 					<div className="w-full lg:w-3/5 flex flex-col font-light mt-4 lg:mt-0">
-						<div className="w-1/5 h-1 bg-white mt-8 lg:mt-32"></div>
+						<div className="w-1/5 h-1 bg-white mt-8 lg:mt-32" />
 						<p className="text-sm sm:text-base lg:text-lg xl:text-xl mt-4">
 							Lorem Ipsum is simply dummy text of the printing and
 							typesetting industry. Lorem Ipsum has been the

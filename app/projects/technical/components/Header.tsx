@@ -1,4 +1,5 @@
 import type React from "react";
+import type React from "react";
 
 const Header: React.FC = () => {
 	return (
@@ -23,7 +24,7 @@ const Header: React.FC = () => {
 						</h1>
 					</div>
 					<div className="w-full lg:w-3/5 flex flex-col font-light mt-4 lg:mt-0">
-						<div className="w-1/5 h-1 bg-white mt-8 lg:mt-32"></div>
+						<div className="w-1/5 h-1 bg-white mt-8 lg:mt-32" />
 						<p className="text-sm sm:text-base lg:text-lg xl:text-xl mt-4">
 							Lorem Ipsum is simply dummy text of the printing and
 							typesetting industry. Lorem Ipsum has been the
