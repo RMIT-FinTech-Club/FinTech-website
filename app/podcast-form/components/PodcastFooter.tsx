@@ -4,30 +4,27 @@ import { useContext, useEffect, useState } from "react";
 import { DisabledButtonContext } from "./context/DisableButtonContext";
 import { PodcastDataContext } from "./context/PodcastContext";
 import axios from "@/app/api/(axios)/axios";
+import { IndexContext } from "./context/IndexContext";
 
-const PodcastFooter: React.FC<{ focusIndex: number; setFocusIndex: any }> = ({
-  focusIndex,
-  setFocusIndex,
-}) => {
+const PodcastFooter = () => {
+  const { focusIndex, setFocusIndex } = useContext(IndexContext);
   const { isDisabled, setIsDisabled } = useContext(DisabledButtonContext);
   const { podcastDetail, authorFiles, audioFile, thumnailFile } =
     useContext(PodcastDataContext);
   const { title, description, authors, publisher, publicationDate, language } =
     podcastDetail;
-  useEffect(() => {}, [isDisabled]);
   function handleCancel() {}
   function handleBack() {
     setFocusIndex(focusIndex - 1);
     setIsDisabled(true);
   }
   async function handleSubmit() {
-    console.log(
-      `title: ${title}\ndescription: ${description}\npublisher: ${publisher}\n publicationDate: ${publicationDate}\n language: ${language}\n authors: ${authors}\n\n\n`
-    );
+    // console.log(
+    //   `title: ${title}\ndescription: ${description}\npublisher: ${publisher}\n publicationDate: ${publicationDate}\n language: ${language}\n authors: ${authors}\n\n\n`
+    // );
     let verifiedStatus = true;
 
     if (!(authorFiles.length === authors.length)) {
-      console.log(`check 1`);
       verifiedStatus = false;
     }
     for (let i = 0; i < authors.length; ++i) {
@@ -38,7 +35,6 @@ const PodcastFooter: React.FC<{ focusIndex: number; setFocusIndex: any }> = ({
           authors[i].title.length > 0
         )
       ) {
-        console.log(`check 2`);
         verifiedStatus = false;
       }
     }
@@ -52,11 +48,9 @@ const PodcastFooter: React.FC<{ focusIndex: number; setFocusIndex: any }> = ({
         audioFile instanceof File
       )
     ) {
-      console.log(`check 3`);
       verifiedStatus = false;
     }
     if (verifiedStatus) {
-      console.log("already Verified! ");
       const formData = new FormData();
       formData.append("title", title);
       formData.append("description", description);
@@ -66,12 +60,9 @@ const PodcastFooter: React.FC<{ focusIndex: number; setFocusIndex: any }> = ({
       formData.append("audioFile", audioFile);
       formData.append("thumnailFile", thumnailFile);
       for (let i = 0; i < authors.length; ++i) {
-      formData.append("authors[]", JSON.stringify(authors[i]));	
+        formData.append("authors[]", JSON.stringify(authors[i]));
         formData.append("authorFiles[]", authorFiles[i]);
       }
-	  for (var pair of formData.entries()) {
-		console.log(pair[0]+ ', ' + pair[1]); 
-	}
       try {
         await axios.post("/api/v1/podcast", formData);
       } catch (error: any) {

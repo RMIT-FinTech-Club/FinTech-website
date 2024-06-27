@@ -23,15 +23,20 @@ const ReviewPodcastDataTab: React.FC<{ isShow: boolean }> = ({ isShow }) => {
       0,
       authorFiles.length
     );
+    console.log(`previewAuthorImageRefs.current: ${previewAuthorImageRefs.current}`);
     for (let i = 0; i < authorFiles.length; ++i) {
+          console.log(`check previewAuthorImagRef at index: ${i}, component: previewAuthorImageRef[${i}]: ${previewAuthorImageRefs.current[i]}`)
       if (previewAuthorImageRefs.current[i]) {
         if (authorFiles[i] instanceof Blob) {
           const reader = new FileReader();
-            previewAuthorImageRefs.current[i].src = URL.createObjectURL(authorFiles[i]);
+          reader.onload = () => {
+            previewAuthorImageRefs.current[i].src = reader.result;
+          };
+          reader.readAsDataURL(authorFiles[i]);
         }
       }
     }
-  }, [authorFiles, podcastDetail.authors]);
+  }, [authorFiles, podcastDetail.authors, previewAuthorImageRefs.current]);
 
   if (isShow) {
     return (
@@ -57,12 +62,16 @@ const ReviewPodcastDataTab: React.FC<{ isShow: boolean }> = ({ isShow }) => {
                     <div
                       key={index}
                       className="w-[40px] h-[40px] rounded-full overflow-hidden absolute"
-                      style={{ zIndex: `${index + 1}`, left:`${index * 30}px` }}
+                      style={{
+                        zIndex: `${index + 1}`,
+                        left: `${index * 30}px`,
+                      }}
                     >
                       <img
-                        ref={(el) => {
-                          previewAuthorImageRefs.current[index] = el;
-                        }}
+                        ref={el => {
+                          previewAuthorImageRefs.current[index] = el
+                        }
+                        }
                         className="w-full h-full"
                       />
                     </div>

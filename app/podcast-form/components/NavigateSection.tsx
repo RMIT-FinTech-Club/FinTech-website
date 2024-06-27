@@ -1,8 +1,8 @@
 import type React from "react";
-interface NavigationProp {
-	focusIndex: number;
-}
-const NavigateSection: React.FC<NavigationProp> = ({ focusIndex }) => {
+import { useContext } from "react";
+import { IndexContext } from "./context/IndexContext";
+const NavigateSection = () => {
+	const {focusIndex} = useContext(IndexContext);
 	return (
 		<section className="w-full flex justify-center items-center gap-3 py-5 border-b-1 border-gray">
 			<h6 className={focusIndex == 1 ? "text-black" : "text-gray-600"}>

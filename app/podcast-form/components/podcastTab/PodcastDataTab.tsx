@@ -5,7 +5,7 @@ import { DisabledButtonContext } from "../context/DisableButtonContext";
 import { PodcastDataContext } from "../context/PodcastContext";
 
 const inputStyle = "w-full p-2 border-1 border-ft-primary-blue-600 rounded-md";
-const PodcastDataTab: React.FC<{ isShow: boolean }> = ({ isShow }) => {
+const PodcastDataTab: React.FC<{ isShow: boolean}> = ({ isShow}) => {
 	const { podcastDetail, setPodcastDetail, authorFiles } =
 		useContext(PodcastDataContext);
 	const { isDisabled, setIsDisabled } = useContext(DisabledButtonContext);
