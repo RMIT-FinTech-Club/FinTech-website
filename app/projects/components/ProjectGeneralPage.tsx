@@ -22,8 +22,8 @@ export default function ProjectGeneralPage() {
 			</div>
 			<div className="md:mb-10 grid grid-cols-3 md:mt-10 md:mb-44">
 				<div className="flex flex-col gap-4 items-center col-span-2">
-					<ProjectGeneralCard />
-					<ProjectGeneralCard />
+					<PROJECT_GENERAL_CARD />
+					<PROJECT_GENERAL_CARD />
 				</div>
 				<div className="flex flex-col gap-4 mx-auto">
 					<div className="flex justify-between items-center mb-4">
@@ -73,7 +73,7 @@ export default function ProjectGeneralPage() {
 	);
 }
 
-function ProjectGeneralCard() {
+function PROJECT_GENERAL_CARD() {
 	return (
 		<>
 			<div className="flex bg-white shadow-lg rounded-lg p-6 md:w-fit">
