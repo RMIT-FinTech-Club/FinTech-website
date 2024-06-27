@@ -3,7 +3,7 @@ import { Button } from "@nextui-org/react";
 import { useContext, useEffect, useState } from "react";
 import { DisabledButtonContext } from "./context/DisableButtonContext";
 import { PodcastDataContext } from "./context/PodcastContext";
-import axios from "@/app/api/(axios)/axios";
+import axios from "axios";
 import { IndexContext } from "./context/IndexContext";
 
 const PodcastFooter = () => {

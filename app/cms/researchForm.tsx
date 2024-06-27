@@ -4,7 +4,10 @@ import { useMutation } from "@tanstack/react-query";
 import { type ChangeEventHandler, useState } from "react";
 import { type SubmitHandler, useForm } from "react-hook-form";
 import { getSignedURL } from "../api/research/actions";
-import { createResearchPaper } from "../api/research/route";
+import { createResearchPaper } from "../api/research/researchPaper";
+import { Button } from "@nextui-org/react";
+import successNotify from "@/utils/successNotify";
+import failedNotify from "@/utils/failedNotify";
 
 interface FormInput {
 	title: string;
@@ -23,7 +26,7 @@ export default function PodcastForm() {
 		register,
 		handleSubmit,
 		reset,
-		formState: { errors, isSubmitting },
+		formState: { errors },
 	} = useForm<FormInput>({
 		defaultValues: {
 			title: "",
@@ -49,20 +52,20 @@ export default function PodcastForm() {
 		mutationFn: createResearchPaper,
 		onSuccess: () => {
 			// Handle success
-			console.log("Research paper created successfully!");
 			reset();
 			setFile(null);
 			setFileUrl(null);
+			successNotify({ message: "Research paper created successfully!" });
 		},
 		onError: (error) => {
 			// Handle error
-			console.error("Failed to create research paper:", error);
+			failedNotify({ message: "Failed to create research paper:" });
 		},
 	});
 
 	const onSubmit: SubmitHandler<FormInput> = async (data: FormInput) => {
 		if (!file) {
-			console.log("No file uploaded");
+			failedNotify({ message: "No file uploaded" });
 			return;
 		}
 
@@ -74,14 +77,14 @@ export default function PodcastForm() {
 		);
 
 		if (signedUrl.failure) {
-			console.log(signedUrl.failure);
+			failedNotify({ message: signedUrl.failure });
 			return;
 		}
 
 		const url = signedUrl.success ? signedUrl.success.url : null;
 
 		if (!url) {
-			console.log("Failed to get signed URL");
+			failedNotify({ message: "Failed to get signed URL" });
 			return;
 		}
 
@@ -294,7 +297,7 @@ export default function PodcastForm() {
 						/>
 					</div>
 					<div>
-						<div className={`flex md:flex-row flex-col`}>
+						<div className="flex md:flex-row flex-col">
 							<p
 								className={`text-black text-4xl font-semibold ${fontSans.style}`}
 							>
@@ -383,17 +386,17 @@ export default function PodcastForm() {
 						>
 							Cancel
 						</button>
-						<button
-							className={`w-1/3 h-10 rounded-lg text-black font-semibold text-lg tracking-wide ${
-								mutation.isPending
+						<Button
+							className={`w-1/3 h-10 rounded-lg text-black font-semibold text-lg tracking-wide ${mutation.isPending
 									? "cursor-not-allowed bg-[#DCB968]/80 "
 									: "cursor-pointer bg-[#DCB968] hover:bg-[#DCB968]/80 active:bg-[#DCB968]/60"
-							}`}
+								}`}
 							type="submit"
-							disabled={mutation.isPending}
+							// disabled={mutation.isPending}
+							isLoading={mutation.isPending}
 						>
 							{mutation.isPending ? "Saving..." : "Save"}
-						</button>
+						</Button>
 					</div>
 				</div>
 			</form>

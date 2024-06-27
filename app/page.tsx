@@ -1,4 +1,6 @@
 import React from "react";
+import ExecuteBoard from "./about-us/components/execute-board/executeBoard";
+import ManagementBoard from "./about-us/components/execute-board/managementBoard";
 import MemberList from "./about-us/components/members";
 import AchievementsSection from "./components/achievements";
 import { Toaster } from "react-hot-toast";
@@ -9,10 +11,8 @@ import IntroSection from "./components/intro";
 import IntroVideo from "./components/introVideo";
 import PastPartners from "./components/pastPartners";
 import UpcomingEvent from "./components/upcomingEvent";
-// import HeroSection from "../components/";
-// import IntroSection from "../components/intro";
-// import UpcomingEvent from "../components/upcomingEvent";
 import Events from "./events/page";
+import ProjectDetail from "./projects/[pid]/page";
 import LoginPage from "./login/page";
 const Home = () => {
 	return (
@@ -24,7 +24,10 @@ const Home = () => {
 			<IntroSection />
 			<Department />
 			<UpcomingEvent />
+			<ProjectDetail />
 			<AchievementsSection />
+			<ExecuteBoard />
+			<ManagementBoard />
 		</div>
 	);
 };

@@ -10,11 +10,11 @@ export default function CountDown() {
 	const [minutes, setMinutes] = useState(0);
 	const [seconds, setSeconds] = useState(0);
 
-	let interval = useRef();
+	const interval = useRef<NodeJS.Timeout>();
 
 	const timerCount = () => {
 		const expiredDay = new Date(2024, 7, 21, 23, 59, 59);
-		interval = setInterval(() => {
+		interval.current = setInterval(() => {
 			const now = new Date();
 			const totalDays = expiredDay.getTime() - now.getTime();
 
@@ -44,15 +44,10 @@ export default function CountDown() {
 		return () => {
 			clearInterval(interval.current);
 		};
-	}, []);
+	}, [timerCount]);
 
 	return (
 		<div className="countDown-container h-screen w-screen flex justify-center items-start">
-			{/* <img
-          src="https://ik.imagekit.io/wsdkzaaovq/Hero%20Section.svg?updatedAt=1718596790677"
-          alt="hero background"
-          className="-z-0  object-cover absolute"
-        /> */}
 			<div className="w-full z-10 mt-16 absolute flex flex-col justify-center items-center">
 				<h1
 					className={`mb-7 md:mb-14 text-[#F9FAFB] text-3xl md:text-6xl font-bold ${fontMono.style}`}
