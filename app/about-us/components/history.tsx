@@ -10,7 +10,7 @@ import useEmblaCarousel from "embla-carousel-react";
 import { useEffect, useState } from "react";
 import "../../../styles/about-us/historyPage.css";
 
-const years = ["2019","2020", "2021", "2022", "2023", "2024"];
+const years = ["2019", "2020", "2021", "2022", "2023", "2024"];
 
 export default function HistorySection() {
 	const { isOpen, onOpen, onOpenChange } = useDisclosure();
@@ -124,30 +124,28 @@ export default function HistorySection() {
 					ref={emblaHorizontalRef}
 				>
 					<div className="flex justify-between items-center">
-						{years.map(
-							(year, index) => {
-								return (
+						{years.map((year, index) => {
+							return (
+								<div
+									key={year}
+									className={`flex shrink-0 md:ml-[50px] lg:ml-[90px] items-center rounded-full duration-1000 ease-out select-none ${
+										index === centerSlideIndex
+											? "md:w-[170px] md:h-[170px] lg:w-60 lg:h-60 bg-slate-700 w-36 h-36"
+											: "sm:inline-flex hidden lg:w-32 lg:h-32 bg-amber-200 md:w-[120px] md:h-[120px]"
+									} `}
+								>
 									<div
-										key={year}
-										className={`flex shrink-0 md:ml-[50px] lg:ml-[90px] items-center rounded-full duration-1000 ease-out select-none ${
+										className={`mx-auto font-extrabold ${
 											index === centerSlideIndex
-												? "md:w-[170px] md:h-[170px] lg:w-60 lg:h-60 bg-slate-700 w-36 h-36"
-												: "sm:inline-flex hidden lg:w-32 lg:h-32 bg-amber-200 md:w-[120px] md:h-[120px]"
-										} `}
+												? "text-orange-300 md:text-4xl lg:text-5xl text-3xl"
+												: "sm:inline-flex hidden text-slate-700 md:text-3xl lg:text-4xl"
+										} ${fontSans.style}`}
 									>
-										<div
-											className={`mx-auto font-extrabold ${
-												index === centerSlideIndex
-													? "text-orange-300 md:text-4xl lg:text-5xl text-3xl"
-													: "sm:inline-flex hidden text-slate-700 md:text-3xl lg:text-4xl"
-											} ${fontSans.style}`}
-										>
-											{year}
-										</div>
+										{year}
 									</div>
-								);
-							},
-						)}
+								</div>
+							);
+						})}
 					</div>
 				</div>
 				<img
@@ -203,7 +201,8 @@ export default function HistorySection() {
 									className={`w-auto h-[850px] grid grid-rows-5 z-0 m-auto ${
 										centerSlideIndex === 0
 											? ""
-											: centerSlideIndex === years.length - 1
+											: centerSlideIndex ===
+													years.length - 1
 												? "pl-96"
 												: "px-96"
 									}`}

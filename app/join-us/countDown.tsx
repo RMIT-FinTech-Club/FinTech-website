@@ -99,7 +99,7 @@ export default function CountDown() {
 					</div>
 				</div>
 				<Button
-					className="text-2xl md:text-5xl px-5 md:px-10 py-6 md:py-12 bg-[#0D1742] border border-2 md:border-4 border-white text-[#F9FAFB]"
+					className="text-2xl md:text-5xl px-5 md:px-10 py-6 md:py-12 bg-[#0D1742] border-2 md:border-4 border-white text-[#F9FAFB]"
 					size="lg"
 				>
 					Join us here
