@@ -37,7 +37,7 @@ const AchievementsSection = () => {
 					>
 						Members:{" "}
 					</div>
-					<CountUp start={1} end={100} duration={5}>
+					<CountUp start={1} end={200} duration={5}>
 						{({ countUpRef }) => (
 							<span
 								ref={countUpRef}
@@ -63,7 +63,7 @@ const AchievementsSection = () => {
 					>
 						Projects:{" "}
 					</div>
-					<CountUp start={1} end={100} duration={5}>
+					<CountUp start={1} end={50} duration={5}>
 						{({ countUpRef }) => (
 							<span
 								ref={countUpRef}
@@ -89,7 +89,7 @@ const AchievementsSection = () => {
 					>
 						Events Partners:{" "}
 					</div>
-					<CountUp start={1} end={100} duration={5}>
+					<CountUp start={1} end={60} duration={5}>
 						{({ countUpRef }) => (
 							<span
 								ref={countUpRef}
