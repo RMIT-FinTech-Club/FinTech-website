@@ -1,4 +1,6 @@
 "use client";
+import Link from 'next/link'
+import ProjectCardSkeletonLoading from "./ProjectCardSkeletonLoading";
 import { fontSans } from "@/config/fonts";
 import {
 	IconBroadcast,
@@ -6,31 +8,18 @@ import {
 	IconUser,
 } from "@tabler/icons-react";
 import { useSuspenseQuery } from "@tanstack/react-query";
-import axios from "axios";
-import Link from "next/link";
 import { Suspense, useState } from "react";
 import { ChevronDown, Filter } from "tabler-icons-react";
-import ProjectCardSkeletonLoading from "./ProjectCardSkeletonLoading";
+import axios from 'axios';
 
 type ResearchPaper = {
-	_id: string;
+	_id: string,
 	title: string;
 	author: string;
 	publicationDate: string;
 	description: string;
 	fileURL: string;
 };
-
-async function getProjects() {
-	return axios
-		.get("/api/projects")
-		.then((res) => res.data)
-		.catch((err) => {
-			throw new Error(
-				err.response?.data?.message || "Failed to fetch projects",
-			);
-		});
-}
 
 export default function ProjectGeneralPage() {
 	return (
@@ -51,9 +40,9 @@ export default function ProjectGeneralPage() {
 				</div>
 				<div className="grid md:grid-cols-3 md:mt-10 md:mb-44 w-full md:px-0">
 					<div className="flex flex-col gap-4 items-center md:col-span-2 md:order-first order-last">
+						<Suspense fallback={<ProjectCardSkeletonLoading />}>
 							<ProjectsSection />
-						{/* <Suspense fallback={<ProjectCardSkeletonLoading />}>
-						</Suspense> */}
+						</Suspense>
 					</div>
 					{/* projects filter  */}
 					<ProjectsFilter />
@@ -182,11 +171,8 @@ function ProjectsFilter() {
 					</div>
 					{isOpen && (
 						<div
-							className={`origin-top-right absolute mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 transition-transform transform ${
-								isOpen
-									? "scale-100 opacity-100"
-									: "scale-95 opacity-0"
-							}`}
+							className={`origin-top-right absolute mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 transition-transform transform ${isOpen ? 'scale-100 opacity-100' : 'scale-95 opacity-0'
+								}`}
 							role="menu"
 							aria-orientation="vertical"
 							aria-labelledby="options-menu"
@@ -219,28 +205,32 @@ function ProjectsFilter() {
 				</div>
 			</div>
 			<div className="mt-4 md:bg-ft-background px-2 py-2 rounded-lg">
-				<p className="text-[24px] hidden md:block">Project filter:</p>
+				<p className="text-[24px] hidden md:block">
+					Project filter:
+				</p>
 				<div className="flex items-center">
 					<Filter className="md:hidden text-ft-primary-blue w-8 h-8" />
 					<button
 						type="button"
-						onClick={() => toggleFilter("research")}
-						className={`mr-2 md:px-4 px-2 py-[4px] md:py-2 rounded-lg ${
-							filters.research
-								? "md:bg-ft-primary-yellow bg-ft-primary-blue text-white"
-								: "bg-gray-200 text-black"
-						}`}
+						onClick={() =>
+							toggleFilter("research")
+						}
+						className={`mr-2 md:px-4 px-2 py-[4px] md:py-2 rounded-lg ${filters.research
+							? "md:bg-ft-primary-yellow bg-ft-primary-blue text-white"
+							: "bg-gray-200 text-black"
+							}`}
 					>
 						Research
 					</button>
 					<button
 						type="button"
-						onClick={() => toggleFilter("podcast")}
-						className={`md:px-4 px-2 py-[4px] md:py-2  rounded-lg ${
-							filters.podcast
-								? "md:bg-ft-primary-yellow bg-ft-primary-blue text-white"
-								: "bg-gray-200 text-black"
-						}`}
+						onClick={() =>
+							toggleFilter("podcast")
+						}
+						className={`md:px-4 px-2 py-[4px] md:py-2  rounded-lg ${filters.podcast
+							? "md:bg-ft-primary-yellow bg-ft-primary-blue text-white"
+							: "bg-gray-200 text-black"
+							}`}
 					>
 						Article
 					</button>
@@ -252,47 +242,64 @@ function ProjectsFilter() {
 					<div className="flex items-center">
 						<button
 							type="button"
-							onClick={() => toggleFilter("newest")}
-							className={`mr-2 w-6 h-6 rounded ${
-								filters.newest
-									? "bg-ft-primary-yellow"
-									: "bg-gray-200"
-							}`}
+							onClick={() =>
+								toggleFilter("newest")
+							}
+							className={`mr-2 w-6 h-6 rounded ${filters.newest
+								? "bg-ft-primary-yellow"
+								: "bg-gray-200"
+								}`}
 						>
 							{filters.newest && "✓"}
 						</button>
-						<p className="mr-4">Newest release date</p>
+						<p className="mr-4">
+							Newest release date
+						</p>
 					</div>
 					<div className="flex items-center">
 						<button
 							type="button"
-							onClick={() => toggleFilter("oldest")}
-							className={`mr-2 w-6 h-6 rounded ${
-								filters.oldest
-									? "bg-ft-primary-yellow"
-									: "bg-gray-200"
-							}`}
+							onClick={() =>
+								toggleFilter("oldest")
+							}
+							className={`mr-2 w-6 h-6 rounded ${filters.oldest
+								? "bg-ft-primary-yellow"
+								: "bg-gray-200"
+								}`}
 						>
 							{filters.oldest && "✓"}
 						</button>
-						<p className="mr-4">Oldest release date</p>
+						<p className="mr-4">
+							Oldest release date
+						</p>
 					</div>
 				</div>
 			</div>
 		</div>
-	);
+	)
 }
 
 async function ProjectsSection() {
-	const { data: projects } = useSuspenseQuery<ResearchPaper[]>({
+	const {
+		data: projects,
+	} = useSuspenseQuery<ResearchPaper[]>({
 		queryKey: ["projects"],
-		queryFn: () => getProjects(),
-	});
+		queryFn: async () => {
+			return axios
+				.get("/api/projects")
+				.then((res) => res.data)
+				.catch((err) => {
+					throw new Error(
+						err.response?.data?.message || "Failed to fetch projects",
+					);
+				});
+		},
+	})
 	return (
 		<>
 			{projects.map((project: ResearchPaper) => (
 				<ProjectGeneralCard key={project._id} project={project} />
 			))}
 		</>
-	);
+	)
 }
