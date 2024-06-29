@@ -83,6 +83,22 @@ const Department = () => {
 				>
 					BUSINESS
 				</Button>
+				<Button
+					className="text-white"
+					onClick={() =>
+						setDepartment(departments.humanResources)
+					}
+					variant="light"
+				>
+					HUMAN RESOURCES
+				</Button>
+				<Button
+					className="text-white"
+					onClick={() => setDepartment(departments.marketing)}
+					variant="light"
+				>
+					MARKETING
+				</Button>
 			</div>
 
 			{/* Department content */}
@@ -92,7 +108,7 @@ const Department = () => {
 					{department.name}
 				</h4>
 				<h4 className="text-ft-text-bright mt-4">BE ONE OF US!</h4>
-				<p className="ft-body-2 text-ft-text-bright max-w-lg mt-6 text-center md:text-left">
+				<p className="ft-body-2 text-ft-text-bright max-w-lg mt-6 text-center">
 					{department.description}
 				</p>
 
